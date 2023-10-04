@@ -19,6 +19,12 @@ public:
     //  создание экземпляров класса с инициализацией одним контейнером;
     Train(MyContainer::Container &);
 
+    //  копирующий конструктор
+    Train(const Train &);
+
+    //  перемещающий конструктор
+    Train(Train &&) noexcept;
+
     //  деструктор
     ~Train() { delete[] containers; };
 

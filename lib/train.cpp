@@ -11,10 +11,16 @@ Train::Train(int number) : containers(nullptr), countContainers(number), maxWeig
 //Train::Train(MyContainer::Container &) : {};
 
 //  копирующий конструктор
-
+Train::Train(const Train &tr) : countContainers(tr.countContainers), maxVolume(tr.maxVolume), maxWeight(tr.maxWeight) {
+    containers = new MyContainer::Container[countContainers];
+    std::copy(tr.containers, tr.containers + tr.countContainers, containers);
+}
 
 //  перемещающий конструктор
-
+Train::Train(Train &&tr) noexcept: countContainers(tr.countContainers), maxWeight(tr.maxWeight),
+                                   maxVolume(tr.maxVolume) {
+    tr.containers = nullptr;
+}
 
 //  методы ввода и вывода состояния класса в входной/выходной поток;
 void Train::inputState() {
@@ -33,8 +39,7 @@ void Train::operator+=(MyContainer::Container &newContainer) {
         std::cout << "Невозможно добавить контейнер из-за ограничений грузоподъемности или объема" << std::endl;
         return;
     }
-
-    MyContainer::Container *newArray = new MyContainer::Container[countContainers + 1];
+    auto *newArray = new MyContainer::Container[countContainers + 1];
     for (int i = 0; i < countContainers; ++i) {
         newArray[i] = containers[i];
     }
