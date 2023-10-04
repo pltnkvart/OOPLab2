@@ -8,7 +8,7 @@ Train::Train() : containers(nullptr), countContainers(0), maxWeight(0.0), maxVol
 Train::Train(int number, Container (&containersInit)[], double _weight, double _volume) {
     maxWeight = _weight;
     maxVolume = _volume;
-    for(int i = 0; i < number; i++){
+    for (int i = 0; i < number; i++) {
         this->operator+=(containersInit[i]);
     }
 };
@@ -28,7 +28,8 @@ Train::Train(const Train &tr) : countContainers(tr.countContainers), maxVolume(t
 }
 
 //  перемещающий конструктор
-Train::Train(Train &&tr) noexcept: countContainers(tr.countContainers), maxWeight(tr.maxWeight), maxVolume(tr.maxVolume) {
+Train::Train(Train &&tr) noexcept: countContainers(tr.countContainers), maxWeight(tr.maxWeight),
+                                   maxVolume(tr.maxVolume) {
     tr.containers = nullptr;
 }
 
