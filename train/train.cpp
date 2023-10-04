@@ -5,24 +5,30 @@
 Train::Train() : containers(nullptr), countContainers(0), maxWeight(0.0), maxVolume(0.0) {};
 
 //  создание экземпляров класса с инициализацией заданным количеством контейнеров из массива контейнеров;
-Train::Train(int number, Container (&containersInit)[]) {
+Train::Train(int number, Container (&containersInit)[], double _weight, double _volume) {
+    maxWeight = _weight;
+    maxVolume = _volume;
     for(int i = 0; i < number; i++){
-        this += containersInit[i];
+        this->operator+=(containersInit[i]);
     }
 };
 
 //  создание экземпляров класса с инициализацией одним контейнером;
-//Train::Train(MyContainer::Container &) : {};
+Train::Train(Container &oneContainer, double _weight, double _volume) {
+    containers = &oneContainer;
+    maxWeight = _weight;
+    maxVolume = _volume;
+    countContainers = 1;
+};
 
 //  копирующий конструктор
-//Train::Train(const Train &tr) : countContainers(tr.countContainers), maxVolume(tr.maxVolume), maxWeight(tr.maxWeight) {
-//    containers = new MyContainer::Container[countContainers];
-//    std::copy(tr.containers, tr.containers + tr.countContainers, containers);
-//}
+Train::Train(const Train &tr) : countContainers(tr.countContainers), maxVolume(tr.maxVolume), maxWeight(tr.maxWeight) {
+    containers = new Container[countContainers];
+    std::copy(tr.containers, tr.containers + tr.countContainers, containers);
+}
 
 //  перемещающий конструктор
-Train::Train(Train &&tr) noexcept: countContainers(tr.countContainers), maxWeight(tr.maxWeight),
-                                   maxVolume(tr.maxVolume) {
+Train::Train(Train &&tr) noexcept: countContainers(tr.countContainers), maxWeight(tr.maxWeight), maxVolume(tr.maxVolume) {
     tr.containers = nullptr;
 }
 

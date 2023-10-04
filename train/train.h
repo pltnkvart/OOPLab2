@@ -14,10 +14,10 @@ public:
     Train();
 
     //  создание экземпляров класса с инициализацией заданным количеством контейнеров из массива контейнеров;
-    Train(int);
+    Train(int, Container (&containers)[], double, double);
 
     //  создание экземпляров класса с инициализацией одним контейнером;
-    Train(Container &);
+    Train(Container &, double, double);
 
     //  копирующий конструктор
     Train(const Train &);
