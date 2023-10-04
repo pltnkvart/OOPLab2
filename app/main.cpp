@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../lib/train.h"
+#include "../train/train.h"
 
 using namespace std;
 

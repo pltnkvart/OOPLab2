@@ -5,16 +5,20 @@
 Train::Train() : containers(nullptr), countContainers(0), maxWeight(0.0), maxVolume(0.0) {};
 
 //  создание экземпляров класса с инициализацией заданным количеством контейнеров из массива контейнеров;
-Train::Train(int number) : containers(nullptr), countContainers(number), maxWeight(0.0), maxVolume(0.0) {};
+Train::Train(int number, Container (&containersInit)[]) {
+    for(int i = 0; i < number; i++){
+        this += containersInit[i];
+    }
+};
 
 //  создание экземпляров класса с инициализацией одним контейнером;
 //Train::Train(MyContainer::Container &) : {};
 
 //  копирующий конструктор
-Train::Train(const Train &tr) : countContainers(tr.countContainers), maxVolume(tr.maxVolume), maxWeight(tr.maxWeight) {
-    containers = new MyContainer::Container[countContainers];
-    std::copy(tr.containers, tr.containers + tr.countContainers, containers);
-}
+//Train::Train(const Train &tr) : countContainers(tr.countContainers), maxVolume(tr.maxVolume), maxWeight(tr.maxWeight) {
+//    containers = new MyContainer::Container[countContainers];
+//    std::copy(tr.containers, tr.containers + tr.countContainers, containers);
+//}
 
 //  перемещающий конструктор
 Train::Train(Train &&tr) noexcept: countContainers(tr.countContainers), maxWeight(tr.maxWeight),
@@ -34,12 +38,12 @@ void Train::printState() {
 }
 
 //  (+=) добавление нового контейнера;
-void Train::operator+=(MyContainer::Container &newContainer) {
+void Train::operator+=(Container &newContainer) {
     if (newContainer.getMass() > maxWeight || newContainer.getVolume() > maxVolume) {
         std::cout << "Невозможно добавить контейнер из-за ограничений грузоподъемности или объема" << std::endl;
         return;
     }
-    auto *newArray = new MyContainer::Container[countContainers + 1];
+    auto *newArray = new Container[countContainers + 1];
     for (int i = 0; i < countContainers; ++i) {
         newArray[i] = containers[i];
     }
@@ -50,7 +54,7 @@ void Train::operator+=(MyContainer::Container &newContainer) {
 }
 
 //  ([]) получение контейнера по его номеру (возврат по ссылке);
-MyContainer::Container &Train::operator[](int index) {
+Container &Train::operator[](int index) {
     if (index < countContainers) {
         return containers[index];
     } else {

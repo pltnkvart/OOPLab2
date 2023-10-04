@@ -1,11 +1,11 @@
 #ifndef LAB2_B_TRAIN_H
 #define LAB2_B_TRAIN_H
 
-#include "../../Lab2/lib/container.h"
+#include "../container/container.h"
 
 class Train {
 private:
-    MyContainer::Container *containers;
+    Container *containers;
     int countContainers;
     double maxWeight;
     double maxVolume;
@@ -17,7 +17,7 @@ public:
     Train(int);
 
     //  создание экземпляров класса с инициализацией одним контейнером;
-    Train(MyContainer::Container &);
+    Train(Container &);
 
     //  копирующий конструктор
     Train(const Train &);
@@ -34,10 +34,10 @@ public:
     void printState();
 
     //  (+=) добавление нового контейнера;
-    void operator+=(MyContainer::Container &);
+    void operator+=(Container &);
 
     //  ([]) получение контейнера по его номеру (возврат по ссылке);
-    MyContainer::Container &operator[](int);
+    Container &operator[](int);
 
     //  удаление контейнера по его номеру;
     void deleteContainer(int);
