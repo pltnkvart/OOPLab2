@@ -48,6 +48,23 @@ Container &Container::setCategory(CargoCategory p_category) {
     return *this;
 }
 
+//  input container
+std::istream& operator>>(std::istream& is, Container& container) {
+    std::string name;
+    double mass, volume;
+    int category;
+
+    is >> name >> mass >> volume >> category;
+
+    container.setName(name);
+    container.setMass(mass);
+    container.setVolume(volume);
+    container.setCategory(CargoCategory(category));
+
+    return is;
+}
+
+
 //    перегрузка заданной массы груза из одного контейнера в другой;
 void Container::transferCargo(double massToTransfer, Container &otherContainer) {
     if (category == DANGEROUS || otherContainer.category == DANGEROUS) {

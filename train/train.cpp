@@ -8,6 +8,8 @@ Train::Train() : containers(nullptr), countContainers(0), maxWeight(0.0), maxVol
 Train::Train(int number, Container (&containersInit)[], double _weight, double _volume) {
     maxWeight = _weight;
     maxVolume = _volume;
+    countContainers = 0;
+    containers = new Container[number];
     for (int i = 0; i < number; i++) {
         this->operator+=(containersInit[i]);
     }
@@ -33,11 +35,26 @@ Train::Train(Train &&tr) noexcept: countContainers(tr.countContainers), maxWeigh
     tr.containers = nullptr;
 }
 
-//  методы ввода и вывода состояния класса в входной/выходной поток;
-void Train::inputState() {
+//  методы ввода состояния класса в входной поток;
+std::istream &operator>>(std::istream &is, Train &train) {
+    double maxWeight, maxVolume;
+    int countContainers;
 
+    is >> maxWeight >> maxVolume >> countContainers;
+
+    train.setMaxWeight(maxWeight);
+    train.setMaxVolume(maxVolume);
+    train.containers = new Container[countContainers];
+    std::cout << "Added weight and volume" << std::endl;
+    for (int i = 0; i < countContainers; i++) {
+        Container container;
+        is >> container;
+        train += container;
+    }
+    return is;
 }
 
+//  метод вывода
 void Train::printState() {
     for (int i = 0; i < countContainers; ++i) {
         containers[i].print();
@@ -46,18 +63,12 @@ void Train::printState() {
 
 //  (+=) добавление нового контейнера;
 void Train::operator+=(Container &newContainer) {
-    if (newContainer.getMass() > maxWeight || newContainer.getVolume() > maxVolume) {
+    if (countMass() + newContainer.getMass() <= maxWeight && newContainer.getVolume() <= maxVolume) {
+        containers[countContainers] = newContainer;
+        countContainers++;
+    } else {
         std::cout << "Невозможно добавить контейнер из-за ограничений грузоподъемности или объема" << std::endl;
-        return;
     }
-    auto *newArray = new Container[countContainers + 1];
-    for (int i = 0; i < countContainers; ++i) {
-        newArray[i] = containers[i];
-    }
-    newArray[countContainers] = newContainer;
-    delete[] containers;
-    containers = newArray;
-    countContainers++;
 }
 
 //  ([]) получение контейнера по его номеру (возврат по ссылке);
@@ -84,8 +95,10 @@ void Train::deleteContainer(int index) {
 //  подсчёт суммарной массы всех контейнеров;
 double Train::countMass() {
     double totalMass = 0.0;
-    for (int i = 0; i < countContainers; i++) {
-        totalMass += containers[i].getMass();
+    if (countContainers != 0) {
+        for (int i = 0; i < countContainers; i++) {
+            totalMass += containers[i].getMass();
+        }
     }
     return totalMass;
 }
@@ -105,10 +118,54 @@ double Train::countCenterMass() {
 
 //  минимизация количества контейнеров за счёт перегрузки груза между ними и удаления пустых контейнеров;
 void Train::minContainers() {
-
+    // Удаление пустых контейнеров
+    int i = 0;
+    while (i < countContainers) {
+        if (containers[i].getMass() == 0.0) {
+            deleteContainer(i);
+        } else {
+            i++;
+        }
+    }
+    i = 0;
+    while (i < countContainers - 1) {
+        int j = i + 1;
+        while (j < countContainers) {
+            double remainingSpace = containers[j].getVolume() - containers[j].getMass();
+            if (remainingSpace > 0.0) {
+                double availableCargo = containers[i].getMass();
+                if (availableCargo > 0.0) {
+                    containers[i].transferCargo(availableCargo, containers[j]);
+                }
+            }
+            j++;
+        }
+        i++;
+    }
 }
+
 
 //  обеспечение безопасности транспортировки опасных грузов — между двумя контейнерами с опасным грузом должно находиться не менее двух контейнеров с безопасным грузом (обеспечить при помощи перемещения контейнеров, при необходимости добавить пустые контейнеры).
 void Train::ensuringSecurity() {
-
+    int i = 0;
+    while (i < countContainers) {
+        if (containers[i].getCategory() == DANGEROUS) {
+            int j = i - 2;
+            while (j < i + 3) {
+                if (j >= 0 && j < countContainers && containers[j].getCategory() != DANGEROUS) {
+                    for (int k = i - 1; k > j; --k) {
+                        Container temp = containers[k];
+                        containers[k] = containers[k + 1];
+                        containers[k + 1] = temp;
+                    }
+                    Container newCont ("Empty Container", 0.0, 0.0, EMPTY);
+                    operator+=(newCont);
+                    i++;
+                    break;
+                }
+                j++;
+            }
+        }
+        i++;
+    }
 }

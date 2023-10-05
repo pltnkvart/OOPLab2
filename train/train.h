@@ -28,9 +28,15 @@ public:
     //  деструктор
     ~Train() { delete[] containers; };
 
-    //  методы ввода и вывода состояния класса в входной/выходной поток;
-    void inputState();
+    //  setters
+    void setMaxWeight(double weight) { maxWeight = weight; };
 
+    void setMaxVolume(double volume) { maxVolume = volume; };
+
+    //  методы ввода и вывода состояния класса в входной/выходной поток;
+    friend std::istream &operator>>(std::istream &is, Train &train);
+
+    //  вывод
     void printState();
 
     //  (+=) добавление нового контейнера;

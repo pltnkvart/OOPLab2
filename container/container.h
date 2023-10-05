@@ -48,6 +48,9 @@ public:
     //  output
     void print();
 
+    // input
+    friend std::istream& operator>>(std::istream& is, Container& container);
+
     //  перегрузка заданной массы груза из одного контейнера в другой;
     void transferCargo(double, Container &);
 
