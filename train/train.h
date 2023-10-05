@@ -33,6 +33,11 @@ public:
 
     void setMaxVolume(double volume) { maxVolume = volume; };
 
+    //  getters
+    int getCount() { return countContainers; };
+
+    Container *getContainers() { return containers; };
+
     //  методы ввода и вывода состояния класса в входной/выходной поток;
     friend std::istream &operator>>(std::istream &is, Train &train);
 
@@ -60,5 +65,7 @@ public:
     //  обеспечение безопасности транспортировки опасных грузов — между двумя контейнерами с опасным грузом должно находиться не менее двух контейнеров с безопасным грузом (обеспечить при помощи перемещения контейнеров, при необходимости добавить пустые контейнеры).
     void ensuringSecurity();
 };
+
+std::ostream &operator<<(std::ostream &s, Train &train);
 
 #endif //LAB2_B_TRAIN_H

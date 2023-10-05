@@ -20,12 +20,12 @@ Container::Container(double p_mass, double p_volume) : name("Undefined"),
                                                        volume(p_volume),
                                                        category(DANGEROUS) {}
 
-void Container::print() {
-    std::cout << "'" << name << "' " << "Mass - " << mass << " Volume - " << volume
-              << " Category - "
-              << convertToenum(category)
-              << std::endl;
+
+std::ostream& operator<<(std::ostream& is, Container& container) {
+    is << container.getName() << " Mass - " << container.getMass() << " Volume - " << container.getVolume() << " Category - " << convertToenum(container.getCategory()) << std::endl;
+    return is;
 }
+
 
 // setters
 Container &Container::setName(std::string p_name) {

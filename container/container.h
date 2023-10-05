@@ -28,7 +28,7 @@ public:
     Container(double, double);
 
     // getters
-    std::string getName() { return name; }
+    std::string getName() { return this->name; }
 
     double getMass() { return mass; }
 
@@ -64,5 +64,6 @@ public:
     void addCargo(double);
 };
 
+std::ostream& operator<<(std::ostream& is, Container& container);
 
 #endif //LAB2_CONTAINER_H

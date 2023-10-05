@@ -55,11 +55,14 @@ std::istream &operator>>(std::istream &is, Train &train) {
 }
 
 //  метод вывода
-void Train::printState() {
-    for (int i = 0; i < countContainers; ++i) {
-        containers[i].print();
+std::ostream &operator<<(std::ostream &s, Train &train) {
+    for (int i = 0; i < train.getCount(); i++) {
+        s << train.getContainers()[i];
     }
+    s << std::endl;
+    return s;
 }
+
 
 //  (+=) добавление нового контейнера;
 void Train::operator+=(Container &newContainer) {
@@ -76,7 +79,7 @@ Container &Train::operator[](int index) {
     if (index < countContainers) {
         return containers[index];
     } else {
-        throw std::out_of_range("Index out of range");
+        std::cout << "Index out of range" << std::endl;
     }
 }
 
@@ -121,7 +124,7 @@ void Train::minContainers() {
     // Удаление пустых контейнеров
     int i = 0;
     while (i < countContainers) {
-        if (containers[i].getMass() == 0.0) {
+        if (containers[i].getCategory() == EMPTY) {
             deleteContainer(i);
         } else {
             i++;
@@ -131,7 +134,7 @@ void Train::minContainers() {
     while (i < countContainers - 1) {
         int j = i + 1;
         while (j < countContainers) {
-            double remainingSpace = containers[j].getVolume() - containers[j].getMass();
+            double remainingSpace = containers[j].getVolume() - containers[i].getVolume();
             if (remainingSpace > 0.0) {
                 double availableCargo = containers[i].getMass();
                 if (availableCargo > 0.0) {
@@ -158,7 +161,7 @@ void Train::ensuringSecurity() {
                         containers[k] = containers[k + 1];
                         containers[k + 1] = temp;
                     }
-                    Container newCont ("Empty Container", 0.0, 0.0, EMPTY);
+                    Container newCont("Empty Container", 0.0, 0.0, EMPTY);
                     operator+=(newCont);
                     i++;
                     break;

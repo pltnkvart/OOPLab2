@@ -7,11 +7,11 @@ int main() {
     Train train;
     std::cin >> train;
 
-    train.printState();
+    std::cout << train;
 
     std::cout << "Peek 1 container: " << std::endl;
     Container c = train.operator[](1);
-    c.print();
+    std::cout << c;
     std::cout << std::endl;
 
     std::cout << "Count all mass: ";
@@ -22,22 +22,16 @@ int main() {
 
     Container newContainer("Cargo1", 5.0, 12.0, BULK);
 
-    std::cout << "Adding new container to train:";
-    newContainer.print();
+    std::cout << "Adding new container to train: ";
+    std::cout << newContainer;
     train += newContainer;
 
     std::cout << "Train:" << std::endl;
-    train.printState();
+    std::cout << train;
     std::cout << std::endl;
 
     std::cout << "Removing container 2 from train:" << std::endl;
-    try{
-        train.deleteContainer(2);
-    }catch (...){
-        std::cout << "Index out of range"  << std::endl;
-    }
-
-
+    train.deleteContainer(2);
     std::cout << "Train:" << std::endl;
-    train.printState();
+    std::cout << train;
 }
