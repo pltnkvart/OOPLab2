@@ -21,8 +21,9 @@ Container::Container(double p_mass, double p_volume) : name("Undefined"),
                                                        category(DANGEROUS) {}
 
 
-std::ostream& operator<<(std::ostream& is, Container& container) {
-    is << container.getName() << " Mass - " << container.getMass() << " Volume - " << container.getVolume() << " Category - " << convertToenum(container.getCategory()) << std::endl;
+std::ostream &operator<<(std::ostream &is, const Container &container) {
+    is << container.name << " Mass - " << container.mass << " Volume - " << container.volume
+       << " Category - " << convertToenum(container.category) << std::endl;
     return is;
 }
 
@@ -55,12 +56,14 @@ std::istream& operator>>(std::istream& is, Container& container) {
     int category;
 
     is >> name >> mass >> volume >> category;
-
+    if(is.fail()){
+        is.setstate(std::ios::failbit);
+        return is;
+    }
     container.setName(name);
     container.setMass(mass);
     container.setVolume(volume);
     container.setCategory(CargoCategory(category));
-
     return is;
 }
 
@@ -68,16 +71,13 @@ std::istream& operator>>(std::istream& is, Container& container) {
 //    перегрузка заданной массы груза из одного контейнера в другой;
 void Container::transferCargo(double massToTransfer, Container &otherContainer) {
     if (category == DANGEROUS || otherContainer.category == DANGEROUS) {
-        std::cout << "Нельзя объединять опасные грузы!" << std::endl;
-        return;
+        throw std::runtime_error("Dangerous goods must not be combined!");
     }
     if (category != EMPTY && otherContainer.category != EMPTY && category != otherContainer.category) {
-        std::cout << "Нельзя объединять грузы разных категорий." << std::endl;
-        return;
+        throw std::runtime_error("Different categories!");
     }
     if (name != otherContainer.name && (category == BULK || category == LIQUID || category == GAS)) {
-        std::cout << "Нельзя объединять насыпные грузы, жидкости и газы разных наименований." << std::endl;
-        return;
+        throw std::runtime_error("Can't combine bulk cargo, liquids and gases of different types!");
     }
     if (otherContainer.category == EMPTY) {
         otherContainer.name = name;

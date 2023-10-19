@@ -28,13 +28,13 @@ public:
     Container(double, double);
 
     // getters
-    std::string getName() { return this->name; }
+    std::string getName() const { return this->name; }
 
-    double getMass() { return mass; }
+    double getMass() const { return mass; }
 
-    double getVolume() { return volume; }
+    double getVolume() const { return volume; }
 
-    int getCategory() { return category; }
+    int getCategory() const { return category; }
 
     // setters
     Container &setName(std::string);
@@ -45,11 +45,11 @@ public:
 
     Container &setCategory(CargoCategory);
 
-    //  output
-    void print();
-
     // input
-    friend std::istream& operator>>(std::istream& is, Container& container);
+    friend std::istream &operator>>(std::istream &is, Container &container);
+
+    // output class
+    friend std::ostream &operator<<(std::ostream &is, const Container &container);
 
     //  перегрузка заданной массы груза из одного контейнера в другой;
     void transferCargo(double, Container &);
@@ -64,6 +64,5 @@ public:
     void addCargo(double);
 };
 
-std::ostream& operator<<(std::ostream& is, Container& container);
 
 #endif //LAB2_CONTAINER_H

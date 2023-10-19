@@ -1,5 +1,10 @@
 #include "train.h"
 
+/*
+почему >> не член класса
+когда ошибка в вводе состояние класса меняться не должно
+показать когда будет перемещение вместо копирования
+ */
 
 //  конструктор по умолчанию (явный или неявный);
 Train::Train() : containers(nullptr), countContainers(0), maxWeight(0.0), maxVolume(0.0) {};
@@ -42,20 +47,27 @@ std::istream &operator>>(std::istream &is, Train &train) {
 
     is >> maxWeight >> maxVolume >> countContainers;
 
+    if (is.fail()) {
+        is.setstate(std::ios::failbit);
+        return is;
+    }
+
     train.setMaxWeight(maxWeight);
     train.setMaxVolume(maxVolume);
     train.containers = new Container[countContainers];
-    std::cout << "Added weight and volume" << std::endl;
     for (int i = 0; i < countContainers; i++) {
         Container container;
         is >> container;
         train += container;
     }
+    train.setCountContainers(countContainers);
     return is;
 }
 
 //  метод вывода
-std::ostream &operator<<(std::ostream &s, Train &train) {
+std::ostream &operator<<(std::ostream &s, const Train &train) {
+    s << "Max Weight - " << train.getMaxWeight() << "; Max Volume - " << train.getMaxVolume() << "; Containers - "
+      << train.getCount() << std::endl;
     for (int i = 0; i < train.getCount(); i++) {
         s << train.getContainers()[i];
     }
@@ -65,21 +77,30 @@ std::ostream &operator<<(std::ostream &s, Train &train) {
 
 
 //  (+=) добавление нового контейнера;
-void Train::operator+=(Container &newContainer) {
+Train &Train::operator+=(Container newContainer) {
     if (countMass() + newContainer.getMass() <= maxWeight && newContainer.getVolume() <= maxVolume) {
-        containers[countContainers] = newContainer;
+        Container *tmp = new Container[countContainers + 1];
+        for (int i = 0; i < countContainers; i++) {
+            tmp[i] = containers[i];
+        }
+
+        tmp[countContainers] = std::move(newContainer); //перемещающий (если не стд мув то копирующий)
         countContainers++;
+        delete[] containers;
+        containers = tmp;
+        return *this;
     } else {
-        std::cout << "Невозможно добавить контейнер из-за ограничений грузоподъемности или объема" << std::endl;
+        throw std::runtime_error("Capacity or volume limitation");
     }
 }
+
 
 //  ([]) получение контейнера по его номеру (возврат по ссылке);
 Container &Train::operator[](int index) {
     if (index < countContainers) {
         return containers[index];
     } else {
-        std::cout << "Index out of range" << std::endl;
+        throw std::out_of_range("Index out of range");
     }
 }
 
@@ -98,7 +119,7 @@ void Train::deleteContainer(int index) {
 //  подсчёт суммарной массы всех контейнеров;
 double Train::countMass() {
     double totalMass = 0.0;
-    if (countContainers != 0) {
+    if (countContainers != 0 || containers != nullptr) {
         for (int i = 0; i < countContainers; i++) {
             totalMass += containers[i].getMass();
         }
@@ -171,4 +192,25 @@ void Train::ensuringSecurity() {
         }
         i++;
     }
+}
+
+// копирующий оператор присваивания
+Train &Train::operator=(const Train &tr) {
+    if (this != &tr) {
+        auto *new_ar = new Container[countContainers];
+        maxVolume = tr.maxVolume;
+        maxWeight = tr.maxWeight;
+        delete[] containers;
+        containers = new_ar;
+        std::copy(tr.containers, tr.containers + tr.countContainers, containers);
+    }
+    return *this;
+}
+
+// перемещающий оператор присваивания
+Train &Train::operator=(Train &&st) noexcept {
+    std::swap(maxWeight, st.maxWeight);
+    std::swap(maxVolume, st.maxVolume);
+    std::swap(containers, st.containers);
+    return *this;
 }

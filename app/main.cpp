@@ -10,7 +10,7 @@ int main() {
     std::cout << train;
 
     std::cout << "Peek 1 container: " << std::endl;
-    Container c = train.operator[](1);
+    Container c = train.operator[](0);
     std::cout << c;
     std::cout << std::endl;
 

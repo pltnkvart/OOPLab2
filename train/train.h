@@ -5,7 +5,7 @@
 
 class Train {
 private:
-    Container *containers;
+    Container *containers = nullptr;
     int countContainers;
     double maxWeight;
     double maxVolume;
@@ -33,19 +33,28 @@ public:
 
     void setMaxVolume(double volume) { maxVolume = volume; };
 
+    void setCountContainers(int count) { countContainers = count; };
+
     //  getters
-    int getCount() { return countContainers; };
+    int getCount() const { return countContainers; };
 
-    Container *getContainers() { return containers; };
+    int getMaxWeight() const { return maxWeight; };
 
-    //  методы ввода и вывода состояния класса в входной/выходной поток;
+    int getMaxVolume() const { return maxVolume; };
+
+    const Container *getContainers() const { return containers; };
+
+//    const Train t;
+//    t.getContainers()[0] = Container();
+
+    //  метод вывода
+//    friend std::ostream &operator<<(std::ostream &s, Train &train);
+
+    //  метод ввода
     friend std::istream &operator>>(std::istream &is, Train &train);
 
-    //  вывод
-    void printState();
-
     //  (+=) добавление нового контейнера;
-    void operator+=(Container &);
+    Train &operator+=(Container);
 
     //  ([]) получение контейнера по его номеру (возврат по ссылке);
     Container &operator[](int);
@@ -64,8 +73,16 @@ public:
 
     //  обеспечение безопасности транспортировки опасных грузов — между двумя контейнерами с опасным грузом должно находиться не менее двух контейнеров с безопасным грузом (обеспечить при помощи перемещения контейнеров, при необходимости добавить пустые контейнеры).
     void ensuringSecurity();
+
+    // перегруженный оператор присваивания
+    Train &operator=(const Train &);
+
+    // перемещающий оператор присваивания
+    Train &operator=(Train &&) noexcept;
+
+//    std::ostream &operator<<(std::ostream &s);
 };
 
-std::ostream &operator<<(std::ostream &s, Train &train);
+std::ostream &operator<<(std::ostream &s, const Train &train);
 
 #endif //LAB2_B_TRAIN_H
