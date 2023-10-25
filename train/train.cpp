@@ -6,10 +6,18 @@
 показать когда будет перемещение вместо копирования
  */
 
-//  конструктор по умолчанию (явный или неявный);
+/**
+ * @brief Empty class constructor
+ */
 Train::Train() : containers(nullptr), countContainers(0), maxWeight(0.0), maxVolume(0.0) {};
 
-//  создание экземпляров класса с инициализацией заданным количеством контейнеров из массива контейнеров;
+/**
+ * @brief Class constructor with initialization of a given number containers from an array
+ * @param containersInit Array containers
+ * @param _volume Max volume for train
+ * @param _weight Max weight for train
+ * @param number Number of containers
+ */
 Train::Train(int number, Container (&containersInit)[], double _weight, double _volume) {
     maxWeight = _weight;
     maxVolume = _volume;
@@ -21,6 +29,12 @@ Train::Train(int number, Container (&containersInit)[], double _weight, double _
 };
 
 //  создание экземпляров класса с инициализацией одним контейнером;
+/**
+ * @brief Class constructor with initialization by one container
+ * @param oneContainer One container
+ * @param _weight Max weight for train
+ * @param _volume Max volume for train
+ */
 Train::Train(Container &oneContainer, double _weight, double _volume) {
     containers = &oneContainer;
     maxWeight = _weight;
@@ -28,19 +42,30 @@ Train::Train(Container &oneContainer, double _weight, double _volume) {
     countContainers = 1;
 };
 
-//  копирующий конструктор
+/**
+ * @brief Copy constructor
+ * @param tr Element to be copied
+ */
 Train::Train(const Train &tr) : countContainers(tr.countContainers), maxVolume(tr.maxVolume), maxWeight(tr.maxWeight) {
     containers = new Container[countContainers];
     std::copy(tr.containers, tr.containers + tr.countContainers, containers);
 }
 
-//  перемещающий конструктор
+/**
+ * @brief Moving constructor
+ * @param tr Element to be moved
+ */
 Train::Train(Train &&tr) noexcept: countContainers(tr.countContainers), maxWeight(tr.maxWeight),
                                    maxVolume(tr.maxVolume) {
     tr.containers = nullptr;
 }
 
-//  методы ввода состояния класса в входной поток;
+/**
+ * @brief Overload input function
+ * @param is Stream into which data is entered
+ * @param train Writable structure
+ * @return Stream
+ */
 std::istream &operator>>(std::istream &is, Train &train) {
     double maxWeight, maxVolume;
     int countContainers;
@@ -64,7 +89,13 @@ std::istream &operator>>(std::istream &is, Train &train) {
     return is;
 }
 
-//  метод вывода
+
+/**
+ * @brief Overload output function
+ * @param s Stream from which data is entered
+ * @param train Readable structure
+ * @return Stream
+ */
 std::ostream &operator<<(std::ostream &s, const Train &train) {
     s << "Max Weight - " << train.getMaxWeight() << "; Max Volume - " << train.getMaxVolume() << "; Containers - "
       << train.getCount() << std::endl;
@@ -76,7 +107,11 @@ std::ostream &operator<<(std::ostream &s, const Train &train) {
 }
 
 
-//  (+=) добавление нового контейнера;
+/**
+ * @brief Adding new container
+ * @param newContainer Exemplar new container
+ * @return Self pointer
+ */
 Train &Train::operator+=(Container newContainer) {
     if (countMass() + newContainer.getMass() <= maxWeight && newContainer.getVolume() <= maxVolume) {
         Container *tmp = new Container[countContainers + 1];
@@ -95,7 +130,11 @@ Train &Train::operator+=(Container newContainer) {
 }
 
 
-//  ([]) получение контейнера по его номеру (возврат по ссылке);
+/**
+ * @brief Getting a container by its index
+ * @param index Index of container to be received
+ * @return Reference to the container
+ */
 Container &Train::operator[](int index) {
     if (index < countContainers) {
         return containers[index];
@@ -104,7 +143,10 @@ Container &Train::operator[](int index) {
     }
 }
 
-//  удаление контейнера по его номеру;
+/**
+ * @brief Deleting container by its index
+ * @param index Index of container to be deleted
+ */
 void Train::deleteContainer(int index) {
     if (index < countContainers) {
         for (int i = index; i < countContainers - 1; ++i) {
@@ -116,7 +158,10 @@ void Train::deleteContainer(int index) {
     }
 }
 
-//  подсчёт суммарной массы всех контейнеров;
+/**
+ * @brief Total mass calculation
+ * @return Total mass
+ */
 double Train::countMass() {
     double totalMass = 0.0;
     if (countContainers != 0 || containers != nullptr) {
@@ -127,7 +172,10 @@ double Train::countMass() {
     return totalMass;
 }
 
-//  вычисление центра массы поезда, измеряемой в контейнерах (считаем, что все контейнеры имеют одинаковую длину);
+/**
+ * @brief Calculating the center of mass of a train, measured in containers
+ * @return Center of mass of a train
+ */
 double Train::countCenterMass() {
     if (countContainers != 0) {
         double totalMass = countMass();
@@ -140,7 +188,9 @@ double Train::countCenterMass() {
     return 0.0;
 }
 
-//  минимизация количества контейнеров за счёт перегрузки груза между ними и удаления пустых контейнеров;
+/**
+ * @brief Minimizing the number of containers function by reloading cargo between them and removing empty containers
+ */
 void Train::minContainers() {
     // Удаление пустых контейнеров
     int i = 0;
@@ -169,7 +219,9 @@ void Train::minContainers() {
 }
 
 
-//  обеспечение безопасности транспортировки опасных грузов — между двумя контейнерами с опасным грузом должно находиться не менее двух контейнеров с безопасным грузом (обеспечить при помощи перемещения контейнеров, при необходимости добавить пустые контейнеры).
+/**
+ * @brief Ensuring the safety of transportation of dangerous goods function
+ */
 void Train::ensuringSecurity() {
     int i = 0;
     while (i < countContainers) {
@@ -194,7 +246,9 @@ void Train::ensuringSecurity() {
     }
 }
 
-// копирующий оператор присваивания
+/**
+ * @brief Copy assignment operator
+ */
 Train &Train::operator=(const Train &tr) {
     if (this != &tr) {
         auto *new_ar = new Container[countContainers];
@@ -208,6 +262,9 @@ Train &Train::operator=(const Train &tr) {
 }
 
 // перемещающий оператор присваивания
+/**
+ * @brief Moving assignment operator
+ */
 Train &Train::operator=(Train &&st) noexcept {
     std::swap(maxWeight, st.maxWeight);
     std::swap(maxVolume, st.maxVolume);

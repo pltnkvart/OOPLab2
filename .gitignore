@@ -1,2 +1,7 @@
 cmake-build-debug
 .idea
+html/
+!*/index.html
+latex
+Doxyfile
+tests

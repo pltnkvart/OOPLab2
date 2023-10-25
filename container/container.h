@@ -12,55 +12,54 @@ enum CargoCategory {
     DANGEROUS   //  опасные
 };
 
+/**
+ * @brief Class Container
+ */
 class Container {
 private:
+    //! Name of container
     std::string name;
+    //! Mass of container
     double mass;
+    //! Volume of container
     double volume;
+    //! Category of container
     CargoCategory category;
 public:
     Container();
-
-    // конструктор экземпляра класса с инициализацией наименования, массы, объёма и категории;
     Container(std::string, double, double, CargoCategory);
-
-    //конструктор экземпляра класса с инициализацией только массой и объёмом
     Container(double, double);
 
     // getters
+    /**
+    * @brief Getting name of container
+    */
     std::string getName() const { return this->name; }
-
+    /**
+    * @brief Getting mass of container
+    */
     double getMass() const { return mass; }
-
+    /**
+    * @brief Getting volume of container
+    */
     double getVolume() const { return volume; }
-
+    /**
+    * @brief Getting category of container
+    */
     int getCategory() const { return category; }
 
     // setters
     Container &setName(std::string);
-
     Container &setMass(double);
-
     Container &setVolume(double);
-
     Container &setCategory(CargoCategory);
 
-    // input
     friend std::istream &operator>>(std::istream &is, Container &container);
-
-    // output class
     friend std::ostream &operator<<(std::ostream &is, const Container &container);
 
-    //  перегрузка заданной массы груза из одного контейнера в другой;
     void transferCargo(double, Container &);
-
-    //  (>>) перегрузка всего груза из одного контейнера в другой;
     void operator>>(Container &);
-
-    // получение плотности перевозимого груза
     const double getDensity();
-
-    //  добавление указанной массы груза в контейнер
     void addCargo(double);
 };
 

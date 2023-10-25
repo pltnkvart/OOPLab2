@@ -1,10 +1,18 @@
 #include "container.h"
 #include "../input/inputFunc.h"
 
-
+/**
+ * @brief Empty constructor
+ */
 Container::Container() : mass(0), volume(0), category(EMPTY) {};
 
-// конструктор экземпляра класса с инициализацией наименования, массы, объёма и категории;
+/**
+ * @brief Constructor with initialization of name, mass, volume and category
+ * @param p_name Name
+ * @param p_volume Volume
+ * @param p_mass Mass
+ * @param p_category Category
+ */
 Container::Container(const std::string p_name,
                      const double p_volume,
                      const double p_mass,
@@ -15,12 +23,22 @@ Container::Container(const std::string p_name,
         category(p_category) {}
 
 //конструктор экземпляра класса с инициализацией только массой и объёмом
+/**
+ * @brief Constructor with initialization of mass and volume
+ * @param p_mass Mass
+ * @param p_volume Volume
+ */
 Container::Container(double p_mass, double p_volume) : name("Undefined"),
                                                        mass(p_mass),
                                                        volume(p_volume),
                                                        category(DANGEROUS) {}
 
-
+/**
+ * @brief Overload output function
+ * @param is Stream from which data is entered
+ * @param container Readable structure
+ * @return Stream
+ */
 std::ostream &operator<<(std::ostream &is, const Container &container) {
     is << container.name << " Mass - " << container.mass << " Volume - " << container.volume
        << " Category - " << convertToenum(container.category) << std::endl;
@@ -29,27 +47,44 @@ std::ostream &operator<<(std::ostream &is, const Container &container) {
 
 
 // setters
+/**
+ * @brief Setting name
+ */
 Container &Container::setName(std::string p_name) {
     name = p_name;
     return *this;
 }
 
+/**
+ * @brief Setting mass
+ */
 Container &Container::setMass(double p_mass) {
     mass = p_mass;
     return *this;
 }
 
+/**
+ * @brief Setting volume
+ */
 Container &Container::setVolume(double p_volume) {
     volume = p_volume;
     return *this;
 }
 
+/**
+ * @brief Setting cargo category
+ */
 Container &Container::setCategory(CargoCategory p_category) {
     category = p_category;
     return *this;
 }
 
-//  input container
+/**
+ * @brief Overload input function
+ * @param is Stream into which data is entered
+ * @param container Writable structure
+ * @return Stream
+ */
 std::istream& operator>>(std::istream& is, Container& container) {
     std::string name;
     double mass, volume;
@@ -67,8 +102,11 @@ std::istream& operator>>(std::istream& is, Container& container) {
     return is;
 }
 
-
-//    перегрузка заданной массы груза из одного контейнера в другой;
+/**
+ * @brief Overloading a given mass of cargo from one container to another
+ * @param massToTransfer Mass of cargo to overload
+ * @param otherContainer Another container to overload
+ */
 void Container::transferCargo(double massToTransfer, Container &otherContainer) {
     if (category == DANGEROUS || otherContainer.category == DANGEROUS) {
         throw std::runtime_error("Dangerous goods must not be combined!");
@@ -91,18 +129,28 @@ void Container::transferCargo(double massToTransfer, Container &otherContainer) 
     otherContainer.volume += getDensity() / mass;
 }
 
-//    (>>) перегрузка всего груза из одного контейнера в другой;
+/**
+ * @brief Overload all the cargo from one container to another
+ * @param otherContainer Another container to overload
+ */
 void Container::operator>>(Container &otherContainer) {
     transferCargo(mass, otherContainer);
 }
 
-// получение плотности перевозимого груза
+/**
+ * @brief Getting the density of container
+ * @return Density
+ */
 const double Container::getDensity() {
     if (volume == 0) return 0;
     return mass / volume;
 }
 
 //    добавление указанной массы груза в контейнер
+/**
+ * @brief Adding the mass of cargo to the container
+ * @param addedMass Mass of cargo to be added
+ */
 void Container::addCargo(double addedMass) {
     double addedVolume = addedMass / getDensity();
     volume += addedVolume;
