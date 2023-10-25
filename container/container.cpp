@@ -22,7 +22,6 @@ Container::Container(const std::string p_name,
         volume(p_volume),
         category(p_category) {}
 
-//конструктор экземпляра класса с инициализацией только массой и объёмом
 /**
  * @brief Constructor with initialization of mass and volume
  * @param p_mass Mass
@@ -46,7 +45,6 @@ std::ostream &operator<<(std::ostream &is, const Container &container) {
 }
 
 
-// setters
 /**
  * @brief Setting name
  */
@@ -146,7 +144,6 @@ const double Container::getDensity() {
     return mass / volume;
 }
 
-//    добавление указанной массы груза в контейнер
 /**
  * @brief Adding the mass of cargo to the container
  * @param addedMass Mass of cargo to be added

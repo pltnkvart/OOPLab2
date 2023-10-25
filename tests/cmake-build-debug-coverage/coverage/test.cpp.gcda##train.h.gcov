@@ -1,0 +1,109 @@
+        -:    0:Source:/Users/plotnikovartem/CLionProjects/OOP/Lab2/tests/../train/train.h
+        -:    0:Graph:/Users/plotnikovartem/CLionProjects/OOP/Lab2/tests/cmake-build-debug-coverage/CMakeFiles/Tests.dir/test.cpp.gcno
+        -:    0:Data:/Users/plotnikovartem/CLionProjects/OOP/Lab2/tests/cmake-build-debug-coverage/CMakeFiles/Tests.dir/test.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#ifndef LAB2_B_TRAIN_H
+        -:    2:#define LAB2_B_TRAIN_H
+        -:    3:
+        -:    4:#include "../container/container.h"
+        -:    5:
+        -:    6:/**
+        -:    7: * @brief Class Train
+        -:    8: */
+        -:    9:class Train {
+        -:   10:private:
+        -:   11:    //! Array containers
+        -:   12:    Container *containers;
+        -:   13:    //! Number of containers in train
+        -:   14:    int countContainers;
+        -:   15:    //! Max weight of containers in train
+        -:   16:    double maxWeight;
+        -:   17:    //! Limit volume of container in train
+        -:   18:    double maxVolume;
+        -:   19:public:
+        -:   20:    Train();
+        -:   21:    Train(int, Container (&containers)[], double, double);
+        -:   22:    Train(Container &, double, double);
+        -:   23:    Train(const Train &);
+        -:   24:    Train(Train &&) noexcept;
+        -:   25:    /**
+        -:   26:    * @brief Destructor
+        -:   27:    */
+function _ZN5TrainD1Ev called 7 returned 100% blocks executed 100%
+function _ZN5TrainD2Ev called 7 returned 100% blocks executed 71%
+       14:   28:    ~Train() { delete[] containers; };
+        7:   28-block  0
+        7:   28-block  1
+branch  0 taken 4
+branch  1 taken 3
+        4:   28-block  2
+    $$$$$:   28-block  3
+        4:   28-block  4
+    $$$$$:   28-block  5
+        4:   28-block  6
+        7:   28-block  7
+        -:   29:
+        -:   30:    //  setters
+        -:   31:    /**
+        -:   32:     * @brief Setting weight
+        -:   33:     */
+function _ZN5Train12setMaxWeightEd called 1 returned 100% blocks executed 100%
+        1:   34:    void setMaxWeight(double weight) { maxWeight = weight; };
+        1:   34-block  0
+        -:   35:    /**
+        -:   36:    * @brief Setting volume
+        -:   37:    */
+function _ZN5Train12setMaxVolumeEd called 1 returned 100% blocks executed 100%
+        1:   38:    void setMaxVolume(double volume) { maxVolume = volume; };
+        1:   38-block  0
+        -:   39:    /**
+        -:   40:     * @brief Setting count containers
+        -:   41:     */
+function _ZN5Train18setCountContainersEi called 1 returned 100% blocks executed 100%
+        1:   42:    void setCountContainers(int count) { countContainers = count; };
+        1:   42-block  0
+        -:   43:
+        -:   44:    //  getters
+        -:   45:    /**
+        -:   46:     * @brief Getting munber of containers in train
+        -:   47:     */
+function _ZNK5Train8getCountEv called 5 returned 100% blocks executed 100%
+        5:   48:    int getCount() const { return countContainers; };
+        5:   48-block  0
+        -:   49:    /**
+        -:   50:     * @brief Getting max weight of train
+        -:   51:     */
+function _ZNK5Train12getMaxWeightEv called 5 returned 100% blocks executed 100%
+        5:   52:    double getMaxWeight() const { return maxWeight; };
+        5:   52-block  0
+        -:   53:    /**
+        -:   54:     * @brief Getting max volume of train
+        -:   55:     */
+function _ZNK5Train12getMaxVolumeEv called 5 returned 100% blocks executed 100%
+        5:   56:    double getMaxVolume() const { return maxVolume; };
+        5:   56-block  0
+        -:   57:    /**
+        -:   58:     * @brief Getting array of containers in train
+        -:   59:     */
+function _ZNK5Train13getContainersEv called 1 returned 100% blocks executed 100%
+        1:   60:    const Container *getContainers() const { return containers; };
+        1:   60-block  0
+        -:   61:
+        -:   62:    friend std::istream &operator>>(std::istream &is, Train &train);
+        -:   63:
+        -:   64:    Train &operator+=(Container);
+        -:   65:    Container &operator[](int);
+        -:   66:    void deleteContainer(int);
+        -:   67:    double countMass();
+        -:   68:    double countCenterMass();
+        -:   69:    void minContainers();
+        -:   70:    void ensuringSecurity();
+        -:   71:
+        -:   72:    Train &operator=(const Train &);
+        -:   73:    Train &operator=(Train &&) noexcept;
+        -:   74:};
+        -:   75:
+        -:   76:std::ostream &operator<<(std::ostream &s, const Train &train);
+        -:   77:
+        -:   78:#endif //LAB2_B_TRAIN_H

@@ -1,0 +1,605 @@
+        -:    0:Source:/Users/plotnikovartem/CLionProjects/OOP/Lab2/train/train.cpp
+        -:    0:Graph:/Users/plotnikovartem/CLionProjects/OOP/Lab2/tests/cmake-build-debug-coverage/CMakeFiles/Tests.dir/Users/plotnikovartem/CLionProjects/OOP/Lab2/train/train.cpp.gcno
+        -:    0:Data:/Users/plotnikovartem/CLionProjects/OOP/Lab2/tests/cmake-build-debug-coverage/CMakeFiles/Tests.dir/Users/plotnikovartem/CLionProjects/OOP/Lab2/train/train.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "train.h"
+        -:    2:
+        -:    3:/*
+        -:    4:почему >> не член класса
+        -:    5:когда ошибка в вводе состояние класса меняться не должно
+        -:    6:показать когда будет перемещение вместо копирования
+        -:    7: */
+        -:    8:
+        -:    9:/**
+        -:   10: * @brief Empty class constructor
+        -:   11: */
+function _ZN5TrainC2Ev called 3 returned 100% blocks executed 100%
+function _ZN5TrainC1Ev called 3 returned 100% blocks executed 100%
+        6:   12:Train::Train() : containers(nullptr), countContainers(0), maxWeight(0.0), maxVolume(0.0) {};
+        3:   12-block  0
+        3:   12-block  1
+        -:   13:
+        -:   14:/**
+        -:   15: * @brief Class constructor with initialization of a given number containers from an array
+        -:   16: * @param containersInit Array containers
+        -:   17: * @param _volume Max volume for train
+        -:   18: * @param _weight Max weight for train
+        -:   19: * @param number Number of containers
+        -:   20: */
+function _ZN5TrainC2EiRA_9Containerdd called 3 returned 100% blocks executed 58%
+function _ZN5TrainC1EiRA_9Containerdd called 3 returned 100% blocks executed 100%
+        6:   21:Train::Train(int number, Container (&containersInit)[], double _weight, double _volume) {
+        3:   22:    maxWeight = _weight;
+        3:   23:    maxVolume = _volume;
+        3:   24:    countContainers = 0;
+        6:   25:    containers = new Container[number];
+        3:   25-block  0
+branch  0 taken 3
+branch  1 taken 0
+        3:   25-block  1
+        6:   25-block  2
+branch  2 taken 6
+branch  3 taken 0
+        6:   25-block  3
+branch  4 taken 3
+branch  5 taken 3
+    $$$$$:   25-block  4
+    $$$$$:   25-block  5
+    $$$$$:   25-block  6
+    $$$$$:   25-block  7
+    $$$$$:   25-block  8
+    $$$$$:   25-block  9
+        9:   26:    for (int i = 0; i < number; i++) {
+        3:   26-block  0
+        9:   26-block  1
+branch  0 taken 3
+branch  1 taken 6
+        6:   26-block  2
+        6:   27:        this->operator+=(containersInit[i]);
+        6:   27-block  0
+branch  0 taken 6
+branch  1 taken 0
+    $$$$$:   27-block  1
+        6:   28:    }
+        6:   28-block  0
+        6:   29:};
+        3:   29-block  0
+        3:   29-block  1
+        -:   30:
+        -:   31://  создание экземпляров класса с инициализацией одним контейнером;
+        -:   32:/**
+        -:   33: * @brief Class constructor with initialization by one container
+        -:   34: * @param oneContainer One container
+        -:   35: * @param _weight Max weight for train
+        -:   36: * @param _volume Max volume for train
+        -:   37: */
+function _ZN5TrainC2ER9Containerdd called 0 returned 0% blocks executed 0%
+function _ZN5TrainC1ER9Containerdd called 0 returned 0% blocks executed 0%
+    #####:   38:Train::Train(Container &oneContainer, double _weight, double _volume) {
+    #####:   39:    containers = &oneContainer;
+    #####:   40:    maxWeight = _weight;
+    #####:   41:    maxVolume = _volume;
+    #####:   42:    countContainers = 1;
+    #####:   43:};
+    $$$$$:   43-block  0
+    $$$$$:   43-block  1
+        -:   44:
+        -:   45:/**
+        -:   46: * @brief Copy constructor
+        -:   47: * @param tr Element to be copied
+        -:   48: */
+function _ZN5TrainC2ERKS_ called 1 returned 100% blocks executed 18%
+function _ZN5TrainC1ERKS_ called 1 returned 100% blocks executed 100%
+        2:   49:Train::Train(const Train &tr) : countContainers(tr.countContainers), maxVolume(tr.maxVolume), maxWeight(tr.maxWeight) {
+        1:   50:    containers = new Container[countContainers];
+        1:   50-block  0
+branch  0 taken 0
+branch  1 taken 1
+    $$$$$:   50-block  1
+    $$$$$:   50-block  2
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   50-block  3
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   50-block  4
+    $$$$$:   50-block  5
+    $$$$$:   50-block  6
+    $$$$$:   50-block  7
+    $$$$$:   50-block  8
+    $$$$$:   50-block  9
+        1:   51:    std::copy(tr.containers, tr.containers + tr.countContainers, containers);
+        2:   52:}
+        1:   52-block  0
+        1:   52-block  1
+        -:   53:
+        -:   54:/**
+        -:   55: * @brief Moving constructor
+        -:   56: * @param tr Element to be moved
+        -:   57: */
+function _ZN5TrainC2EOS_ called 0 returned 0% blocks executed 0%
+function _ZN5TrainC1EOS_ called 0 returned 0% blocks executed 0%
+    #####:   58:Train::Train(Train &&tr) noexcept: countContainers(tr.countContainers), maxWeight(tr.maxWeight),
+    #####:   59:                                   maxVolume(tr.maxVolume) {
+    #####:   60:    tr.containers = nullptr;
+    #####:   61:}
+    $$$$$:   61-block  0
+    $$$$$:   61-block  1
+        -:   62:
+        -:   63:/**
+        -:   64: * @brief Overload input function
+        -:   65: * @param is Stream into which data is entered
+        -:   66: * @param train Writable structure
+        -:   67: * @return Stream
+        -:   68: */
+function _ZrsRNSt3__113basic_istreamIcNS_11char_traitsIcEEEER5Train called 0 returned 0% blocks executed 0%
+    #####:   69:std::istream &operator>>(std::istream &is, Train &train) {
+        -:   70:    double maxWeight, maxVolume;
+        -:   71:    int countContainers;
+        -:   72:
+    #####:   73:    is >> maxWeight >> maxVolume >> countContainers;
+        -:   74:
+    #####:   75:    if (is.fail()) {
+    $$$$$:   75-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   76:        is.setstate(std::ios::failbit);
+    #####:   77:        return is;
+    $$$$$:   77-block  0
+        -:   78:    }
+        -:   79:
+    #####:   80:    train.setMaxWeight(maxWeight);
+    #####:   81:    train.setMaxVolume(maxVolume);
+    #####:   82:    train.containers = new Container[countContainers];
+    $$$$$:   82-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   82-block  1
+    $$$$$:   82-block  2
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   82-block  3
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   82-block  4
+    $$$$$:   82-block  5
+    $$$$$:   82-block  6
+    $$$$$:   82-block  7
+    $$$$$:   82-block  8
+    $$$$$:   82-block  9
+    #####:   83:    for (int i = 0; i < countContainers; i++) {
+    $$$$$:   83-block  0
+    $$$$$:   83-block  1
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   83-block  2
+    #####:   84:        Container container;
+    #####:   85:        is >> container;
+    $$$$$:   85-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   86:        train += container;
+    $$$$$:   86-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   86-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   86-block  2
+    #####:   87:    }
+    $$$$$:   87-block  0
+    $$$$$:   87-block  1
+    #####:   88:    train.setCountContainers(countContainers);
+    #####:   89:    return is;
+    $$$$$:   89-block  0
+    #####:   90:}
+    $$$$$:   90-block  0
+    $$$$$:   90-block  1
+        -:   91:
+        -:   92:
+        -:   93:/**
+        -:   94: * @brief Overload output function
+        -:   95: * @param s Stream from which data is entered
+        -:   96: * @param train Readable structure
+        -:   97: * @return Stream
+        -:   98: */
+function _ZlsRNSt3__113basic_ostreamIcNS_11char_traitsIcEEEERK5Train called 0 returned 0% blocks executed 0%
+    #####:   99:std::ostream &operator<<(std::ostream &s, const Train &train) {
+    #####:  100:    s << "Max Weight - " << train.getMaxWeight() << "; Max Volume - " << train.getMaxVolume() << "; Containers - "
+    #####:  101:      << train.getCount() << std::endl;
+    #####:  102:    for (int i = 0; i < train.getCount(); i++) {
+    $$$$$:  102-block  0
+    $$$$$:  102-block  1
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  102-block  2
+    #####:  103:        s << train.getContainers()[i];
+    #####:  104:    }
+    $$$$$:  104-block  0
+    #####:  105:    s << std::endl;
+    #####:  106:    return s;
+    $$$$$:  106-block  0
+        -:  107:}
+        -:  108:
+        -:  109:
+        -:  110:/**
+        -:  111: * @brief Adding new container
+        -:  112: * @param newContainer Exemplar new container
+        -:  113: * @return Self pointer
+        -:  114: */
+function _ZN5TrainpLE9Container called 6 returned 100% blocks executed 57%
+        6:  115:Train &Train::operator+=(Container newContainer) {
+        6:  116:    if (countMass() + newContainer.getMass() <= maxWeight && newContainer.getVolume() <= maxVolume) {
+        6:  116-block  0
+branch  0 taken 6
+branch  1 taken 0
+        6:  116-block  1
+    $$$$$:  116-block  2
+        6:  116-block  3
+        9:  117:        Container *tmp = new Container[countContainers + 1];
+        6:  117-block  0
+branch  0 taken 0
+branch  1 taken 6
+        6:  117-block  1
+        9:  117-block  2
+branch  2 taken 9
+branch  3 taken 0
+        9:  117-block  3
+branch  4 taken 3
+branch  5 taken 6
+    $$$$$:  117-block  4
+    $$$$$:  117-block  5
+    $$$$$:  117-block  6
+    $$$$$:  117-block  7
+    $$$$$:  117-block  8
+    $$$$$:  117-block  9
+        9:  118:        for (int i = 0; i < countContainers; i++) {
+        6:  118-block  0
+        9:  118-block  1
+branch  0 taken 6
+branch  1 taken 3
+        3:  118-block  2
+        3:  119:            tmp[i] = containers[i];
+        3:  120:        }
+        3:  120-block  0
+        -:  121:
+        6:  122:        tmp[countContainers] = std::move(newContainer); //перемещающий (если не стд мув то копирующий)
+        6:  123:        countContainers++;
+        6:  124:        delete[] containers;
+        6:  124-block  0
+branch  0 taken 0
+branch  1 taken 6
+        6:  124-block  1
+    $$$$$:  124-block  2
+        6:  124-block  3
+    $$$$$:  124-block  4
+        6:  124-block  5
+        6:  125:        containers = tmp;
+        6:  126:        return *this;
+        6:  126-block  0
+        -:  127:    } else {
+    #####:  128:        throw std::runtime_error("Capacity or volume limitation");
+    $$$$$:  128-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  128-block  1
+    $$$$$:  128-block  2
+        -:  129:    }
+    #####:  130:}
+        -:  131:
+        -:  132:
+        -:  133:/**
+        -:  134: * @brief Getting a container by its index
+        -:  135: * @param index Index of container to be received
+        -:  136: * @return Reference to the container
+        -:  137: */
+function _ZN5TrainixEi called 0 returned 0% blocks executed 0%
+    #####:  138:Container &Train::operator[](int index) {
+    #####:  139:    if (index < countContainers) {
+    $$$$$:  139-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  140:        return containers[index];
+    $$$$$:  140-block  0
+        -:  141:    } else {
+    #####:  142:        throw std::out_of_range("Index out of range");
+    $$$$$:  142-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  142-block  1
+    $$$$$:  142-block  2
+    $$$$$:  142-block  3
+        -:  143:    }
+    #####:  144:}
+        -:  145:
+        -:  146:/**
+        -:  147: * @brief Deleting container by its index
+        -:  148: * @param index Index of container to be deleted
+        -:  149: */
+function _ZN5Train15deleteContainerEi called 0 returned 0% blocks executed 0%
+    #####:  150:void Train::deleteContainer(int index) {
+    #####:  151:    if (index < countContainers) {
+    $$$$$:  151-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  152:        for (int i = index; i < countContainers - 1; ++i) {
+    $$$$$:  152-block  0
+    $$$$$:  152-block  1
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  152-block  2
+    #####:  153:            containers[i] = containers[i + 1];
+    #####:  154:        }
+    $$$$$:  154-block  0
+    #####:  155:        countContainers--;
+    #####:  156:    } else {
+    $$$$$:  156-block  0
+    #####:  157:        throw std::out_of_range("Index out of range");
+    $$$$$:  157-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  157-block  1
+    $$$$$:  157-block  2
+    $$$$$:  157-block  3
+        -:  158:    }
+    #####:  159:}
+    $$$$$:  159-block  0
+        -:  160:
+        -:  161:/**
+        -:  162: * @brief Total mass calculation
+        -:  163: * @return Total mass
+        -:  164: */
+function _ZN5Train9countMassEv called 8 returned 100% blocks executed 88%
+        8:  165:double Train::countMass() {
+        8:  166:    double totalMass = 0.0;
+        8:  167:    if (countContainers != 0 || containers != nullptr) {
+        8:  167-block  0
+branch  0 taken 3
+branch  1 taken 5
+        3:  167-block  1
+branch  2 taken 0
+branch  3 taken 3
+    $$$$$:  167-block  2
+       15:  168:        for (int i = 0; i < countContainers; i++) {
+        8:  168-block  0
+       15:  168-block  1
+branch  0 taken 7
+branch  1 taken 8
+        7:  168-block  2
+        7:  169:            totalMass += containers[i].getMass();
+        7:  170:        }
+        7:  170-block  0
+        8:  171:    }
+        8:  171-block  0
+        8:  172:    return totalMass;
+        8:  172-block  0
+        -:  173:}
+        -:  174:
+        -:  175:/**
+        -:  176: * @brief Calculating the center of mass of a train, measured in containers
+        -:  177: * @return Center of mass of a train
+        -:  178: */
+function _ZN5Train15countCenterMassEv called 1 returned 100% blocks executed 87%
+        1:  179:double Train::countCenterMass() {
+        1:  180:    if (countContainers != 0) {
+        1:  180-block  0
+branch  0 taken 0
+branch  1 taken 1
+        1:  181:        double totalMass = countMass();
+        1:  182:        double massMoment = 0.0;
+        3:  183:        for (int i = 1; i <= countContainers; ++i) {
+        1:  183-block  0
+        3:  183-block  1
+branch  0 taken 2
+branch  1 taken 1
+        2:  183-block  2
+        2:  184:            massMoment += containers[i].getMass() * i;
+        2:  185:        }
+        2:  185-block  0
+        1:  186:        return massMoment / totalMass;
+        1:  186-block  0
+        -:  187:    }
+    #####:  188:    return 0.0;
+    $$$$$:  188-block  0
+        1:  189:}
+        1:  189-block  0
+        -:  190:
+        -:  191:/**
+        -:  192: * @brief Minimizing the number of containers function by reloading cargo between them and removing empty containers
+        -:  193: */
+function _ZN5Train13minContainersEv called 0 returned 0% blocks executed 0%
+    #####:  194:void Train::minContainers() {
+    #####:  195:    int i = 0;
+    #####:  196:    while (i < countContainers) {
+    $$$$$:  196-block  0
+    $$$$$:  196-block  1
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  196-block  2
+    #####:  197:        if (containers[i].getCategory() == EMPTY) {
+    $$$$$:  197-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  198:            deleteContainer(i);
+    #####:  199:        } else {
+    $$$$$:  199-block  0
+    #####:  200:            i++;
+    $$$$$:  200-block  0
+        -:  201:        }
+        -:  202:    }
+    #####:  203:    i = 0;
+    #####:  204:    while (i < countContainers - 1) {
+    $$$$$:  204-block  0
+    $$$$$:  204-block  1
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  204-block  2
+    #####:  205:        int j = i + 1;
+    #####:  206:        while (j < countContainers) {
+    $$$$$:  206-block  0
+    $$$$$:  206-block  1
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  206-block  2
+    #####:  207:            double remainingSpace = containers[j].getVolume() - containers[i].getVolume();
+    #####:  208:            if (remainingSpace > 0.0) {
+    $$$$$:  208-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  209:                double availableCargo = containers[i].getMass();
+    #####:  210:                if (availableCargo > 0.0) {
+    $$$$$:  210-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  211:                    containers[i].transferCargo(availableCargo, containers[j]);
+    #####:  212:                }
+    $$$$$:  212-block  0
+    #####:  213:            }
+    $$$$$:  213-block  0
+    #####:  214:            j++;
+        -:  215:        }
+    #####:  216:        i++;
+        -:  217:    }
+    #####:  218:}
+    $$$$$:  218-block  0
+        -:  219:
+        -:  220:
+        -:  221:/**
+        -:  222: * @brief Ensuring the safety of transportation of dangerous goods function
+        -:  223: */
+function _ZN5Train16ensuringSecurityEv called 0 returned 0% blocks executed 0%
+    #####:  224:void Train::ensuringSecurity() {
+    #####:  225:    int i = 0;
+    #####:  226:    while (i < countContainers) {
+    $$$$$:  226-block  0
+    $$$$$:  226-block  1
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  226-block  2
+    #####:  227:        if (containers[i].getCategory() == DANGEROUS) {
+    $$$$$:  227-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  228:            int j = i - 2;
+    #####:  229:            while (j < i + 3) {
+    $$$$$:  229-block  0
+    $$$$$:  229-block  1
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  229-block  2
+    #####:  230:                if (j >= 0 && j < countContainers && containers[j].getCategory() != DANGEROUS) {
+    $$$$$:  230-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  230-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  230-block  2
+    $$$$$:  230-block  3
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  230-block  4
+    #####:  231:                    for (int k = i - 1; k > j; --k) {
+    $$$$$:  231-block  0
+    $$$$$:  231-block  1
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  231-block  2
+    #####:  232:                        Container temp = containers[k];
+    #####:  233:                        containers[k] = containers[k + 1];
+    $$$$$:  233-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  234:                        containers[k + 1] = temp;
+    $$$$$:  234-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  235:                    }
+    $$$$$:  235-block  0
+    $$$$$:  235-block  1
+    $$$$$:  235-block  2
+    #####:  236:                    Container newCont("Empty Container", 0.0, 0.0, EMPTY);
+    $$$$$:  236-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  236-block  1
+    #####:  237:                    operator+=(newCont);
+    $$$$$:  237-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  237-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  237-block  2
+    #####:  238:                    i++;
+        -:  239:                    break;
+    #####:  240:                }
+    $$$$$:  240-block  0
+    $$$$$:  240-block  1
+    #####:  241:                j++;
+        -:  242:            }
+    #####:  243:        }
+    $$$$$:  243-block  0
+    #####:  244:        i++;
+        -:  245:    }
+    #####:  246:}
+    $$$$$:  246-block  0
+    $$$$$:  246-block  1
+        -:  247:
+        -:  248:/**
+        -:  249: * @brief Copy assignment operator
+        -:  250: */
+function _ZN5TrainaSERKS_ called 0 returned 0% blocks executed 0%
+    #####:  251:Train &Train::operator=(const Train &tr) {
+    #####:  252:    if (this != &tr) {
+    $$$$$:  252-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  253:        auto *new_ar = new Container[countContainers];
+    $$$$$:  253-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  253-block  1
+    $$$$$:  253-block  2
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  253-block  3
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  253-block  4
+    $$$$$:  253-block  5
+    $$$$$:  253-block  6
+    $$$$$:  253-block  7
+    $$$$$:  253-block  8
+    $$$$$:  253-block  9
+    #####:  254:        maxVolume = tr.maxVolume;
+    #####:  255:        maxWeight = tr.maxWeight;
+    #####:  256:        delete[] containers;
+    $$$$$:  256-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  256-block  1
+    $$$$$:  256-block  2
+    $$$$$:  256-block  3
+    $$$$$:  256-block  4
+    $$$$$:  256-block  5
+    #####:  257:        containers = new_ar;
+    #####:  258:        std::copy(tr.containers, tr.containers + tr.countContainers, containers);
+    #####:  259:    }
+    $$$$$:  259-block  0
+    #####:  260:    return *this;
+    $$$$$:  260-block  0
+    #####:  261:}
+        -:  262:
+        -:  263:/**
+        -:  264: * @brief Moving assignment operator
+        -:  265: */
+function _ZN5TrainaSEOS_ called 0 returned 0% blocks executed 0%
+    #####:  266:Train &Train::operator=(Train &&st) noexcept {
+    #####:  267:    std::swap(maxWeight, st.maxWeight);
+    #####:  268:    std::swap(maxVolume, st.maxVolume);
+    #####:  269:    std::swap(containers, st.containers);
+    #####:  270:    return *this;
+    $$$$$:  270-block  0
+        -:  271:}

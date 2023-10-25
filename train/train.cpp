@@ -180,7 +180,7 @@ double Train::countCenterMass() {
     if (countContainers != 0) {
         double totalMass = countMass();
         double massMoment = 0.0;
-        for (int i = 0; i < countContainers; ++i) {
+        for (int i = 1; i <= countContainers; ++i) {
             massMoment += containers[i].getMass() * i;
         }
         return massMoment / totalMass;
@@ -192,7 +192,6 @@ double Train::countCenterMass() {
  * @brief Minimizing the number of containers function by reloading cargo between them and removing empty containers
  */
 void Train::minContainers() {
-    // Удаление пустых контейнеров
     int i = 0;
     while (i < countContainers) {
         if (containers[i].getCategory() == EMPTY) {
@@ -261,7 +260,6 @@ Train &Train::operator=(const Train &tr) {
     return *this;
 }
 
-// перемещающий оператор присваивания
 /**
  * @brief Moving assignment operator
  */

@@ -1,0 +1,3 @@
+/Users/plotnikovartem/CLionProjects/OOP/Lab2/tests/cmake-build-debug-coverage/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir
+/Users/plotnikovartem/CLionProjects/OOP/Lab2/tests/cmake-build-debug-coverage/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
+/Users/plotnikovartem/CLionProjects/OOP/Lab2/tests/cmake-build-debug-coverage/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,1 @@
+add_library(train STATIC train.cpp train.h)

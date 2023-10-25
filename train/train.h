@@ -9,7 +9,7 @@
 class Train {
 private:
     //! Array containers
-    Container *containers = nullptr;
+    Container *containers;
     //! Number of containers in train
     int countContainers;
     //! Max weight of containers in train
@@ -49,11 +49,11 @@ public:
     /**
      * @brief Getting max weight of train
      */
-    int getMaxWeight() const { return maxWeight; };
+    double getMaxWeight() const { return maxWeight; };
     /**
      * @brief Getting max volume of train
      */
-    int getMaxVolume() const { return maxVolume; };
+    double getMaxVolume() const { return maxVolume; };
     /**
      * @brief Getting array of containers in train
      */

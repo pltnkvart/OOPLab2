@@ -1,1 +1,1 @@
-add_library(container STATIC container.cpp ../train/train.cpp)
+add_library(container STATIC container.cpp container.h)
