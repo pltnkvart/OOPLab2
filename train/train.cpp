@@ -2,8 +2,22 @@
 
 /*
 почему >> не член класса
+ Функция перегрузки оператора << для вывода не является членом класса потому, что она предназначена для
+ работы с классом std::ostream, который не является частью вашей иерархии классов.
+ В C++ перегрузка операторов << и >> для ввода и вывода обычно выполняется в виде глобальных функций, а не методов класса.
+ Когда мы перегружаем оператор << для пользовательского типа класс Train, это позволяет вам использовать оператор <<
+ с объектами этого типа так же, как с фундаментальными типами (например, int, double и т. д.) или другими типами
+ из стандартной библиотеки (например, std::string).
+ Путем перегрузки его как глобальной функции вы делаете возможным использование выражений вроде:
+ std::cout << myTrain;
+ Если бы перегружали его как метод класса, синтаксис выглядел бы примерно так:
+ myTrain.operator<<(std::cout);
+
 когда ошибка в вводе состояние класса меняться не должно
+ DONE
+
 показать когда будет перемещение вместо копирования
+ 294
  */
 
 /**
@@ -57,7 +71,7 @@ Train::Train(const Train &tr) : countContainers(tr.countContainers), maxVolume(t
  */
 Train::Train(Train &&tr) noexcept: countContainers(tr.countContainers), maxWeight(tr.maxWeight),
                                    maxVolume(tr.maxVolume) {
-    tr.containers = nullptr;
+    tr.containers = nullptr; // Здесь происходит перемещение, обнуляя указатель у исходного объекта
 }
 
 /**
@@ -77,17 +91,22 @@ std::istream &operator>>(std::istream &is, Train &train) {
         return is;
     }
 
-    train.setMaxWeight(maxWeight);
-    train.setMaxVolume(maxVolume);
-    train.containers = new Container[countContainers];
+    Train tempTrain;
+    tempTrain.setMaxWeight(maxWeight);
+    tempTrain.setMaxVolume(maxVolume);
+    tempTrain.containers = new Container[countContainers];
+
     for (int i = 0; i < countContainers; i++) {
         Container container;
         is >> container;
-        train += container;
+        tempTrain += container;
     }
-    train.setCountContainers(countContainers);
+    tempTrain.setCountContainers(countContainers);
+
+    train = std::move(tempTrain);
     return is;
 }
+
 
 
 /**
@@ -273,6 +292,6 @@ Train &Train::operator=(Train &&st) noexcept {
     std::swap(maxWeight, st.maxWeight);
     std::swap(maxVolume, st.maxVolume);
     std::swap(countContainers, st.countContainers);
-    std::swap(containers, st.containers);
+    std::swap(containers, st.containers);  // Здесь происходит перемещение, обмениваясь указателями
     return *this;
 }

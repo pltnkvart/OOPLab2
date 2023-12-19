@@ -83,13 +83,13 @@ Container &Container::setCategory(CargoCategory p_category) {
  * @param container Writable structure
  * @return Stream
  */
-std::istream& operator>>(std::istream& is, Container& container) {
+std::istream &operator>>(std::istream &is, Container &container) {
     std::string name;
     double mass, volume;
     int category;
 
     is >> name >> mass >> volume >> category;
-    if(is.fail()){
+    if (is.fail()) {
         is.setstate(std::ios::failbit);
         return is;
     }
@@ -126,6 +126,9 @@ void Container::transferCargo(double massToTransfer, Container &otherContainer) 
     otherContainer.mass += massToTransfer;
     volume -= getDensity() / mass;
     otherContainer.volume += getDensity() / mass;
+    if (mass == 0 || volume == 0) {
+        category = EMPTY;
+    }
 }
 
 /**
