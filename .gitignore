@@ -7,3 +7,4 @@ Doxyfile
 .idea
 tests/cmake-build-debug
 tests/cmake-build-debug-coverage
+.DS_Store
