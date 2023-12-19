@@ -216,16 +216,16 @@
         -:  211:_LIBCPP_BEGIN_NAMESPACE_STD
         -:  212:
         -:  213:template <class _Tp>
-function _ZNSt3__119__debug_db_insert_cB7v160006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEvPT_ called 664 returned 100% blocks executed 100%
-      664:  214:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 inline void __debug_db_insert_c(_Tp* __c) {
+function _ZNSt3__119__debug_db_insert_cB7v160006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEvPT_ called 1041 returned 100% blocks executed 100%
+     1041:  214:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 inline void __debug_db_insert_c(_Tp* __c) {
         -:  215:#ifdef _LIBCPP_ENABLE_DEBUG_MODE
         -:  216:    if (!__libcpp_is_constant_evaluated())
         -:  217:        __get_db()->__insert_c(__c);
         -:  218:#else
         -:  219:    (void)(__c);
         -:  220:#endif
-      664:  221:}
-      664:  221-block  0
+     1041:  221:}
+     1041:  221-block  0
         -:  222:
         -:  223:template <class _Tp>
         -:  224:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 inline void __debug_db_insert_i(_Tp* __i) {
@@ -248,8 +248,8 @@ function _ZNSt3__119__debug_db_insert_cB7v160006INS_12basic_stringIcNS_11char_tr
         -:  241:}
         -:  242:
         -:  243:template <class _Tp>
-function _ZNSt3__115__debug_db_swapB7v160006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEvPT_S8_ called 32 returned 100% blocks executed 100%
-       32:  244:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 inline void __debug_db_swap(_Tp* __lhs, _Tp* __rhs) {
+function _ZNSt3__115__debug_db_swapB7v160006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEvPT_S8_ called 40 returned 100% blocks executed 100%
+       40:  244:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 inline void __debug_db_swap(_Tp* __lhs, _Tp* __rhs) {
         -:  245:#ifdef _LIBCPP_ENABLE_DEBUG_MODE
         -:  246:    if (!__libcpp_is_constant_evaluated())
         -:  247:        __get_db()->swap(__lhs, __rhs);
@@ -257,8 +257,8 @@ function _ZNSt3__115__debug_db_swapB7v160006INS_12basic_stringIcNS_11char_traits
         -:  249:    (void)(__lhs);
         -:  250:    (void)(__rhs);
         -:  251:#endif
-       32:  252:}
-       32:  252-block  0
+       40:  252:}
+       40:  252-block  0
         -:  253:
         -:  254:template <class _Tp>
         -:  255:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 inline void __debug_db_invalidate_all(_Tp* __c) {

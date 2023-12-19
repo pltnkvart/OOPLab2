@@ -1114,27 +1114,27 @@ branch  1 never executed
     $$$$$: 1078-block  3
         -: 1079:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 size_type length() const _NOEXCEPT {return size();}
         -: 1080:
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE8max_sizeB7v160006Ev called 19 returned 100% blocks executed 71%
-       19: 1081:  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 size_type max_size() const _NOEXCEPT {
-       19: 1082:    size_type __m = __alloc_traits::max_size(__alloc());
-       19: 1083:    if (__m <= std::numeric_limits<size_type>::max() / 2) {
-       19: 1083-block  0
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE8max_sizeB7v160006Ev called 30 returned 100% blocks executed 71%
+       30: 1081:  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 size_type max_size() const _NOEXCEPT {
+       30: 1082:    size_type __m = __alloc_traits::max_size(__alloc());
+       30: 1083:    if (__m <= std::numeric_limits<size_type>::max() / 2) {
+       30: 1083-block  0
 branch  0 taken 0
-branch  1 taken 19
+branch  1 taken 30
     #####: 1084:      return __m - __alignment;
     $$$$$: 1084-block  0
         -: 1085:    } else {
-       19: 1086:    bool __uses_lsb = __endian_factor == 2;
-       19: 1087:      return __uses_lsb ? __m - __alignment : (__m / 2) - __alignment;
-       19: 1087-block  0
+       30: 1086:    bool __uses_lsb = __endian_factor == 2;
+       30: 1087:      return __uses_lsb ? __m - __alignment : (__m / 2) - __alignment;
+       30: 1087-block  0
 branch  0 taken 0
-branch  1 taken 19
+branch  1 taken 30
     $$$$$: 1087-block  1
-       19: 1087-block  2
-       19: 1087-block  3
+       30: 1087-block  2
+       30: 1087-block  3
         -: 1088:    }
-       19: 1089:  }
-       19: 1089-block  0
+       30: 1089:  }
+       30: 1089-block  0
         -: 1090:
         -: 1091:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 size_type capacity() const _NOEXCEPT {
         -: 1092:        return (__is_long() ? __get_long_cap() : static_cast<size_type>(__min_cap)) - 1;
@@ -1822,10 +1822,10 @@ function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE16__get
         -: 1760:    }
         -: 1761:
         -: 1762:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE15__set_long_sizeB7v160006Em called 8 returned 100% blocks executed 100%
-        8: 1763:    void __set_long_size(size_type __s) _NOEXCEPT
-        8: 1764:        {__r_.first().__l.__size_ = __s;}
-        8: 1764-block  0
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE15__set_long_sizeB7v160006Em called 9 returned 100% blocks executed 100%
+        9: 1763:    void __set_long_size(size_type __s) _NOEXCEPT
+        9: 1764:        {__r_.first().__l.__size_ = __s;}
+        9: 1764-block  0
         -: 1765:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE15__get_long_sizeB7v160006Ev called 0 returned 0% blocks executed 0%
     #####: 1766:    size_type __get_long_size() const _NOEXCEPT
@@ -3357,18 +3357,18 @@ branch  1 never executed
         -: 3269:template <class _CharT, class _Traits, class _Allocator>
         -: 3270:inline _LIBCPP_CONSTEXPR_SINCE_CXX20
         -: 3271:void
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5clearB7v160006Ev called 1 returned 100% blocks executed 66%
-        1: 3272:basic_string<_CharT, _Traits, _Allocator>::clear() _NOEXCEPT
-        1: 3273:{
-        1: 3274:    std::__debug_db_invalidate_all(this);
-        1: 3274-block  0
-branch  0 taken 1
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5clearB7v160006Ev called 3 returned 100% blocks executed 66%
+        3: 3272:basic_string<_CharT, _Traits, _Allocator>::clear() _NOEXCEPT
+        3: 3273:{
+        3: 3274:    std::__debug_db_invalidate_all(this);
+        3: 3274-block  0
+branch  0 taken 3
 branch  1 taken 0
     $$$$$: 3274-block  1
-        1: 3275:    if (__is_long())
-        1: 3275-block  0
+        3: 3275:    if (__is_long())
+        3: 3275-block  0
 branch  0 taken 0
-branch  1 taken 1
+branch  1 taken 3
         -: 3276:    {
     #####: 3277:        traits_type::assign(*__get_long_pointer(), value_type());
     #####: 3278:        __set_long_size(0);
@@ -3376,12 +3376,12 @@ branch  1 taken 1
     $$$$$: 3279-block  0
         -: 3280:    else
         -: 3281:    {
-        1: 3282:        traits_type::assign(*__get_short_pointer(), value_type());
-        1: 3283:        __set_short_size(0);
-        1: 3283-block  0
+        3: 3282:        traits_type::assign(*__get_short_pointer(), value_type());
+        3: 3283:        __set_short_size(0);
+        3: 3283-block  0
         -: 3284:    }
-        1: 3285:}
-        1: 3285-block  0
+        3: 3285:}
+        3: 3285-block  0
         -: 3286:
         -: 3287:template <class _CharT, class _Traits, class _Allocator>
         -: 3288:_LIBCPP_CONSTEXPR_SINCE_CXX20
@@ -4122,42 +4122,42 @@ branch  1 taken 1
         -: 4023:template<class _Allocator>
         -: 4024:inline _LIBCPP_CONSTEXPR_SINCE_CXX20 _LIBCPP_HIDE_FROM_ABI
         -: 4025:bool
-function _ZNSt3__1eqB7v160006INS_9allocatorIcEEEEbRKNS_12basic_stringIcNS_11char_traitsIcEET_EES9_ called 4 returned 100% blocks executed 83%
-        4: 4026:operator==(const basic_string<char, char_traits<char>, _Allocator>& __lhs,
+function _ZNSt3__1eqB7v160006INS_9allocatorIcEEEEbRKNS_12basic_stringIcNS_11char_traitsIcEET_EES9_ called 0 returned 0% blocks executed 0%
+    #####: 4026:operator==(const basic_string<char, char_traits<char>, _Allocator>& __lhs,
         -: 4027:           const basic_string<char, char_traits<char>, _Allocator>& __rhs) _NOEXCEPT
-        4: 4028:{
-        4: 4029:    size_t __lhs_sz = __lhs.size();
-        4: 4030:    if (__lhs_sz != __rhs.size())
-        4: 4030-block  0
-branch  0 taken 1
-branch  1 taken 3
-        1: 4031:        return false;
-        1: 4031-block  0
-        3: 4032:    const char* __lp = __lhs.data();
-        3: 4033:    const char* __rp = __rhs.data();
-        3: 4034:    if (__lhs.__is_long())
-        3: 4034-block  0
-branch  0 taken 0
-branch  1 taken 3
+    #####: 4028:{
+    #####: 4029:    size_t __lhs_sz = __lhs.size();
+    #####: 4030:    if (__lhs_sz != __rhs.size())
+    $$$$$: 4030-block  0
+branch  0 never executed
+branch  1 never executed
+    #####: 4031:        return false;
+    $$$$$: 4031-block  0
+    #####: 4032:    const char* __lp = __lhs.data();
+    #####: 4033:    const char* __rp = __rhs.data();
+    #####: 4034:    if (__lhs.__is_long())
+    $$$$$: 4034-block  0
+branch  0 never executed
+branch  1 never executed
     #####: 4035:        return char_traits<char>::compare(__lp, __rp, __lhs_sz) == 0;
     $$$$$: 4035-block  0
-       30: 4036:    for (; __lhs_sz != 0; --__lhs_sz, ++__lp, ++__rp)
-        3: 4036-block  0
-       30: 4036-block  1
-branch  0 taken 30
-branch  1 taken 0
-       27: 4036-block  2
-       30: 4037:        if (*__lp != *__rp)
-       30: 4037-block  0
-branch  0 taken 27
-branch  1 taken 3
-       27: 4037-block  1
-        3: 4038:            return false;
-        3: 4038-block  0
+    #####: 4036:    for (; __lhs_sz != 0; --__lhs_sz, ++__lp, ++__rp)
+    $$$$$: 4036-block  0
+    $$$$$: 4036-block  1
+branch  0 never executed
+branch  1 never executed
+    $$$$$: 4036-block  2
+    #####: 4037:        if (*__lp != *__rp)
+    $$$$$: 4037-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$: 4037-block  1
+    #####: 4038:            return false;
+    $$$$$: 4038-block  0
     #####: 4039:    return true;
     $$$$$: 4039-block  0
-        4: 4040:}
-        4: 4040-block  0
+    #####: 4040:}
+    $$$$$: 4040-block  0
         -: 4041:
         -: 4042:#if _LIBCPP_STD_VER <= 17
         -: 4043:template<class _CharT, class _Traits, class _Allocator>

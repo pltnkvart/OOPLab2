@@ -195,11 +195,11 @@
         -:  190:
         -:  191:    // 27.7.1.1.1 Constructor/destructor:
         -:  192:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-function _ZNSt3__113basic_istreamIcNS_11char_traitsIcEEEC2B7v160006EPNS_15basic_streambufIcS2_EE called 103 returned 100% blocks executed 100%
-      206:  193:    explicit basic_istream(basic_streambuf<char_type, traits_type>* __sb) : __gc_(0)
-      206:  194:    { this->init(__sb); }
-      103:  194-block  0
-      103:  194-block  1
+function _ZNSt3__113basic_istreamIcNS_11char_traitsIcEEEC2B7v160006EPNS_15basic_streambufIcS2_EE called 131 returned 100% blocks executed 100%
+      262:  193:    explicit basic_istream(basic_streambuf<char_type, traits_type>* __sb) : __gc_(0)
+      262:  194:    { this->init(__sb); }
+      131:  194-block  0
+      131:  194-block  1
         -:  195:    ~basic_istream() override;
         -:  196:protected:
         -:  197:    inline _LIBCPP_INLINE_VISIBILITY
@@ -1412,17 +1412,17 @@ function _ZNSt3__113basic_istreamIcNS_11char_traitsIcEEEC2B7v160006EPNS_15basic_
         -: 1404:
         -: 1405:    // constructor/destructor
         -: 1406:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-function _ZNSt3__114basic_iostreamIcNS_11char_traitsIcEEEC2B7v160006EPNS_15basic_streambufIcS2_EE called 102 returned 100% blocks executed 50%
-      204: 1407:    explicit basic_iostream(basic_streambuf<char_type, traits_type>* __sb)
-      102: 1407-block  0
-branch  0 taken 102
+function _ZNSt3__114basic_iostreamIcNS_11char_traitsIcEEEC2B7v160006EPNS_15basic_streambufIcS2_EE called 129 returned 100% blocks executed 50%
+      258: 1407:    explicit basic_iostream(basic_streambuf<char_type, traits_type>* __sb)
+      129: 1407-block  0
+branch  0 taken 129
 branch  1 taken 0
-      102: 1407-block  1
-branch  2 taken 102
+      129: 1407-block  1
+branch  2 taken 129
 branch  3 taken 0
-      102: 1408:      : basic_istream<_CharT, _Traits>(__sb)
-      204: 1409:    {}
-      102: 1409-block  0
+      129: 1408:      : basic_istream<_CharT, _Traits>(__sb)
+      258: 1409:    {}
+      129: 1409-block  0
     $$$$$: 1409-block  1
     $$$$$: 1409-block  2
         -: 1410:

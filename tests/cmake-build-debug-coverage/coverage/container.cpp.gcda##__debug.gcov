@@ -259,16 +259,16 @@ function _ZNSt3__119__debug_db_insert_cB7v160006INS_12basic_stringIcNS_11char_tr
         -:  252:}
         -:  253:
         -:  254:template <class _Tp>
-function _ZNSt3__125__debug_db_invalidate_allB7v160006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEvPT_ called 1 returned 100% blocks executed 100%
-        1:  255:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 inline void __debug_db_invalidate_all(_Tp* __c) {
+function _ZNSt3__125__debug_db_invalidate_allB7v160006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEvPT_ called 3 returned 100% blocks executed 100%
+        3:  255:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 inline void __debug_db_invalidate_all(_Tp* __c) {
         -:  256:#ifdef _LIBCPP_ENABLE_DEBUG_MODE
         -:  257:    if (!__libcpp_is_constant_evaluated())
         -:  258:        __get_db()->__invalidate_all(__c);
         -:  259:#else
         -:  260:    (void)(__c);
         -:  261:#endif
-        1:  262:}
-        1:  262-block  0
+        3:  262:}
+        3:  262-block  0
         -:  263:
         -:  264:_LIBCPP_END_NAMESPACE_STD
         -:  265:

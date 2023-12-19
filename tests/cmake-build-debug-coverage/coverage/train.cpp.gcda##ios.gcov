@@ -590,11 +590,11 @@ function _ZNSt3__18ios_base8setstateB7v160006Ej called 0 returned 0% blocks exec
         -:  575:
         -:  576:inline _LIBCPP_INLINE_VISIBILITY
         -:  577:bool
-function _ZNKSt3__18ios_base4failB7v160006Ev called 1 returned 100% blocks executed 100%
-        1:  578:ios_base::fail() const
-        1:  579:{
-        1:  580:    return (__rdstate_ & (failbit | badbit)) != 0;
-        1:  580-block  0
+function _ZNKSt3__18ios_base4failB7v160006Ev called 4 returned 100% blocks executed 100%
+        4:  578:ios_base::fail() const
+        4:  579:{
+        4:  580:    return (__rdstate_ & (failbit | badbit)) != 0;
+        4:  580-block  0
         -:  581:}
         -:  582:
         -:  583:inline _LIBCPP_INLINE_VISIBILITY
@@ -653,9 +653,9 @@ function _ZNSt3__19basic_iosIcNS_11char_traitsIcEEE8setstateB7v160006Ej called 0
     $$$$$:  634-block  0
         -:  635:    _LIBCPP_INLINE_VISIBILITY bool good() const {return ios_base::good();}
         -:  636:    _LIBCPP_INLINE_VISIBILITY bool eof() const  {return ios_base::eof();}
-function _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE4failB7v160006Ev called 1 returned 100% blocks executed 100%
-        1:  637:    _LIBCPP_INLINE_VISIBILITY bool fail() const {return ios_base::fail();}
-        1:  637-block  0
+function _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE4failB7v160006Ev called 4 returned 100% blocks executed 100%
+        4:  637:    _LIBCPP_INLINE_VISIBILITY bool fail() const {return ios_base::fail();}
+        4:  637-block  0
         -:  638:    _LIBCPP_INLINE_VISIBILITY bool bad() const  {return ios_base::bad();}
         -:  639:
         -:  640:    _LIBCPP_INLINE_VISIBILITY iostate exceptions() const {return ios_base::exceptions();}

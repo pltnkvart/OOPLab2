@@ -1032,12 +1032,12 @@ function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B7v160
         -: 1019:    }
         -: 1020:
         -: 1021:#ifndef _LIBCPP_CXX03_LANG
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEaSB7v160006EOS5_ called 6 returned 100% blocks executed 100%
-        6: 1022:  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 basic_string& operator=(basic_string&& __str)
-        6: 1023:      _NOEXCEPT_((__noexcept_move_assign_container<_Allocator, __alloc_traits>::value)) {
-        6: 1024:    __move_assign(__str, integral_constant<bool, __alloc_traits::propagate_on_container_move_assignment::value>());
-        6: 1025:    return *this;
-        6: 1025-block  0
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEaSB7v160006EOS5_ called 34 returned 100% blocks executed 100%
+       34: 1022:  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 basic_string& operator=(basic_string&& __str)
+       34: 1023:      _NOEXCEPT_((__noexcept_move_assign_container<_Allocator, __alloc_traits>::value)) {
+       34: 1024:    __move_assign(__str, integral_constant<bool, __alloc_traits::propagate_on_container_move_assignment::value>());
+       34: 1025:    return *this;
+       34: 1025-block  0
         -: 1026:  }
         -: 1027:
         -: 1028:     _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
@@ -1762,19 +1762,19 @@ function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE9__is_l
         -: 1743:        return begin() + __ip;
         -: 1744:    }
         -: 1745:
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE7__allocB7v160006Ev called 20 returned 100% blocks executed 100%
-       20: 1746:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 allocator_type& __alloc() _NOEXCEPT { return __r_.second(); }
-       20: 1746-block  0
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE7__allocB7v160006Ev called 77 returned 100% blocks executed 100%
+       77: 1746:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 allocator_type& __alloc() _NOEXCEPT { return __r_.second(); }
+       77: 1746-block  0
         -: 1747:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR const allocator_type& __alloc() const _NOEXCEPT { return __r_.second(); }
         -: 1748:
         -: 1749:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE16__set_short_sizeB7v160006Em called 17 returned 100% blocks executed 100%
-       17: 1750:    void __set_short_size(size_type __s) _NOEXCEPT {
-       17: 1751:        _LIBCPP_ASSERT(__s < __min_cap, "__s should never be greater than or equal to the short string capacity");
-       17: 1752:        __r_.first().__s.__size_ = __s;
-       17: 1753:        __r_.first().__s.__is_long_ = false;
-       17: 1754:    }
-       17: 1754-block  0
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE16__set_short_sizeB7v160006Em called 55 returned 100% blocks executed 100%
+       55: 1750:    void __set_short_size(size_type __s) _NOEXCEPT {
+       55: 1751:        _LIBCPP_ASSERT(__s < __min_cap, "__s should never be greater than or equal to the short string capacity");
+       55: 1752:        __r_.first().__s.__size_ = __s;
+       55: 1753:        __r_.first().__s.__is_long_ = false;
+       55: 1754:    }
+       55: 1754-block  0
         -: 1755:
         -: 1756:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
         -: 1757:    size_type __get_short_size() const _NOEXCEPT {
@@ -1963,23 +1963,23 @@ branch  1 never executed
         -: 1927:
         -: 1928:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
         -: 1929:    void
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE19__move_assign_allocB7v160006ERS5_ called 6 returned 100% blocks executed 100%
-        6: 1930:    __move_assign_alloc(basic_string& __str)
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE19__move_assign_allocB7v160006ERS5_ called 34 returned 100% blocks executed 100%
+       34: 1930:    __move_assign_alloc(basic_string& __str)
         -: 1931:        _NOEXCEPT_(
         -: 1932:            !__alloc_traits::propagate_on_container_move_assignment::value ||
         -: 1933:            is_nothrow_move_assignable<allocator_type>::value)
-        6: 1934:    {__move_assign_alloc(__str, integral_constant<bool,
-        6: 1935:                      __alloc_traits::propagate_on_container_move_assignment::value>());}
-        6: 1935-block  0
+       34: 1934:    {__move_assign_alloc(__str, integral_constant<bool,
+       34: 1935:                      __alloc_traits::propagate_on_container_move_assignment::value>());}
+       34: 1935-block  0
         -: 1936:
         -: 1937:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE19__move_assign_allocB7v160006ERS5_NS_17integral_constantIbLb1EEE called 6 returned 100% blocks executed 100%
-        6: 1938:    void __move_assign_alloc(basic_string& __c, true_type)
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE19__move_assign_allocB7v160006ERS5_NS_17integral_constantIbLb1EEE called 34 returned 100% blocks executed 100%
+       34: 1938:    void __move_assign_alloc(basic_string& __c, true_type)
         -: 1939:        _NOEXCEPT_(is_nothrow_move_assignable<allocator_type>::value)
-        6: 1940:        {
-        6: 1941:            __alloc() = std::move(__c.__alloc());
-        6: 1942:        }
-        6: 1942-block  0
+       34: 1940:        {
+       34: 1941:            __alloc() = std::move(__c.__alloc());
+       34: 1942:        }
+       34: 1942-block  0
         -: 1943:
         -: 1944:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
         -: 1945:    void __move_assign_alloc(basic_string&, false_type)
@@ -2594,17 +2594,17 @@ function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE19__move
         -: 2554:template <class _CharT, class _Traits, class _Allocator>
         -: 2555:inline _LIBCPP_CONSTEXPR_SINCE_CXX20
         -: 2556:void
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE13__move_assignB7v160006ERS5_NS_17integral_constantIbLb1EEE called 6 returned 100% blocks executed 66%
-        6: 2557:basic_string<_CharT, _Traits, _Allocator>::__move_assign(basic_string& __str, true_type)
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE13__move_assignB7v160006ERS5_NS_17integral_constantIbLb1EEE called 34 returned 100% blocks executed 66%
+       34: 2557:basic_string<_CharT, _Traits, _Allocator>::__move_assign(basic_string& __str, true_type)
         -: 2558:#if _LIBCPP_STD_VER > 14
         -: 2559:    _NOEXCEPT
         -: 2560:#else
         -: 2561:    _NOEXCEPT_(is_nothrow_move_assignable<allocator_type>::value)
         -: 2562:#endif
-        6: 2563:{
-        6: 2564:  if (__is_long()) {
-        6: 2564-block  0
-branch  0 taken 6
+       34: 2563:{
+       34: 2564:  if (__is_long()) {
+       34: 2564-block  0
+branch  0 taken 34
 branch  1 taken 0
     #####: 2565:    __alloc_traits::deallocate(__alloc(), __get_long_pointer(),
     #####: 2566:                               __get_long_cap());
@@ -2616,16 +2616,16 @@ branch  1 taken 0
         -: 2572:#endif
     #####: 2573:  }
     $$$$$: 2573-block  0
-        6: 2574:  __move_assign_alloc(__str);
-        6: 2575:  __r_.first() = __str.__r_.first();
+       34: 2574:  __move_assign_alloc(__str);
+       34: 2575:  __r_.first() = __str.__r_.first();
         -: 2576:  if (__libcpp_is_constant_evaluated()) {
         -: 2577:    __str.__default_init();
         -: 2578:  } else {
-        6: 2579:    __str.__set_short_size(0);
-        6: 2580:    traits_type::assign(__str.__get_short_pointer()[0], value_type());
+       34: 2579:    __str.__set_short_size(0);
+       34: 2580:    traits_type::assign(__str.__get_short_pointer()[0], value_type());
         -: 2581:  }
-        6: 2582:}
-        6: 2582-block  0
+       34: 2582:}
+       34: 2582-block  0
         -: 2583:
         -: 2584:#endif
         -: 2585:

@@ -370,6 +370,7 @@ function _ZN7testing8internal19FormatForComparisonIiiE6FormatERKi called 0 retur
 function _ZN7testing8internal19FormatForComparisonINSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEA49_cE6FormatERKS8_ called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal19FormatForComparisonIPK9ContainerDnE6FormatERKS4_ called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal19FormatForComparisonIDnPK9ContainerE6FormatERKDn called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal19FormatForComparisonINSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEES8_E6FormatERKS8_ called 0 returned 0% blocks executed 0%
     #####:  333:  static ::std::string Format(const ToPrint& value) {
     #####:  334:    return ::testing::PrintToString(value);
     $$$$$:  334-block  0
@@ -386,6 +387,7 @@ function _ZN7testing8internal19FormatForComparisonIDnPK9ContainerE6FormatERKDn c
     $$$$$:  334-block 11
     $$$$$:  334-block 12
     $$$$$:  334-block 13
+    $$$$$:  334-block 14
         -:  335:  }
         -:  336:};
         -:  337:
@@ -498,6 +500,7 @@ function _ZN7testing8internal33FormatForComparisonFailureMessageINSt3__112basic_
 function _ZN7testing8internal33FormatForComparisonFailureMessageIA49_cNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEES9_RKT_RKT0_ called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal33FormatForComparisonFailureMessageIPK9ContainerDnEENSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEERKT_RKT0_ called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal33FormatForComparisonFailureMessageIDnPK9ContainerEENSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEERKT_RKT0_ called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal33FormatForComparisonFailureMessageINSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEES8_EES8_RKT_RKT0_ called 0 returned 0% blocks executed 0%
     #####:  413:std::string FormatForComparisonFailureMessage(
     #####:  414:    const T1& value, const T2& /* other_operand */) {
     #####:  415:  return FormatForComparison<T1, T2>::Format(value);
@@ -521,6 +524,7 @@ function _ZN7testing8internal33FormatForComparisonFailureMessageIDnPK9ContainerE
     $$$$$:  415-block 17
     $$$$$:  415-block 18
     $$$$$:  415-block 19
+    $$$$$:  415-block 20
         -:  416:}
         -:  417:
         -:  418:// UniversalPrinter<T>::Print(value, ostream_ptr) prints the given

@@ -155,12 +155,12 @@
         -:  150:    struct __nat {};
         -:  151:public:
         -:  152:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNSt3__114pointer_traitsIPKcE10pointer_toB7v160006ERS1_ called 638 returned 100% blocks executed 100%
-function _ZNSt3__114pointer_traitsIPcE10pointer_toB7v160006ERc called 17 returned 100% blocks executed 100%
-      655:  153:    static pointer pointer_to(__conditional_t<is_void<element_type>::value, __nat, element_type>& __r) _NOEXCEPT
-      655:  154:        {return _VSTD::addressof(__r);}
-      638:  154-block  0
-       17:  154-block  1
+function _ZNSt3__114pointer_traitsIPKcE10pointer_toB7v160006ERS1_ called 1026 returned 100% blocks executed 100%
+function _ZNSt3__114pointer_traitsIPcE10pointer_toB7v160006ERc called 55 returned 100% blocks executed 100%
+     1081:  153:    static pointer pointer_to(__conditional_t<is_void<element_type>::value, __nat, element_type>& __r) _NOEXCEPT
+     1081:  154:        {return _VSTD::addressof(__r);}
+     1026:  154-block  0
+       55:  154-block  1
         -:  155:};
         -:  156:
         -:  157:#ifndef _LIBCPP_CXX03_LANG
@@ -178,13 +178,13 @@ function _ZNSt3__114pointer_traitsIPcE10pointer_toB7v160006ERc called 17 returne
         -:  169:
         -:  170:template <class _Tp>
         -:  171:_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
-function _ZNSt3__112__to_addressB7v160006IKcEEPT_S3_ called 1234 returned 100% blocks executed 100%
-function _ZNSt3__112__to_addressB7v160006IcEEPT_S2_ called 90 returned 100% blocks executed 100%
-     1324:  172:_Tp* __to_address(_Tp* __p) _NOEXCEPT {
+function _ZNSt3__112__to_addressB7v160006IKcEEPT_S3_ called 1740 returned 100% blocks executed 100%
+function _ZNSt3__112__to_addressB7v160006IcEEPT_S2_ called 135 returned 100% blocks executed 100%
+     1875:  172:_Tp* __to_address(_Tp* __p) _NOEXCEPT {
         -:  173:    static_assert(!is_function<_Tp>::value, "_Tp is a function type");
-     1324:  174:    return __p;
-     1234:  174-block  0
-       90:  174-block  1
+     1875:  174:    return __p;
+     1740:  174-block  0
+      135:  174-block  1
         -:  175:}
         -:  176:
         -:  177:template <class _Pointer, class = void>

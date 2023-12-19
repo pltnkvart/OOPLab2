@@ -199,10 +199,10 @@
         -:  194:
         -:  195:    // 27.7.2.2 Constructor/destructor:
         -:  196:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-function _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEEC2B7v160006EPNS_15basic_streambufIcS2_EE called 1 returned 100% blocks executed 100%
-        1:  197:    explicit basic_ostream(basic_streambuf<char_type, traits_type>* __sb)
-        1:  198:    { this->init(__sb); }
-        1:  198-block  0
+function _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEEC2B7v160006EPNS_15basic_streambufIcS2_EE called 2 returned 100% blocks executed 100%
+        2:  197:    explicit basic_ostream(basic_streambuf<char_type, traits_type>* __sb)
+        2:  198:    { this->init(__sb); }
+        2:  198-block  0
         -:  199:    ~basic_ostream() override;
         -:  200:protected:
         -:  201:    inline _LIBCPP_INLINE_VISIBILITY
@@ -283,9 +283,9 @@ function _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEEC2B7v160006EPNS_15basic_
         -:  276:
         -:  277:protected:
         -:  278:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEEC2B7v160006Ev called 102 returned 100% blocks executed 100%
-      102:  279:    basic_ostream() {}  // extension, intentially does not initialize
-      102:  279-block  0
+function _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEEC2B7v160006Ev called 129 returned 100% blocks executed 100%
+      129:  279:    basic_ostream() {}  // extension, intentially does not initialize
+      129:  279-block  0
         -:  280:};
         -:  281:
         -:  282:template <class _CharT, class _Traits>
@@ -301,9 +301,9 @@ function _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEEC2B7v160006Ev called 102
         -:  292:    sentry& operator=(const sentry&) = delete;
         -:  293:
         -:  294:    _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentrycvbB7v160006Ev called 422 returned 100% blocks executed 100%
-      422:  295:    explicit operator bool() const {return __ok_;}
-      422:  295-block  0
+function _ZNKSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentrycvbB7v160006Ev called 435 returned 100% blocks executed 100%
+      435:  295:    explicit operator bool() const {return __ok_;}
+      435:  295-block  0
         -:  296:};
         -:  297:
         -:  298:template <class _CharT, class _Traits>
@@ -759,74 +759,74 @@ function _ZNKSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentrycvbB7v160006Ev c
         -:  748:
         -:  749:template<class _CharT, class _Traits>
         -:  750:_LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
-function _ZNSt3__124__put_character_sequenceB7v160006IcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m called 422 returned 100% blocks executed 52%
-      422:  751:__put_character_sequence(basic_ostream<_CharT, _Traits>& __os,
+function _ZNSt3__124__put_character_sequenceB7v160006IcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m called 435 returned 100% blocks executed 52%
+      435:  751:__put_character_sequence(basic_ostream<_CharT, _Traits>& __os,
         -:  752:                          const _CharT* __str, size_t __len)
-      422:  753:{
+      435:  753:{
         -:  754:#ifndef _LIBCPP_NO_EXCEPTIONS
         -:  755:    try
         -:  756:    {
         -:  757:#endif // _LIBCPP_NO_EXCEPTIONS
-      422:  758:        typename basic_ostream<_CharT, _Traits>::sentry __s(__os);
-      422:  758-block  0
-branch  0 taken 422
+      435:  758:        typename basic_ostream<_CharT, _Traits>::sentry __s(__os);
+      435:  758-block  0
+branch  0 taken 435
 branch  1 taken 0
-      422:  759:        if (__s)
-      422:  759-block  0
-branch  0 taken 422
+      435:  759:        if (__s)
+      435:  759-block  0
+branch  0 taken 435
 branch  1 taken 0
-      422:  759-block  1
-branch  2 taken 422
+      435:  759-block  1
+branch  2 taken 435
 branch  3 taken 0
         -:  760:        {
         -:  761:            typedef ostreambuf_iterator<_CharT, _Traits> _Ip;
-      844:  762:            if (std::__pad_and_output(_Ip(__os),
-      422:  762-block  0
-branch  0 taken 422
+      870:  762:            if (std::__pad_and_output(_Ip(__os),
+      435:  762-block  0
+branch  0 taken 435
 branch  1 taken 0
-      422:  762-block  1
+      435:  762-block  1
 branch  2 taken 0
-branch  3 taken 422
-      422:  762-block  2
+branch  3 taken 435
+      435:  762-block  2
 branch  4 taken 0
-branch  5 taken 422
-      422:  763:                                      __str,
-      422:  764:                                      (__os.flags() & ios_base::adjustfield) == ios_base::left ?
-      422:  764-block  0
-branch  0 taken 422
+branch  5 taken 435
+      435:  763:                                      __str,
+      435:  764:                                      (__os.flags() & ios_base::adjustfield) == ios_base::left ?
+      435:  764-block  0
+branch  0 taken 435
 branch  1 taken 0
-      422:  764-block  1
+      435:  764-block  1
 branch  2 taken 0
-branch  3 taken 422
+branch  3 taken 435
     $$$$$:  764-block  2
     $$$$$:  764-block  3
-      422:  764-block  4
+      435:  764-block  4
     #####:  765:                                          __str + __len :
-      422:  766:                                          __str,
-      422:  767:                                      __str + __len,
-      422:  768:                                      __os,
-      844:  769:                                      __os.fill()).failed())
-      422:  769-block  0
-branch  0 taken 422
+      435:  766:                                          __str,
+      435:  767:                                      __str + __len,
+      435:  768:                                      __os,
+      870:  769:                                      __os.fill()).failed())
+      435:  769-block  0
+branch  0 taken 435
 branch  1 taken 0
     #####:  770:                __os.setstate(ios_base::badbit | ios_base::failbit);
     $$$$$:  770-block  0
 branch  0 never executed
 branch  1 never executed
     $$$$$:  770-block  1
-      422:  771:        }
-      422:  771-block  0
+      435:  771:        }
+      435:  771-block  0
         -:  772:#ifndef _LIBCPP_NO_EXCEPTIONS
-      422:  773:    }
+      435:  773:    }
     $$$$$:  773-block  0
-      422:  773-block  1
+      435:  773-block  1
         -:  774:    catch (...)
         -:  775:    {
     #####:  776:        __os.__set_badbit_and_consider_rethrow();
     $$$$$:  776-block  0
 branch  0 never executed
 branch  1 never executed
-      422:  777:    }
+      435:  777:    }
     $$$$$:  777-block  0
     $$$$$:  777-block  1
 branch  0 never executed
@@ -835,8 +835,8 @@ branch  1 never executed
     $$$$$:  777-block  3
     $$$$$:  777-block  4
         -:  778:#endif // _LIBCPP_NO_EXCEPTIONS
-      422:  779:    return __os;
-      422:  779-block  0
+      435:  779:    return __os;
+      435:  779-block  0
     #####:  780:}
     $$$$$:  780-block  0
         -:  781:
@@ -957,11 +957,11 @@ branch  1 never executed
         -:  896:
         -:  897:template<class _Traits>
         -:  898:_LIBCPP_HIDE_FROM_ABI basic_ostream<char, _Traits>&
-function _ZNSt3__1lsB7v160006INS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc called 48 returned 100% blocks executed 100%
-       48:  899:operator<<(basic_ostream<char, _Traits>& __os, const char* __str)
-       48:  900:{
-       48:  901:    return _VSTD::__put_character_sequence(__os, __str, _Traits::length(__str));
-       48:  901-block  0
+function _ZNSt3__1lsB7v160006INS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc called 57 returned 100% blocks executed 100%
+       57:  899:operator<<(basic_ostream<char, _Traits>& __os, const char* __str)
+       57:  900:{
+       57:  901:    return _VSTD::__put_character_sequence(__os, __str, _Traits::length(__str));
+       57:  901-block  0
         -:  902:}
         -:  903:
         -:  904:template<class _Traits>

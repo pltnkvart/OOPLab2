@@ -342,10 +342,10 @@
         -:  337:    template <class _Ap = _Alloc, class = void, class =
         -:  338:        __enable_if_t<!__has_max_size<const _Ap>::value> >
         -:  339:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNSt3__116allocator_traitsINS_9allocatorIcEEE8max_sizeB7v160006IS2_vvEEmRKS2_ called 27 returned 100% blocks executed 100%
-       27:  340:    static size_type max_size(const allocator_type&) _NOEXCEPT {
-       27:  341:        return numeric_limits<size_type>::max() / sizeof(value_type);
-       27:  341-block  0
+function _ZNSt3__116allocator_traitsINS_9allocatorIcEEE8max_sizeB7v160006IS2_vvEEmRKS2_ called 39 returned 100% blocks executed 100%
+       39:  340:    static size_type max_size(const allocator_type&) _NOEXCEPT {
+       39:  341:        return numeric_limits<size_type>::max() / sizeof(value_type);
+       39:  341-block  0
         -:  342:    }
         -:  343:
         -:  344:    template <class _Ap = _Alloc, class =

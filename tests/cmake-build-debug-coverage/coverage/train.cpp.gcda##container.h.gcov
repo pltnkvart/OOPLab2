@@ -21,11 +21,11 @@
         -:   16: * @brief Class Container
         -:   17: */
 function _ZN9ContainerD1Ev called 0 returned 0% blocks executed 0%
-function _ZN9ContainerC1ERKS_ called 6 returned 100% blocks executed 100%
-function _ZN9ContaineraSERKS_ called 3 returned 100% blocks executed 100%
-function _ZN9ContaineraSEOS_ called 6 returned 100% blocks executed 100%
+function _ZN9ContainerC1ERKS_ called 0 returned 0% blocks executed 0%
+function _ZN9ContaineraSERKS_ called 68 returned 100% blocks executed 100%
+function _ZN9ContaineraSEOS_ called 34 returned 100% blocks executed 100%
 function _ZN9ContainerD2Ev called 0 returned 0% blocks executed 0%
-function _ZN9ContainerC2ERKS_ called 6 returned 100% blocks executed 100%
+function _ZN9ContainerC2ERKS_ called 0 returned 0% blocks executed 0%
         -:   18:class Container {
         -:   19:private:
         -:   20:    //! Name of container

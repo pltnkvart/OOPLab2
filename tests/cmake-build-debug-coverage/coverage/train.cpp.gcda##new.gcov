@@ -275,11 +275,11 @@
         -:  270:
         -:  271:_LIBCPP_BEGIN_NAMESPACE_STD
         -:  272:
-function _ZNSt3__124__is_overaligned_for_newB7v160006Em called 80 returned 100% blocks executed 100%
-       80:  273:_LIBCPP_CONSTEXPR inline _LIBCPP_INLINE_VISIBILITY bool __is_overaligned_for_new(size_t __align) _NOEXCEPT {
+function _ZNSt3__124__is_overaligned_for_newB7v160006Em called 105 returned 100% blocks executed 100%
+      105:  273:_LIBCPP_CONSTEXPR inline _LIBCPP_INLINE_VISIBILITY bool __is_overaligned_for_new(size_t __align) _NOEXCEPT {
         -:  274:#ifdef __STDCPP_DEFAULT_NEW_ALIGNMENT__
-       80:  275:  return __align > __STDCPP_DEFAULT_NEW_ALIGNMENT__;
-       80:  275-block  0
+      105:  275:  return __align > __STDCPP_DEFAULT_NEW_ALIGNMENT__;
+      105:  275-block  0
         -:  276:#else
         -:  277:  return __align > alignment_of<max_align_t>::value;
         -:  278:#endif
@@ -298,16 +298,16 @@ function _ZNSt3__124__is_overaligned_for_newB7v160006Em called 80 returned 100% 
         -:  291:template <class ..._Args>
         -:  292:_LIBCPP_INLINE_VISIBILITY
 function _ZNSt3__124__libcpp_operator_deleteB7v160006IJPvSt11align_val_tEEEvDpT_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__124__libcpp_operator_deleteB7v160006IJPvEEEvDpT_ called 23 returned 100% blocks executed 100%
-       23:  293:void __libcpp_operator_delete(_Args ...__args) {
+function _ZNSt3__124__libcpp_operator_deleteB7v160006IJPvEEEvDpT_ called 29 returned 100% blocks executed 100%
+       29:  293:void __libcpp_operator_delete(_Args ...__args) {
         -:  294:#if __has_builtin(__builtin_operator_new) && __has_builtin(__builtin_operator_delete)
-       23:  295:  __builtin_operator_delete(__args...);
+       29:  295:  __builtin_operator_delete(__args...);
         -:  296:#else
         -:  297:  ::operator delete(__args...);
         -:  298:#endif
-       23:  299:}
+       29:  299:}
     $$$$$:  299-block  0
-       23:  299-block  1
+       29:  299-block  1
         -:  300:
         -:  301:inline _LIBCPP_INLINE_VISIBILITY
         -:  302:void *__libcpp_allocate(size_t __size, size_t __align) {
@@ -325,39 +325,39 @@ function _ZNSt3__124__libcpp_operator_deleteB7v160006IJPvEEEvDpT_ called 23 retu
         -:  314:template <class ..._Args>
         -:  315:_LIBCPP_INLINE_VISIBILITY
 function _ZNSt3__127__do_deallocate_handle_sizeB7v160006IJSt11align_val_tEEEvPvmDpT_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__127__do_deallocate_handle_sizeB7v160006IJEEEvPvmDpT_ called 23 returned 100% blocks executed 100%
-       23:  316:void __do_deallocate_handle_size(void *__ptr, size_t __size, _Args ...__args) {
+function _ZNSt3__127__do_deallocate_handle_sizeB7v160006IJEEEvPvmDpT_ called 29 returned 100% blocks executed 100%
+       29:  316:void __do_deallocate_handle_size(void *__ptr, size_t __size, _Args ...__args) {
         -:  317:#ifdef _LIBCPP_HAS_NO_SIZED_DEALLOCATION
         -:  318:  (void)__size;
-       23:  319:  return std::__libcpp_operator_delete(__ptr, __args...);
+       29:  319:  return std::__libcpp_operator_delete(__ptr, __args...);
     $$$$$:  319-block  0
-       23:  319-block  1
+       29:  319-block  1
         -:  320:#else
         -:  321:  return std::__libcpp_operator_delete(__ptr, __size, __args...);
         -:  322:#endif
         -:  323:}
         -:  324:
         -:  325:inline _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__119__libcpp_deallocateB7v160006EPvmm called 23 returned 100% blocks executed 75%
-       23:  326:void __libcpp_deallocate(void* __ptr, size_t __size, size_t __align) {
+function _ZNSt3__119__libcpp_deallocateB7v160006EPvmm called 29 returned 100% blocks executed 75%
+       29:  326:void __libcpp_deallocate(void* __ptr, size_t __size, size_t __align) {
         -:  327:#if defined(_LIBCPP_HAS_NO_ALIGNED_ALLOCATION)
         -:  328:    (void)__align;
         -:  329:    return __do_deallocate_handle_size(__ptr, __size);
         -:  330:#else
-       23:  331:    if (__is_overaligned_for_new(__align)) {
-       23:  331-block  0
+       29:  331:    if (__is_overaligned_for_new(__align)) {
+       29:  331-block  0
 branch  0 taken 0
-branch  1 taken 23
+branch  1 taken 29
     #####:  332:      const align_val_t __align_val = static_cast<align_val_t>(__align);
     #####:  333:      return __do_deallocate_handle_size(__ptr, __size, __align_val);
     $$$$$:  333-block  0
         -:  334:    } else {
-       23:  335:      return __do_deallocate_handle_size(__ptr, __size);
-       23:  335-block  0
+       29:  335:      return __do_deallocate_handle_size(__ptr, __size);
+       29:  335-block  0
         -:  336:    }
         -:  337:#endif
-       23:  338:}
-       23:  338-block  0
+       29:  338:}
+       29:  338-block  0
         -:  339:
         -:  340:inline _LIBCPP_INLINE_VISIBILITY void __libcpp_deallocate_unsized(void* __ptr, size_t __align) {
         -:  341:#if defined(_LIBCPP_HAS_NO_ALIGNED_ALLOCATION)

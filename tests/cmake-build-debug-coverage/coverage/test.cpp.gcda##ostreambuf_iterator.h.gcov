@@ -53,15 +53,15 @@
         -:   48:private:
         -:   49:    streambuf_type* __sbuf_;
         -:   50:public:
-function _ZNSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEEC1B7v160006ERNS_13basic_ostreamIcS2_EE called 422 returned 100% blocks executed 100%
-function _ZNSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEEC2B7v160006ERNS_13basic_ostreamIcS2_EE called 422 returned 100% blocks executed 66%
-      844:   51:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator(ostream_type& __s) _NOEXCEPT
-      844:   52:        : __sbuf_(__s.rdbuf()) {}
-      422:   52-block  0
-      422:   52-block  1
-branch  0 taken 422
+function _ZNSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEEC1B7v160006ERNS_13basic_ostreamIcS2_EE called 435 returned 100% blocks executed 100%
+function _ZNSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEEC2B7v160006ERNS_13basic_ostreamIcS2_EE called 435 returned 100% blocks executed 66%
+      870:   51:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator(ostream_type& __s) _NOEXCEPT
+      870:   52:        : __sbuf_(__s.rdbuf()) {}
+      435:   52-block  0
+      435:   52-block  1
+branch  0 taken 435
 branch  1 taken 0
-      422:   52-block  2
+      435:   52-block  2
     $$$$$:   52-block  3
         -:   53:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator(streambuf_type* __s) _NOEXCEPT
         -:   54:        : __sbuf_(__s) {}
@@ -74,9 +74,9 @@ branch  1 taken 0
         -:   61:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator& operator*()     {return *this;}
         -:   62:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator& operator++()    {return *this;}
         -:   63:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator& operator++(int) {return *this;}
-function _ZNKSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEE6failedB7v160006Ev called 422 returned 100% blocks executed 100%
-      422:   64:    _LIBCPP_INLINE_VISIBILITY bool failed() const _NOEXCEPT {return __sbuf_ == nullptr;}
-      422:   64-block  0
+function _ZNKSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEE6failedB7v160006Ev called 435 returned 100% blocks executed 100%
+      435:   64:    _LIBCPP_INLINE_VISIBILITY bool failed() const _NOEXCEPT {return __sbuf_ == nullptr;}
+      435:   64-block  0
         -:   65:
         -:   66:    template <class _Ch, class _Tr>
         -:   67:    friend

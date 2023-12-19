@@ -285,8 +285,8 @@
         -:  280://   Expected: Foo() is even
         -:  281://     Actual: it's 5
         -:  282://
-function _ZN7testing15AssertionResultD1Ev called 44 returned 100% blocks executed 100%
-function _ZN7testing15AssertionResultD2Ev called 44 returned 100% blocks executed 100%
+function _ZN7testing15AssertionResultD1Ev called 81 returned 100% blocks executed 100%
+function _ZN7testing15AssertionResultD2Ev called 81 returned 100% blocks executed 100%
         -:  283:class GTEST_API_ AssertionResult {
         -:  284: public:
         -:  285:  // Copy constructor.
@@ -328,9 +328,9 @@ function _ZN7testing15AssertionResultD2Ev called 44 returned 100% blocks execute
         -:  321:  }
         -:  322:
         -:  323:  // Returns true if and only if the assertion succeeded.
-function _ZNK7testing15AssertionResultcvbEv called 44 returned 100% blocks executed 100%
-       44:  324:  operator bool() const { return success_; }  // NOLINT
-       44:  324-block  0
+function _ZNK7testing15AssertionResultcvbEv called 81 returned 100% blocks executed 100%
+       81:  324:  operator bool() const { return success_; }  // NOLINT
+       81:  324-block  0
         -:  325:
         -:  326:  // Returns the assertion's negation. Used with EXPECT/ASSERT_FALSE.
         -:  327:  AssertionResult operator!() const;
@@ -1558,6 +1558,7 @@ function _ZN7testing8internal18CmpHelperEQFailureINSt3__112basic_stringIcNS2_11c
 function _ZN7testing8internal18CmpHelperEQFailureIiiEENS_15AssertionResultEPKcS4_RKT_RKT0_ called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal18CmpHelperEQFailureINSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEA49_cEENS_15AssertionResultEPKcSC_RKT_RKT0_ called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal18CmpHelperEQFailureIPK9ContainerDnEENS_15AssertionResultEPKcS7_RKT_RKT0_ called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal18CmpHelperEQFailureINSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEES8_EENS_15AssertionResultEPKcSB_RKT_RKT0_ called 0 returned 0% blocks executed 0%
     #####: 1522:AssertionResult CmpHelperEQFailure(const char* lhs_expression,
         -: 1523:                                   const char* rhs_expression,
     #####: 1524:                                   const T1& lhs, const T2& rhs) {
@@ -1639,6 +1640,13 @@ branch 21 never executed
     $$$$$: 1525-block 52
     $$$$$: 1525-block 53
     $$$$$: 1525-block 54
+    $$$$$: 1525-block 55
+branch 22 never executed
+branch 23 never executed
+    $$$$$: 1525-block 56
+    $$$$$: 1525-block 57
+    $$$$$: 1525-block 58
+    $$$$$: 1525-block 59
     #####: 1526:                   rhs_expression,
     #####: 1527:                   FormatForComparisonFailureMessage(lhs, rhs),
     #####: 1528:                   FormatForComparisonFailureMessage(rhs, lhs),
@@ -1675,6 +1683,9 @@ branch 19 never executed
     $$$$$: 1528-block 10
 branch 20 never executed
 branch 21 never executed
+    $$$$$: 1528-block 11
+branch 22 never executed
+branch 23 never executed
         -: 1529:                   false);
     #####: 1530:}
     $$$$$: 1530-block  0
@@ -1688,6 +1699,7 @@ branch 21 never executed
     $$$$$: 1530-block  8
     $$$$$: 1530-block  9
     $$$$$: 1530-block 10
+    $$$$$: 1530-block 11
         -: 1531:
         -: 1532:// This block of code defines operator==/!=
         -: 1533:// to block lexical scope lookup.
@@ -1700,34 +1712,35 @@ branch 21 never executed
         -: 1540:template <typename T1, typename T2>
 function _ZN7testing8internal11CmpHelperEQINSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEA1_cEENS_15AssertionResultEPKcSC_RKT_RKT0_ called 1 returned 100% blocks executed 75%
 function _ZN7testing8internal11CmpHelperEQIdiEENS_15AssertionResultEPKcS4_RKT_RKT0_ called 7 returned 100% blocks executed 75%
-function _ZN7testing8internal11CmpHelperEQIi13CargoCategoryEENS_15AssertionResultEPKcS5_RKT_RKT0_ called 5 returned 100% blocks executed 75%
+function _ZN7testing8internal11CmpHelperEQIi13CargoCategoryEENS_15AssertionResultEPKcS5_RKT_RKT0_ called 11 returned 100% blocks executed 75%
 function _ZN7testing8internal11CmpHelperEQINSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEA2_cEENS_15AssertionResultEPKcSC_RKT_RKT0_ called 1 returned 100% blocks executed 75%
-function _ZN7testing8internal11CmpHelperEQIddEENS_15AssertionResultEPKcS4_RKT_RKT0_ called 20 returned 100% blocks executed 75%
+function _ZN7testing8internal11CmpHelperEQIddEENS_15AssertionResultEPKcS4_RKT_RKT0_ called 22 returned 100% blocks executed 75%
 function _ZN7testing8internal11CmpHelperEQINSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEA10_cEENS_15AssertionResultEPKcSC_RKT_RKT0_ called 1 returned 100% blocks executed 75%
 function _ZN7testing8internal11CmpHelperEQINSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEA4_cEENS_15AssertionResultEPKcSC_RKT_RKT0_ called 1 returned 100% blocks executed 75%
-function _ZN7testing8internal11CmpHelperEQINSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEA11_cEENS_15AssertionResultEPKcSC_RKT_RKT0_ called 1 returned 100% blocks executed 75%
-function _ZN7testing8internal11CmpHelperEQIiiEENS_15AssertionResultEPKcS4_RKT_RKT0_ called 5 returned 100% blocks executed 75%
+function _ZN7testing8internal11CmpHelperEQINSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEA11_cEENS_15AssertionResultEPKcSC_RKT_RKT0_ called 7 returned 100% blocks executed 75%
+function _ZN7testing8internal11CmpHelperEQIiiEENS_15AssertionResultEPKcS4_RKT_RKT0_ called 13 returned 100% blocks executed 75%
 function _ZN7testing8internal11CmpHelperEQINSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEA49_cEENS_15AssertionResultEPKcSC_RKT_RKT0_ called 1 returned 100% blocks executed 75%
 function _ZN7testing8internal11CmpHelperEQIPK9ContainerDnEENS_15AssertionResultEPKcS7_RKT_RKT0_ called 1 returned 100% blocks executed 75%
-       44: 1541:AssertionResult CmpHelperEQ(const char* lhs_expression,
+function _ZN7testing8internal11CmpHelperEQINSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEES8_EENS_15AssertionResultEPKcSB_RKT_RKT0_ called 1 returned 100% blocks executed 75%
+       67: 1541:AssertionResult CmpHelperEQ(const char* lhs_expression,
         -: 1542:                            const char* rhs_expression,
         -: 1543:                            const T1& lhs,
-       44: 1544:                            const T2& rhs) {
-       44: 1545:  if (lhs == rhs) {
+       67: 1544:                            const T2& rhs) {
+       67: 1545:  if (lhs == rhs) {
         1: 1545-block  0
 branch  0 taken 1
 branch  1 taken 0
         7: 1545-block  1
 branch  2 taken 7
 branch  3 taken 0
-        5: 1545-block  2
-branch  4 taken 5
+       11: 1545-block  2
+branch  4 taken 11
 branch  5 taken 0
         1: 1545-block  3
 branch  6 taken 1
 branch  7 taken 0
-       20: 1545-block  4
-branch  8 taken 20
+       22: 1545-block  4
+branch  8 taken 22
 branch  9 taken 0
         1: 1545-block  5
 branch 10 taken 1
@@ -1735,11 +1748,11 @@ branch 11 taken 0
         1: 1545-block  6
 branch 12 taken 1
 branch 13 taken 0
-        1: 1545-block  7
-branch 14 taken 1
+        7: 1545-block  7
+branch 14 taken 7
 branch 15 taken 0
-        5: 1545-block  8
-branch 16 taken 5
+       13: 1545-block  8
+branch 16 taken 13
 branch 17 taken 0
         1: 1545-block  9
 branch 18 taken 1
@@ -1747,18 +1760,22 @@ branch 19 taken 0
         1: 1545-block 10
 branch 20 taken 1
 branch 21 taken 0
-       44: 1546:    return AssertionSuccess();
+        1: 1545-block 11
+branch 22 taken 1
+branch 23 taken 0
+       67: 1546:    return AssertionSuccess();
         1: 1546-block  0
         7: 1546-block  1
-        5: 1546-block  2
+       11: 1546-block  2
         1: 1546-block  3
-       20: 1546-block  4
+       22: 1546-block  4
         1: 1546-block  5
         1: 1546-block  6
-        1: 1546-block  7
-        5: 1546-block  8
+        7: 1546-block  7
+       13: 1546-block  8
         1: 1546-block  9
         1: 1546-block 10
+        1: 1546-block 11
         -: 1547:  }
         -: 1548:
     #####: 1549:  return CmpHelperEQFailure(lhs_expression, rhs_expression, lhs, rhs);
@@ -1773,18 +1790,20 @@ branch 21 taken 0
     $$$$$: 1549-block  8
     $$$$$: 1549-block  9
     $$$$$: 1549-block 10
-       44: 1550:}
+    $$$$$: 1549-block 11
+       67: 1550:}
         1: 1550-block  0
         7: 1550-block  1
-        5: 1550-block  2
+       11: 1550-block  2
         1: 1550-block  3
-       20: 1550-block  4
+       22: 1550-block  4
         1: 1550-block  5
         1: 1550-block  6
-        1: 1550-block  7
-        5: 1550-block  8
+        7: 1550-block  7
+       13: 1550-block  8
         1: 1550-block  9
         1: 1550-block 10
+        1: 1550-block 11
         -: 1551:
         -: 1552:class EqHelper {
         -: 1553: public:
@@ -1797,30 +1816,32 @@ branch 21 taken 0
         -: 1560:                              !std::is_pointer<T2>::value>::type* = nullptr>
 function _ZN7testing8internal8EqHelper7CompareINSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEA1_cLPv0EEENS_15AssertionResultEPKcSE_RKT_RKT0_ called 1 returned 100% blocks executed 100%
 function _ZN7testing8internal8EqHelper7CompareIdiLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_ called 7 returned 100% blocks executed 100%
-function _ZN7testing8internal8EqHelper7CompareIi13CargoCategoryLPv0EEENS_15AssertionResultEPKcS7_RKT_RKT0_ called 5 returned 100% blocks executed 100%
+function _ZN7testing8internal8EqHelper7CompareIi13CargoCategoryLPv0EEENS_15AssertionResultEPKcS7_RKT_RKT0_ called 11 returned 100% blocks executed 100%
 function _ZN7testing8internal8EqHelper7CompareINSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEA2_cLPv0EEENS_15AssertionResultEPKcSE_RKT_RKT0_ called 1 returned 100% blocks executed 100%
-function _ZN7testing8internal8EqHelper7CompareIddLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_ called 20 returned 100% blocks executed 100%
+function _ZN7testing8internal8EqHelper7CompareIddLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_ called 22 returned 100% blocks executed 100%
 function _ZN7testing8internal8EqHelper7CompareINSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEA10_cLPv0EEENS_15AssertionResultEPKcSE_RKT_RKT0_ called 1 returned 100% blocks executed 100%
 function _ZN7testing8internal8EqHelper7CompareINSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEA4_cLPv0EEENS_15AssertionResultEPKcSE_RKT_RKT0_ called 1 returned 100% blocks executed 100%
-function _ZN7testing8internal8EqHelper7CompareINSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEA11_cLPv0EEENS_15AssertionResultEPKcSE_RKT_RKT0_ called 1 returned 100% blocks executed 100%
-function _ZN7testing8internal8EqHelper7CompareIiiLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_ called 5 returned 100% blocks executed 100%
+function _ZN7testing8internal8EqHelper7CompareINSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEA11_cLPv0EEENS_15AssertionResultEPKcSE_RKT_RKT0_ called 7 returned 100% blocks executed 100%
+function _ZN7testing8internal8EqHelper7CompareIiiLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_ called 13 returned 100% blocks executed 100%
 function _ZN7testing8internal8EqHelper7CompareINSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEA49_cLPv0EEENS_15AssertionResultEPKcSE_RKT_RKT0_ called 1 returned 100% blocks executed 100%
 function _ZN7testing8internal8EqHelper7CompareIPK9ContainerDnLPv0EEENS_15AssertionResultEPKcS9_RKT_RKT0_ called 1 returned 100% blocks executed 100%
-       44: 1561:  static AssertionResult Compare(const char* lhs_expression,
+function _ZN7testing8internal8EqHelper7CompareINSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEES9_LPv0EEENS_15AssertionResultEPKcSD_RKT_RKT0_ called 1 returned 100% blocks executed 100%
+       67: 1561:  static AssertionResult Compare(const char* lhs_expression,
         -: 1562:                                 const char* rhs_expression, const T1& lhs,
-       44: 1563:                                 const T2& rhs) {
-       44: 1564:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+       67: 1563:                                 const T2& rhs) {
+       67: 1564:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
         1: 1564-block  0
         7: 1564-block  1
-        5: 1564-block  2
+       11: 1564-block  2
         1: 1564-block  3
-       20: 1564-block  4
+       22: 1564-block  4
         1: 1564-block  5
         1: 1564-block  6
-        1: 1564-block  7
-        5: 1564-block  8
+        7: 1564-block  7
+       13: 1564-block  8
         1: 1564-block  9
         1: 1564-block 10
+        1: 1564-block 11
         -: 1565:  }
         -: 1566:
         -: 1567:  // With this overloaded version, we allow anonymous enums to be used
@@ -1989,30 +2010,75 @@ function _ZN7testing8internal8EqHelper7CompareIPK9ContainerDnLPv0EEENS_15Asserti
         -: 1730://
         -: 1731:// INTERNAL IMPLEMENTATION - DO NOT USE IN A USER PROGRAM.
         -: 1732:template <typename RawType>
-        -: 1733:AssertionResult CmpHelperFloatingPointEQ(const char* lhs_expression,
+function _ZN7testing8internal24CmpHelperFloatingPointEQIdEENS_15AssertionResultEPKcS4_T_S5_ called 14 returned 100% blocks executed 13%
+       14: 1733:AssertionResult CmpHelperFloatingPointEQ(const char* lhs_expression,
         -: 1734:                                         const char* rhs_expression,
         -: 1735:                                         RawType lhs_value,
-        -: 1736:                                         RawType rhs_value) {
-        -: 1737:  const FloatingPoint<RawType> lhs(lhs_value), rhs(rhs_value);
+       14: 1736:                                         RawType rhs_value) {
+       14: 1737:  const FloatingPoint<RawType> lhs(lhs_value), rhs(rhs_value);
         -: 1738:
-        -: 1739:  if (lhs.AlmostEquals(rhs)) {
-        -: 1740:    return AssertionSuccess();
+       14: 1739:  if (lhs.AlmostEquals(rhs)) {
+       14: 1739-block  0
+branch  0 taken 14
+branch  1 taken 0
+       14: 1740:    return AssertionSuccess();
+       14: 1740-block  0
         -: 1741:  }
         -: 1742:
-        -: 1743:  ::std::stringstream lhs_ss;
-        -: 1744:  lhs_ss << std::setprecision(std::numeric_limits<RawType>::digits10 + 2)
-        -: 1745:         << lhs_value;
+    #####: 1743:  ::std::stringstream lhs_ss;
+    #####: 1744:  lhs_ss << std::setprecision(std::numeric_limits<RawType>::digits10 + 2)
+    $$$$$: 1744-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$: 1744-block  1
+branch  2 never executed
+branch  3 never executed
+    #####: 1745:         << lhs_value;
+    $$$$$: 1745-block  0
+branch  0 never executed
+branch  1 never executed
         -: 1746:
-        -: 1747:  ::std::stringstream rhs_ss;
-        -: 1748:  rhs_ss << std::setprecision(std::numeric_limits<RawType>::digits10 + 2)
-        -: 1749:         << rhs_value;
+    #####: 1747:  ::std::stringstream rhs_ss;
+    $$$$$: 1747-block  0
+branch  0 never executed
+branch  1 never executed
+    #####: 1748:  rhs_ss << std::setprecision(std::numeric_limits<RawType>::digits10 + 2)
+    $$$$$: 1748-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$: 1748-block  1
+branch  2 never executed
+branch  3 never executed
+    #####: 1749:         << rhs_value;
+    $$$$$: 1749-block  0
+branch  0 never executed
+branch  1 never executed
         -: 1750:
-        -: 1751:  return EqFailure(lhs_expression,
-        -: 1752:                   rhs_expression,
-        -: 1753:                   StringStreamToString(&lhs_ss),
-        -: 1754:                   StringStreamToString(&rhs_ss),
+    #####: 1751:  return EqFailure(lhs_expression,
+    $$$$$: 1751-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$: 1751-block  1
+    $$$$$: 1751-block  2
+    #####: 1752:                   rhs_expression,
+    #####: 1753:                   StringStreamToString(&lhs_ss),
+    $$$$$: 1753-block  0
+branch  0 never executed
+branch  1 never executed
+    #####: 1754:                   StringStreamToString(&rhs_ss),
+    $$$$$: 1754-block  0
+branch  0 never executed
+branch  1 never executed
         -: 1755:                   false);
-        -: 1756:}
+       14: 1756:}
+    $$$$$: 1756-block  0
+    $$$$$: 1756-block  1
+    $$$$$: 1756-block  2
+    $$$$$: 1756-block  3
+    $$$$$: 1756-block  4
+    $$$$$: 1756-block  5
+       14: 1756-block  6
+    $$$$$: 1756-block  7
         -: 1757:
         -: 1758:// Helper function for implementing ASSERT_NEAR.
         -: 1759://

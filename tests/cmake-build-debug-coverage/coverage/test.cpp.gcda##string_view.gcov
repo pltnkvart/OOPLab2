@@ -255,11 +255,11 @@
         -:  250://       string_view constructors. This can be refactored when this exact form isn't needed anymore.
         -:  251:template <class _Traits>
         -:  252:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR
-function _ZNSt3__128__char_traits_length_checkedB7v160006INS_11char_traitsIcEEEEmPKNT_9char_typeE called 10 returned 100% blocks executed 100%
-       10:  253:inline size_t __char_traits_length_checked(const typename _Traits::char_type* __s) _NOEXCEPT {
+function _ZNSt3__128__char_traits_length_checkedB7v160006INS_11char_traitsIcEEEEmPKNT_9char_typeE called 16 returned 100% blocks executed 100%
+       16:  253:inline size_t __char_traits_length_checked(const typename _Traits::char_type* __s) _NOEXCEPT {
         -:  254:  // This needs to be a single statement for C++11 constexpr
-       10:  255:  return _LIBCPP_ASSERT(__s != nullptr, "null pointer passed to non-null argument of char_traits<...>::length"), _Traits::length(__s);
-       10:  255-block  0
+       16:  255:  return _LIBCPP_ASSERT(__s != nullptr, "null pointer passed to non-null argument of char_traits<...>::length"), _Traits::length(__s);
+       16:  255-block  0
         -:  256:}
         -:  257:
         -:  258:template<class _CharT, class _Traits>
@@ -297,24 +297,24 @@ function _ZNSt3__128__char_traits_length_checkedB7v160006INS_11char_traitsIcEEEE
         -:  290:    basic_string_view& operator=(const basic_string_view&) _NOEXCEPT = default;
         -:  291:
         -:  292:    _LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__117basic_string_viewIcNS_11char_traitsIcEEEC1B7v160006EPKcm called 10 returned 100% blocks executed 100%
-function _ZNSt3__117basic_string_viewIcNS_11char_traitsIcEEEC2B7v160006EPKcm called 10 returned 100% blocks executed 75%
-       20:  293:    basic_string_view(const _CharT* __s, size_type __len) _NOEXCEPT
-       10:  294:        : __data_(__s), __size_(__len)
-       20:  295:    {
+function _ZNSt3__117basic_string_viewIcNS_11char_traitsIcEEEC1B7v160006EPKcm called 16 returned 100% blocks executed 100%
+function _ZNSt3__117basic_string_viewIcNS_11char_traitsIcEEEC2B7v160006EPKcm called 16 returned 100% blocks executed 75%
+       32:  293:    basic_string_view(const _CharT* __s, size_type __len) _NOEXCEPT
+       16:  294:        : __data_(__s), __size_(__len)
+       32:  295:    {
         -:  296:#if _LIBCPP_STD_VER > 11
-       10:  297:    _LIBCPP_ASSERT(__len == 0 || __s != nullptr, "string_view::string_view(_CharT *, size_t): received nullptr");
-       10:  297-block  0
-branch  0 taken 5
+       16:  297:    _LIBCPP_ASSERT(__len == 0 || __s != nullptr, "string_view::string_view(_CharT *, size_t): received nullptr");
+       16:  297-block  0
+branch  0 taken 11
 branch  1 taken 5
-        5:  297-block  1
+       11:  297-block  1
 branch  2 taken 0
-branch  3 taken 5
+branch  3 taken 11
     $$$$$:  297-block  2
         -:  298:#endif
-       20:  299:    }
-       10:  299-block  0
-       10:  299-block  1
+       32:  299:    }
+       16:  299-block  0
+       16:  299-block  1
         -:  300:
         -:  301:#if _LIBCPP_STD_VER > 17
         -:  302:    template <contiguous_iterator _It, sized_sentinel_for<_It> _End>
@@ -346,12 +346,12 @@ branch  3 taken 5
         -:  328:#endif // _LIBCPP_STD_VER > 20
         -:  329:
         -:  330:    _LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__117basic_string_viewIcNS_11char_traitsIcEEEC1B7v160006EPKc called 10 returned 100% blocks executed 100%
-function _ZNSt3__117basic_string_viewIcNS_11char_traitsIcEEEC2B7v160006EPKc called 10 returned 100% blocks executed 100%
-       20:  331:    basic_string_view(const _CharT* __s)
-       20:  332:        : __data_(__s), __size_(_VSTD::__char_traits_length_checked<_Traits>(__s)) {}
-       10:  332-block  0
-       10:  332-block  1
+function _ZNSt3__117basic_string_viewIcNS_11char_traitsIcEEEC1B7v160006EPKc called 16 returned 100% blocks executed 100%
+function _ZNSt3__117basic_string_viewIcNS_11char_traitsIcEEEC2B7v160006EPKc called 16 returned 100% blocks executed 100%
+       32:  331:    basic_string_view(const _CharT* __s)
+       32:  332:        : __data_(__s), __size_(_VSTD::__char_traits_length_checked<_Traits>(__s)) {}
+       16:  332-block  0
+       16:  332-block  1
         -:  333:
         -:  334:#if _LIBCPP_STD_VER > 20
         -:  335:    basic_string_view(nullptr_t) = delete;
@@ -384,9 +384,9 @@ function _ZNSt3__117basic_string_viewIcNS_11char_traitsIcEEEC2B7v160006EPKc call
         -:  362:
         -:  363:    // [string.view.capacity], capacity
         -:  364:    _LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__117basic_string_viewIcNS_11char_traitsIcEEE4sizeB7v160006Ev called 52 returned 100% blocks executed 100%
-       52:  365:    size_type size()     const _NOEXCEPT { return __size_; }
-       52:  365-block  0
+function _ZNKSt3__117basic_string_viewIcNS_11char_traitsIcEEE4sizeB7v160006Ev called 88 returned 100% blocks executed 100%
+       88:  365:    size_type size()     const _NOEXCEPT { return __size_; }
+       88:  365-block  0
         -:  366:
         -:  367:    _LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
         -:  368:    size_type length()   const _NOEXCEPT { return __size_; }
@@ -424,9 +424,9 @@ function _ZNKSt3__117basic_string_viewIcNS_11char_traitsIcEEE4sizeB7v160006Ev ca
         -:  400:    }
         -:  401:
         -:  402:    _LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__117basic_string_viewIcNS_11char_traitsIcEEE4dataB7v160006Ev called 16 returned 100% blocks executed 100%
-       16:  403:    const_pointer data() const _NOEXCEPT { return __data_; }
-       16:  403-block  0
+function _ZNKSt3__117basic_string_viewIcNS_11char_traitsIcEEE4dataB7v160006Ev called 28 returned 100% blocks executed 100%
+       28:  403:    const_pointer data() const _NOEXCEPT { return __data_; }
+       28:  403-block  0
         -:  404:
         -:  405:    // [string.view.modifiers], modifiers:
         -:  406:    _LIBCPP_CONSTEXPR_SINCE_CXX14 _LIBCPP_INLINE_VISIBILITY
@@ -474,28 +474,28 @@ function _ZNKSt3__117basic_string_viewIcNS_11char_traitsIcEEE4dataB7v160006Ev ca
         -:  448:            : basic_string_view(data() + __pos, _VSTD::min(__n, size() - __pos));
         -:  449:    }
         -:  450:
-function _ZNKSt3__117basic_string_viewIcNS_11char_traitsIcEEE7compareES3_ called 8 returned 100% blocks executed 75%
-        8:  451:    _LIBCPP_CONSTEXPR_SINCE_CXX14 int compare(basic_string_view __sv) const _NOEXCEPT
-        8:  452:    {
-        8:  453:        size_type __rlen = _VSTD::min(size(), __sv.size());
-        8:  453-block  0
-branch  0 taken 8
+function _ZNKSt3__117basic_string_viewIcNS_11char_traitsIcEEE7compareES3_ called 14 returned 100% blocks executed 75%
+       14:  451:    _LIBCPP_CONSTEXPR_SINCE_CXX14 int compare(basic_string_view __sv) const _NOEXCEPT
+       14:  452:    {
+       14:  453:        size_type __rlen = _VSTD::min(size(), __sv.size());
+       14:  453-block  0
+branch  0 taken 14
 branch  1 taken 0
     $$$$$:  453-block  1
-        8:  454:        int __retval = _Traits::compare(data(), __sv.data(), __rlen);
-        8:  455:        if (__retval == 0) // first __rlen chars matched
-        8:  455-block  0
+       14:  454:        int __retval = _Traits::compare(data(), __sv.data(), __rlen);
+       14:  455:        if (__retval == 0) // first __rlen chars matched
+       14:  455-block  0
 branch  0 taken 0
-branch  1 taken 8
-        8:  456:            __retval = size() == __sv.size() ? 0 : (size() < __sv.size() ? -1 : 1);
-        8:  456-block  0
-branch  0 taken 8
+branch  1 taken 14
+       14:  456:            __retval = size() == __sv.size() ? 0 : (size() < __sv.size() ? -1 : 1);
+       14:  456-block  0
+branch  0 taken 14
 branch  1 taken 0
-        8:  456-block  1
+       14:  456-block  1
     $$$$$:  456-block  2
-        8:  456-block  3
-        8:  457:        return __retval;
-        8:  457-block  0
+       14:  456-block  3
+       14:  457:        return __retval;
+       14:  457-block  0
         -:  458:    }
         -:  459:
         -:  460:    _LIBCPP_CONSTEXPR_SINCE_CXX14 _LIBCPP_INLINE_VISIBILITY
@@ -786,19 +786,19 @@ branch  1 taken 0
         -:  745:// operator ==
         -:  746:template<class _CharT, class _Traits>
         -:  747:_LIBCPP_CONSTEXPR_SINCE_CXX14 _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__1eqB7v160006IcNS_11char_traitsIcEEEEbNS_17basic_string_viewIT_T0_EES6_ called 10 returned 100% blocks executed 100%
-       10:  748:bool operator==(basic_string_view<_CharT, _Traits> __lhs,
+function _ZNSt3__1eqB7v160006IcNS_11char_traitsIcEEEEbNS_17basic_string_viewIT_T0_EES6_ called 16 returned 100% blocks executed 100%
+       16:  748:bool operator==(basic_string_view<_CharT, _Traits> __lhs,
         -:  749:                basic_string_view<_CharT, _Traits> __rhs) _NOEXCEPT
-       10:  750:{
-       10:  751:    if (__lhs.size() != __rhs.size()) return false;
-       10:  751-block  0
+       16:  750:{
+       16:  751:    if (__lhs.size() != __rhs.size()) return false;
+       16:  751-block  0
 branch  0 taken 2
-branch  1 taken 8
+branch  1 taken 14
         2:  751-block  1
-        8:  752:    return __lhs.compare(__rhs) == 0;
-        8:  752-block  0
-       10:  753:}
-       10:  753-block  0
+       14:  752:    return __lhs.compare(__rhs) == 0;
+       14:  752-block  0
+       16:  753:}
+       16:  753-block  0
         -:  754:
         -:  755:// The dummy default template parameters are used to work around a MSVC issue with mangling, see VSO-409326 for details.
         -:  756:// This applies to the other sufficient overloads below for the other comparison operators.

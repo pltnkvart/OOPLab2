@@ -105,8 +105,8 @@
         -:  100:using ::strerror _LIBCPP_USING_IF_EXISTS;
         -:  101:using ::strlen _LIBCPP_USING_IF_EXISTS;
         -:  102:
-function _ZNSt3__118__constexpr_strlenB7v160006EPKc called 245 returned 100% blocks executed 100%
-      245:  103:inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 size_t __constexpr_strlen(const char* __str) {
+function _ZNSt3__118__constexpr_strlenB7v160006EPKc called 362 returned 100% blocks executed 100%
+      362:  103:inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 size_t __constexpr_strlen(const char* __str) {
         -:  104:  // GCC currently doesn't support __builtin_strlen for heap-allocated memory during constant evaluation.
         -:  105:  // https://gcc.gnu.org/bugzilla/show_bug.cgi?id=70816
         -:  106:#ifdef _LIBCPP_COMPILER_GCC
@@ -117,14 +117,14 @@ function _ZNSt3__118__constexpr_strlenB7v160006EPKc called 245 returned 100% blo
         -:  111:    return __i;
         -:  112:  }
         -:  113:#endif
-      245:  114:  return __builtin_strlen(__str);
-      245:  114-block  0
+      362:  114:  return __builtin_strlen(__str);
+      362:  114-block  0
         -:  115:}
         -:  116:
         -:  117:template <class _Tp>
         -:  118:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 int
-function _ZNSt3__118__constexpr_memcmpB7v160006IcEEiPKT_S3_m called 5 returned 100% blocks executed 100%
-        5:  119:__constexpr_memcmp(const _Tp* __lhs, const _Tp* __rhs, size_t __count) {
+function _ZNSt3__118__constexpr_memcmpB7v160006IcEEiPKT_S3_m called 12 returned 100% blocks executed 100%
+       12:  119:__constexpr_memcmp(const _Tp* __lhs, const _Tp* __rhs, size_t __count) {
         -:  120:#ifdef _LIBCPP_COMPILER_GCC
         -:  121:  if (__libcpp_is_constant_evaluated()) {
         -:  122:    for (; __count; --__count, ++__lhs, ++__rhs) {
@@ -136,8 +136,8 @@ function _ZNSt3__118__constexpr_memcmpB7v160006IcEEiPKT_S3_m called 5 returned 1
         -:  128:    return 0;
         -:  129:  }
         -:  130:#endif
-        5:  131:  return __builtin_memcmp(__lhs, __rhs, __count);
-        5:  131-block  0
+       12:  131:  return __builtin_memcmp(__lhs, __rhs, __count);
+       12:  131-block  0
         -:  132:}
         -:  133:
         -:  134:inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 const char*

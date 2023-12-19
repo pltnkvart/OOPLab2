@@ -33,27 +33,27 @@
         -:   28:_LIBCPP_NODISCARD_EXT inline
         -:   29:_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
         -:   30:const _Tp&
-function _ZNSt3__13minB7v160006ImNS_6__lessImmEEEERKT_S5_S5_T0_ called 57 returned 100% blocks executed 75%
-       57:   31:min(const _Tp& __a, const _Tp& __b, _Compare __comp)
-       57:   32:{
-       57:   33:    return __comp(__b, __a) ? __b : __a;
-       57:   33-block  0
+function _ZNSt3__13minB7v160006ImNS_6__lessImmEEEERKT_S5_S5_T0_ called 81 returned 100% blocks executed 75%
+       81:   31:min(const _Tp& __a, const _Tp& __b, _Compare __comp)
+       81:   32:{
+       81:   33:    return __comp(__b, __a) ? __b : __a;
+       81:   33-block  0
 branch  0 taken 0
-branch  1 taken 57
+branch  1 taken 81
     $$$$$:   33-block  1
-       57:   33-block  2
-       57:   33-block  3
+       81:   33-block  2
+       81:   33-block  3
         -:   34:}
         -:   35:
         -:   36:template <class _Tp>
         -:   37:_LIBCPP_NODISCARD_EXT inline
         -:   38:_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX14
         -:   39:const _Tp&
-function _ZNSt3__13minB7v160006ImEERKT_S3_S3_ called 57 returned 100% blocks executed 100%
-       57:   40:min(const _Tp& __a, const _Tp& __b)
-       57:   41:{
-       57:   42:    return _VSTD::min(__a, __b, __less<_Tp>());
-       57:   42-block  0
+function _ZNSt3__13minB7v160006ImEERKT_S3_S3_ called 81 returned 100% blocks executed 100%
+       81:   40:min(const _Tp& __a, const _Tp& __b)
+       81:   41:{
+       81:   42:    return _VSTD::min(__a, __b, __less<_Tp>());
+       81:   42-block  0
         -:   43:}
         -:   44:
         -:   45:#ifndef _LIBCPP_CXX03_LANG

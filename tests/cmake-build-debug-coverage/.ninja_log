@@ -1,10 +1,10 @@
 # ninja log v5
-917	960	1698238128243327785	Tests	90c764297231ec83
-2388	2402	1698232341252404000	lib/libgtest_maind.a	43ca529d8fa44cc5
-2352	2388	1698232341238521000	lib/libgtestd.a	49d0bf04b6f1a1e1
-3	917	1698238128198595392	CMakeFiles/Tests.dir/test.cpp.o	a37cd04fcd2af27b
-0	2352	1698232341194486266	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	838cf13a994d1203
-0	830	1698232339675780943	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	75436cd230a25617
-4	647	1698234459275891598	CMakeFiles/Tests.dir/Users/plotnikovartem/CLionProjects/OOP/Lab2/train/train.cpp.o	1620227397df60a2
-3	526	1698236997723378115	CMakeFiles/Tests.dir/Users/plotnikovartem/CLionProjects/OOP/Lab2/container/container.cpp.o	c9a18ae73dfca66c
 0	701	1698232339545990512	CMakeFiles/Tests.dir/Users/plotnikovartem/CLionProjects/OOP/Lab2/input/inputFunc.cpp.o	fd59f379c5f79f5c
+3	627	1698316076822646317	CMakeFiles/Tests.dir/Users/plotnikovartem/CLionProjects/OOP/Lab2/container/container.cpp.o	c9a18ae73dfca66c
+4	792	1699518221775910844	CMakeFiles/Tests.dir/Users/plotnikovartem/CLionProjects/OOP/Lab2/train/train.cpp.o	1620227397df60a2
+6	820	1698252753461377098	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	75436cd230a25617
+5	2266	1698252754902360549	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	838cf13a994d1203
+7	1024	1699518450834208359	CMakeFiles/Tests.dir/test.cpp.o	a37cd04fcd2af27b
+2266	2304	1698252754950650000	lib/libgtestd.a	49d0bf04b6f1a1e1
+2304	2319	1698252754965794000	lib/libgtest_maind.a	43ca529d8fa44cc5
+1024	1136	1699518450948203085	Tests	90c764297231ec83

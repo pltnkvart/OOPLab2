@@ -1142,12 +1142,12 @@ function _ZNSt3__14endlB7v160006IcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0
         -: 1079:
         -: 1080:template<class _CharT, class _Traits, class _Allocator>
         -: 1081:basic_ostream<_CharT, _Traits>&
-function _ZNSt3__1lsB7v160006IcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE called 2 returned 100% blocks executed 100%
-        2: 1082:operator<<(basic_ostream<_CharT, _Traits>& __os,
+function _ZNSt3__1lsB7v160006IcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE called 6 returned 100% blocks executed 100%
+        6: 1082:operator<<(basic_ostream<_CharT, _Traits>& __os,
         -: 1083:           const basic_string<_CharT, _Traits, _Allocator>& __str)
-        2: 1084:{
-        2: 1085:    return _VSTD::__put_character_sequence(__os, __str.data(), __str.size());
-        2: 1085-block  0
+        6: 1084:{
+        6: 1085:    return _VSTD::__put_character_sequence(__os, __str.data(), __str.size());
+        6: 1085-block  0
         -: 1086:}
         -: 1087:
         -: 1088:template<class _CharT, class _Traits>

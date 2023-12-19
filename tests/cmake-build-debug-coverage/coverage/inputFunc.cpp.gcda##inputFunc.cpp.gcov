@@ -6,8 +6,8 @@
         -:    1:#include "inputFunc.h"
         -:    2:#include <iostream>
         -:    3:
-function _Z13convertToenumi called 1 returned 100% blocks executed 100%
-        1:    4:std::string convertToenum(int val) {
-        1:    5:    return std::string(enum_string[val]);
-        1:    5-block  0
+function _Z13convertToenumi called 3 returned 100% blocks executed 100%
+        3:    4:std::string convertToenum(int val) {
+        3:    5:    return std::string(enum_string[val]);
+        3:    5-block  0
         -:    6:}

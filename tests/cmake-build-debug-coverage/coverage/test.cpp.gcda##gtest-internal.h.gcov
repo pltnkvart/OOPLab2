@@ -300,7 +300,11 @@
         -:  295:  // around may change its bits, although the new value is guaranteed
         -:  296:  // to be also a NAN.  Therefore, don't expect this constructor to
         -:  297:  // preserve the bits in x when x is a NAN.
-        -:  298:  explicit FloatingPoint(const RawType& x) { u_.value_ = x; }
+function _ZN7testing8internal13FloatingPointIdEC1ERKd called 28 returned 100% blocks executed 100%
+function _ZN7testing8internal13FloatingPointIdEC2ERKd called 28 returned 100% blocks executed 100%
+       56:  298:  explicit FloatingPoint(const RawType& x) { u_.value_ = x; }
+       28:  298-block  0
+       28:  298-block  1
         -:  299:
         -:  300:  // Static methods
         -:  301:
@@ -327,19 +331,32 @@
         -:  322:  const Bits &bits() const { return u_.bits_; }
         -:  323:
         -:  324:  // Returns the exponent bits of this number.
-        -:  325:  Bits exponent_bits() const { return kExponentBitMask & u_.bits_; }
+function _ZNK7testing8internal13FloatingPointIdE13exponent_bitsEv called 28 returned 100% blocks executed 100%
+       28:  325:  Bits exponent_bits() const { return kExponentBitMask & u_.bits_; }
+       28:  325-block  0
         -:  326:
         -:  327:  // Returns the fraction bits of this number.
-        -:  328:  Bits fraction_bits() const { return kFractionBitMask & u_.bits_; }
+function _ZNK7testing8internal13FloatingPointIdE13fraction_bitsEv called 0 returned 0% blocks executed 0%
+    #####:  328:  Bits fraction_bits() const { return kFractionBitMask & u_.bits_; }
+    $$$$$:  328-block  0
         -:  329:
         -:  330:  // Returns the sign bit of this number.
         -:  331:  Bits sign_bit() const { return kSignBitMask & u_.bits_; }
         -:  332:
         -:  333:  // Returns true if and only if this is NAN (not a number).
-        -:  334:  bool is_nan() const {
+function _ZNK7testing8internal13FloatingPointIdE6is_nanEv called 28 returned 100% blocks executed 50%
+       28:  334:  bool is_nan() const {
         -:  335:    // It's a NAN if the exponent bits are all ones and the fraction
         -:  336:    // bits are not entirely zeros.
-        -:  337:    return (exponent_bits() == kExponentBitMask) && (fraction_bits() != 0);
+       28:  337:    return (exponent_bits() == kExponentBitMask) && (fraction_bits() != 0);
+       28:  337-block  0
+branch  0 taken 0
+branch  1 taken 28
+    $$$$$:  337-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  337-block  2
+       28:  337-block  3
         -:  338:  }
         -:  339:
         -:  340:  // Returns true if and only if this number is at most kMaxUlps ULP's away
@@ -348,14 +365,26 @@
         -:  343:  //   - returns false if either number is (or both are) NAN.
         -:  344:  //   - treats really large numbers as almost equal to infinity.
         -:  345:  //   - thinks +0.0 and -0.0 are 0 DLP's apart.
-        -:  346:  bool AlmostEquals(const FloatingPoint& rhs) const {
+function _ZNK7testing8internal13FloatingPointIdE12AlmostEqualsERKS2_ called 14 returned 100% blocks executed 83%
+       14:  346:  bool AlmostEquals(const FloatingPoint& rhs) const {
         -:  347:    // The IEEE standard says that any comparison operation involving
         -:  348:    // a NAN must return false.
-        -:  349:    if (is_nan() || rhs.is_nan()) return false;
+       14:  349:    if (is_nan() || rhs.is_nan()) return false;
+       14:  349-block  0
+branch  0 taken 14
+branch  1 taken 0
+       14:  349-block  1
+branch  2 taken 0
+branch  3 taken 14
+       14:  349-block  2
+    $$$$$:  349-block  3
         -:  350:
-        -:  351:    return DistanceBetweenSignAndMagnitudeNumbers(u_.bits_, rhs.u_.bits_)
-        -:  352:        <= kMaxUlps;
-        -:  353:  }
+       28:  351:    return DistanceBetweenSignAndMagnitudeNumbers(u_.bits_, rhs.u_.bits_)
+       14:  351-block  0
+       14:  351-block  1
+       14:  352:        <= kMaxUlps;
+       14:  353:  }
+       14:  353-block  0
         -:  354:
         -:  355: private:
         -:  356:  // The data type used to store the actual floating-point number.
@@ -379,23 +408,37 @@
         -:  374:  //
         -:  375:  // Read http://en.wikipedia.org/wiki/Signed_number_representations
         -:  376:  // for more details on signed number representations.
-        -:  377:  static Bits SignAndMagnitudeToBiased(const Bits &sam) {
-        -:  378:    if (kSignBitMask & sam) {
+function _ZN7testing8internal13FloatingPointIdE24SignAndMagnitudeToBiasedERKy called 28 returned 100% blocks executed 75%
+       28:  377:  static Bits SignAndMagnitudeToBiased(const Bits &sam) {
+       28:  378:    if (kSignBitMask & sam) {
+       28:  378-block  0
+branch  0 taken 0
+branch  1 taken 28
         -:  379:      // sam represents a negative number.
-        -:  380:      return ~sam + 1;
+    #####:  380:      return ~sam + 1;
+    $$$$$:  380-block  0
         -:  381:    } else {
         -:  382:      // sam represents a positive number.
-        -:  383:      return kSignBitMask | sam;
+       28:  383:      return kSignBitMask | sam;
+       28:  383-block  0
         -:  384:    }
-        -:  385:  }
+       28:  385:  }
+       28:  385-block  0
         -:  386:
         -:  387:  // Given two numbers in the sign-and-magnitude representation,
         -:  388:  // returns the distance between them as an unsigned number.
-        -:  389:  static Bits DistanceBetweenSignAndMagnitudeNumbers(const Bits &sam1,
-        -:  390:                                                     const Bits &sam2) {
-        -:  391:    const Bits biased1 = SignAndMagnitudeToBiased(sam1);
-        -:  392:    const Bits biased2 = SignAndMagnitudeToBiased(sam2);
-        -:  393:    return (biased1 >= biased2) ? (biased1 - biased2) : (biased2 - biased1);
+function _ZN7testing8internal13FloatingPointIdE38DistanceBetweenSignAndMagnitudeNumbersERKyS4_ called 14 returned 100% blocks executed 75%
+       14:  389:  static Bits DistanceBetweenSignAndMagnitudeNumbers(const Bits &sam1,
+       14:  390:                                                     const Bits &sam2) {
+       14:  391:    const Bits biased1 = SignAndMagnitudeToBiased(sam1);
+       14:  392:    const Bits biased2 = SignAndMagnitudeToBiased(sam2);
+       14:  393:    return (biased1 >= biased2) ? (biased1 - biased2) : (biased2 - biased1);
+       14:  393-block  0
+branch  0 taken 14
+branch  1 taken 0
+       14:  393-block  1
+    $$$$$:  393-block  2
+       14:  393-block  3
         -:  394:  }
         -:  395:
         -:  396:  FloatingPointUnion u_;
@@ -469,9 +512,9 @@ function _ZN7testing8internal15TestFactoryBaseD2Ev called 0 returned 0% blocks e
         -:  458:  virtual Test* CreateTest() = 0;
         -:  459:
         -:  460: protected:
-function _ZN7testing8internal15TestFactoryBaseC2Ev called 18 returned 100% blocks executed 100%
-       18:  461:  TestFactoryBase() {}
-       18:  461-block  0
+function _ZN7testing8internal15TestFactoryBaseC2Ev called 27 returned 100% blocks executed 100%
+       27:  461:  TestFactoryBase() {}
+       27:  461-block  0
         -:  462:
         -:  463: private:
         -:  464:  GTEST_DISALLOW_COPY_AND_ASSIGN_(TestFactoryBase);
@@ -494,10 +537,19 @@ function _ZN7testing8internal15TestFactoryImplI43ContainerOutputOperator_OutputO
 function _ZN7testing8internal15TestFactoryImplI31ContainerAddCargo_AddCargo_TestEC1Ev called 1 returned 100% blocks executed 100%
 function _ZN7testing8internal15TestFactoryImplI40TrainConstructor_DefaultConstructor_TestEC1Ev called 1 returned 100% blocks executed 100%
 function _ZN7testing8internal15TestFactoryImplI46TrainConstructor_ParameterizedConstructor_TestEC1Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI47TrainConstructor_ConstructorByOneContainer_TestEC1Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI37TrainInputOperator_InputOperator_TestEC1Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI39TrainOutputOperator_OutputOperator_TestEC1Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI41TrainDeleteContainer_DeleteContainer_TestEC1Ev called 1 returned 100% blocks executed 100%
 function _ZN7testing8internal15TestFactoryImplI37TrainConstructor_CopyConstructor_TestEC1Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI55TrainMoveAssignmentOperator_MoveAssignmentOperator_TestEC1Ev called 1 returned 100% blocks executed 100%
 function _ZN7testing8internal15TestFactoryImplI45TrainGettersAndSetters_GettersAndSetters_TestEC1Ev called 1 returned 100% blocks executed 100%
 function _ZN7testing8internal15TestFactoryImplI29TrainCountMass_CountMass_TestEC1Ev called 1 returned 100% blocks executed 100%
 function _ZN7testing8internal15TestFactoryImplI41TrainCountCenterMass_CountCenterMass_TestEC1Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI43TrainEnsuringSecurity_EnsuringSecurity_TestEC1Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI36TrainTest_RemoveEmptyContainers_TestEC1Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI37TrainTest_AssignmentOperatorTest_TestEC1Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI26TrainTest_AddingThrow_TestEC1Ev called 1 returned 100% blocks executed 100%
 function _ZN7testing8internal15TestFactoryImplI43ContainerConstuctor_DefaultConstructor_TestEC2Ev called 1 returned 100% blocks executed 100%
 function _ZN7testing8internal15TestFactoryImplI43ContainerConstuctor_DefaultConstructor_TestED1Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI43ContainerConstuctor_DefaultConstructor_TestED0Ev called 0 returned 0% blocks executed 0%
@@ -554,10 +606,30 @@ function _ZN7testing8internal15TestFactoryImplI46TrainConstructor_ParameterizedC
 function _ZN7testing8internal15TestFactoryImplI46TrainConstructor_ParameterizedConstructor_TestED1Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI46TrainConstructor_ParameterizedConstructor_TestED0Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI46TrainConstructor_ParameterizedConstructor_TestED2Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI47TrainConstructor_ConstructorByOneContainer_TestEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI47TrainConstructor_ConstructorByOneContainer_TestED1Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI47TrainConstructor_ConstructorByOneContainer_TestED0Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI47TrainConstructor_ConstructorByOneContainer_TestED2Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI37TrainInputOperator_InputOperator_TestEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI37TrainInputOperator_InputOperator_TestED1Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI37TrainInputOperator_InputOperator_TestED0Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI37TrainInputOperator_InputOperator_TestED2Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI39TrainOutputOperator_OutputOperator_TestEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI39TrainOutputOperator_OutputOperator_TestED1Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI39TrainOutputOperator_OutputOperator_TestED0Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI39TrainOutputOperator_OutputOperator_TestED2Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI41TrainDeleteContainer_DeleteContainer_TestEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI41TrainDeleteContainer_DeleteContainer_TestED1Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI41TrainDeleteContainer_DeleteContainer_TestED0Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI41TrainDeleteContainer_DeleteContainer_TestED2Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI37TrainConstructor_CopyConstructor_TestEC2Ev called 1 returned 100% blocks executed 100%
 function _ZN7testing8internal15TestFactoryImplI37TrainConstructor_CopyConstructor_TestED1Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI37TrainConstructor_CopyConstructor_TestED0Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI37TrainConstructor_CopyConstructor_TestED2Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI55TrainMoveAssignmentOperator_MoveAssignmentOperator_TestEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI55TrainMoveAssignmentOperator_MoveAssignmentOperator_TestED1Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI55TrainMoveAssignmentOperator_MoveAssignmentOperator_TestED0Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI55TrainMoveAssignmentOperator_MoveAssignmentOperator_TestED2Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI45TrainGettersAndSetters_GettersAndSetters_TestEC2Ev called 1 returned 100% blocks executed 100%
 function _ZN7testing8internal15TestFactoryImplI45TrainGettersAndSetters_GettersAndSetters_TestED1Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI45TrainGettersAndSetters_GettersAndSetters_TestED0Ev called 0 returned 0% blocks executed 0%
@@ -570,6 +642,22 @@ function _ZN7testing8internal15TestFactoryImplI41TrainCountCenterMass_CountCente
 function _ZN7testing8internal15TestFactoryImplI41TrainCountCenterMass_CountCenterMass_TestED1Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI41TrainCountCenterMass_CountCenterMass_TestED0Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI41TrainCountCenterMass_CountCenterMass_TestED2Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI43TrainEnsuringSecurity_EnsuringSecurity_TestEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI43TrainEnsuringSecurity_EnsuringSecurity_TestED1Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI43TrainEnsuringSecurity_EnsuringSecurity_TestED0Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI43TrainEnsuringSecurity_EnsuringSecurity_TestED2Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI36TrainTest_RemoveEmptyContainers_TestEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI36TrainTest_RemoveEmptyContainers_TestED1Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI36TrainTest_RemoveEmptyContainers_TestED0Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI36TrainTest_RemoveEmptyContainers_TestED2Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI37TrainTest_AssignmentOperatorTest_TestEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI37TrainTest_AssignmentOperatorTest_TestED1Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI37TrainTest_AssignmentOperatorTest_TestED0Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI37TrainTest_AssignmentOperatorTest_TestED2Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI26TrainTest_AddingThrow_TestEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI26TrainTest_AddingThrow_TestED1Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI26TrainTest_AddingThrow_TestED0Ev called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI26TrainTest_AddingThrow_TestED2Ev called 0 returned 0% blocks executed 0%
         -:  470:class TestFactoryImpl : public TestFactoryBase {
         -:  471: public:
 function _ZN7testing8internal15TestFactoryImplI43ContainerConstuctor_DefaultConstructor_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
@@ -586,11 +674,20 @@ function _ZN7testing8internal15TestFactoryImplI43ContainerOutputOperator_OutputO
 function _ZN7testing8internal15TestFactoryImplI31ContainerAddCargo_AddCargo_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
 function _ZN7testing8internal15TestFactoryImplI40TrainConstructor_DefaultConstructor_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
 function _ZN7testing8internal15TestFactoryImplI46TrainConstructor_ParameterizedConstructor_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
+function _ZN7testing8internal15TestFactoryImplI47TrainConstructor_ConstructorByOneContainer_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
+function _ZN7testing8internal15TestFactoryImplI37TrainInputOperator_InputOperator_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
+function _ZN7testing8internal15TestFactoryImplI39TrainOutputOperator_OutputOperator_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
+function _ZN7testing8internal15TestFactoryImplI41TrainDeleteContainer_DeleteContainer_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
 function _ZN7testing8internal15TestFactoryImplI37TrainConstructor_CopyConstructor_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
+function _ZN7testing8internal15TestFactoryImplI55TrainMoveAssignmentOperator_MoveAssignmentOperator_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
 function _ZN7testing8internal15TestFactoryImplI45TrainGettersAndSetters_GettersAndSetters_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
 function _ZN7testing8internal15TestFactoryImplI29TrainCountMass_CountMass_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
 function _ZN7testing8internal15TestFactoryImplI41TrainCountCenterMass_CountCenterMass_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
-       18:  472:  Test* CreateTest() override { return new TestClass; }
+function _ZN7testing8internal15TestFactoryImplI43TrainEnsuringSecurity_EnsuringSecurity_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
+function _ZN7testing8internal15TestFactoryImplI36TrainTest_RemoveEmptyContainers_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
+function _ZN7testing8internal15TestFactoryImplI37TrainTest_AssignmentOperatorTest_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
+function _ZN7testing8internal15TestFactoryImplI26TrainTest_AddingThrow_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
+       27:  472:  Test* CreateTest() override { return new TestClass; }
         1:  472-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -699,6 +796,60 @@ branch 35 taken 0
         1:  472-block 69
     $$$$$:  472-block 70
     $$$$$:  472-block 71
+        1:  472-block 72
+branch 36 taken 1
+branch 37 taken 0
+        1:  472-block 73
+    $$$$$:  472-block 74
+    $$$$$:  472-block 75
+        1:  472-block 76
+branch 38 taken 1
+branch 39 taken 0
+        1:  472-block 77
+    $$$$$:  472-block 78
+    $$$$$:  472-block 79
+        1:  472-block 80
+branch 40 taken 1
+branch 41 taken 0
+        1:  472-block 81
+    $$$$$:  472-block 82
+    $$$$$:  472-block 83
+        1:  472-block 84
+branch 42 taken 1
+branch 43 taken 0
+        1:  472-block 85
+    $$$$$:  472-block 86
+    $$$$$:  472-block 87
+        1:  472-block 88
+branch 44 taken 1
+branch 45 taken 0
+        1:  472-block 89
+    $$$$$:  472-block 90
+    $$$$$:  472-block 91
+        1:  472-block 92
+branch 46 taken 1
+branch 47 taken 0
+        1:  472-block 93
+    $$$$$:  472-block 94
+    $$$$$:  472-block 95
+        1:  472-block 96
+branch 48 taken 1
+branch 49 taken 0
+        1:  472-block 97
+    $$$$$:  472-block 98
+    $$$$$:  472-block 99
+        1:  472-block 100
+branch 50 taken 1
+branch 51 taken 0
+        1:  472-block 101
+    $$$$$:  472-block 102
+    $$$$$:  472-block 103
+        1:  472-block 104
+branch 52 taken 1
+branch 53 taken 0
+        1:  472-block 105
+    $$$$$:  472-block 106
+    $$$$$:  472-block 107
         -:  473:};
         -:  474:
         -:  475:#if GTEST_OS_WINDOWS
@@ -718,15 +869,15 @@ branch 35 taken 0
         -:  489:using SetUpTestSuiteFunc = void (*)();
         -:  490:using TearDownTestSuiteFunc = void (*)();
         -:  491:
-function _ZN7testing8internal12CodeLocationD1Ev called 36 returned 100% blocks executed 100%
-function _ZN7testing8internal12CodeLocationD2Ev called 36 returned 100% blocks executed 100%
+function _ZN7testing8internal12CodeLocationD1Ev called 54 returned 100% blocks executed 100%
+function _ZN7testing8internal12CodeLocationD2Ev called 54 returned 100% blocks executed 100%
         -:  492:struct CodeLocation {
-function _ZN7testing8internal12CodeLocationC1ERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEi called 18 returned 100% blocks executed 100%
-function _ZN7testing8internal12CodeLocationC2ERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEi called 18 returned 100% blocks executed 100%
-       36:  493:  CodeLocation(const std::string& a_file, int a_line)
-       36:  494:      : file(a_file), line(a_line) {}
-       18:  494-block  0
-       18:  494-block  1
+function _ZN7testing8internal12CodeLocationC1ERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEi called 27 returned 100% blocks executed 100%
+function _ZN7testing8internal12CodeLocationC2ERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEi called 27 returned 100% blocks executed 100%
+       54:  493:  CodeLocation(const std::string& a_file, int a_line)
+       54:  494:      : file(a_file), line(a_line) {}
+       27:  494-block  0
+       27:  494-block  1
         -:  495:
         -:  496:  std::string file;
         -:  497:  int line;
@@ -738,16 +889,16 @@ function _ZN7testing8internal12CodeLocationC2ERKNSt3__112basic_stringIcNS2_11cha
         -:  503:// Utility functions to help SuiteApiResolver
         -:  504:using SetUpTearDownSuiteFuncType = void (*)();
         -:  505:
-function _ZN7testing8internal19GetNotDefaultOrNullEPFvvES2_ called 72 returned 100% blocks executed 75%
-       72:  506:inline SetUpTearDownSuiteFuncType GetNotDefaultOrNull(
-       72:  507:    SetUpTearDownSuiteFuncType a, SetUpTearDownSuiteFuncType def) {
-       72:  508:  return a == def ? nullptr : a;
-       72:  508-block  0
-branch  0 taken 72
+function _ZN7testing8internal19GetNotDefaultOrNullEPFvvES2_ called 108 returned 100% blocks executed 75%
+      108:  506:inline SetUpTearDownSuiteFuncType GetNotDefaultOrNull(
+      108:  507:    SetUpTearDownSuiteFuncType a, SetUpTearDownSuiteFuncType def) {
+      108:  508:  return a == def ? nullptr : a;
+      108:  508-block  0
+branch  0 taken 108
 branch  1 taken 0
-       72:  508-block  1
+      108:  508-block  1
     $$$$$:  508-block  2
-       72:  508-block  3
+      108:  508-block  3
         -:  509:}
         -:  510:
         -:  511:template <typename T>
@@ -760,27 +911,27 @@ branch  1 taken 0
         -:  518:  using Test =
         -:  519:      typename std::conditional<sizeof(T) != 0, ::testing::Test, void>::type;
         -:  520:
-function _ZN7testing8internal16SuiteApiResolverINS_4TestEE19GetSetUpCaseOrSuiteEPKci called 18 returned 100% blocks executed 33%
-       18:  521:  static SetUpTearDownSuiteFuncType GetSetUpCaseOrSuite(const char* filename,
-       18:  522:                                                        int line_num) {
+function _ZN7testing8internal16SuiteApiResolverINS_4TestEE19GetSetUpCaseOrSuiteEPKci called 27 returned 100% blocks executed 33%
+       27:  521:  static SetUpTearDownSuiteFuncType GetSetUpCaseOrSuite(const char* filename,
+       27:  522:                                                        int line_num) {
         -:  523:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
-       18:  524:    SetUpTearDownSuiteFuncType test_case_fp =
-       18:  525:        GetNotDefaultOrNull(&T::SetUpTestCase, &Test::SetUpTestCase);
-       18:  526:    SetUpTearDownSuiteFuncType test_suite_fp =
-       18:  527:        GetNotDefaultOrNull(&T::SetUpTestSuite, &Test::SetUpTestSuite);
+       27:  524:    SetUpTearDownSuiteFuncType test_case_fp =
+       27:  525:        GetNotDefaultOrNull(&T::SetUpTestCase, &Test::SetUpTestCase);
+       27:  526:    SetUpTearDownSuiteFuncType test_suite_fp =
+       27:  527:        GetNotDefaultOrNull(&T::SetUpTestSuite, &Test::SetUpTestSuite);
         -:  528:
-       18:  529:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
-       18:  529-block  0
+       27:  529:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
+       27:  529-block  0
 branch  0 taken 0
-branch  1 taken 18
+branch  1 taken 27
     $$$$$:  529-block  1
 branch  2 never executed
 branch  3 never executed
     $$$$$:  529-block  2
-       18:  529-block  3
-branch  4 taken 18
+       27:  529-block  3
+branch  4 taken 27
 branch  5 taken 0
-       18:  529-block  4
+       27:  529-block  4
     $$$$$:  529-block  5
 branch  6 never executed
 branch  7 never executed
@@ -806,13 +957,13 @@ branch  3 never executed
 branch  4 never executed
 branch  5 never executed
         -:  533:
-       18:  534:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
-       18:  534-block  0
+       27:  534:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
+       27:  534-block  0
 branch  0 taken 0
-branch  1 taken 18
+branch  1 taken 27
     $$$$$:  534-block  1
-       18:  534-block  2
-       18:  534-block  3
+       27:  534-block  2
+       27:  534-block  3
         -:  535:#else
         -:  536:    (void)(filename);
         -:  537:    (void)(line_num);
@@ -820,27 +971,27 @@ branch  1 taken 18
         -:  539:#endif
     #####:  540:  }
         -:  541:
-function _ZN7testing8internal16SuiteApiResolverINS_4TestEE22GetTearDownCaseOrSuiteEPKci called 18 returned 100% blocks executed 35%
-       18:  542:  static SetUpTearDownSuiteFuncType GetTearDownCaseOrSuite(const char* filename,
-       18:  543:                                                           int line_num) {
+function _ZN7testing8internal16SuiteApiResolverINS_4TestEE22GetTearDownCaseOrSuiteEPKci called 27 returned 100% blocks executed 35%
+       27:  542:  static SetUpTearDownSuiteFuncType GetTearDownCaseOrSuite(const char* filename,
+       27:  543:                                                           int line_num) {
         -:  544:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
-       18:  545:    SetUpTearDownSuiteFuncType test_case_fp =
-       18:  546:        GetNotDefaultOrNull(&T::TearDownTestCase, &Test::TearDownTestCase);
-       18:  547:    SetUpTearDownSuiteFuncType test_suite_fp =
-       18:  548:        GetNotDefaultOrNull(&T::TearDownTestSuite, &Test::TearDownTestSuite);
+       27:  545:    SetUpTearDownSuiteFuncType test_case_fp =
+       27:  546:        GetNotDefaultOrNull(&T::TearDownTestCase, &Test::TearDownTestCase);
+       27:  547:    SetUpTearDownSuiteFuncType test_suite_fp =
+       27:  548:        GetNotDefaultOrNull(&T::TearDownTestSuite, &Test::TearDownTestSuite);
         -:  549:
-       18:  550:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
-       18:  550-block  0
+       27:  550:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
+       27:  550-block  0
 branch  0 taken 0
-branch  1 taken 18
+branch  1 taken 27
     $$$$$:  550-block  1
 branch  2 never executed
 branch  3 never executed
     $$$$$:  550-block  2
-       18:  550-block  3
-branch  4 taken 18
+       27:  550-block  3
+branch  4 taken 27
 branch  5 taken 0
-       18:  550-block  4
+       27:  550-block  4
     $$$$$:  550-block  5
 branch  6 never executed
 branch  7 never executed
@@ -863,13 +1014,13 @@ branch  3 never executed
 branch  4 never executed
 branch  5 never executed
         -:  554:
-       18:  555:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
-       18:  555-block  0
+       27:  555:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
+       27:  555-block  0
 branch  0 taken 0
-branch  1 taken 18
+branch  1 taken 27
     $$$$$:  555-block  1
-       18:  555-block  2
-       18:  555-block  3
+       27:  555-block  2
+       27:  555-block  3
         -:  556:#else
         -:  557:    (void)(filename);
         -:  558:    (void)(line_num);
@@ -1171,19 +1322,19 @@ branch  1 taken 18
         -:  854:
         -:  855:// Helper for declaring std::string within 'if' statement
         -:  856:// in pre C++17 build environment.
-function _ZN7testing8internal14TrueWithStringD1Ev called 3 returned 100% blocks executed 100%
-function _ZN7testing8internal14TrueWithStringD2Ev called 3 returned 100% blocks executed 100%
+function _ZN7testing8internal14TrueWithStringD1Ev called 4 returned 100% blocks executed 100%
+function _ZN7testing8internal14TrueWithStringD2Ev called 4 returned 100% blocks executed 100%
         -:  857:struct TrueWithString {
-function _ZN7testing8internal14TrueWithStringC1Ev called 3 returned 100% blocks executed 100%
-function _ZN7testing8internal14TrueWithStringC2Ev called 3 returned 100% blocks executed 100%
-        6:  858:  TrueWithString() = default;
-        3:  858-block  0
-        3:  858-block  1
+function _ZN7testing8internal14TrueWithStringC1Ev called 4 returned 100% blocks executed 100%
+function _ZN7testing8internal14TrueWithStringC2Ev called 4 returned 100% blocks executed 100%
+        8:  858:  TrueWithString() = default;
+        4:  858-block  0
+        4:  858-block  1
         -:  859:  explicit TrueWithString(const char* str) : value(str) {}
         -:  860:  explicit TrueWithString(const std::string& str) : value(str) {}
-function _ZNK7testing8internal14TrueWithStringcvbEv called 3 returned 100% blocks executed 100%
-        3:  861:  explicit operator bool() const { return true; }
-        3:  861-block  0
+function _ZNK7testing8internal14TrueWithStringcvbEv called 4 returned 100% blocks executed 100%
+        4:  861:  explicit operator bool() const { return true; }
+        4:  861-block  0
         -:  862:  std::string value;
         -:  863:};
         -:  864:

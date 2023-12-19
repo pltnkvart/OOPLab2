@@ -20,8 +20,10 @@
         -:   15:/**
         -:   16: * @brief Class Container
         -:   17: */
-function _ZN9ContainerD1Ev called 46 returned 100% blocks executed 100%
-function _ZN9ContainerD2Ev called 46 returned 100% blocks executed 100%
+function _ZN9ContainerD1Ev called 213 returned 100% blocks executed 100%
+function _ZN9ContainerC1ERKS_ called 36 returned 100% blocks executed 100%
+function _ZN9ContainerD2Ev called 213 returned 100% blocks executed 100%
+function _ZN9ContainerC2ERKS_ called 36 returned 100% blocks executed 100%
         -:   18:class Container {
         -:   19:private:
         -:   20:    //! Name of container
@@ -41,27 +43,27 @@ function _ZN9ContainerD2Ev called 46 returned 100% blocks executed 100%
         -:   34:    /**
         -:   35:    * @brief Getting name of container
         -:   36:    */
-function _ZNK9Container7getNameEv called 5 returned 100% blocks executed 100%
-        5:   37:    std::string getName() const { return this->name; }
-        5:   37-block  0
+function _ZNK9Container7getNameEv called 11 returned 100% blocks executed 100%
+       11:   37:    std::string getName() const { return this->name; }
+       11:   37-block  0
         -:   38:    /**
         -:   39:    * @brief Getting mass of container
         -:   40:    */
-function _ZNK9Container7getMassEv called 26 returned 100% blocks executed 100%
-       26:   41:    double getMass() const { return mass; }
-       26:   41-block  0
+function _ZNK9Container7getMassEv called 117 returned 100% blocks executed 100%
+      117:   41:    double getMass() const { return mass; }
+      117:   41-block  0
         -:   42:    /**
         -:   43:    * @brief Getting volume of container
         -:   44:    */
-function _ZNK9Container9getVolumeEv called 11 returned 100% blocks executed 100%
-       11:   45:    double getVolume() const { return volume; }
-       11:   45-block  0
+function _ZNK9Container9getVolumeEv called 46 returned 100% blocks executed 100%
+       46:   45:    double getVolume() const { return volume; }
+       46:   45-block  0
         -:   46:    /**
         -:   47:    * @brief Getting category of container
         -:   48:    */
-function _ZNK9Container11getCategoryEv called 6 returned 100% blocks executed 100%
-        6:   49:    int getCategory() const { return category; }
-        6:   49-block  0
+function _ZNK9Container11getCategoryEv called 25 returned 100% blocks executed 100%
+       25:   49:    int getCategory() const { return category; }
+       25:   49-block  0
         -:   50:
         -:   51:    // setters
         -:   52:    Container &setName(std::string);

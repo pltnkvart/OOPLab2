@@ -103,6 +103,7 @@ std::istream& operator>>(std::istream& is, Container& container) {
 /**
  * @brief Overloading a given mass of cargo from one container to another
  * @param massToTransfer Mass of cargo to overload
+ * @throw std::runtime_error If not transition not possible
  * @param otherContainer Another container to overload
  */
 void Container::transferCargo(double massToTransfer, Container &otherContainer) {

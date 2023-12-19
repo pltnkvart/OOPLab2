@@ -686,16 +686,16 @@ function _ZNSt3__19use_facetB7v160006INS_5ctypeIcEEEERKT_RKNS_6localeE called 0 
         -:  679:    explicit ctype(const mask* __tab = nullptr, bool __del = false, size_t __refs = 0);
         -:  680:
         -:  681:    _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__15ctypeIcE2isB7v160006Ejc called 11 returned 100% blocks executed 75%
-       11:  682:    bool is(mask __m, char_type __c) const
-       11:  683:    {
-       11:  684:        return isascii(__c) ? (__tab_[static_cast<int>(__c)] & __m) !=0 : false;
-       11:  684-block  0
-branch  0 taken 11
+function _ZNKSt3__15ctypeIcE2isB7v160006Ejc called 33 returned 100% blocks executed 75%
+       33:  682:    bool is(mask __m, char_type __c) const
+       33:  683:    {
+       33:  684:        return isascii(__c) ? (__tab_[static_cast<int>(__c)] & __m) !=0 : false;
+       33:  684-block  0
+branch  0 taken 33
 branch  1 taken 0
-       11:  684-block  1
+       33:  684-block  1
     $$$$$:  684-block  2
-       11:  684-block  3
+       33:  684-block  3
         -:  685:    }
         -:  686:
         -:  687:    _LIBCPP_INLINE_VISIBILITY

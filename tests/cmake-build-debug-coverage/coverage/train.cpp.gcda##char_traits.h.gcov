@@ -209,9 +209,9 @@
         -:  204:#endif
         -:  205:
         -:  206:    static inline _LIBCPP_CONSTEXPR_SINCE_CXX17
-function _ZNSt3__111char_traitsIcE6assignERcRKc called 7 returned 100% blocks executed 100%
-        7:  207:    void assign(char_type& __c1, const char_type& __c2) _NOEXCEPT {__c1 = __c2;}
-        7:  207-block  0
+function _ZNSt3__111char_traitsIcE6assignERcRKc called 37 returned 100% blocks executed 100%
+       37:  207:    void assign(char_type& __c1, const char_type& __c2) _NOEXCEPT {__c1 = __c2;}
+       37:  207-block  0
         -:  208:    static inline _LIBCPP_CONSTEXPR bool eq(char_type __c1, char_type __c2) _NOEXCEPT
         -:  209:            {return __c1 == __c2;}
         -:  210:    static inline _LIBCPP_CONSTEXPR bool lt(char_type __c1, char_type __c2) _NOEXCEPT

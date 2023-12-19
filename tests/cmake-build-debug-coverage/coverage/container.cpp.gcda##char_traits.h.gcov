@@ -272,14 +272,14 @@ branch  1 never executed
         -:  248:
         -:  249:    static inline _LIBCPP_CONSTEXPR int_type  not_eof(int_type __c) _NOEXCEPT
         -:  250:        {return eq_int_type(__c, eof()) ? ~eof() : __c;}
-function _ZNSt3__111char_traitsIcE12to_char_typeEi called 11 returned 100% blocks executed 100%
-       11:  251:    static inline _LIBCPP_CONSTEXPR char_type to_char_type(int_type __c) _NOEXCEPT
-       11:  252:        {return char_type(__c);}
-       11:  252-block  0
-function _ZNSt3__111char_traitsIcE11to_int_typeEc called 21 returned 100% blocks executed 100%
-       21:  253:    static inline _LIBCPP_CONSTEXPR int_type to_int_type(char_type __c) _NOEXCEPT
-       21:  254:        {return int_type((unsigned char)__c);}
-       21:  254-block  0
+function _ZNSt3__111char_traitsIcE12to_char_typeEi called 33 returned 100% blocks executed 100%
+       33:  251:    static inline _LIBCPP_CONSTEXPR char_type to_char_type(int_type __c) _NOEXCEPT
+       33:  252:        {return char_type(__c);}
+       33:  252-block  0
+function _ZNSt3__111char_traitsIcE11to_int_typeEc called 63 returned 100% blocks executed 100%
+       63:  253:    static inline _LIBCPP_CONSTEXPR int_type to_int_type(char_type __c) _NOEXCEPT
+       63:  254:        {return int_type((unsigned char)__c);}
+       63:  254-block  0
 function _ZNSt3__111char_traitsIcE11eq_int_typeEii called 0 returned 0% blocks executed 0%
     #####:  255:    static inline _LIBCPP_CONSTEXPR bool eq_int_type(int_type __c1, int_type __c2) _NOEXCEPT
     #####:  256:        {return __c1 == __c2;}

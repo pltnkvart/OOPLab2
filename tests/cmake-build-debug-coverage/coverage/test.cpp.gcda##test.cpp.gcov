@@ -6,83 +6,49 @@
         -:    1:#include <gtest/gtest.h>
         -:    2:#include "../train/train.h"
         -:    3:
+        -:    4://CONTAINER TESTS
 function _ZN43ContainerConstuctor_DefaultConstructor_Test8TestBodyEv called 1 returned 100% blocks executed 40%
 function _ZN43ContainerConstuctor_DefaultConstructor_TestD1Ev called 1 returned 100% blocks executed 100%
 function _ZN43ContainerConstuctor_DefaultConstructor_TestD0Ev called 1 returned 100% blocks executed 100%
 function _ZN43ContainerConstuctor_DefaultConstructor_TestC1Ev called 1 returned 100% blocks executed 100%
 function _ZN43ContainerConstuctor_DefaultConstructor_TestC2Ev called 1 returned 100% blocks executed 100%
 function _ZN43ContainerConstuctor_DefaultConstructor_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:    4:TEST(ContainerConstuctor, DefaultConstructor) {
-        1:    4-block  0
+        7:    5:TEST(ContainerConstuctor, DefaultConstructor) {
+        1:    5-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:    4-block  1
+        1:    5-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:    4-block  2
+        1:    5-block  2
 branch  4 taken 1
 branch  5 taken 0
-        1:    4-block  3
+        1:    5-block  3
 branch  6 taken 1
 branch  7 taken 0
-        1:    4-block  4
+        1:    5-block  4
 branch  8 taken 1
 branch  9 taken 0
-        1:    4-block  5
+        1:    5-block  5
 branch 10 taken 1
 branch 11 taken 0
-        1:    4-block  6
+        1:    5-block  6
 branch 12 taken 1
 branch 13 taken 0
-        1:    4-block  7
-    $$$$$:    4-block  8
-    $$$$$:    4-block  9
-    $$$$$:    4-block 10
-    $$$$$:    4-block 11
-    $$$$$:    4-block 12
-    $$$$$:    4-block 13
-        1:    4-block 14
-        1:    4-block 15
-        1:    4-block 16
-        1:    4-block 17
-        1:    4-block 18
-        1:    5:    Container container;
-        1:    6:    ASSERT_EQ(container.getName(), "");
-        1:    6-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:    6-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:    6-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:    6-block  3
-branch  6 taken 0
-branch  7 taken 1
-        1:    6-block  4
-    $$$$$:    6-block  5
-    $$$$$:    6-block  6
-branch  8 never executed
-branch  9 never executed
-    $$$$$:    6-block  7
-branch 10 never executed
-branch 11 never executed
-    $$$$$:    6-block  8
-branch 12 never executed
-branch 13 never executed
-    $$$$$:    6-block  9
-branch 14 never executed
-branch 15 never executed
-    $$$$$:    6-block 10
-    $$$$$:    6-block 11
-    $$$$$:    6-block 12
-        1:    6-block 13
-        1:    6-block 14
-branch 16 taken 1
-branch 17 taken 0
-    $$$$$:    6-block 15
-        1:    7:    ASSERT_EQ(container.getMass(), 0);
+        1:    5-block  7
+    $$$$$:    5-block  8
+    $$$$$:    5-block  9
+    $$$$$:    5-block 10
+    $$$$$:    5-block 11
+    $$$$$:    5-block 12
+    $$$$$:    5-block 13
+        1:    5-block 14
+        1:    5-block 15
+        1:    5-block 16
+        1:    5-block 17
+        1:    5-block 18
+        1:    6:    Container container;
+        1:    7:    ASSERT_EQ(container.getName(), "");
         1:    7-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -97,26 +63,27 @@ branch  6 taken 0
 branch  7 taken 1
         1:    7-block  4
     $$$$$:    7-block  5
+    $$$$$:    7-block  6
 branch  8 never executed
 branch  9 never executed
-    $$$$$:    7-block  6
+    $$$$$:    7-block  7
 branch 10 never executed
 branch 11 never executed
-    $$$$$:    7-block  7
+    $$$$$:    7-block  8
 branch 12 never executed
 branch 13 never executed
-    $$$$$:    7-block  8
+    $$$$$:    7-block  9
 branch 14 never executed
 branch 15 never executed
-    $$$$$:    7-block  9
     $$$$$:    7-block 10
     $$$$$:    7-block 11
-        1:    7-block 12
+    $$$$$:    7-block 12
         1:    7-block 13
+        1:    7-block 14
 branch 16 taken 1
 branch 17 taken 0
-    $$$$$:    7-block 14
-        1:    8:    ASSERT_EQ(container.getVolume(), 0);
+    $$$$$:    7-block 15
+        1:    8:    ASSERT_EQ(container.getMass(), 0);
         1:    8-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -150,7 +117,7 @@ branch 15 never executed
 branch 16 taken 1
 branch 17 taken 0
     $$$$$:    8-block 14
-        1:    9:    ASSERT_EQ(container.getCategory(), EMPTY);
+        1:    9:    ASSERT_EQ(container.getVolume(), 0);
         1:    9-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -181,109 +148,108 @@ branch 15 never executed
     $$$$$:    9-block 11
         1:    9-block 12
         1:    9-block 13
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:    9-block 14
+        1:   10:    ASSERT_EQ(container.getCategory(), EMPTY);
+        1:   10-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   10-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   10-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   10-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:   10-block  4
+    $$$$$:   10-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   10-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:   10-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   10-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   10-block  9
+    $$$$$:   10-block 10
+    $$$$$:   10-block 11
+        1:   10-block 12
+        1:   10-block 13
 branch 16 taken 0
 branch 17 taken 1
-    $$$$$:    9-block 14
-        1:   10:}
-    $$$$$:   10-block  0
-    $$$$$:   10-block  1
-    $$$$$:   10-block  2
-    $$$$$:   10-block  3
-    $$$$$:   10-block  4
-    $$$$$:   10-block  5
-    $$$$$:   10-block  6
-    $$$$$:   10-block  7
-    $$$$$:   10-block  8
-        1:   10-block  9
-        1:   10-block 10
+    $$$$$:   10-block 14
+        1:   11:}
+    $$$$$:   11-block  0
+    $$$$$:   11-block  1
+    $$$$$:   11-block  2
+    $$$$$:   11-block  3
+    $$$$$:   11-block  4
+    $$$$$:   11-block  5
+    $$$$$:   11-block  6
+    $$$$$:   11-block  7
+    $$$$$:   11-block  8
+        1:   11-block  9
+        1:   11-block 10
 branch  0 taken 0
 branch  1 taken 1
-        1:   10-block 11
-    $$$$$:   10-block 12
-    $$$$$:   10-block 13
-        -:   11:
+        1:   11-block 11
+    $$$$$:   11-block 12
+    $$$$$:   11-block 13
+        -:   12:
 function _ZN58ContainerConstuctor_ParameterizedContainerConstructor_Test8TestBodyEv called 1 returned 100% blocks executed 40%
 function _ZN58ContainerConstuctor_ParameterizedContainerConstructor_TestD1Ev called 1 returned 100% blocks executed 100%
 function _ZN58ContainerConstuctor_ParameterizedContainerConstructor_TestD0Ev called 1 returned 100% blocks executed 100%
 function _ZN58ContainerConstuctor_ParameterizedContainerConstructor_TestC1Ev called 1 returned 100% blocks executed 100%
 function _ZN58ContainerConstuctor_ParameterizedContainerConstructor_TestC2Ev called 1 returned 100% blocks executed 100%
 function _ZN58ContainerConstuctor_ParameterizedContainerConstructor_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:   12:TEST(ContainerConstuctor, ParameterizedContainerConstructor) {
-        1:   12-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:   12-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:   12-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:   12-block  3
-branch  6 taken 1
-branch  7 taken 0
-        1:   12-block  4
-branch  8 taken 1
-branch  9 taken 0
-        1:   12-block  5
-branch 10 taken 1
-branch 11 taken 0
-        1:   12-block  6
-branch 12 taken 1
-branch 13 taken 0
-        1:   12-block  7
-    $$$$$:   12-block  8
-    $$$$$:   12-block  9
-    $$$$$:   12-block 10
-    $$$$$:   12-block 11
-    $$$$$:   12-block 12
-    $$$$$:   12-block 13
-        1:   12-block 14
-        1:   12-block 15
-        1:   12-block 16
-        1:   12-block 17
-        1:   12-block 18
-        1:   13:    Container container("a", 3.1, 4.2, BULK);
+        7:   13:TEST(ContainerConstuctor, ParameterizedContainerConstructor) {
         1:   13-block  0
 branch  0 taken 1
 branch  1 taken 0
-    $$$$$:   13-block  1
-    $$$$$:   13-block  2
-        1:   14:    ASSERT_EQ(container.getName(), "a");
+        1:   13-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   13-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   13-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:   13-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:   13-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:   13-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:   13-block  7
+    $$$$$:   13-block  8
+    $$$$$:   13-block  9
+    $$$$$:   13-block 10
+    $$$$$:   13-block 11
+    $$$$$:   13-block 12
+    $$$$$:   13-block 13
+        1:   13-block 14
+        1:   13-block 15
+        1:   13-block 16
+        1:   13-block 17
+        1:   13-block 18
+        1:   14:    Container container("a", 3.1, 4.2, BULK);
         1:   14-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   14-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:   14-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:   14-block  3
-branch  6 taken 0
-branch  7 taken 1
-        1:   14-block  4
-    $$$$$:   14-block  5
-    $$$$$:   14-block  6
-branch  8 never executed
-branch  9 never executed
-    $$$$$:   14-block  7
-branch 10 never executed
-branch 11 never executed
-    $$$$$:   14-block  8
-branch 12 never executed
-branch 13 never executed
-    $$$$$:   14-block  9
-branch 14 never executed
-branch 15 never executed
-    $$$$$:   14-block 10
-    $$$$$:   14-block 11
-    $$$$$:   14-block 12
-        1:   14-block 13
-        1:   14-block 14
-branch 16 taken 1
-branch 17 taken 0
-    $$$$$:   14-block 15
-        1:   15:    ASSERT_EQ(container.getMass(), 4.2);
+    $$$$$:   14-block  1
+    $$$$$:   14-block  2
+        1:   15:    ASSERT_EQ(container.getName(), "a");
         1:   15-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -298,26 +264,27 @@ branch  6 taken 0
 branch  7 taken 1
         1:   15-block  4
     $$$$$:   15-block  5
+    $$$$$:   15-block  6
 branch  8 never executed
 branch  9 never executed
-    $$$$$:   15-block  6
+    $$$$$:   15-block  7
 branch 10 never executed
 branch 11 never executed
-    $$$$$:   15-block  7
+    $$$$$:   15-block  8
 branch 12 never executed
 branch 13 never executed
-    $$$$$:   15-block  8
+    $$$$$:   15-block  9
 branch 14 never executed
 branch 15 never executed
-    $$$$$:   15-block  9
     $$$$$:   15-block 10
     $$$$$:   15-block 11
-        1:   15-block 12
+    $$$$$:   15-block 12
         1:   15-block 13
+        1:   15-block 14
 branch 16 taken 1
 branch 17 taken 0
-    $$$$$:   15-block 14
-        1:   16:    ASSERT_EQ(container.getVolume(), 3.1);
+    $$$$$:   15-block 15
+        1:   16:    ASSERT_EQ(container.getMass(), 4.2);
         1:   16-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -351,7 +318,7 @@ branch 15 never executed
 branch 16 taken 1
 branch 17 taken 0
     $$$$$:   16-block 14
-        1:   17:    ASSERT_EQ(container.getCategory(), BULK);
+        1:   17:    ASSERT_EQ(container.getVolume(), 3.1);
         1:   17-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -382,103 +349,102 @@ branch 15 never executed
     $$$$$:   17-block 11
         1:   17-block 12
         1:   17-block 13
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:   17-block 14
+        1:   18:    ASSERT_EQ(container.getCategory(), BULK);
+        1:   18-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   18-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   18-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   18-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:   18-block  4
+    $$$$$:   18-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   18-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:   18-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   18-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   18-block  9
+    $$$$$:   18-block 10
+    $$$$$:   18-block 11
+        1:   18-block 12
+        1:   18-block 13
 branch 16 taken 0
 branch 17 taken 1
-    $$$$$:   17-block 14
-        1:   18:}
-    $$$$$:   18-block  0
-    $$$$$:   18-block  1
-    $$$$$:   18-block  2
-    $$$$$:   18-block  3
-    $$$$$:   18-block  4
-    $$$$$:   18-block  5
-    $$$$$:   18-block  6
-    $$$$$:   18-block  7
-    $$$$$:   18-block  8
-        1:   18-block  9
-        1:   18-block 10
+    $$$$$:   18-block 14
+        1:   19:}
+    $$$$$:   19-block  0
+    $$$$$:   19-block  1
+    $$$$$:   19-block  2
+    $$$$$:   19-block  3
+    $$$$$:   19-block  4
+    $$$$$:   19-block  5
+    $$$$$:   19-block  6
+    $$$$$:   19-block  7
+    $$$$$:   19-block  8
+        1:   19-block  9
+        1:   19-block 10
 branch  0 taken 0
 branch  1 taken 1
-        1:   18-block 11
-    $$$$$:   18-block 12
-        -:   19:
+        1:   19-block 11
+    $$$$$:   19-block 12
+        -:   20:
 function _ZN45ContainerConstuctor_DangerousConstructor_Test8TestBodyEv called 1 returned 100% blocks executed 40%
 function _ZN45ContainerConstuctor_DangerousConstructor_TestD1Ev called 1 returned 100% blocks executed 100%
 function _ZN45ContainerConstuctor_DangerousConstructor_TestD0Ev called 1 returned 100% blocks executed 100%
 function _ZN45ContainerConstuctor_DangerousConstructor_TestC1Ev called 1 returned 100% blocks executed 100%
 function _ZN45ContainerConstuctor_DangerousConstructor_TestC2Ev called 1 returned 100% blocks executed 100%
 function _ZN45ContainerConstuctor_DangerousConstructor_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:   20:TEST(ContainerConstuctor, DangerousConstructor) {
-        1:   20-block  0
+        7:   21:TEST(ContainerConstuctor, DangerousConstructor) {
+        1:   21-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   20-block  1
+        1:   21-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:   20-block  2
+        1:   21-block  2
 branch  4 taken 1
 branch  5 taken 0
-        1:   20-block  3
+        1:   21-block  3
 branch  6 taken 1
 branch  7 taken 0
-        1:   20-block  4
+        1:   21-block  4
 branch  8 taken 1
 branch  9 taken 0
-        1:   20-block  5
+        1:   21-block  5
 branch 10 taken 1
 branch 11 taken 0
-        1:   20-block  6
+        1:   21-block  6
 branch 12 taken 1
 branch 13 taken 0
-        1:   20-block  7
-    $$$$$:   20-block  8
-    $$$$$:   20-block  9
-    $$$$$:   20-block 10
-    $$$$$:   20-block 11
-    $$$$$:   20-block 12
-    $$$$$:   20-block 13
-        1:   20-block 14
-        1:   20-block 15
-        1:   20-block 16
-        1:   20-block 17
-        1:   20-block 18
-        1:   21:    Container container(2.3, 4.5);
-        1:   22:    ASSERT_EQ(container.getName(), "Undefined");
-        1:   22-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:   22-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:   22-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:   22-block  3
-branch  6 taken 0
-branch  7 taken 1
-        1:   22-block  4
-    $$$$$:   22-block  5
-    $$$$$:   22-block  6
-branch  8 never executed
-branch  9 never executed
-    $$$$$:   22-block  7
-branch 10 never executed
-branch 11 never executed
-    $$$$$:   22-block  8
-branch 12 never executed
-branch 13 never executed
-    $$$$$:   22-block  9
-branch 14 never executed
-branch 15 never executed
-    $$$$$:   22-block 10
-    $$$$$:   22-block 11
-    $$$$$:   22-block 12
-        1:   22-block 13
-        1:   22-block 14
-branch 16 taken 1
-branch 17 taken 0
-    $$$$$:   22-block 15
-        1:   23:    ASSERT_EQ(container.getMass(), 2.3);
+        1:   21-block  7
+    $$$$$:   21-block  8
+    $$$$$:   21-block  9
+    $$$$$:   21-block 10
+    $$$$$:   21-block 11
+    $$$$$:   21-block 12
+    $$$$$:   21-block 13
+        1:   21-block 14
+        1:   21-block 15
+        1:   21-block 16
+        1:   21-block 17
+        1:   21-block 18
+        1:   22:    Container container(2.3, 4.5);
+        1:   23:    ASSERT_EQ(container.getName(), "Undefined");
         1:   23-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -493,26 +459,27 @@ branch  6 taken 0
 branch  7 taken 1
         1:   23-block  4
     $$$$$:   23-block  5
+    $$$$$:   23-block  6
 branch  8 never executed
 branch  9 never executed
-    $$$$$:   23-block  6
+    $$$$$:   23-block  7
 branch 10 never executed
 branch 11 never executed
-    $$$$$:   23-block  7
+    $$$$$:   23-block  8
 branch 12 never executed
 branch 13 never executed
-    $$$$$:   23-block  8
+    $$$$$:   23-block  9
 branch 14 never executed
 branch 15 never executed
-    $$$$$:   23-block  9
     $$$$$:   23-block 10
     $$$$$:   23-block 11
-        1:   23-block 12
+    $$$$$:   23-block 12
         1:   23-block 13
+        1:   23-block 14
 branch 16 taken 1
 branch 17 taken 0
-    $$$$$:   23-block 14
-        1:   24:    ASSERT_EQ(container.getVolume(), 4.5);
+    $$$$$:   23-block 15
+        1:   24:    ASSERT_EQ(container.getMass(), 2.3);
         1:   24-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -546,7 +513,7 @@ branch 15 never executed
 branch 16 taken 1
 branch 17 taken 0
     $$$$$:   24-block 14
-        1:   25:    ASSERT_EQ(container.getCategory(), DANGEROUS);
+        1:   25:    ASSERT_EQ(container.getVolume(), 4.5);
         1:   25-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -577,123 +544,123 @@ branch 15 never executed
     $$$$$:   25-block 11
         1:   25-block 12
         1:   25-block 13
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:   25-block 14
+        1:   26:    ASSERT_EQ(container.getCategory(), DANGEROUS);
+        1:   26-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   26-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   26-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   26-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:   26-block  4
+    $$$$$:   26-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   26-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:   26-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   26-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   26-block  9
+    $$$$$:   26-block 10
+    $$$$$:   26-block 11
+        1:   26-block 12
+        1:   26-block 13
 branch 16 taken 0
 branch 17 taken 1
-    $$$$$:   25-block 14
-        1:   26:}
-    $$$$$:   26-block  0
-    $$$$$:   26-block  1
-    $$$$$:   26-block  2
-    $$$$$:   26-block  3
-    $$$$$:   26-block  4
-    $$$$$:   26-block  5
-    $$$$$:   26-block  6
-    $$$$$:   26-block  7
-    $$$$$:   26-block  8
-        1:   26-block  9
-        1:   26-block 10
+    $$$$$:   26-block 14
+        1:   27:}
+    $$$$$:   27-block  0
+    $$$$$:   27-block  1
+    $$$$$:   27-block  2
+    $$$$$:   27-block  3
+    $$$$$:   27-block  4
+    $$$$$:   27-block  5
+    $$$$$:   27-block  6
+    $$$$$:   27-block  7
+    $$$$$:   27-block  8
+        1:   27-block  9
+        1:   27-block 10
 branch  0 taken 0
 branch  1 taken 1
-        1:   26-block 11
-    $$$$$:   26-block 12
-    $$$$$:   26-block 13
-        -:   27:
+        1:   27-block 11
+    $$$$$:   27-block 12
+    $$$$$:   27-block 13
+        -:   28:
 function _ZN60СontainerGettersAndSetters_СontainerGettersAndSetters_Test8TestBodyEv called 1 returned 100% blocks executed 43%
 function _ZN60СontainerGettersAndSetters_СontainerGettersAndSetters_TestD1Ev called 1 returned 100% blocks executed 100%
 function _ZN60СontainerGettersAndSetters_СontainerGettersAndSetters_TestD0Ev called 1 returned 100% blocks executed 100%
 function _ZN60СontainerGettersAndSetters_СontainerGettersAndSetters_TestC1Ev called 1 returned 100% blocks executed 100%
 function _ZN60СontainerGettersAndSetters_СontainerGettersAndSetters_TestC2Ev called 1 returned 100% blocks executed 100%
 function _ZN60СontainerGettersAndSetters_СontainerGettersAndSetters_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:   28:TEST(СontainerGettersAndSetters, СontainerGettersAndSetters) {
-        1:   28-block  0
+        7:   29:TEST(СontainerGettersAndSetters, СontainerGettersAndSetters) {
+        1:   29-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   28-block  1
+        1:   29-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:   28-block  2
+        1:   29-block  2
 branch  4 taken 1
 branch  5 taken 0
-        1:   28-block  3
+        1:   29-block  3
 branch  6 taken 1
 branch  7 taken 0
-        1:   28-block  4
+        1:   29-block  4
 branch  8 taken 1
 branch  9 taken 0
-        1:   28-block  5
+        1:   29-block  5
 branch 10 taken 1
 branch 11 taken 0
-        1:   28-block  6
+        1:   29-block  6
 branch 12 taken 1
 branch 13 taken 0
-        1:   28-block  7
-    $$$$$:   28-block  8
-    $$$$$:   28-block  9
-    $$$$$:   28-block 10
-    $$$$$:   28-block 11
-    $$$$$:   28-block 12
-    $$$$$:   28-block 13
-        1:   28-block 14
-        1:   28-block 15
-        1:   28-block 16
-        1:   28-block 17
-        1:   28-block 18
-        1:   29:    Container container;
-        1:   30:    container.setMass(2);
-        1:   30-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:   31:    container.setVolume(3);
+        1:   29-block  7
+    $$$$$:   29-block  8
+    $$$$$:   29-block  9
+    $$$$$:   29-block 10
+    $$$$$:   29-block 11
+    $$$$$:   29-block 12
+    $$$$$:   29-block 13
+        1:   29-block 14
+        1:   29-block 15
+        1:   29-block 16
+        1:   29-block 17
+        1:   29-block 18
+        1:   30:    Container container;
+        1:   31:    container.setMass(2);
         1:   31-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   32:    container.setName("asd");
+        1:   32:    container.setVolume(3);
         1:   32-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   32-block  1
-branch  2 taken 1
-branch  3 taken 0
-    $$$$$:   32-block  2
-        1:   33:    container.setCategory(BULK);
+        1:   33:    container.setName("asd");
         1:   33-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   34:    ASSERT_EQ(container.getMass(), 2);
+        1:   33-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   33-block  2
+        1:   34:    container.setCategory(BULK);
         1:   34-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   34-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:   34-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:   34-block  3
-branch  6 taken 0
-branch  7 taken 1
-        1:   34-block  4
-    $$$$$:   34-block  5
-branch  8 never executed
-branch  9 never executed
-    $$$$$:   34-block  6
-branch 10 never executed
-branch 11 never executed
-    $$$$$:   34-block  7
-branch 12 never executed
-branch 13 never executed
-    $$$$$:   34-block  8
-branch 14 never executed
-branch 15 never executed
-    $$$$$:   34-block  9
-    $$$$$:   34-block 10
-    $$$$$:   34-block 11
-        1:   34-block 12
-        1:   34-block 13
-branch 16 taken 1
-branch 17 taken 0
-    $$$$$:   34-block 14
-        1:   35:    ASSERT_EQ(container.getVolume(), 3);
+        1:   35:    ASSERT_EQ(container.getMass(), 2);
         1:   35-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -727,7 +694,7 @@ branch 15 never executed
 branch 16 taken 1
 branch 17 taken 0
     $$$$$:   35-block 14
-        1:   36:    ASSERT_EQ(container.getName(), "asd");
+        1:   36:    ASSERT_EQ(container.getVolume(), 3);
         1:   36-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -742,27 +709,26 @@ branch  6 taken 0
 branch  7 taken 1
         1:   36-block  4
     $$$$$:   36-block  5
-    $$$$$:   36-block  6
 branch  8 never executed
 branch  9 never executed
-    $$$$$:   36-block  7
+    $$$$$:   36-block  6
 branch 10 never executed
 branch 11 never executed
-    $$$$$:   36-block  8
+    $$$$$:   36-block  7
 branch 12 never executed
 branch 13 never executed
-    $$$$$:   36-block  9
+    $$$$$:   36-block  8
 branch 14 never executed
 branch 15 never executed
+    $$$$$:   36-block  9
     $$$$$:   36-block 10
     $$$$$:   36-block 11
-    $$$$$:   36-block 12
+        1:   36-block 12
         1:   36-block 13
-        1:   36-block 14
 branch 16 taken 1
 branch 17 taken 0
-    $$$$$:   36-block 15
-        1:   37:    ASSERT_EQ(container.getCategory(), BULK);
+    $$$$$:   36-block 14
+        1:   37:    ASSERT_EQ(container.getName(), "asd");
         1:   37-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -777,227 +743,228 @@ branch  6 taken 0
 branch  7 taken 1
         1:   37-block  4
     $$$$$:   37-block  5
+    $$$$$:   37-block  6
 branch  8 never executed
 branch  9 never executed
-    $$$$$:   37-block  6
+    $$$$$:   37-block  7
 branch 10 never executed
 branch 11 never executed
-    $$$$$:   37-block  7
+    $$$$$:   37-block  8
 branch 12 never executed
 branch 13 never executed
-    $$$$$:   37-block  8
+    $$$$$:   37-block  9
 branch 14 never executed
 branch 15 never executed
-    $$$$$:   37-block  9
     $$$$$:   37-block 10
     $$$$$:   37-block 11
-        1:   37-block 12
+    $$$$$:   37-block 12
         1:   37-block 13
+        1:   37-block 14
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:   37-block 15
+        1:   38:    ASSERT_EQ(container.getCategory(), BULK);
+        1:   38-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   38-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   38-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   38-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:   38-block  4
+    $$$$$:   38-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   38-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:   38-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   38-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   38-block  9
+    $$$$$:   38-block 10
+    $$$$$:   38-block 11
+        1:   38-block 12
+        1:   38-block 13
 branch 16 taken 0
 branch 17 taken 1
-    $$$$$:   37-block 14
-        1:   38:}
-    $$$$$:   38-block  0
-    $$$$$:   38-block  1
-    $$$$$:   38-block  2
-    $$$$$:   38-block  3
-    $$$$$:   38-block  4
-    $$$$$:   38-block  5
-    $$$$$:   38-block  6
-    $$$$$:   38-block  7
-    $$$$$:   38-block  8
-        1:   38-block  9
-        1:   38-block 10
+    $$$$$:   38-block 14
+        1:   39:}
+    $$$$$:   39-block  0
+    $$$$$:   39-block  1
+    $$$$$:   39-block  2
+    $$$$$:   39-block  3
+    $$$$$:   39-block  4
+    $$$$$:   39-block  5
+    $$$$$:   39-block  6
+    $$$$$:   39-block  7
+    $$$$$:   39-block  8
+        1:   39-block  9
+        1:   39-block 10
 branch  0 taken 0
 branch  1 taken 1
-        1:   38-block 11
-    $$$$$:   38-block 12
-    $$$$$:   38-block 13
-        -:   39:
+        1:   39-block 11
+    $$$$$:   39-block 12
+    $$$$$:   39-block 13
+        -:   40:
 function _ZN44ContainerGetDensity_ContainerGetDensity_Test8TestBodyEv called 1 returned 100% blocks executed 40%
 function _ZN44ContainerGetDensity_ContainerGetDensity_TestD1Ev called 1 returned 100% blocks executed 100%
 function _ZN44ContainerGetDensity_ContainerGetDensity_TestD0Ev called 1 returned 100% blocks executed 100%
 function _ZN44ContainerGetDensity_ContainerGetDensity_TestC1Ev called 1 returned 100% blocks executed 100%
 function _ZN44ContainerGetDensity_ContainerGetDensity_TestC2Ev called 1 returned 100% blocks executed 100%
 function _ZN44ContainerGetDensity_ContainerGetDensity_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:   40:TEST(ContainerGetDensity, ContainerGetDensity) {
-        1:   40-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:   40-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:   40-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:   40-block  3
-branch  6 taken 1
-branch  7 taken 0
-        1:   40-block  4
-branch  8 taken 1
-branch  9 taken 0
-        1:   40-block  5
-branch 10 taken 1
-branch 11 taken 0
-        1:   40-block  6
-branch 12 taken 1
-branch 13 taken 0
-        1:   40-block  7
-    $$$$$:   40-block  8
-    $$$$$:   40-block  9
-    $$$$$:   40-block 10
-    $$$$$:   40-block 11
-    $$$$$:   40-block 12
-    $$$$$:   40-block 13
-        1:   40-block 14
-        1:   40-block 15
-        1:   40-block 16
-        1:   40-block 17
-        1:   40-block 18
-        1:   41:    Container container ("Asd", 20.0, 10.0, PIECES);
+        7:   41:TEST(ContainerGetDensity, ContainerGetDensity) {
         1:   41-block  0
 branch  0 taken 1
 branch  1 taken 0
-    $$$$$:   41-block  1
-    $$$$$:   41-block  2
-        1:   42:    ASSERT_EQ(container.getDensity(), 0.5);
+        1:   41-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   41-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   41-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:   41-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:   41-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:   41-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:   41-block  7
+    $$$$$:   41-block  8
+    $$$$$:   41-block  9
+    $$$$$:   41-block 10
+    $$$$$:   41-block 11
+    $$$$$:   41-block 12
+    $$$$$:   41-block 13
+        1:   41-block 14
+        1:   41-block 15
+        1:   41-block 16
+        1:   41-block 17
+        1:   41-block 18
+        1:   42:    Container container ("Asd", 20.0, 10.0, PIECES);
         1:   42-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   42-block  1
+    $$$$$:   42-block  1
+    $$$$$:   42-block  2
+        1:   43:    ASSERT_EQ(container.getDensity(), 0.5);
+        1:   43-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   43-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:   42-block  2
+        1:   43-block  2
 branch  4 taken 1
 branch  5 taken 0
-        1:   42-block  3
+        1:   43-block  3
 branch  6 taken 0
 branch  7 taken 1
-        1:   42-block  4
-    $$$$$:   42-block  5
+        1:   43-block  4
+    $$$$$:   43-block  5
 branch  8 never executed
 branch  9 never executed
-    $$$$$:   42-block  6
+    $$$$$:   43-block  6
 branch 10 never executed
 branch 11 never executed
-    $$$$$:   42-block  7
+    $$$$$:   43-block  7
 branch 12 never executed
 branch 13 never executed
-    $$$$$:   42-block  8
+    $$$$$:   43-block  8
 branch 14 never executed
 branch 15 never executed
-    $$$$$:   42-block  9
-    $$$$$:   42-block 10
-    $$$$$:   42-block 11
-        1:   42-block 12
-        1:   42-block 13
+    $$$$$:   43-block  9
+    $$$$$:   43-block 10
+    $$$$$:   43-block 11
+        1:   43-block 12
+        1:   43-block 13
 branch 16 taken 0
 branch 17 taken 1
-    $$$$$:   42-block 14
-        1:   43:}
-    $$$$$:   43-block  0
-    $$$$$:   43-block  1
-    $$$$$:   43-block  2
-        1:   43-block  3
-        1:   43-block  4
+    $$$$$:   43-block 14
+        1:   44:}
+    $$$$$:   44-block  0
+    $$$$$:   44-block  1
+    $$$$$:   44-block  2
+        1:   44-block  3
+        1:   44-block  4
 branch  0 taken 0
 branch  1 taken 1
-        1:   43-block  5
-    $$$$$:   43-block  6
-        -:   44:
+        1:   44-block  5
+    $$$$$:   44-block  6
+        -:   45:
 function _ZN41ContainerTransferCargo_TransferCargo_Test8TestBodyEv called 1 returned 100% blocks executed 42%
 function _ZN41ContainerTransferCargo_TransferCargo_TestD1Ev called 1 returned 100% blocks executed 100%
 function _ZN41ContainerTransferCargo_TransferCargo_TestD0Ev called 1 returned 100% blocks executed 100%
 function _ZN41ContainerTransferCargo_TransferCargo_TestC1Ev called 1 returned 100% blocks executed 100%
 function _ZN41ContainerTransferCargo_TransferCargo_TestC2Ev called 1 returned 100% blocks executed 100%
 function _ZN41ContainerTransferCargo_TransferCargo_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:   45:TEST(ContainerTransferCargo, TransferCargo) {
-        1:   45-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:   45-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:   45-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:   45-block  3
-branch  6 taken 1
-branch  7 taken 0
-        1:   45-block  4
-branch  8 taken 1
-branch  9 taken 0
-        1:   45-block  5
-branch 10 taken 1
-branch 11 taken 0
-        1:   45-block  6
-branch 12 taken 1
-branch 13 taken 0
-        1:   45-block  7
-    $$$$$:   45-block  8
-    $$$$$:   45-block  9
-    $$$$$:   45-block 10
-    $$$$$:   45-block 11
-    $$$$$:   45-block 12
-    $$$$$:   45-block 13
-        1:   45-block 14
-        1:   45-block 15
-        1:   45-block 16
-        1:   45-block 17
-        1:   45-block 18
-        1:   46:    Container container1 ("Container1", 20.0, 10.0, PIECES);
+        7:   46:TEST(ContainerTransferCargo, TransferCargo) {
         1:   46-block  0
 branch  0 taken 1
 branch  1 taken 0
-    $$$$$:   46-block  1
-    $$$$$:   46-block  2
-        1:   47:    Container container2 ("Container2", 10.0, 5.0, PIECES);
+        1:   46-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   46-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   46-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:   46-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:   46-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:   46-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:   46-block  7
+    $$$$$:   46-block  8
+    $$$$$:   46-block  9
+    $$$$$:   46-block 10
+    $$$$$:   46-block 11
+    $$$$$:   46-block 12
+    $$$$$:   46-block 13
+        1:   46-block 14
+        1:   46-block 15
+        1:   46-block 16
+        1:   46-block 17
+        1:   46-block 18
+        1:   47:    Container container1 ("Container1", 20.0, 10.0, PIECES);
         1:   47-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   47-block  1
-branch  2 taken 1
-branch  3 taken 0
+    $$$$$:   47-block  1
     $$$$$:   47-block  2
-        1:   48:    container1.transferCargo(2.0, container2);
+        1:   48:    Container container2 ("Container2", 10.0, 5.0, PIECES);
         1:   48-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   49:    ASSERT_EQ(container1.getMass(), 8);
+        1:   48-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   48-block  2
+        1:   49:    container1.transferCargo(2.0, container2);
         1:   49-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   49-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:   49-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:   49-block  3
-branch  6 taken 0
-branch  7 taken 1
-        1:   49-block  4
-    $$$$$:   49-block  5
-branch  8 never executed
-branch  9 never executed
-    $$$$$:   49-block  6
-branch 10 never executed
-branch 11 never executed
-    $$$$$:   49-block  7
-branch 12 never executed
-branch 13 never executed
-    $$$$$:   49-block  8
-branch 14 never executed
-branch 15 never executed
-    $$$$$:   49-block  9
-    $$$$$:   49-block 10
-    $$$$$:   49-block 11
-        1:   49-block 12
-        1:   49-block 13
-branch 16 taken 1
-branch 17 taken 0
-    $$$$$:   49-block 14
-        1:   50:    ASSERT_EQ(container2.getMass(), 7);
+        1:   50:    ASSERT_EQ(container1.getMass(), 8);
         1:   50-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -1028,112 +995,112 @@ branch 15 never executed
     $$$$$:   50-block 11
         1:   50-block 12
         1:   50-block 13
-branch 16 taken 0
-branch 17 taken 1
+branch 16 taken 1
+branch 17 taken 0
     $$$$$:   50-block 14
-        1:   51:}
-    $$$$$:   51-block  0
-    $$$$$:   51-block  1
-    $$$$$:   51-block  2
-    $$$$$:   51-block  3
-    $$$$$:   51-block  4
+        1:   51:    ASSERT_EQ(container2.getMass(), 7);
+        1:   51-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   51-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   51-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   51-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:   51-block  4
     $$$$$:   51-block  5
-        1:   51-block  6
-        1:   51-block  7
-branch  0 taken 0
-branch  1 taken 1
-        1:   51-block  8
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   51-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:   51-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   51-block  8
+branch 14 never executed
+branch 15 never executed
     $$$$$:   51-block  9
     $$$$$:   51-block 10
-        -:   52:
+    $$$$$:   51-block 11
+        1:   51-block 12
+        1:   51-block 13
+branch 16 taken 0
+branch 17 taken 1
+    $$$$$:   51-block 14
+        1:   52:}
+    $$$$$:   52-block  0
+    $$$$$:   52-block  1
+    $$$$$:   52-block  2
+    $$$$$:   52-block  3
+    $$$$$:   52-block  4
+    $$$$$:   52-block  5
+        1:   52-block  6
+        1:   52-block  7
+branch  0 taken 0
+branch  1 taken 1
+        1:   52-block  8
+    $$$$$:   52-block  9
+    $$$$$:   52-block 10
+        -:   53:
 function _ZN48ContainerTransferCargo_TransferCargoToEmpty_Test8TestBodyEv called 1 returned 100% blocks executed 41%
 function _ZN48ContainerTransferCargo_TransferCargoToEmpty_TestD1Ev called 1 returned 100% blocks executed 100%
 function _ZN48ContainerTransferCargo_TransferCargoToEmpty_TestD0Ev called 1 returned 100% blocks executed 100%
 function _ZN48ContainerTransferCargo_TransferCargoToEmpty_TestC1Ev called 1 returned 100% blocks executed 100%
 function _ZN48ContainerTransferCargo_TransferCargoToEmpty_TestC2Ev called 1 returned 100% blocks executed 100%
 function _ZN48ContainerTransferCargo_TransferCargoToEmpty_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:   53:TEST(ContainerTransferCargo, TransferCargoToEmpty) {
-        1:   53-block  0
+        7:   54:TEST(ContainerTransferCargo, TransferCargoToEmpty) {
+        1:   54-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   53-block  1
+        1:   54-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:   53-block  2
+        1:   54-block  2
 branch  4 taken 1
 branch  5 taken 0
-        1:   53-block  3
+        1:   54-block  3
 branch  6 taken 1
 branch  7 taken 0
-        1:   53-block  4
+        1:   54-block  4
 branch  8 taken 1
 branch  9 taken 0
-        1:   53-block  5
+        1:   54-block  5
 branch 10 taken 1
 branch 11 taken 0
-        1:   53-block  6
+        1:   54-block  6
 branch 12 taken 1
 branch 13 taken 0
-        1:   53-block  7
-    $$$$$:   53-block  8
-    $$$$$:   53-block  9
-    $$$$$:   53-block 10
-    $$$$$:   53-block 11
-    $$$$$:   53-block 12
-    $$$$$:   53-block 13
-        1:   53-block 14
-        1:   53-block 15
-        1:   53-block 16
-        1:   53-block 17
-        1:   53-block 18
-        1:   54:    Container container1;
-        1:   55:    Container container2 ("Container2", 10.0, 5.0, PIECES);
-        1:   55-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:   55-block  1
-branch  2 taken 1
-branch  3 taken 0
-    $$$$$:   55-block  2
-        1:   56:    container2.transferCargo(2.0, container1);
+        1:   54-block  7
+    $$$$$:   54-block  8
+    $$$$$:   54-block  9
+    $$$$$:   54-block 10
+    $$$$$:   54-block 11
+    $$$$$:   54-block 12
+    $$$$$:   54-block 13
+        1:   54-block 14
+        1:   54-block 15
+        1:   54-block 16
+        1:   54-block 17
+        1:   54-block 18
+        1:   55:    Container container1;
+        1:   56:    Container container2 ("Container2", 10.0, 5.0, PIECES);
         1:   56-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   57:    ASSERT_EQ(container1.getMass(), 2.0);
+        1:   56-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   56-block  2
+        1:   57:    container2.transferCargo(2.0, container1);
         1:   57-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   57-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:   57-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:   57-block  3
-branch  6 taken 0
-branch  7 taken 1
-        1:   57-block  4
-    $$$$$:   57-block  5
-branch  8 never executed
-branch  9 never executed
-    $$$$$:   57-block  6
-branch 10 never executed
-branch 11 never executed
-    $$$$$:   57-block  7
-branch 12 never executed
-branch 13 never executed
-    $$$$$:   57-block  8
-branch 14 never executed
-branch 15 never executed
-    $$$$$:   57-block  9
-    $$$$$:   57-block 10
-    $$$$$:   57-block 11
-        1:   57-block 12
-        1:   57-block 13
-branch 16 taken 1
-branch 17 taken 0
-    $$$$$:   57-block 14
-        1:   58:    ASSERT_EQ(container2.getCategory(), EMPTY);
+        1:   58:    ASSERT_EQ(container1.getMass(), 2.0);
         1:   58-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -1164,118 +1131,118 @@ branch 15 never executed
     $$$$$:   58-block 11
         1:   58-block 12
         1:   58-block 13
-branch 16 taken 0
-branch 17 taken 1
+branch 16 taken 1
+branch 17 taken 0
     $$$$$:   58-block 14
-        1:   59:}
-    $$$$$:   59-block  0
-    $$$$$:   59-block  1
-    $$$$$:   59-block  2
-    $$$$$:   59-block  3
-    $$$$$:   59-block  4
+        1:   59:    ASSERT_EQ(container2.getCategory(), EMPTY);
+        1:   59-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   59-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   59-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   59-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:   59-block  4
     $$$$$:   59-block  5
-        1:   59-block  6
-        1:   59-block  7
-branch  0 taken 0
-branch  1 taken 1
-        1:   59-block  8
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   59-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:   59-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   59-block  8
+branch 14 never executed
+branch 15 never executed
     $$$$$:   59-block  9
     $$$$$:   59-block 10
     $$$$$:   59-block 11
-        -:   60:
+        1:   59-block 12
+        1:   59-block 13
+branch 16 taken 0
+branch 17 taken 1
+    $$$$$:   59-block 14
+        1:   60:}
+    $$$$$:   60-block  0
+    $$$$$:   60-block  1
+    $$$$$:   60-block  2
+    $$$$$:   60-block  3
+    $$$$$:   60-block  4
+    $$$$$:   60-block  5
+        1:   60-block  6
+        1:   60-block  7
+branch  0 taken 0
+branch  1 taken 1
+        1:   60-block  8
+    $$$$$:   60-block  9
+    $$$$$:   60-block 10
+    $$$$$:   60-block 11
+        -:   61:
 function _ZN44ContainerTransferCargo_TransferAllCargo_Test8TestBodyEv called 1 returned 100% blocks executed 42%
 function _ZN44ContainerTransferCargo_TransferAllCargo_TestD1Ev called 1 returned 100% blocks executed 100%
 function _ZN44ContainerTransferCargo_TransferAllCargo_TestD0Ev called 1 returned 100% blocks executed 100%
 function _ZN44ContainerTransferCargo_TransferAllCargo_TestC1Ev called 1 returned 100% blocks executed 100%
 function _ZN44ContainerTransferCargo_TransferAllCargo_TestC2Ev called 1 returned 100% blocks executed 100%
 function _ZN44ContainerTransferCargo_TransferAllCargo_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:   61:TEST(ContainerTransferCargo, TransferAllCargo) {
-        1:   61-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:   61-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:   61-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:   61-block  3
-branch  6 taken 1
-branch  7 taken 0
-        1:   61-block  4
-branch  8 taken 1
-branch  9 taken 0
-        1:   61-block  5
-branch 10 taken 1
-branch 11 taken 0
-        1:   61-block  6
-branch 12 taken 1
-branch 13 taken 0
-        1:   61-block  7
-    $$$$$:   61-block  8
-    $$$$$:   61-block  9
-    $$$$$:   61-block 10
-    $$$$$:   61-block 11
-    $$$$$:   61-block 12
-    $$$$$:   61-block 13
-        1:   61-block 14
-        1:   61-block 15
-        1:   61-block 16
-        1:   61-block 17
-        1:   61-block 18
-        1:   62:    Container container1 ("Container1", 20.0, 10.4, PIECES);
+        7:   62:TEST(ContainerTransferCargo, TransferAllCargo) {
         1:   62-block  0
 branch  0 taken 1
 branch  1 taken 0
-    $$$$$:   62-block  1
-    $$$$$:   62-block  2
-        1:   63:    Container container2 ("Container2", 10.0, 5.4, PIECES);
+        1:   62-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   62-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   62-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:   62-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:   62-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:   62-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:   62-block  7
+    $$$$$:   62-block  8
+    $$$$$:   62-block  9
+    $$$$$:   62-block 10
+    $$$$$:   62-block 11
+    $$$$$:   62-block 12
+    $$$$$:   62-block 13
+        1:   62-block 14
+        1:   62-block 15
+        1:   62-block 16
+        1:   62-block 17
+        1:   62-block 18
+        1:   63:    Container container1 ("Container1", 20.0, 10.4, PIECES);
         1:   63-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   63-block  1
-branch  2 taken 1
-branch  3 taken 0
+    $$$$$:   63-block  1
     $$$$$:   63-block  2
-        1:   64:    container1>>(container2);
+        1:   64:    Container container2 ("Container2", 10.0, 5.4, PIECES);
         1:   64-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   65:    ASSERT_EQ(container1.getMass(), 0);
+        1:   64-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   64-block  2
+        1:   65:    container1>>(container2);
         1:   65-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   65-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:   65-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:   65-block  3
-branch  6 taken 0
-branch  7 taken 1
-        1:   65-block  4
-    $$$$$:   65-block  5
-branch  8 never executed
-branch  9 never executed
-    $$$$$:   65-block  6
-branch 10 never executed
-branch 11 never executed
-    $$$$$:   65-block  7
-branch 12 never executed
-branch 13 never executed
-    $$$$$:   65-block  8
-branch 14 never executed
-branch 15 never executed
-    $$$$$:   65-block  9
-    $$$$$:   65-block 10
-    $$$$$:   65-block 11
-        1:   65-block 12
-        1:   65-block 13
-branch 16 taken 1
-branch 17 taken 0
-    $$$$$:   65-block 14
-        1:   66:    ASSERT_EQ(container2.getMass(), 15.8);
+        1:   66:    ASSERT_EQ(container1.getMass(), 0);
         1:   66-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -1306,79 +1273,105 @@ branch 15 never executed
     $$$$$:   66-block 11
         1:   66-block 12
         1:   66-block 13
-branch 16 taken 0
-branch 17 taken 1
+branch 16 taken 1
+branch 17 taken 0
     $$$$$:   66-block 14
-        1:   67:}
-    $$$$$:   67-block  0
-    $$$$$:   67-block  1
-    $$$$$:   67-block  2
-    $$$$$:   67-block  3
-    $$$$$:   67-block  4
+        1:   67:    ASSERT_EQ(container2.getMass(), 15.8);
+        1:   67-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   67-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   67-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   67-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:   67-block  4
     $$$$$:   67-block  5
-        1:   67-block  6
-        1:   67-block  7
-branch  0 taken 0
-branch  1 taken 1
-        1:   67-block  8
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   67-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:   67-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   67-block  8
+branch 14 never executed
+branch 15 never executed
     $$$$$:   67-block  9
     $$$$$:   67-block 10
-        -:   68:
+    $$$$$:   67-block 11
+        1:   67-block 12
+        1:   67-block 13
+branch 16 taken 0
+branch 17 taken 1
+    $$$$$:   67-block 14
+        1:   68:}
+    $$$$$:   68-block  0
+    $$$$$:   68-block  1
+    $$$$$:   68-block  2
+    $$$$$:   68-block  3
+    $$$$$:   68-block  4
+    $$$$$:   68-block  5
+        1:   68-block  6
+        1:   68-block  7
+branch  0 taken 0
+branch  1 taken 1
+        1:   68-block  8
+    $$$$$:   68-block  9
+    $$$$$:   68-block 10
+        -:   69:
 function _ZN47ContainerTransferCargo_ThrowErrorsTransfer_Test8TestBodyEv called 1 returned 100% blocks executed 28%
 function _ZN47ContainerTransferCargo_ThrowErrorsTransfer_TestD1Ev called 1 returned 100% blocks executed 100%
 function _ZN47ContainerTransferCargo_ThrowErrorsTransfer_TestD0Ev called 1 returned 100% blocks executed 100%
 function _ZN47ContainerTransferCargo_ThrowErrorsTransfer_TestC1Ev called 1 returned 100% blocks executed 100%
 function _ZN47ContainerTransferCargo_ThrowErrorsTransfer_TestC2Ev called 1 returned 100% blocks executed 100%
 function _ZN47ContainerTransferCargo_ThrowErrorsTransfer_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:   69:TEST(ContainerTransferCargo, ThrowErrorsTransfer) {
-        1:   69-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:   69-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:   69-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:   69-block  3
-branch  6 taken 1
-branch  7 taken 0
-        1:   69-block  4
-branch  8 taken 1
-branch  9 taken 0
-        1:   69-block  5
-branch 10 taken 1
-branch 11 taken 0
-        1:   69-block  6
-branch 12 taken 1
-branch 13 taken 0
-        1:   69-block  7
-    $$$$$:   69-block  8
-    $$$$$:   69-block  9
-    $$$$$:   69-block 10
-    $$$$$:   69-block 11
-    $$$$$:   69-block 12
-    $$$$$:   69-block 13
-        1:   69-block 14
-        1:   69-block 15
-        1:   69-block 16
-        1:   69-block 17
-        1:   69-block 18
-        1:   70:    Container container1 ("Container1", 20.0, 10.4, BULK);
+        7:   70:TEST(ContainerTransferCargo, ThrowErrorsTransfer) {
         1:   70-block  0
 branch  0 taken 1
 branch  1 taken 0
-    $$$$$:   70-block  1
-    $$$$$:   70-block  2
-        1:   71:    Container container2 ("Container2", 10.0, 5.4, PIECES);
+        1:   70-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   70-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   70-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:   70-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:   70-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:   70-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:   70-block  7
+    $$$$$:   70-block  8
+    $$$$$:   70-block  9
+    $$$$$:   70-block 10
+    $$$$$:   70-block 11
+    $$$$$:   70-block 12
+    $$$$$:   70-block 13
+        1:   70-block 14
+        1:   70-block 15
+        1:   70-block 16
+        1:   70-block 17
+        1:   70-block 18
+        1:   71:    Container container1 ("Container1", 20.0, 10.4, BULK);
         1:   71-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   71-block  1
-branch  2 taken 1
-branch  3 taken 0
+    $$$$$:   71-block  1
     $$$$$:   71-block  2
-        1:   72:    Container container3 ("Container3", 5.0, 3.0,  BULK);
+        1:   72:    Container container2 ("Container2", 10.0, 5.4, PIECES);
         1:   72-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -1386,106 +1379,23 @@ branch  1 taken 0
 branch  2 taken 1
 branch  3 taken 0
     $$$$$:   72-block  2
-        1:   73:    Container container4 (3.0, 5.0);
+        1:   73:    Container container3 ("Container3", 5.0, 3.0,  BULK);
         1:   73-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   74:    Container container5 (5.7, 3.4);
+        1:   73-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   73-block  2
+        1:   74:    Container container4 (3.0, 5.0);
         1:   74-block  0
 branch  0 taken 1
 branch  1 taken 0
-        2:   75:    ASSERT_THROW(container1.transferCargo(2.0, container2), std::runtime_error);
+        1:   75:    Container container5 (5.7, 3.4);
         1:   75-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   75-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:   75-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:   75-block  3
-branch  6 taken 1
-branch  7 taken 0
-        1:   75-block  4
-branch  8 taken 0
-branch  9 taken 1
-    $$$$$:   75-block  5
-        1:   75-block  6
-branch 10 taken 1
-branch 11 taken 0
-        1:   75-block  7
-branch 12 taken 1
-branch 13 taken 0
-        1:   75-block  8
-        1:   75-block  9
-branch 14 taken 0
-branch 15 taken 1
-    $$$$$:   75-block 10
-branch 16 never executed
-branch 17 never executed
-    $$$$$:   75-block 11
-    $$$$$:   75-block 12
-branch 18 never executed
-branch 19 never executed
-    $$$$$:   75-block 13
-branch 20 never executed
-branch 21 never executed
-    $$$$$:   75-block 14
-branch 22 never executed
-branch 23 never executed
-    $$$$$:   75-block 15
-branch 24 never executed
-branch 25 never executed
-    $$$$$:   75-block 16
-branch 26 never executed
-branch 27 never executed
-    $$$$$:   75-block 17
-branch 28 never executed
-branch 29 never executed
-    $$$$$:   75-block 18
-branch 30 never executed
-branch 31 never executed
-    $$$$$:   75-block 19
-branch 32 never executed
-branch 33 never executed
-    $$$$$:   75-block 20
-branch 34 never executed
-branch 35 never executed
-    $$$$$:   75-block 21
-branch 36 never executed
-branch 37 never executed
-    $$$$$:   75-block 22
-    $$$$$:   75-block 23
-branch 38 never executed
-branch 39 never executed
-    $$$$$:   75-block 24
-    $$$$$:   75-block 25
-    $$$$$:   75-block 26
-branch 40 never executed
-branch 41 never executed
-    $$$$$:   75-block 27
-        1:   75-block 28
-    $$$$$:   75-block 29
-    $$$$$:   75-block 30
-branch 42 never executed
-branch 43 never executed
-    $$$$$:   75-block 31
-branch 44 never executed
-branch 45 never executed
-    $$$$$:   75-block 32
-branch 46 never executed
-branch 47 never executed
-    $$$$$:   75-block 33
-    $$$$$:   75-block 34
-    $$$$$:   75-block 35
-        1:   75-block 36
-        1:   75-block 37
-branch 48 taken 0
-branch 49 taken 1
-    $$$$$:   75-block 38
-    $$$$$:   75-block 39
-        2:   76:    ASSERT_THROW(container3.transferCargo(2.0, container1), std::runtime_error);
+        2:   76:    ASSERT_THROW(container1.transferCargo(2.0, container2), std::runtime_error);
         1:   76-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -1510,8 +1420,8 @@ branch 12 taken 1
 branch 13 taken 0
         1:   76-block  8
         1:   76-block  9
-branch 14 taken 1
-branch 15 taken 0
+branch 14 taken 0
+branch 15 taken 1
     $$$$$:   76-block 10
 branch 16 never executed
 branch 17 never executed
@@ -1575,7 +1485,8 @@ branch 47 never executed
 branch 48 taken 0
 branch 49 taken 1
     $$$$$:   76-block 38
-        2:   77:    ASSERT_THROW(container4.transferCargo(2.0, container5), std::runtime_error);
+    $$$$$:   76-block 39
+        2:   77:    ASSERT_THROW(container3.transferCargo(2.0, container1), std::runtime_error);
         1:   77-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -1600,8 +1511,8 @@ branch 12 taken 1
 branch 13 taken 0
         1:   77-block  8
         1:   77-block  9
-branch 14 taken 0
-branch 15 taken 1
+branch 14 taken 1
+branch 15 taken 0
     $$$$$:   77-block 10
 branch 16 never executed
 branch 17 never executed
@@ -1665,123 +1576,178 @@ branch 47 never executed
 branch 48 taken 0
 branch 49 taken 1
     $$$$$:   77-block 38
-        4:   78:}
-    $$$$$:   78-block  0
-    $$$$$:   78-block  1
-    $$$$$:   78-block  2
-    $$$$$:   78-block  3
-    $$$$$:   78-block  4
-        1:   78-block  5
-    $$$$$:   78-block  6
-    $$$$$:   78-block  7
-    $$$$$:   78-block  8
+        2:   78:    ASSERT_THROW(container4.transferCargo(2.0, container5), std::runtime_error);
+        1:   78-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   78-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   78-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   78-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:   78-block  4
+branch  8 taken 0
+branch  9 taken 1
+    $$$$$:   78-block  5
+        1:   78-block  6
+branch 10 taken 1
+branch 11 taken 0
+        1:   78-block  7
+branch 12 taken 1
+branch 13 taken 0
+        1:   78-block  8
         1:   78-block  9
+branch 14 taken 0
+branch 15 taken 1
     $$$$$:   78-block 10
+branch 16 never executed
+branch 17 never executed
     $$$$$:   78-block 11
     $$$$$:   78-block 12
-        1:   78-block 13
+branch 18 never executed
+branch 19 never executed
+    $$$$$:   78-block 13
+branch 20 never executed
+branch 21 never executed
     $$$$$:   78-block 14
+branch 22 never executed
+branch 23 never executed
     $$$$$:   78-block 15
-        1:   78-block 16
-        1:   78-block 17
-branch  0 taken 0
-branch  1 taken 1
-        1:   78-block 18
+branch 24 never executed
+branch 25 never executed
+    $$$$$:   78-block 16
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   78-block 17
+branch 28 never executed
+branch 29 never executed
+    $$$$$:   78-block 18
+branch 30 never executed
+branch 31 never executed
     $$$$$:   78-block 19
+branch 32 never executed
+branch 33 never executed
     $$$$$:   78-block 20
+branch 34 never executed
+branch 35 never executed
     $$$$$:   78-block 21
+branch 36 never executed
+branch 37 never executed
     $$$$$:   78-block 22
     $$$$$:   78-block 23
-        -:   79:
+branch 38 never executed
+branch 39 never executed
+    $$$$$:   78-block 24
+    $$$$$:   78-block 25
+    $$$$$:   78-block 26
+branch 40 never executed
+branch 41 never executed
+    $$$$$:   78-block 27
+        1:   78-block 28
+    $$$$$:   78-block 29
+    $$$$$:   78-block 30
+branch 42 never executed
+branch 43 never executed
+    $$$$$:   78-block 31
+branch 44 never executed
+branch 45 never executed
+    $$$$$:   78-block 32
+branch 46 never executed
+branch 47 never executed
+    $$$$$:   78-block 33
+    $$$$$:   78-block 34
+    $$$$$:   78-block 35
+        1:   78-block 36
+        1:   78-block 37
+branch 48 taken 0
+branch 49 taken 1
+    $$$$$:   78-block 38
+        4:   79:}
+    $$$$$:   79-block  0
+    $$$$$:   79-block  1
+    $$$$$:   79-block  2
+    $$$$$:   79-block  3
+    $$$$$:   79-block  4
+        1:   79-block  5
+    $$$$$:   79-block  6
+    $$$$$:   79-block  7
+    $$$$$:   79-block  8
+        1:   79-block  9
+    $$$$$:   79-block 10
+    $$$$$:   79-block 11
+    $$$$$:   79-block 12
+        1:   79-block 13
+    $$$$$:   79-block 14
+    $$$$$:   79-block 15
+        1:   79-block 16
+        1:   79-block 17
+branch  0 taken 0
+branch  1 taken 1
+        1:   79-block 18
+    $$$$$:   79-block 19
+    $$$$$:   79-block 20
+    $$$$$:   79-block 21
+    $$$$$:   79-block 22
+    $$$$$:   79-block 23
+        -:   80:
 function _ZN41ContainerInputOperator_InputOperator_Test8TestBodyEv called 1 returned 100% blocks executed 40%
 function _ZN41ContainerInputOperator_InputOperator_TestD1Ev called 1 returned 100% blocks executed 100%
 function _ZN41ContainerInputOperator_InputOperator_TestD0Ev called 1 returned 100% blocks executed 100%
 function _ZN41ContainerInputOperator_InputOperator_TestC1Ev called 1 returned 100% blocks executed 100%
 function _ZN41ContainerInputOperator_InputOperator_TestC2Ev called 1 returned 100% blocks executed 100%
 function _ZN41ContainerInputOperator_InputOperator_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:   80:TEST(ContainerInputOperator, InputOperator) {
-        1:   80-block  0
+        7:   81:TEST(ContainerInputOperator, InputOperator) {
+        1:   81-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   80-block  1
+        1:   81-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:   80-block  2
+        1:   81-block  2
 branch  4 taken 1
 branch  5 taken 0
-        1:   80-block  3
+        1:   81-block  3
 branch  6 taken 1
 branch  7 taken 0
-        1:   80-block  4
+        1:   81-block  4
 branch  8 taken 1
 branch  9 taken 0
-        1:   80-block  5
+        1:   81-block  5
 branch 10 taken 1
 branch 11 taken 0
-        1:   80-block  6
+        1:   81-block  6
 branch 12 taken 1
 branch 13 taken 0
-        1:   80-block  7
-    $$$$$:   80-block  8
-    $$$$$:   80-block  9
-    $$$$$:   80-block 10
-    $$$$$:   80-block 11
-    $$$$$:   80-block 12
-    $$$$$:   80-block 13
-        1:   80-block 14
-        1:   80-block 15
-        1:   80-block 16
-        1:   80-block 17
-        1:   80-block 18
-        1:   81:    Container container;
-        1:   82:    std::istringstream input("Container1 50.0 10.0 1");
-        1:   82-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:   82-block  1
-branch  2 taken 1
-branch  3 taken 0
-    $$$$$:   82-block  2
-        1:   83:    input >> container;
+        1:   81-block  7
+    $$$$$:   81-block  8
+    $$$$$:   81-block  9
+    $$$$$:   81-block 10
+    $$$$$:   81-block 11
+    $$$$$:   81-block 12
+    $$$$$:   81-block 13
+        1:   81-block 14
+        1:   81-block 15
+        1:   81-block 16
+        1:   81-block 17
+        1:   81-block 18
+        1:   82:    Container container;
+        1:   83:    std::istringstream input("Container1 50.0 10.0 1");
         1:   83-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   84:    ASSERT_EQ(container.getName(), "Container1");
+        1:   83-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:   83-block  2
+        1:   84:    input >> container;
         1:   84-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   84-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:   84-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:   84-block  3
-branch  6 taken 0
-branch  7 taken 1
-        1:   84-block  4
-    $$$$$:   84-block  5
-    $$$$$:   84-block  6
-branch  8 never executed
-branch  9 never executed
-    $$$$$:   84-block  7
-branch 10 never executed
-branch 11 never executed
-    $$$$$:   84-block  8
-branch 12 never executed
-branch 13 never executed
-    $$$$$:   84-block  9
-branch 14 never executed
-branch 15 never executed
-    $$$$$:   84-block 10
-    $$$$$:   84-block 11
-    $$$$$:   84-block 12
-        1:   84-block 13
-        1:   84-block 14
-branch 16 taken 1
-branch 17 taken 0
-    $$$$$:   84-block 15
-        1:   85:    ASSERT_EQ(container.getMass(), 50.0);
+        1:   85:    ASSERT_EQ(container.getName(), "Container1");
         1:   85-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -1796,26 +1762,27 @@ branch  6 taken 0
 branch  7 taken 1
         1:   85-block  4
     $$$$$:   85-block  5
+    $$$$$:   85-block  6
 branch  8 never executed
 branch  9 never executed
-    $$$$$:   85-block  6
+    $$$$$:   85-block  7
 branch 10 never executed
 branch 11 never executed
-    $$$$$:   85-block  7
+    $$$$$:   85-block  8
 branch 12 never executed
 branch 13 never executed
-    $$$$$:   85-block  8
+    $$$$$:   85-block  9
 branch 14 never executed
 branch 15 never executed
-    $$$$$:   85-block  9
     $$$$$:   85-block 10
     $$$$$:   85-block 11
-        1:   85-block 12
+    $$$$$:   85-block 12
         1:   85-block 13
+        1:   85-block 14
 branch 16 taken 1
 branch 17 taken 0
-    $$$$$:   85-block 14
-        1:   86:    ASSERT_EQ(container.getVolume(), 10.0);
+    $$$$$:   85-block 15
+        1:   86:    ASSERT_EQ(container.getMass(), 50.0);
         1:   86-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -1849,7 +1816,7 @@ branch 15 never executed
 branch 16 taken 1
 branch 17 taken 0
     $$$$$:   86-block 14
-        1:   87:    ASSERT_EQ(static_cast<int>(container.getCategory()), 1);
+        1:   87:    ASSERT_EQ(container.getVolume(), 10.0);
         1:   87-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -1880,268 +1847,268 @@ branch 15 never executed
     $$$$$:   87-block 11
         1:   87-block 12
         1:   87-block 13
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:   87-block 14
+        1:   88:    ASSERT_EQ(static_cast<int>(container.getCategory()), 1);
+        1:   88-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   88-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   88-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   88-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:   88-block  4
+    $$$$$:   88-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   88-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:   88-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   88-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   88-block  9
+    $$$$$:   88-block 10
+    $$$$$:   88-block 11
+        1:   88-block 12
+        1:   88-block 13
 branch 16 taken 0
 branch 17 taken 1
-    $$$$$:   87-block 14
-        1:   88:}
-    $$$$$:   88-block  0
-    $$$$$:   88-block  1
-    $$$$$:   88-block  2
-    $$$$$:   88-block  3
-    $$$$$:   88-block  4
-    $$$$$:   88-block  5
-    $$$$$:   88-block  6
-    $$$$$:   88-block  7
-    $$$$$:   88-block  8
-    $$$$$:   88-block  9
-        1:   88-block 10
-        1:   88-block 11
+    $$$$$:   88-block 14
+        1:   89:}
+    $$$$$:   89-block  0
+    $$$$$:   89-block  1
+    $$$$$:   89-block  2
+    $$$$$:   89-block  3
+    $$$$$:   89-block  4
+    $$$$$:   89-block  5
+    $$$$$:   89-block  6
+    $$$$$:   89-block  7
+    $$$$$:   89-block  8
+    $$$$$:   89-block  9
+        1:   89-block 10
+        1:   89-block 11
 branch  0 taken 0
 branch  1 taken 1
-        1:   88-block 12
-    $$$$$:   88-block 13
-    $$$$$:   88-block 14
-    $$$$$:   88-block 15
-        -:   89:
+        1:   89-block 12
+    $$$$$:   89-block 13
+    $$$$$:   89-block 14
+    $$$$$:   89-block 15
+        -:   90:
 function _ZN43ContainerOutputOperator_OutputOperator_Test8TestBodyEv called 1 returned 100% blocks executed 40%
 function _ZN43ContainerOutputOperator_OutputOperator_TestD1Ev called 1 returned 100% blocks executed 100%
 function _ZN43ContainerOutputOperator_OutputOperator_TestD0Ev called 1 returned 100% blocks executed 100%
 function _ZN43ContainerOutputOperator_OutputOperator_TestC1Ev called 1 returned 100% blocks executed 100%
 function _ZN43ContainerOutputOperator_OutputOperator_TestC2Ev called 1 returned 100% blocks executed 100%
 function _ZN43ContainerOutputOperator_OutputOperator_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:   90:TEST(ContainerOutputOperator, OutputOperator) {
-        1:   90-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:   90-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:   90-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:   90-block  3
-branch  6 taken 1
-branch  7 taken 0
-        1:   90-block  4
-branch  8 taken 1
-branch  9 taken 0
-        1:   90-block  5
-branch 10 taken 1
-branch 11 taken 0
-        1:   90-block  6
-branch 12 taken 1
-branch 13 taken 0
-        1:   90-block  7
-    $$$$$:   90-block  8
-    $$$$$:   90-block  9
-    $$$$$:   90-block 10
-    $$$$$:   90-block 11
-    $$$$$:   90-block 12
-    $$$$$:   90-block 13
-        1:   90-block 14
-        1:   90-block 15
-        1:   90-block 16
-        1:   90-block 17
-        1:   90-block 18
-        1:   91:    Container container("Container2", 30.0, 5.0, BULK);
+        7:   91:TEST(ContainerOutputOperator, OutputOperator) {
         1:   91-block  0
 branch  0 taken 1
 branch  1 taken 0
-    $$$$$:   91-block  1
-    $$$$$:   91-block  2
-        1:   92:    std::ostringstream output;
+        1:   91-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   91-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   91-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:   91-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:   91-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:   91-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:   91-block  7
+    $$$$$:   91-block  8
+    $$$$$:   91-block  9
+    $$$$$:   91-block 10
+    $$$$$:   91-block 11
+    $$$$$:   91-block 12
+    $$$$$:   91-block 13
+        1:   91-block 14
+        1:   91-block 15
+        1:   91-block 16
+        1:   91-block 17
+        1:   91-block 18
+        1:   92:    Container container("Container2", 30.0, 5.0, BULK);
         1:   92-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   93:    output << container;
+    $$$$$:   92-block  1
+    $$$$$:   92-block  2
+        1:   93:    std::ostringstream output;
         1:   93-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   94:    ASSERT_EQ(output.str(), "Container2 Mass - 5 Volume - 30 Category - BULK\n");
+        1:   94:    output << container;
         1:   94-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:   94-block  1
+        1:   95:    ASSERT_EQ(output.str(), "Container2 Mass - 5 Volume - 30 Category - BULK\n");
+        1:   95-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:   95-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:   94-block  2
+        1:   95-block  2
 branch  4 taken 1
 branch  5 taken 0
-        1:   94-block  3
+        1:   95-block  3
 branch  6 taken 0
 branch  7 taken 1
-        1:   94-block  4
-    $$$$$:   94-block  5
-    $$$$$:   94-block  6
+        1:   95-block  4
+    $$$$$:   95-block  5
+    $$$$$:   95-block  6
 branch  8 never executed
 branch  9 never executed
-    $$$$$:   94-block  7
+    $$$$$:   95-block  7
 branch 10 never executed
 branch 11 never executed
-    $$$$$:   94-block  8
+    $$$$$:   95-block  8
 branch 12 never executed
 branch 13 never executed
-    $$$$$:   94-block  9
+    $$$$$:   95-block  9
 branch 14 never executed
 branch 15 never executed
-    $$$$$:   94-block 10
-    $$$$$:   94-block 11
-    $$$$$:   94-block 12
-        1:   94-block 13
-        1:   94-block 14
+    $$$$$:   95-block 10
+    $$$$$:   95-block 11
+    $$$$$:   95-block 12
+        1:   95-block 13
+        1:   95-block 14
 branch 16 taken 0
 branch 17 taken 1
-    $$$$$:   94-block 15
-        1:   95:}
-    $$$$$:   95-block  0
-    $$$$$:   95-block  1
-    $$$$$:   95-block  2
-    $$$$$:   95-block  3
-        1:   95-block  4
-        1:   95-block  5
+    $$$$$:   95-block 15
+        1:   96:}
+    $$$$$:   96-block  0
+    $$$$$:   96-block  1
+    $$$$$:   96-block  2
+    $$$$$:   96-block  3
+        1:   96-block  4
+        1:   96-block  5
 branch  0 taken 0
 branch  1 taken 1
-        1:   95-block  6
-    $$$$$:   95-block  7
-    $$$$$:   95-block  8
-        -:   96:
+        1:   96-block  6
+    $$$$$:   96-block  7
+    $$$$$:   96-block  8
+        -:   97:
 function _ZN31ContainerAddCargo_AddCargo_Test8TestBodyEv called 1 returned 100% blocks executed 42%
 function _ZN31ContainerAddCargo_AddCargo_TestD1Ev called 1 returned 100% blocks executed 100%
 function _ZN31ContainerAddCargo_AddCargo_TestD0Ev called 1 returned 100% blocks executed 100%
 function _ZN31ContainerAddCargo_AddCargo_TestC1Ev called 1 returned 100% blocks executed 100%
 function _ZN31ContainerAddCargo_AddCargo_TestC2Ev called 1 returned 100% blocks executed 100%
 function _ZN31ContainerAddCargo_AddCargo_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:   97:TEST(ContainerAddCargo, AddCargo) {
-        1:   97-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:   97-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:   97-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:   97-block  3
-branch  6 taken 1
-branch  7 taken 0
-        1:   97-block  4
-branch  8 taken 1
-branch  9 taken 0
-        1:   97-block  5
-branch 10 taken 1
-branch 11 taken 0
-        1:   97-block  6
-branch 12 taken 1
-branch 13 taken 0
-        1:   97-block  7
-    $$$$$:   97-block  8
-    $$$$$:   97-block  9
-    $$$$$:   97-block 10
-    $$$$$:   97-block 11
-    $$$$$:   97-block 12
-    $$$$$:   97-block 13
-        1:   97-block 14
-        1:   97-block 15
-        1:   97-block 16
-        1:   97-block 17
-        1:   97-block 18
-        1:   98:    Container container1 ("Container1", 20.0, 10.4, PIECES);
+        7:   98:TEST(ContainerAddCargo, AddCargo) {
         1:   98-block  0
 branch  0 taken 1
 branch  1 taken 0
-    $$$$$:   98-block  1
-    $$$$$:   98-block  2
-        1:   99:    container1.addCargo(3.3);
+        1:   98-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:   98-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:   98-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:   98-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:   98-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:   98-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:   98-block  7
+    $$$$$:   98-block  8
+    $$$$$:   98-block  9
+    $$$$$:   98-block 10
+    $$$$$:   98-block 11
+    $$$$$:   98-block 12
+    $$$$$:   98-block 13
+        1:   98-block 14
+        1:   98-block 15
+        1:   98-block 16
+        1:   98-block 17
+        1:   98-block 18
+        1:   99:    Container container1 ("Container1", 20.0, 10.4, PIECES);
         1:   99-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:  100:    ASSERT_EQ(container1.getMass(), 13.7);
+    $$$$$:   99-block  1
+    $$$$$:   99-block  2
+        1:  100:    container1.addCargo(3.3);
         1:  100-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:  100-block  1
+        1:  101:    ASSERT_EQ(container1.getMass(), 13.7);
+        1:  101-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  101-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:  100-block  2
+        1:  101-block  2
 branch  4 taken 1
 branch  5 taken 0
-        1:  100-block  3
+        1:  101-block  3
 branch  6 taken 0
 branch  7 taken 1
-        1:  100-block  4
-    $$$$$:  100-block  5
+        1:  101-block  4
+    $$$$$:  101-block  5
 branch  8 never executed
 branch  9 never executed
-    $$$$$:  100-block  6
+    $$$$$:  101-block  6
 branch 10 never executed
 branch 11 never executed
-    $$$$$:  100-block  7
+    $$$$$:  101-block  7
 branch 12 never executed
 branch 13 never executed
-    $$$$$:  100-block  8
+    $$$$$:  101-block  8
 branch 14 never executed
 branch 15 never executed
-    $$$$$:  100-block  9
-    $$$$$:  100-block 10
-    $$$$$:  100-block 11
-        1:  100-block 12
-        1:  100-block 13
+    $$$$$:  101-block  9
+    $$$$$:  101-block 10
+    $$$$$:  101-block 11
+        1:  101-block 12
+        1:  101-block 13
 branch 16 taken 0
 branch 17 taken 1
-    $$$$$:  100-block 14
-        1:  101:}
-    $$$$$:  101-block  0
-    $$$$$:  101-block  1
-    $$$$$:  101-block  2
-        1:  101-block  3
-        1:  101-block  4
+    $$$$$:  101-block 14
+        1:  102:}
+    $$$$$:  102-block  0
+    $$$$$:  102-block  1
+    $$$$$:  102-block  2
+        1:  102-block  3
+        1:  102-block  4
 branch  0 taken 0
 branch  1 taken 1
-        1:  101-block  5
-    $$$$$:  101-block  6
-        -:  102:
+        1:  102-block  5
+    $$$$$:  102-block  6
+        -:  103:
+        -:  104:// TRAIN TESTS
 function _ZN40TrainConstructor_DefaultConstructor_Test8TestBodyEv called 1 returned 100% blocks executed 40%
 function _ZN40TrainConstructor_DefaultConstructor_TestD1Ev called 1 returned 100% blocks executed 100%
 function _ZN40TrainConstructor_DefaultConstructor_TestD0Ev called 1 returned 100% blocks executed 100%
 function _ZN40TrainConstructor_DefaultConstructor_TestC1Ev called 1 returned 100% blocks executed 100%
 function _ZN40TrainConstructor_DefaultConstructor_TestC2Ev called 1 returned 100% blocks executed 100%
 function _ZN40TrainConstructor_DefaultConstructor_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:  103:TEST(TrainConstructor, DefaultConstructor) {
-        1:  103-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:  103-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:  103-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:  103-block  3
-branch  6 taken 1
-branch  7 taken 0
-        1:  103-block  4
-branch  8 taken 1
-branch  9 taken 0
-        1:  103-block  5
-branch 10 taken 1
-branch 11 taken 0
-        1:  103-block  6
-branch 12 taken 1
-branch 13 taken 0
-        1:  103-block  7
-    $$$$$:  103-block  8
-    $$$$$:  103-block  9
-    $$$$$:  103-block 10
-    $$$$$:  103-block 11
-    $$$$$:  103-block 12
-    $$$$$:  103-block 13
-        1:  103-block 14
-        1:  103-block 15
-        1:  103-block 16
-        1:  103-block 17
-        1:  103-block 18
-        1:  104:    Train train;
-        1:  105:    ASSERT_EQ(train.getMaxWeight(), 0.0);
+        7:  105:TEST(TrainConstructor, DefaultConstructor) {
         1:  105-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -2152,64 +2119,31 @@ branch  3 taken 0
 branch  4 taken 1
 branch  5 taken 0
         1:  105-block  3
-branch  6 taken 0
-branch  7 taken 1
+branch  6 taken 1
+branch  7 taken 0
         1:  105-block  4
-    $$$$$:  105-block  5
-branch  8 never executed
-branch  9 never executed
-    $$$$$:  105-block  6
-branch 10 never executed
-branch 11 never executed
-    $$$$$:  105-block  7
-branch 12 never executed
-branch 13 never executed
+branch  8 taken 1
+branch  9 taken 0
+        1:  105-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:  105-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:  105-block  7
     $$$$$:  105-block  8
-branch 14 never executed
-branch 15 never executed
     $$$$$:  105-block  9
     $$$$$:  105-block 10
     $$$$$:  105-block 11
-        1:  105-block 12
-        1:  105-block 13
-branch 16 taken 1
-branch 17 taken 0
-    $$$$$:  105-block 14
-        1:  106:    ASSERT_EQ(train.getMaxVolume(), 0.0);
-        1:  106-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:  106-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:  106-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:  106-block  3
-branch  6 taken 0
-branch  7 taken 1
-        1:  106-block  4
-    $$$$$:  106-block  5
-branch  8 never executed
-branch  9 never executed
-    $$$$$:  106-block  6
-branch 10 never executed
-branch 11 never executed
-    $$$$$:  106-block  7
-branch 12 never executed
-branch 13 never executed
-    $$$$$:  106-block  8
-branch 14 never executed
-branch 15 never executed
-    $$$$$:  106-block  9
-    $$$$$:  106-block 10
-    $$$$$:  106-block 11
-        1:  106-block 12
-        1:  106-block 13
-branch 16 taken 1
-branch 17 taken 0
-    $$$$$:  106-block 14
-        1:  107:    ASSERT_EQ(train.getCount(), 0);
+    $$$$$:  105-block 12
+    $$$$$:  105-block 13
+        1:  105-block 14
+        1:  105-block 15
+        1:  105-block 16
+        1:  105-block 17
+        1:  105-block 18
+        1:  106:    Train train;
+        1:  107:    ASSERT_EQ(train.getMaxWeight(), 0.0);
         1:  107-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -2243,7 +2177,7 @@ branch 15 never executed
 branch 16 taken 1
 branch 17 taken 0
     $$$$$:  107-block 14
-        1:  108:    ASSERT_EQ(train.getContainers(), nullptr);
+        1:  108:    ASSERT_EQ(train.getMaxVolume(), 0.0);
         1:  108-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -2274,154 +2208,154 @@ branch 15 never executed
     $$$$$:  108-block 11
         1:  108-block 12
         1:  108-block 13
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:  108-block 14
+        1:  109:    ASSERT_EQ(train.getCount(), 0);
+        1:  109-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  109-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  109-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  109-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  109-block  4
+    $$$$$:  109-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  109-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  109-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  109-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  109-block  9
+    $$$$$:  109-block 10
+    $$$$$:  109-block 11
+        1:  109-block 12
+        1:  109-block 13
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:  109-block 14
+        1:  110:    ASSERT_EQ(train.getContainers(), nullptr);
+        1:  110-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  110-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  110-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  110-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  110-block  4
+    $$$$$:  110-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  110-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  110-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  110-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  110-block  9
+    $$$$$:  110-block 10
+    $$$$$:  110-block 11
+        1:  110-block 12
+        1:  110-block 13
 branch 16 taken 0
 branch 17 taken 1
-    $$$$$:  108-block 14
-        1:  109:}
-    $$$$$:  109-block  0
-    $$$$$:  109-block  1
-    $$$$$:  109-block  2
-    $$$$$:  109-block  3
-    $$$$$:  109-block  4
-    $$$$$:  109-block  5
-    $$$$$:  109-block  6
-    $$$$$:  109-block  7
-    $$$$$:  109-block  8
-        1:  109-block  9
-        1:  109-block 10
+    $$$$$:  110-block 14
+        1:  111:}
+    $$$$$:  111-block  0
+    $$$$$:  111-block  1
+    $$$$$:  111-block  2
+    $$$$$:  111-block  3
+    $$$$$:  111-block  4
+    $$$$$:  111-block  5
+    $$$$$:  111-block  6
+    $$$$$:  111-block  7
+    $$$$$:  111-block  8
+        1:  111-block  9
+        1:  111-block 10
 branch  0 taken 0
 branch  1 taken 1
-        1:  109-block 11
-    $$$$$:  109-block 12
-    $$$$$:  109-block 13
-        -:  110:
+        1:  111-block 11
+    $$$$$:  111-block 12
+    $$$$$:  111-block 13
+        -:  112:
 function _ZN46TrainConstructor_ParameterizedConstructor_Test8TestBodyEv called 1 returned 100% blocks executed 39%
 function _ZN46TrainConstructor_ParameterizedConstructor_TestD1Ev called 1 returned 100% blocks executed 100%
 function _ZN46TrainConstructor_ParameterizedConstructor_TestD0Ev called 1 returned 100% blocks executed 100%
 function _ZN46TrainConstructor_ParameterizedConstructor_TestC1Ev called 1 returned 100% blocks executed 100%
 function _ZN46TrainConstructor_ParameterizedConstructor_TestC2Ev called 1 returned 100% blocks executed 100%
 function _ZN46TrainConstructor_ParameterizedConstructor_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:  111:TEST(TrainConstructor, ParameterizedConstructor) {
-        1:  111-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:  111-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:  111-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:  111-block  3
-branch  6 taken 1
-branch  7 taken 0
-        1:  111-block  4
-branch  8 taken 1
-branch  9 taken 0
-        1:  111-block  5
-branch 10 taken 1
-branch 11 taken 0
-        1:  111-block  6
-branch 12 taken 1
-branch 13 taken 0
-        1:  111-block  7
-    $$$$$:  111-block  8
-    $$$$$:  111-block  9
-    $$$$$:  111-block 10
-    $$$$$:  111-block 11
-    $$$$$:  111-block 12
-    $$$$$:  111-block 13
-        1:  111-block 14
-        1:  111-block 15
-        1:  111-block 16
-        1:  111-block 17
-        1:  111-block 18
-        2:  112:    Container containersInit[2];
-        1:  112-block  0
-        2:  112-block  1
-branch  0 taken 2
-branch  1 taken 0
-        2:  112-block  2
-branch  2 taken 1
-branch  3 taken 1
-    $$$$$:  112-block  3
-    $$$$$:  112-block  4
-    $$$$$:  112-block  5
-    $$$$$:  112-block  6
-    $$$$$:  112-block  7
-    $$$$$:  112-block  8
-        1:  113:    Train train(2, containersInit, 200.0, 100.0);
+        7:  113:TEST(TrainConstructor, ParameterizedConstructor) {
         1:  113-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:  114:    ASSERT_EQ(train.getMaxWeight(), 200.0);
-        1:  114-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:  114-block  1
+        1:  113-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:  114-block  2
+        1:  113-block  2
 branch  4 taken 1
 branch  5 taken 0
-        1:  114-block  3
-branch  6 taken 0
-branch  7 taken 1
-        1:  114-block  4
+        1:  113-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  113-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:  113-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:  113-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:  113-block  7
+    $$$$$:  113-block  8
+    $$$$$:  113-block  9
+    $$$$$:  113-block 10
+    $$$$$:  113-block 11
+    $$$$$:  113-block 12
+    $$$$$:  113-block 13
+        1:  113-block 14
+        1:  113-block 15
+        1:  113-block 16
+        1:  113-block 17
+        1:  113-block 18
+        2:  114:    Container containersInit[2];
+        1:  114-block  0
+        2:  114-block  1
+branch  0 taken 2
+branch  1 taken 0
+        2:  114-block  2
+branch  2 taken 1
+branch  3 taken 1
+    $$$$$:  114-block  3
+    $$$$$:  114-block  4
     $$$$$:  114-block  5
-branch  8 never executed
-branch  9 never executed
     $$$$$:  114-block  6
-branch 10 never executed
-branch 11 never executed
     $$$$$:  114-block  7
-branch 12 never executed
-branch 13 never executed
     $$$$$:  114-block  8
-branch 14 never executed
-branch 15 never executed
-    $$$$$:  114-block  9
-    $$$$$:  114-block 10
-    $$$$$:  114-block 11
-        1:  114-block 12
-        1:  114-block 13
-branch 16 taken 1
-branch 17 taken 0
-    $$$$$:  114-block 14
-        1:  115:    ASSERT_EQ(train.getMaxVolume(), 100.0);
+        1:  115:    Train train(2, containersInit, 200.0, 100.0);
         1:  115-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:  115-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:  115-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:  115-block  3
-branch  6 taken 0
-branch  7 taken 1
-        1:  115-block  4
-    $$$$$:  115-block  5
-branch  8 never executed
-branch  9 never executed
-    $$$$$:  115-block  6
-branch 10 never executed
-branch 11 never executed
-    $$$$$:  115-block  7
-branch 12 never executed
-branch 13 never executed
-    $$$$$:  115-block  8
-branch 14 never executed
-branch 15 never executed
-    $$$$$:  115-block  9
-    $$$$$:  115-block 10
-    $$$$$:  115-block 11
-        1:  115-block 12
-        1:  115-block 13
-branch 16 taken 1
-branch 17 taken 0
-    $$$$$:  115-block 14
-        1:  116:    ASSERT_EQ(train.getCount(), 2);
+        1:  116:    ASSERT_EQ(train.getMaxWeight(), 200.0);
         1:  116-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -2452,149 +2386,148 @@ branch 15 never executed
     $$$$$:  116-block 11
         1:  116-block 12
         1:  116-block 13
-branch 16 taken 0
-branch 17 taken 1
+branch 16 taken 1
+branch 17 taken 0
     $$$$$:  116-block 14
-        2:  117:}
-    $$$$$:  117-block  0
-    $$$$$:  117-block  1
-    $$$$$:  117-block  2
-    $$$$$:  117-block  3
-    $$$$$:  117-block  4
-    $$$$$:  117-block  5
-    $$$$$:  117-block  6
-    $$$$$:  117-block  7
-        1:  117-block  8
-        1:  117-block  9
-        1:  117-block 10
-    $$$$$:  117-block 11
-        1:  117-block 12
-    $$$$$:  117-block 13
-    $$$$$:  117-block 14
-    $$$$$:  117-block 15
-    $$$$$:  117-block 16
-    $$$$$:  117-block 17
-        -:  118:
-function _ZN37TrainConstructor_CopyConstructor_Test8TestBodyEv called 1 returned 100% blocks executed 43%
-function _ZN37TrainConstructor_CopyConstructor_TestD1Ev called 1 returned 100% blocks executed 100%
-function _ZN37TrainConstructor_CopyConstructor_TestD0Ev called 1 returned 100% blocks executed 100%
-function _ZN37TrainConstructor_CopyConstructor_TestC1Ev called 1 returned 100% blocks executed 100%
-function _ZN37TrainConstructor_CopyConstructor_TestC2Ev called 1 returned 100% blocks executed 100%
-function _ZN37TrainConstructor_CopyConstructor_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:  119:TEST(TrainConstructor, CopyConstructor) {
-        1:  119-block  0
+        1:  117:    ASSERT_EQ(train.getMaxVolume(), 100.0);
+        1:  117-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:  119-block  1
+        1:  117-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:  119-block  2
+        1:  117-block  2
 branch  4 taken 1
 branch  5 taken 0
-        1:  119-block  3
-branch  6 taken 1
-branch  7 taken 0
-        1:  119-block  4
-branch  8 taken 1
-branch  9 taken 0
-        1:  119-block  5
-branch 10 taken 1
-branch 11 taken 0
-        1:  119-block  6
-branch 12 taken 1
-branch 13 taken 0
-        1:  119-block  7
-    $$$$$:  119-block  8
-    $$$$$:  119-block  9
-    $$$$$:  119-block 10
+        1:  117-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  117-block  4
+    $$$$$:  117-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  117-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  117-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  117-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  117-block  9
+    $$$$$:  117-block 10
+    $$$$$:  117-block 11
+        1:  117-block 12
+        1:  117-block 13
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:  117-block 14
+        1:  118:    ASSERT_EQ(train.getCount(), 2);
+        1:  118-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  118-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  118-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  118-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  118-block  4
+    $$$$$:  118-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  118-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  118-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  118-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  118-block  9
+    $$$$$:  118-block 10
+    $$$$$:  118-block 11
+        1:  118-block 12
+        1:  118-block 13
+branch 16 taken 0
+branch 17 taken 1
+    $$$$$:  118-block 14
+        2:  119:}
+    $$$$$:  119-block  0
+    $$$$$:  119-block  1
+    $$$$$:  119-block  2
+    $$$$$:  119-block  3
+    $$$$$:  119-block  4
+    $$$$$:  119-block  5
+    $$$$$:  119-block  6
+    $$$$$:  119-block  7
+        1:  119-block  8
+        1:  119-block  9
+        1:  119-block 10
     $$$$$:  119-block 11
-    $$$$$:  119-block 12
+        1:  119-block 12
     $$$$$:  119-block 13
-        1:  119-block 14
-        1:  119-block 15
-        1:  119-block 16
-        1:  119-block 17
-        1:  119-block 18
-        1:  120:    Train train1;
-        1:  121:    Train train2 = train1;
+    $$$$$:  119-block 14
+    $$$$$:  119-block 15
+    $$$$$:  119-block 16
+    $$$$$:  119-block 17
+        -:  120:
+function _ZN47TrainConstructor_ConstructorByOneContainer_Test8TestBodyEv called 1 returned 100% blocks executed 42%
+function _ZN47TrainConstructor_ConstructorByOneContainer_TestD1Ev called 1 returned 100% blocks executed 100%
+function _ZN47TrainConstructor_ConstructorByOneContainer_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN47TrainConstructor_ConstructorByOneContainer_TestC1Ev called 1 returned 100% blocks executed 100%
+function _ZN47TrainConstructor_ConstructorByOneContainer_TestC2Ev called 1 returned 100% blocks executed 100%
+function _ZN47TrainConstructor_ConstructorByOneContainer_TestD2Ev called 1 returned 100% blocks executed 100%
+        7:  121:TEST(TrainConstructor, ConstructorByOneContainer) {
         1:  121-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:  122:    ASSERT_EQ(train2.getMaxWeight(), train1.getMaxWeight());
+        1:  121-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  121-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  121-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  121-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:  121-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:  121-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:  121-block  7
+    $$$$$:  121-block  8
+    $$$$$:  121-block  9
+    $$$$$:  121-block 10
+    $$$$$:  121-block 11
+    $$$$$:  121-block 12
+    $$$$$:  121-block 13
+        1:  121-block 14
+        1:  121-block 15
+        1:  121-block 16
+        1:  121-block 17
+        1:  121-block 18
+        1:  122:    Container oneContainer("Container1", 50.0, 10.0, GAS);
         1:  122-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:  122-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:  122-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:  122-block  3
-branch  6 taken 1
-branch  7 taken 0
-        1:  122-block  4
-branch  8 taken 0
-branch  9 taken 1
-        1:  122-block  5
-    $$$$$:  122-block  6
-branch 10 never executed
-branch 11 never executed
-    $$$$$:  122-block  7
-branch 12 never executed
-branch 13 never executed
-    $$$$$:  122-block  8
-branch 14 never executed
-branch 15 never executed
-    $$$$$:  122-block  9
-branch 16 never executed
-branch 17 never executed
-    $$$$$:  122-block 10
-    $$$$$:  122-block 11
-    $$$$$:  122-block 12
-        1:  122-block 13
-        1:  122-block 14
-branch 18 taken 1
-branch 19 taken 0
-    $$$$$:  122-block 15
-        1:  123:    ASSERT_EQ(train2.getMaxVolume(), train1.getMaxVolume());
+    $$$$$:  122-block  1
+    $$$$$:  122-block  2
+        1:  123:    Train train(oneContainer, 200.0, 100.0);
         1:  123-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:  123-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:  123-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:  123-block  3
-branch  6 taken 1
-branch  7 taken 0
-        1:  123-block  4
-branch  8 taken 0
-branch  9 taken 1
-        1:  123-block  5
-    $$$$$:  123-block  6
-branch 10 never executed
-branch 11 never executed
-    $$$$$:  123-block  7
-branch 12 never executed
-branch 13 never executed
-    $$$$$:  123-block  8
-branch 14 never executed
-branch 15 never executed
-    $$$$$:  123-block  9
-branch 16 never executed
-branch 17 never executed
-    $$$$$:  123-block 10
-    $$$$$:  123-block 11
-    $$$$$:  123-block 12
-        1:  123-block 13
-        1:  123-block 14
-branch 18 taken 1
-branch 19 taken 0
-    $$$$$:  123-block 15
-        1:  124:    ASSERT_EQ(train2.getCount(), train1.getCount());
+        1:  124:    ASSERT_DOUBLE_EQ(train.getMaxWeight(), 200.0);
         1:  124-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -2605,12 +2538,12 @@ branch  3 taken 0
 branch  4 taken 1
 branch  5 taken 0
         1:  124-block  3
-branch  6 taken 1
-branch  7 taken 0
+branch  6 taken 0
+branch  7 taken 1
         1:  124-block  4
-branch  8 taken 0
-branch  9 taken 1
-        1:  124-block  5
+    $$$$$:  124-block  5
+branch  8 never executed
+branch  9 never executed
     $$$$$:  124-block  6
 branch 10 never executed
 branch 11 never executed
@@ -2621,42 +2554,120 @@ branch 13 never executed
 branch 14 never executed
 branch 15 never executed
     $$$$$:  124-block  9
-branch 16 never executed
-branch 17 never executed
     $$$$$:  124-block 10
     $$$$$:  124-block 11
-    $$$$$:  124-block 12
+        1:  124-block 12
         1:  124-block 13
-        1:  124-block 14
-branch 18 taken 0
-branch 19 taken 1
-    $$$$$:  124-block 15
-        1:  125:}
-    $$$$$:  125-block  0
-    $$$$$:  125-block  1
-    $$$$$:  125-block  2
-    $$$$$:  125-block  3
-    $$$$$:  125-block  4
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:  124-block 14
+        1:  125:    ASSERT_DOUBLE_EQ(train.getMaxVolume(), 100.0);
+        1:  125-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  125-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  125-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  125-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  125-block  4
     $$$$$:  125-block  5
+branch  8 never executed
+branch  9 never executed
     $$$$$:  125-block  6
+branch 10 never executed
+branch 11 never executed
     $$$$$:  125-block  7
-        1:  125-block  8
-        1:  125-block  9
-branch  0 taken 0
-branch  1 taken 1
-        1:  125-block 10
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  125-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  125-block  9
+    $$$$$:  125-block 10
     $$$$$:  125-block 11
-    $$$$$:  125-block 12
-    $$$$$:  125-block 13
-        -:  126:
-        -:  127:
-function _ZN45TrainGettersAndSetters_GettersAndSetters_Test8TestBodyEv called 1 returned 100% blocks executed 43%
-function _ZN45TrainGettersAndSetters_GettersAndSetters_TestD1Ev called 1 returned 100% blocks executed 100%
-function _ZN45TrainGettersAndSetters_GettersAndSetters_TestD0Ev called 1 returned 100% blocks executed 100%
-function _ZN45TrainGettersAndSetters_GettersAndSetters_TestC1Ev called 1 returned 100% blocks executed 100%
-function _ZN45TrainGettersAndSetters_GettersAndSetters_TestC2Ev called 1 returned 100% blocks executed 100%
-function _ZN45TrainGettersAndSetters_GettersAndSetters_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:  128:TEST(TrainGettersAndSetters, GettersAndSetters) {
+        1:  125-block 12
+        1:  125-block 13
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:  125-block 14
+        1:  126:    ASSERT_EQ(train.getCount(), 1);
+        1:  126-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  126-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  126-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  126-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  126-block  4
+    $$$$$:  126-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  126-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  126-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  126-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  126-block  9
+    $$$$$:  126-block 10
+    $$$$$:  126-block 11
+        1:  126-block 12
+        1:  126-block 13
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:  126-block 14
+        1:  127:    ASSERT_EQ(train[0].getName(), "Container1");
+        1:  127-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  127-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  127-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  127-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  127-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  127-block  5
+    $$$$$:  127-block  6
+    $$$$$:  127-block  7
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  127-block  8
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  127-block  9
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  127-block 10
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  127-block 11
+    $$$$$:  127-block 12
+    $$$$$:  127-block 13
+        1:  127-block 14
+        1:  127-block 15
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  127-block 16
+        1:  128:    ASSERT_DOUBLE_EQ(train[0].getMass(), 10.0);
         1:  128-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -2670,40 +2681,135 @@ branch  5 taken 0
 branch  6 taken 1
 branch  7 taken 0
         1:  128-block  4
-branch  8 taken 1
-branch  9 taken 0
+branch  8 taken 0
+branch  9 taken 1
         1:  128-block  5
-branch 10 taken 1
-branch 11 taken 0
-        1:  128-block  6
-branch 12 taken 1
-branch 13 taken 0
-        1:  128-block  7
+    $$$$$:  128-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  128-block  7
+branch 12 never executed
+branch 13 never executed
     $$$$$:  128-block  8
+branch 14 never executed
+branch 15 never executed
     $$$$$:  128-block  9
+branch 16 never executed
+branch 17 never executed
     $$$$$:  128-block 10
     $$$$$:  128-block 11
     $$$$$:  128-block 12
-    $$$$$:  128-block 13
+        1:  128-block 13
         1:  128-block 14
-        1:  128-block 15
-        1:  128-block 16
-        1:  128-block 17
-        1:  128-block 18
-        1:  129:    Train train1;
-        1:  130:    train1.setMaxWeight(325.2);
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  128-block 15
+        1:  129:    ASSERT_DOUBLE_EQ(train[0].getVolume(), 50.0);
+        1:  129-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  129-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  129-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  129-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  129-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  129-block  5
+    $$$$$:  129-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  129-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  129-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  129-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  129-block 10
+    $$$$$:  129-block 11
+    $$$$$:  129-block 12
+        1:  129-block 13
+        1:  129-block 14
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  129-block 15
+        1:  130:    ASSERT_EQ(train[0].getCategory(), GAS);
         1:  130-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:  131:    train1.setMaxVolume(241.1);
-        1:  131-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:  132:    train1.setCountContainers(3);
-        1:  132-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:  133:    ASSERT_EQ(train1.getMaxWeight(), 325.2);
+        1:  130-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  130-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  130-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  130-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  130-block  5
+    $$$$$:  130-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  130-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  130-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  130-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  130-block 10
+    $$$$$:  130-block 11
+    $$$$$:  130-block 12
+        1:  130-block 13
+        1:  130-block 14
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:  130-block 15
+        1:  131:}
+    $$$$$:  131-block  0
+    $$$$$:  131-block  1
+    $$$$$:  131-block  2
+    $$$$$:  131-block  3
+    $$$$$:  131-block  4
+    $$$$$:  131-block  5
+    $$$$$:  131-block  6
+    $$$$$:  131-block  7
+    $$$$$:  131-block  8
+    $$$$$:  131-block  9
+    $$$$$:  131-block 10
+    $$$$$:  131-block 11
+    $$$$$:  131-block 12
+    $$$$$:  131-block 13
+    $$$$$:  131-block 14
+    $$$$$:  131-block 15
+        1:  131-block 16
+        1:  131-block 17
+branch  0 taken 0
+branch  1 taken 1
+        1:  131-block 18
+    $$$$$:  131-block 19
+    $$$$$:  131-block 20
+        -:  132:
+function _ZN37TrainInputOperator_InputOperator_Test8TestBodyEv called 1 returned 100% blocks executed 43%
+function _ZN37TrainInputOperator_InputOperator_TestD1Ev called 1 returned 100% blocks executed 100%
+function _ZN37TrainInputOperator_InputOperator_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN37TrainInputOperator_InputOperator_TestC1Ev called 1 returned 100% blocks executed 100%
+function _ZN37TrainInputOperator_InputOperator_TestC2Ev called 1 returned 100% blocks executed 100%
+function _ZN37TrainInputOperator_InputOperator_TestD2Ev called 1 returned 100% blocks executed 100%
+        7:  133:TEST(TrainInputOperator, InputOperator) {
         1:  133-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -2714,186 +2820,186 @@ branch  3 taken 0
 branch  4 taken 1
 branch  5 taken 0
         1:  133-block  3
-branch  6 taken 0
-branch  7 taken 1
+branch  6 taken 1
+branch  7 taken 0
         1:  133-block  4
-    $$$$$:  133-block  5
-branch  8 never executed
-branch  9 never executed
-    $$$$$:  133-block  6
-branch 10 never executed
-branch 11 never executed
-    $$$$$:  133-block  7
-branch 12 never executed
-branch 13 never executed
+branch  8 taken 1
+branch  9 taken 0
+        1:  133-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:  133-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:  133-block  7
     $$$$$:  133-block  8
-branch 14 never executed
-branch 15 never executed
     $$$$$:  133-block  9
     $$$$$:  133-block 10
     $$$$$:  133-block 11
-        1:  133-block 12
-        1:  133-block 13
-branch 16 taken 1
-branch 17 taken 0
-    $$$$$:  133-block 14
-        1:  134:    ASSERT_EQ(train1.getMaxVolume(), 241.1);
-        1:  134-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:  134-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:  134-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:  134-block  3
-branch  6 taken 0
-branch  7 taken 1
-        1:  134-block  4
-    $$$$$:  134-block  5
-branch  8 never executed
-branch  9 never executed
-    $$$$$:  134-block  6
-branch 10 never executed
-branch 11 never executed
-    $$$$$:  134-block  7
-branch 12 never executed
-branch 13 never executed
-    $$$$$:  134-block  8
-branch 14 never executed
-branch 15 never executed
-    $$$$$:  134-block  9
-    $$$$$:  134-block 10
-    $$$$$:  134-block 11
-        1:  134-block 12
-        1:  134-block 13
-branch 16 taken 1
-branch 17 taken 0
-    $$$$$:  134-block 14
-        1:  135:    ASSERT_EQ(train1.getCount(), 3);
+    $$$$$:  133-block 12
+    $$$$$:  133-block 13
+        1:  133-block 14
+        1:  133-block 15
+        1:  133-block 16
+        1:  133-block 17
+        1:  133-block 18
+        1:  134:    Train train;
+        1:  135:    std::istringstream input("100.0 200.0 2\nContainer1 50.0 10.0 1\nContainer2 30.0 5.0 2");
         1:  135-block  0
 branch  0 taken 1
 branch  1 taken 0
         1:  135-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:  135-block  2
-branch  4 taken 1
-branch  5 taken 0
-        1:  135-block  3
-branch  6 taken 0
-branch  7 taken 1
-        1:  135-block  4
-    $$$$$:  135-block  5
-branch  8 never executed
-branch  9 never executed
-    $$$$$:  135-block  6
-branch 10 never executed
-branch 11 never executed
-    $$$$$:  135-block  7
-branch 12 never executed
-branch 13 never executed
-    $$$$$:  135-block  8
-branch 14 never executed
-branch 15 never executed
-    $$$$$:  135-block  9
-    $$$$$:  135-block 10
-    $$$$$:  135-block 11
-        1:  135-block 12
-        1:  135-block 13
-branch 16 taken 0
-branch 17 taken 1
-    $$$$$:  135-block 14
-        1:  136:}
-    $$$$$:  136-block  0
-    $$$$$:  136-block  1
-    $$$$$:  136-block  2
-    $$$$$:  136-block  3
-    $$$$$:  136-block  4
-    $$$$$:  136-block  5
-    $$$$$:  136-block  6
-        1:  136-block  7
-        1:  136-block  8
-branch  0 taken 0
-branch  1 taken 1
-        1:  136-block  9
-    $$$$$:  136-block 10
-    $$$$$:  136-block 11
-        -:  137:
-function _ZN29TrainCountMass_CountMass_Test8TestBodyEv called 1 returned 100% blocks executed 34%
-function _ZN29TrainCountMass_CountMass_TestD1Ev called 1 returned 100% blocks executed 100%
-function _ZN29TrainCountMass_CountMass_TestD0Ev called 1 returned 100% blocks executed 100%
-function _ZN29TrainCountMass_CountMass_TestC1Ev called 1 returned 100% blocks executed 100%
-function _ZN29TrainCountMass_CountMass_TestC2Ev called 1 returned 100% blocks executed 100%
-function _ZN29TrainCountMass_CountMass_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:  138:TEST(TrainCountMass, CountMass) {
-        1:  138-block  0
+    $$$$$:  135-block  2
+        -:  136:
+        1:  137:    input >> train;
+        1:  137-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:  138-block  1
+        -:  138:
+        1:  139:    ASSERT_DOUBLE_EQ(train.getMaxWeight(), 100.0);
+        1:  139-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  139-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:  138-block  2
+        1:  139-block  2
 branch  4 taken 1
 branch  5 taken 0
-        1:  138-block  3
-branch  6 taken 1
-branch  7 taken 0
-        1:  138-block  4
-branch  8 taken 1
-branch  9 taken 0
-        1:  138-block  5
-branch 10 taken 1
-branch 11 taken 0
-        1:  138-block  6
-branch 12 taken 1
-branch 13 taken 0
-        1:  138-block  7
-    $$$$$:  138-block  8
-    $$$$$:  138-block  9
-    $$$$$:  138-block 10
-    $$$$$:  138-block 11
-    $$$$$:  138-block 12
-    $$$$$:  138-block 13
-        1:  138-block 14
-        1:  138-block 15
-        1:  138-block 16
-        1:  138-block 17
-        1:  138-block 18
-        3:  139:    Container containers[] = {
-    $$$$$:  139-block  0
-    $$$$$:  139-block  1
-    $$$$$:  139-block  2
-branch  0 never executed
-branch  1 never executed
-    $$$$$:  139-block  3
-    $$$$$:  139-block  4
+        1:  139-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  139-block  4
     $$$$$:  139-block  5
+branch  8 never executed
+branch  9 never executed
     $$$$$:  139-block  6
+branch 10 never executed
+branch 11 never executed
     $$$$$:  139-block  7
+branch 12 never executed
+branch 13 never executed
     $$$$$:  139-block  8
+branch 14 never executed
+branch 15 never executed
     $$$$$:  139-block  9
-        1:  140:            Container("Container1", 50.0, 10.0, PIECES),
+    $$$$$:  139-block 10
+    $$$$$:  139-block 11
+        1:  139-block 12
+        1:  139-block 13
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:  139-block 14
+        1:  140:    ASSERT_DOUBLE_EQ(train.getMaxVolume(), 200.0);
         1:  140-block  0
 branch  0 taken 1
 branch  1 taken 0
         1:  140-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:  141:            Container("Container2", 30.0, 5.0, BULK),
+        1:  140-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  140-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  140-block  4
+    $$$$$:  140-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  140-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  140-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  140-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  140-block  9
+    $$$$$:  140-block 10
+    $$$$$:  140-block 11
+        1:  140-block 12
+        1:  140-block 13
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:  140-block 14
+        1:  141:    ASSERT_EQ(train.getCount(), 2);
         1:  141-block  0
 branch  0 taken 1
 branch  1 taken 0
         1:  141-block  1
 branch  2 taken 1
 branch  3 taken 0
-        -:  142:    };
-        1:  143:    Train train(2, containers, 200.0, 100.0);
+        1:  141-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  141-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  141-block  4
+    $$$$$:  141-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  141-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  141-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  141-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  141-block  9
+    $$$$$:  141-block 10
+    $$$$$:  141-block 11
+        1:  141-block 12
+        1:  141-block 13
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:  141-block 14
+        -:  142:
+        1:  143:    ASSERT_EQ(train[0].getName(), "Container1");
         1:  143-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:  144:    ASSERT_EQ(train.countMass(), 15.0);
+        1:  143-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  143-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  143-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  143-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  143-block  5
+    $$$$$:  143-block  6
+    $$$$$:  143-block  7
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  143-block  8
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  143-block  9
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  143-block 10
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  143-block 11
+    $$$$$:  143-block 12
+    $$$$$:  143-block 13
+        1:  143-block 14
+        1:  143-block 15
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  143-block 16
+        1:  144:    ASSERT_DOUBLE_EQ(train[0].getMass(), 50.0);
         1:  144-block  0
 branch  0 taken 1
 branch  1 taken 0
@@ -2904,12 +3010,12 @@ branch  3 taken 0
 branch  4 taken 1
 branch  5 taken 0
         1:  144-block  3
-branch  6 taken 0
-branch  7 taken 1
+branch  6 taken 1
+branch  7 taken 0
         1:  144-block  4
-    $$$$$:  144-block  5
-branch  8 never executed
-branch  9 never executed
+branch  8 taken 0
+branch  9 taken 1
+        1:  144-block  5
     $$$$$:  144-block  6
 branch 10 never executed
 branch 11 never executed
@@ -2920,158 +3026,2475 @@ branch 13 never executed
 branch 14 never executed
 branch 15 never executed
     $$$$$:  144-block  9
+branch 16 never executed
+branch 17 never executed
     $$$$$:  144-block 10
     $$$$$:  144-block 11
-        1:  144-block 12
+    $$$$$:  144-block 12
         1:  144-block 13
-branch 16 taken 0
-branch 17 taken 1
-    $$$$$:  144-block 14
-        2:  145:}
-    $$$$$:  145-block  0
-    $$$$$:  145-block  1
-    $$$$$:  145-block  2
-    $$$$$:  145-block  3
-    $$$$$:  145-block  4
-    $$$$$:  145-block  5
-        1:  145-block  6
-        1:  145-block  7
-        1:  145-block  8
-    $$$$$:  145-block  9
-        1:  145-block 10
-    $$$$$:  145-block 11
-    $$$$$:  145-block 12
-    $$$$$:  145-block 13
-    $$$$$:  145-block 14
-    $$$$$:  145-block 15
-        -:  146:
-function _ZN41TrainCountCenterMass_CountCenterMass_Test8TestBodyEv called 1 returned 100% blocks executed 34%
-function _ZN41TrainCountCenterMass_CountCenterMass_TestD1Ev called 1 returned 100% blocks executed 100%
-function _ZN41TrainCountCenterMass_CountCenterMass_TestD0Ev called 1 returned 100% blocks executed 100%
-function _ZN41TrainCountCenterMass_CountCenterMass_TestC1Ev called 1 returned 100% blocks executed 100%
-function _ZN41TrainCountCenterMass_CountCenterMass_TestC2Ev called 1 returned 100% blocks executed 100%
-function _ZN41TrainCountCenterMass_CountCenterMass_TestD2Ev called 1 returned 100% blocks executed 100%
-        7:  147:TEST(TrainCountCenterMass, CountCenterMass) {
-        1:  147-block  0
+        1:  144-block 14
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  144-block 15
+        1:  145:    ASSERT_DOUBLE_EQ(train[0].getVolume(), 10.0);
+        1:  145-block  0
 branch  0 taken 1
 branch  1 taken 0
-        1:  147-block  1
+        1:  145-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:  147-block  2
+        1:  145-block  2
 branch  4 taken 1
 branch  5 taken 0
-        1:  147-block  3
+        1:  145-block  3
 branch  6 taken 1
 branch  7 taken 0
-        1:  147-block  4
-branch  8 taken 1
-branch  9 taken 0
-        1:  147-block  5
-branch 10 taken 1
-branch 11 taken 0
-        1:  147-block  6
-branch 12 taken 1
-branch 13 taken 0
-        1:  147-block  7
-    $$$$$:  147-block  8
-    $$$$$:  147-block  9
-    $$$$$:  147-block 10
-    $$$$$:  147-block 11
-    $$$$$:  147-block 12
-    $$$$$:  147-block 13
-        1:  147-block 14
-        1:  147-block 15
-        1:  147-block 16
-        1:  147-block 17
-        1:  147-block 18
-        3:  148:    Container containers[] = {
-    $$$$$:  148-block  0
-    $$$$$:  148-block  1
-    $$$$$:  148-block  2
-branch  0 never executed
-branch  1 never executed
-    $$$$$:  148-block  3
-    $$$$$:  148-block  4
-    $$$$$:  148-block  5
+        1:  145-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  145-block  5
+    $$$$$:  145-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  145-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  145-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  145-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  145-block 10
+    $$$$$:  145-block 11
+    $$$$$:  145-block 12
+        1:  145-block 13
+        1:  145-block 14
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  145-block 15
+        1:  146:    ASSERT_EQ(static_cast<int>(train[0].getCategory()), 1);
+        1:  146-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  146-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  146-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  146-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  146-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  146-block  5
+    $$$$$:  146-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  146-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  146-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  146-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  146-block 10
+    $$$$$:  146-block 11
+    $$$$$:  146-block 12
+        1:  146-block 13
+        1:  146-block 14
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  146-block 15
+        -:  147:
+        1:  148:    ASSERT_EQ(train[1].getName(), "Container2");
+        1:  148-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  148-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  148-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  148-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  148-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  148-block  5
     $$$$$:  148-block  6
     $$$$$:  148-block  7
+branch 10 never executed
+branch 11 never executed
     $$$$$:  148-block  8
+branch 12 never executed
+branch 13 never executed
     $$$$$:  148-block  9
-        1:  149:            Container("Container1", 50.0, 10.0, PIECES),
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  148-block 10
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  148-block 11
+    $$$$$:  148-block 12
+    $$$$$:  148-block 13
+        1:  148-block 14
+        1:  148-block 15
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  148-block 16
+        1:  149:    ASSERT_DOUBLE_EQ(train[1].getMass(), 30.0);
         1:  149-block  0
 branch  0 taken 1
 branch  1 taken 0
         1:  149-block  1
 branch  2 taken 1
 branch  3 taken 0
-        1:  150:            Container("Container2", 30.0, 10.0, BULK),
+        1:  149-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  149-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  149-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  149-block  5
+    $$$$$:  149-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  149-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  149-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  149-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  149-block 10
+    $$$$$:  149-block 11
+    $$$$$:  149-block 12
+        1:  149-block 13
+        1:  149-block 14
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  149-block 15
+        1:  150:    ASSERT_DOUBLE_EQ(train[1].getVolume(), 5.0);
         1:  150-block  0
 branch  0 taken 1
 branch  1 taken 0
         1:  150-block  1
 branch  2 taken 1
 branch  3 taken 0
-        -:  151:    };
-        1:  152:    Train train(2, containers, 200.0, 100.0);
-        1:  152-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:  153:    ASSERT_EQ(train.countCenterMass(), 0.5);
-        1:  153-block  0
-branch  0 taken 1
-branch  1 taken 0
-        1:  153-block  1
-branch  2 taken 1
-branch  3 taken 0
-        1:  153-block  2
+        1:  150-block  2
 branch  4 taken 1
 branch  5 taken 0
-        1:  153-block  3
-branch  6 taken 0
-branch  7 taken 1
-        1:  153-block  4
-    $$$$$:  153-block  5
-branch  8 never executed
-branch  9 never executed
-    $$$$$:  153-block  6
+        1:  150-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  150-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  150-block  5
+    $$$$$:  150-block  6
 branch 10 never executed
 branch 11 never executed
-    $$$$$:  153-block  7
+    $$$$$:  150-block  7
 branch 12 never executed
 branch 13 never executed
-    $$$$$:  153-block  8
+    $$$$$:  150-block  8
 branch 14 never executed
 branch 15 never executed
-    $$$$$:  153-block  9
-    $$$$$:  153-block 10
-    $$$$$:  153-block 11
-        1:  153-block 12
-        1:  153-block 13
-branch 16 taken 0
-branch 17 taken 1
-    $$$$$:  153-block 14
-        2:  154:}
-    $$$$$:  154-block  0
-    $$$$$:  154-block  1
-    $$$$$:  154-block  2
-    $$$$$:  154-block  3
-    $$$$$:  154-block  4
-    $$$$$:  154-block  5
+    $$$$$:  150-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  150-block 10
+    $$$$$:  150-block 11
+    $$$$$:  150-block 12
+        1:  150-block 13
+        1:  150-block 14
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  150-block 15
+        1:  151:    ASSERT_EQ(static_cast<int>(train[1].getCategory()), 2);
+        1:  151-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  151-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  151-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  151-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  151-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  151-block  5
+    $$$$$:  151-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  151-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  151-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  151-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  151-block 10
+    $$$$$:  151-block 11
+    $$$$$:  151-block 12
+        1:  151-block 13
+        1:  151-block 14
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:  151-block 15
+        1:  152:}
+    $$$$$:  152-block  0
+    $$$$$:  152-block  1
+    $$$$$:  152-block  2
+    $$$$$:  152-block  3
+    $$$$$:  152-block  4
+    $$$$$:  152-block  5
+    $$$$$:  152-block  6
+    $$$$$:  152-block  7
+    $$$$$:  152-block  8
+    $$$$$:  152-block  9
+    $$$$$:  152-block 10
+    $$$$$:  152-block 11
+    $$$$$:  152-block 12
+    $$$$$:  152-block 13
+    $$$$$:  152-block 14
+    $$$$$:  152-block 15
+    $$$$$:  152-block 16
+    $$$$$:  152-block 17
+    $$$$$:  152-block 18
+    $$$$$:  152-block 19
+    $$$$$:  152-block 20
+    $$$$$:  152-block 21
+    $$$$$:  152-block 22
+    $$$$$:  152-block 23
+        1:  152-block 24
+        1:  152-block 25
+branch  0 taken 0
+branch  1 taken 1
+        1:  152-block 26
+    $$$$$:  152-block 27
+    $$$$$:  152-block 28
+    $$$$$:  152-block 29
+        -:  153:
+function _ZN39TrainOutputOperator_OutputOperator_Test8TestBodyEv called 1 returned 100% blocks executed 47%
+function _ZN39TrainOutputOperator_OutputOperator_TestD1Ev called 1 returned 100% blocks executed 100%
+function _ZN39TrainOutputOperator_OutputOperator_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN39TrainOutputOperator_OutputOperator_TestC1Ev called 1 returned 100% blocks executed 100%
+function _ZN39TrainOutputOperator_OutputOperator_TestC2Ev called 1 returned 100% blocks executed 100%
+function _ZN39TrainOutputOperator_OutputOperator_TestD2Ev called 1 returned 100% blocks executed 100%
+        7:  154:TEST(TrainOutputOperator, OutputOperator) {
+        1:  154-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  154-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  154-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  154-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  154-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:  154-block  5
+branch 10 taken 1
+branch 11 taken 0
         1:  154-block  6
+branch 12 taken 1
+branch 13 taken 0
         1:  154-block  7
-        1:  154-block  8
+    $$$$$:  154-block  8
     $$$$$:  154-block  9
-        1:  154-block 10
+    $$$$$:  154-block 10
     $$$$$:  154-block 11
     $$$$$:  154-block 12
     $$$$$:  154-block 13
-    $$$$$:  154-block 14
-    $$$$$:  154-block 15
-        -:  155:
+        1:  154-block 14
+        1:  154-block 15
+        1:  154-block 16
+        1:  154-block 17
+        1:  154-block 18
+        1:  155:    Train train;
+        1:  156:    train.setMaxWeight(100.0);
+        1:  156-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  157:    train.setMaxVolume(200.0);
+        1:  157-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  158:
+        1:  159:    Container container1("Container1", 10.0, 50.0, GAS);
+        1:  159-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  159-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:  159-block  2
+        1:  160:    Container container2("Container2", 5.0, 30.0, BULK);
+        1:  160-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  160-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:  160-block  2
+        -:  161:
+        1:  162:    train += container1;
+        1:  162-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  162-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:  162-block  2
+        1:  163:    train += container2;
+        1:  163-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  163-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:  163-block  2
+        -:  164:
+        1:  165:    std::ostringstream output;
+        1:  165-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  166:    output << train;
+        1:  166-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  167:
+        1:  168:    std::string expectedOutput = "Max Weight - 100; Max Volume - 200; Containers - 2\n";
+        1:  168-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  169:    expectedOutput += "Container1 Mass - 50 Volume - 10 Category - GAS\n";
+        1:  169-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  170:    expectedOutput += "Container2 Mass - 30 Volume - 5 Category - BULK\n\n";
+        1:  170-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  171:
+        1:  172:    ASSERT_EQ(output.str(), expectedOutput);
+        1:  172-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  172-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  172-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  172-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  172-block  4
+    $$$$$:  172-block  5
+    $$$$$:  172-block  6
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  172-block  7
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  172-block  8
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  172-block  9
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  172-block 10
+    $$$$$:  172-block 11
+    $$$$$:  172-block 12
+        1:  172-block 13
+        1:  172-block 14
+branch 16 taken 0
+branch 17 taken 1
+    $$$$$:  172-block 15
+        1:  173:}
+    $$$$$:  173-block  0
+    $$$$$:  173-block  1
+    $$$$$:  173-block  2
+    $$$$$:  173-block  3
+    $$$$$:  173-block  4
+    $$$$$:  173-block  5
+    $$$$$:  173-block  6
+        1:  173-block  7
+        1:  173-block  8
+branch  0 taken 0
+branch  1 taken 1
+        1:  173-block  9
+    $$$$$:  173-block 10
+    $$$$$:  173-block 11
+    $$$$$:  173-block 12
+    $$$$$:  173-block 13
+    $$$$$:  173-block 14
+    $$$$$:  173-block 15
+        -:  174:
+function _ZN41TrainDeleteContainer_DeleteContainer_Test8TestBodyEv called 1 returned 100% blocks executed 45%
+function _ZN41TrainDeleteContainer_DeleteContainer_TestD1Ev called 1 returned 100% blocks executed 100%
+function _ZN41TrainDeleteContainer_DeleteContainer_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN41TrainDeleteContainer_DeleteContainer_TestC1Ev called 1 returned 100% blocks executed 100%
+function _ZN41TrainDeleteContainer_DeleteContainer_TestC2Ev called 1 returned 100% blocks executed 100%
+function _ZN41TrainDeleteContainer_DeleteContainer_TestD2Ev called 1 returned 100% blocks executed 100%
+        7:  175:TEST(TrainDeleteContainer, DeleteContainer) {
+        1:  175-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  175-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  175-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  175-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  175-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:  175-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:  175-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:  175-block  7
+    $$$$$:  175-block  8
+    $$$$$:  175-block  9
+    $$$$$:  175-block 10
+    $$$$$:  175-block 11
+    $$$$$:  175-block 12
+    $$$$$:  175-block 13
+        1:  175-block 14
+        1:  175-block 15
+        1:  175-block 16
+        1:  175-block 17
+        1:  175-block 18
+        1:  176:    Train train;
+        1:  177:    train.setMaxWeight(300);
+        1:  177-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  178:    train.setMaxVolume(200);
+        1:  178-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  179:    Container container1("Container1", 10.0, 5.0, GAS);
+        1:  179-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  179-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:  179-block  2
+        1:  180:    Container container2("Container2", 50.0, 3.0, BULK);
+        1:  180-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  180-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:  180-block  2
+        1:  181:    Container container3("Container3", 8.0, 4.0, BULK);
+        1:  181-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  181-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:  181-block  2
+        -:  182:
+        1:  183:    train += container1;
+        1:  183-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  183-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:  183-block  2
+        1:  184:    train += container2;
+        1:  184-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  184-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:  184-block  2
+        1:  185:    train += container3;
+        1:  185-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  185-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:  185-block  2
+        -:  186:
+        1:  187:    train.deleteContainer(1);
+        1:  187-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  188:
+        1:  189:    ASSERT_EQ(train.getCount(), 2);
+        1:  189-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  189-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  189-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  189-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  189-block  4
+    $$$$$:  189-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  189-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  189-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  189-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  189-block  9
+    $$$$$:  189-block 10
+    $$$$$:  189-block 11
+        1:  189-block 12
+        1:  189-block 13
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:  189-block 14
+        1:  190:    ASSERT_EQ(train[0].getName(), "Container1");
+        1:  190-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  190-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  190-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  190-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  190-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  190-block  5
+    $$$$$:  190-block  6
+    $$$$$:  190-block  7
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  190-block  8
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  190-block  9
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  190-block 10
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  190-block 11
+    $$$$$:  190-block 12
+    $$$$$:  190-block 13
+        1:  190-block 14
+        1:  190-block 15
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  190-block 16
+        1:  191:    ASSERT_EQ(train[1].getName(), "Container3");
+        1:  191-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  191-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  191-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  191-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  191-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  191-block  5
+    $$$$$:  191-block  6
+    $$$$$:  191-block  7
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  191-block  8
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  191-block  9
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  191-block 10
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  191-block 11
+    $$$$$:  191-block 12
+    $$$$$:  191-block 13
+        1:  191-block 14
+        1:  191-block 15
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:  191-block 16
+        1:  192:}
+    $$$$$:  192-block  0
+    $$$$$:  192-block  1
+    $$$$$:  192-block  2
+    $$$$$:  192-block  3
+    $$$$$:  192-block  4
+    $$$$$:  192-block  5
+    $$$$$:  192-block  6
+    $$$$$:  192-block  7
+    $$$$$:  192-block  8
+    $$$$$:  192-block  9
+        1:  192-block 10
+        1:  192-block 11
+branch  0 taken 0
+branch  1 taken 1
+        1:  192-block 12
+    $$$$$:  192-block 13
+    $$$$$:  192-block 14
+    $$$$$:  192-block 15
+    $$$$$:  192-block 16
+    $$$$$:  192-block 17
+        -:  193:
+function _ZN37TrainConstructor_CopyConstructor_Test8TestBodyEv called 1 returned 100% blocks executed 43%
+function _ZN37TrainConstructor_CopyConstructor_TestD1Ev called 1 returned 100% blocks executed 100%
+function _ZN37TrainConstructor_CopyConstructor_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN37TrainConstructor_CopyConstructor_TestC1Ev called 1 returned 100% blocks executed 100%
+function _ZN37TrainConstructor_CopyConstructor_TestC2Ev called 1 returned 100% blocks executed 100%
+function _ZN37TrainConstructor_CopyConstructor_TestD2Ev called 1 returned 100% blocks executed 100%
+        7:  194:TEST(TrainConstructor, CopyConstructor) {
+        1:  194-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  194-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  194-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  194-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  194-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:  194-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:  194-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:  194-block  7
+    $$$$$:  194-block  8
+    $$$$$:  194-block  9
+    $$$$$:  194-block 10
+    $$$$$:  194-block 11
+    $$$$$:  194-block 12
+    $$$$$:  194-block 13
+        1:  194-block 14
+        1:  194-block 15
+        1:  194-block 16
+        1:  194-block 17
+        1:  194-block 18
+        1:  195:    Train train1;
+        1:  196:    Train train2 = train1;
+        1:  196-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  197:    ASSERT_EQ(train2.getMaxWeight(), train1.getMaxWeight());
+        1:  197-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  197-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  197-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  197-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  197-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  197-block  5
+    $$$$$:  197-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  197-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  197-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  197-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  197-block 10
+    $$$$$:  197-block 11
+    $$$$$:  197-block 12
+        1:  197-block 13
+        1:  197-block 14
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  197-block 15
+        1:  198:    ASSERT_EQ(train2.getMaxVolume(), train1.getMaxVolume());
+        1:  198-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  198-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  198-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  198-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  198-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  198-block  5
+    $$$$$:  198-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  198-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  198-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  198-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  198-block 10
+    $$$$$:  198-block 11
+    $$$$$:  198-block 12
+        1:  198-block 13
+        1:  198-block 14
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  198-block 15
+        1:  199:    ASSERT_EQ(train2.getCount(), train1.getCount());
+        1:  199-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  199-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  199-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  199-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  199-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  199-block  5
+    $$$$$:  199-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  199-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  199-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  199-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  199-block 10
+    $$$$$:  199-block 11
+    $$$$$:  199-block 12
+        1:  199-block 13
+        1:  199-block 14
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:  199-block 15
+        1:  200:}
+    $$$$$:  200-block  0
+    $$$$$:  200-block  1
+    $$$$$:  200-block  2
+    $$$$$:  200-block  3
+    $$$$$:  200-block  4
+    $$$$$:  200-block  5
+    $$$$$:  200-block  6
+    $$$$$:  200-block  7
+        1:  200-block  8
+        1:  200-block  9
+branch  0 taken 0
+branch  1 taken 1
+        1:  200-block 10
+    $$$$$:  200-block 11
+    $$$$$:  200-block 12
+    $$$$$:  200-block 13
+        -:  201:
+        -:  202:
+function _ZN55TrainMoveAssignmentOperator_MoveAssignmentOperator_Test8TestBodyEv called 1 returned 100% blocks executed 45%
+function _ZN55TrainMoveAssignmentOperator_MoveAssignmentOperator_TestD1Ev called 1 returned 100% blocks executed 100%
+function _ZN55TrainMoveAssignmentOperator_MoveAssignmentOperator_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN55TrainMoveAssignmentOperator_MoveAssignmentOperator_TestC1Ev called 1 returned 100% blocks executed 100%
+function _ZN55TrainMoveAssignmentOperator_MoveAssignmentOperator_TestC2Ev called 1 returned 100% blocks executed 100%
+function _ZN55TrainMoveAssignmentOperator_MoveAssignmentOperator_TestD2Ev called 1 returned 100% blocks executed 100%
+        7:  203:TEST(TrainMoveAssignmentOperator, MoveAssignmentOperator) {
+        1:  203-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  203-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  203-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  203-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  203-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:  203-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:  203-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:  203-block  7
+    $$$$$:  203-block  8
+    $$$$$:  203-block  9
+    $$$$$:  203-block 10
+    $$$$$:  203-block 11
+    $$$$$:  203-block 12
+    $$$$$:  203-block 13
+        1:  203-block 14
+        1:  203-block 15
+        1:  203-block 16
+        1:  203-block 17
+        1:  203-block 18
+        1:  204:    Train train1;
+        1:  205:    train1.setMaxWeight(35.2);
+        1:  205-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  206:    train1.setMaxVolume(21.1);
+        1:  206-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  207:    train1.setCountContainers(3);
+        1:  207-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  208:
+        1:  209:    Train train2;
+        1:  209-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  210:    train2.setMaxWeight(50.0);
+        1:  210-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  211:    train2.setMaxVolume(30.0);
+        1:  211-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  212:    train2.setCountContainers(2);
+        1:  212-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  213:
+        1:  214:    train2 = std::move(train1);
+        -:  215:
+        1:  216:    ASSERT_DOUBLE_EQ(train2.getMaxWeight(), 35.2);
+        1:  216-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  216-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  216-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  216-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  216-block  4
+    $$$$$:  216-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  216-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  216-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  216-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  216-block  9
+    $$$$$:  216-block 10
+    $$$$$:  216-block 11
+        1:  216-block 12
+        1:  216-block 13
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:  216-block 14
+        1:  217:    ASSERT_DOUBLE_EQ(train2.getMaxVolume(), 21.1);
+        1:  217-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  217-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  217-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  217-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  217-block  4
+    $$$$$:  217-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  217-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  217-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  217-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  217-block  9
+    $$$$$:  217-block 10
+    $$$$$:  217-block 11
+        1:  217-block 12
+        1:  217-block 13
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:  217-block 14
+        1:  218:    ASSERT_EQ(train2.getCount(), 3);
+        1:  218-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  218-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  218-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  218-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  218-block  4
+    $$$$$:  218-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  218-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  218-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  218-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  218-block  9
+    $$$$$:  218-block 10
+    $$$$$:  218-block 11
+        1:  218-block 12
+        1:  218-block 13
+branch 16 taken 0
+branch 17 taken 1
+    $$$$$:  218-block 14
+        1:  219:}
+    $$$$$:  219-block  0
+    $$$$$:  219-block  1
+    $$$$$:  219-block  2
+    $$$$$:  219-block  3
+    $$$$$:  219-block  4
+    $$$$$:  219-block  5
+    $$$$$:  219-block  6
+    $$$$$:  219-block  7
+        1:  219-block  8
+        1:  219-block  9
+branch  0 taken 0
+branch  1 taken 1
+        1:  219-block 10
+    $$$$$:  219-block 11
+    $$$$$:  219-block 12
+    $$$$$:  219-block 13
+        -:  220:
+        -:  221:
+function _ZN45TrainGettersAndSetters_GettersAndSetters_Test8TestBodyEv called 1 returned 100% blocks executed 43%
+function _ZN45TrainGettersAndSetters_GettersAndSetters_TestD1Ev called 1 returned 100% blocks executed 100%
+function _ZN45TrainGettersAndSetters_GettersAndSetters_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN45TrainGettersAndSetters_GettersAndSetters_TestC1Ev called 1 returned 100% blocks executed 100%
+function _ZN45TrainGettersAndSetters_GettersAndSetters_TestC2Ev called 1 returned 100% blocks executed 100%
+function _ZN45TrainGettersAndSetters_GettersAndSetters_TestD2Ev called 1 returned 100% blocks executed 100%
+        7:  222:TEST(TrainGettersAndSetters, GettersAndSetters) {
+        1:  222-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  222-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  222-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  222-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  222-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:  222-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:  222-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:  222-block  7
+    $$$$$:  222-block  8
+    $$$$$:  222-block  9
+    $$$$$:  222-block 10
+    $$$$$:  222-block 11
+    $$$$$:  222-block 12
+    $$$$$:  222-block 13
+        1:  222-block 14
+        1:  222-block 15
+        1:  222-block 16
+        1:  222-block 17
+        1:  222-block 18
+        1:  223:    Train train1;
+        1:  224:    train1.setMaxWeight(325.2);
+        1:  224-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  225:    train1.setMaxVolume(241.1);
+        1:  225-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  226:    train1.setCountContainers(3);
+        1:  226-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  227:    ASSERT_EQ(train1.getMaxWeight(), 325.2);
+        1:  227-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  227-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  227-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  227-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  227-block  4
+    $$$$$:  227-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  227-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  227-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  227-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  227-block  9
+    $$$$$:  227-block 10
+    $$$$$:  227-block 11
+        1:  227-block 12
+        1:  227-block 13
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:  227-block 14
+        1:  228:    ASSERT_EQ(train1.getMaxVolume(), 241.1);
+        1:  228-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  228-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  228-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  228-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  228-block  4
+    $$$$$:  228-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  228-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  228-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  228-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  228-block  9
+    $$$$$:  228-block 10
+    $$$$$:  228-block 11
+        1:  228-block 12
+        1:  228-block 13
+branch 16 taken 1
+branch 17 taken 0
+    $$$$$:  228-block 14
+        1:  229:    ASSERT_EQ(train1.getCount(), 3);
+        1:  229-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  229-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  229-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  229-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  229-block  4
+    $$$$$:  229-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  229-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  229-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  229-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  229-block  9
+    $$$$$:  229-block 10
+    $$$$$:  229-block 11
+        1:  229-block 12
+        1:  229-block 13
+branch 16 taken 0
+branch 17 taken 1
+    $$$$$:  229-block 14
+        1:  230:}
+    $$$$$:  230-block  0
+    $$$$$:  230-block  1
+    $$$$$:  230-block  2
+    $$$$$:  230-block  3
+    $$$$$:  230-block  4
+    $$$$$:  230-block  5
+    $$$$$:  230-block  6
+        1:  230-block  7
+        1:  230-block  8
+branch  0 taken 0
+branch  1 taken 1
+        1:  230-block  9
+    $$$$$:  230-block 10
+    $$$$$:  230-block 11
+        -:  231:
+function _ZN29TrainCountMass_CountMass_Test8TestBodyEv called 1 returned 100% blocks executed 34%
+function _ZN29TrainCountMass_CountMass_TestD1Ev called 1 returned 100% blocks executed 100%
+function _ZN29TrainCountMass_CountMass_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN29TrainCountMass_CountMass_TestC1Ev called 1 returned 100% blocks executed 100%
+function _ZN29TrainCountMass_CountMass_TestC2Ev called 1 returned 100% blocks executed 100%
+function _ZN29TrainCountMass_CountMass_TestD2Ev called 1 returned 100% blocks executed 100%
+        7:  232:TEST(TrainCountMass, CountMass) {
+        1:  232-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  232-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  232-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  232-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  232-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:  232-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:  232-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:  232-block  7
+    $$$$$:  232-block  8
+    $$$$$:  232-block  9
+    $$$$$:  232-block 10
+    $$$$$:  232-block 11
+    $$$$$:  232-block 12
+    $$$$$:  232-block 13
+        1:  232-block 14
+        1:  232-block 15
+        1:  232-block 16
+        1:  232-block 17
+        1:  232-block 18
+        3:  233:    Container containers[] = {
+    $$$$$:  233-block  0
+    $$$$$:  233-block  1
+    $$$$$:  233-block  2
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  233-block  3
+    $$$$$:  233-block  4
+    $$$$$:  233-block  5
+    $$$$$:  233-block  6
+    $$$$$:  233-block  7
+    $$$$$:  233-block  8
+    $$$$$:  233-block  9
+        1:  234:            Container("Container1", 50.0, 10.0, PIECES),
+        1:  234-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  234-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  235:            Container("Container2", 30.0, 5.0, BULK),
+        1:  235-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  235-block  1
+branch  2 taken 1
+branch  3 taken 0
+        -:  236:    };
+        1:  237:    Train train(2, containers, 200.0, 100.0);
+        1:  237-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  238:    ASSERT_EQ(train.countMass(), 15.0);
+        1:  238-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  238-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  238-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  238-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  238-block  4
+    $$$$$:  238-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  238-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  238-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  238-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  238-block  9
+    $$$$$:  238-block 10
+    $$$$$:  238-block 11
+        1:  238-block 12
+        1:  238-block 13
+branch 16 taken 0
+branch 17 taken 1
+    $$$$$:  238-block 14
+        2:  239:}
+    $$$$$:  239-block  0
+    $$$$$:  239-block  1
+    $$$$$:  239-block  2
+    $$$$$:  239-block  3
+    $$$$$:  239-block  4
+    $$$$$:  239-block  5
+        1:  239-block  6
+        1:  239-block  7
+        1:  239-block  8
+    $$$$$:  239-block  9
+        1:  239-block 10
+    $$$$$:  239-block 11
+    $$$$$:  239-block 12
+    $$$$$:  239-block 13
+    $$$$$:  239-block 14
+    $$$$$:  239-block 15
+        -:  240:
+function _ZN41TrainCountCenterMass_CountCenterMass_Test8TestBodyEv called 1 returned 100% blocks executed 34%
+function _ZN41TrainCountCenterMass_CountCenterMass_TestD1Ev called 1 returned 100% blocks executed 100%
+function _ZN41TrainCountCenterMass_CountCenterMass_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN41TrainCountCenterMass_CountCenterMass_TestC1Ev called 1 returned 100% blocks executed 100%
+function _ZN41TrainCountCenterMass_CountCenterMass_TestC2Ev called 1 returned 100% blocks executed 100%
+function _ZN41TrainCountCenterMass_CountCenterMass_TestD2Ev called 1 returned 100% blocks executed 100%
+        7:  241:TEST(TrainCountCenterMass, CountCenterMass) {
+        1:  241-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  241-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  241-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  241-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  241-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:  241-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:  241-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:  241-block  7
+    $$$$$:  241-block  8
+    $$$$$:  241-block  9
+    $$$$$:  241-block 10
+    $$$$$:  241-block 11
+    $$$$$:  241-block 12
+    $$$$$:  241-block 13
+        1:  241-block 14
+        1:  241-block 15
+        1:  241-block 16
+        1:  241-block 17
+        1:  241-block 18
+        3:  242:    Container containers[] = {
+    $$$$$:  242-block  0
+    $$$$$:  242-block  1
+    $$$$$:  242-block  2
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  242-block  3
+    $$$$$:  242-block  4
+    $$$$$:  242-block  5
+    $$$$$:  242-block  6
+    $$$$$:  242-block  7
+    $$$$$:  242-block  8
+    $$$$$:  242-block  9
+        1:  243:            Container("Container1", 50.0, 10.0, PIECES),
+        1:  243-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  243-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  244:            Container("Container2", 30.0, 10.0, BULK),
+        1:  244-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  244-block  1
+branch  2 taken 1
+branch  3 taken 0
+        -:  245:    };
+        1:  246:    Train train(2, containers, 200.0, 100.0);
+        1:  246-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  247:    ASSERT_EQ(train.countCenterMass(), 0.5);
+        1:  247-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  247-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  247-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  247-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  247-block  4
+    $$$$$:  247-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  247-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  247-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  247-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  247-block  9
+    $$$$$:  247-block 10
+    $$$$$:  247-block 11
+        1:  247-block 12
+        1:  247-block 13
+branch 16 taken 0
+branch 17 taken 1
+    $$$$$:  247-block 14
+        2:  248:}
+    $$$$$:  248-block  0
+    $$$$$:  248-block  1
+    $$$$$:  248-block  2
+    $$$$$:  248-block  3
+    $$$$$:  248-block  4
+    $$$$$:  248-block  5
+        1:  248-block  6
+        1:  248-block  7
+        1:  248-block  8
+    $$$$$:  248-block  9
+        1:  248-block 10
+    $$$$$:  248-block 11
+    $$$$$:  248-block 12
+    $$$$$:  248-block 13
+    $$$$$:  248-block 14
+    $$$$$:  248-block 15
+        -:  249:
+function _ZN43TrainEnsuringSecurity_EnsuringSecurity_Test8TestBodyEv called 1 returned 100% blocks executed 42%
+function _ZN43TrainEnsuringSecurity_EnsuringSecurity_TestD1Ev called 1 returned 100% blocks executed 100%
+function _ZN43TrainEnsuringSecurity_EnsuringSecurity_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN43TrainEnsuringSecurity_EnsuringSecurity_TestC1Ev called 1 returned 100% blocks executed 100%
+function _ZN43TrainEnsuringSecurity_EnsuringSecurity_TestC2Ev called 1 returned 100% blocks executed 100%
+function _ZN43TrainEnsuringSecurity_EnsuringSecurity_TestD2Ev called 1 returned 100% blocks executed 100%
+        7:  250:TEST(TrainEnsuringSecurity, EnsuringSecurity) {
+        1:  250-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  250-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  250-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  250-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  250-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:  250-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:  250-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:  250-block  7
+    $$$$$:  250-block  8
+    $$$$$:  250-block  9
+    $$$$$:  250-block 10
+    $$$$$:  250-block 11
+    $$$$$:  250-block 12
+    $$$$$:  250-block 13
+        1:  250-block 14
+        1:  250-block 15
+        1:  250-block 16
+        1:  250-block 17
+        1:  250-block 18
+        6:  251:    Container containers[] = {
+    $$$$$:  251-block  0
+    $$$$$:  251-block  1
+    $$$$$:  251-block  2
+    $$$$$:  251-block  3
+    $$$$$:  251-block  4
+    $$$$$:  251-block  5
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  251-block  6
+    $$$$$:  251-block  7
+    $$$$$:  251-block  8
+    $$$$$:  251-block  9
+    $$$$$:  251-block 10
+    $$$$$:  251-block 11
+    $$$$$:  251-block 12
+        1:  252:            Container("Container1", 50.0, 10.0, PIECES),
+        1:  252-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  252-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  253:            Container("Container2", 30.0, 5.0, DANGEROUS),
+        1:  253-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  253-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  254:            Container("Container3", 40.0, 6.0, BULK),
+        1:  254-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  254-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  255:            Container("Container4", 25.0, 4.0, EMPTY),
+        1:  255-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  255-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  256:            Container("Container5", 35.0, 7.0, DANGEROUS),
+        1:  256-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  256-block  1
+branch  2 taken 1
+branch  3 taken 0
+        -:  257:    };
+        -:  258:
+        1:  259:    Train train(5, containers, 200.0, 100.0);
+        1:  259-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  260:    train.ensuringSecurity();
+        1:  260-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  261:    ASSERT_EQ(train.getContainers()[0].getCategory(), PIECES);
+        1:  261-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  261-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  261-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  261-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  261-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  261-block  5
+    $$$$$:  261-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  261-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  261-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  261-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  261-block 10
+    $$$$$:  261-block 11
+    $$$$$:  261-block 12
+        1:  261-block 13
+        1:  261-block 14
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  261-block 15
+        1:  262:    ASSERT_EQ(train.getContainers()[1].getCategory(), DANGEROUS);
+        1:  262-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  262-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  262-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  262-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  262-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  262-block  5
+    $$$$$:  262-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  262-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  262-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  262-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  262-block 10
+    $$$$$:  262-block 11
+    $$$$$:  262-block 12
+        1:  262-block 13
+        1:  262-block 14
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  262-block 15
+        -:  263:
+        1:  264:    ASSERT_EQ(train.getContainers()[3].getName(), "Container5");
+        1:  264-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  264-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  264-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  264-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  264-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  264-block  5
+    $$$$$:  264-block  6
+    $$$$$:  264-block  7
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  264-block  8
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  264-block  9
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  264-block 10
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  264-block 11
+    $$$$$:  264-block 12
+    $$$$$:  264-block 13
+        1:  264-block 14
+        1:  264-block 15
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  264-block 16
+        1:  265:    ASSERT_DOUBLE_EQ(train.getContainers()[3].getMass(), 7.0);
+        1:  265-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  265-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  265-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  265-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  265-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  265-block  5
+    $$$$$:  265-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  265-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  265-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  265-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  265-block 10
+    $$$$$:  265-block 11
+    $$$$$:  265-block 12
+        1:  265-block 13
+        1:  265-block 14
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  265-block 15
+        1:  266:    ASSERT_DOUBLE_EQ(train.getContainers()[3].getVolume(), 35.0);
+        1:  266-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  266-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  266-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  266-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  266-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  266-block  5
+    $$$$$:  266-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  266-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  266-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  266-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  266-block 10
+    $$$$$:  266-block 11
+    $$$$$:  266-block 12
+        1:  266-block 13
+        1:  266-block 14
+branch 18 taken 1
+branch 19 taken 0
+    $$$$$:  266-block 15
+        1:  267:    ASSERT_EQ(train.getContainers()[3].getCategory(), DANGEROUS);
+        1:  267-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  267-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  267-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  267-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  267-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  267-block  5
+    $$$$$:  267-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  267-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  267-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  267-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  267-block 10
+    $$$$$:  267-block 11
+    $$$$$:  267-block 12
+        1:  267-block 13
+        1:  267-block 14
+branch 18 taken 0
+branch 19 taken 1
+    $$$$$:  267-block 15
+        2:  268:}
+    $$$$$:  268-block  0
+    $$$$$:  268-block  1
+    $$$$$:  268-block  2
+    $$$$$:  268-block  3
+    $$$$$:  268-block  4
+    $$$$$:  268-block  5
+    $$$$$:  268-block  6
+    $$$$$:  268-block  7
+    $$$$$:  268-block  8
+    $$$$$:  268-block  9
+    $$$$$:  268-block 10
+    $$$$$:  268-block 11
+    $$$$$:  268-block 12
+    $$$$$:  268-block 13
+    $$$$$:  268-block 14
+    $$$$$:  268-block 15
+    $$$$$:  268-block 16
+    $$$$$:  268-block 17
+    $$$$$:  268-block 18
+        1:  268-block 19
+        1:  268-block 20
+        1:  268-block 21
+    $$$$$:  268-block 22
+        1:  268-block 23
+    $$$$$:  268-block 24
+    $$$$$:  268-block 25
+    $$$$$:  268-block 26
+    $$$$$:  268-block 27
+    $$$$$:  268-block 28
+        -:  269:
+function _ZN36TrainTest_RemoveEmptyContainers_Test8TestBodyEv called 1 returned 100% blocks executed 35%
+function _ZN36TrainTest_RemoveEmptyContainers_TestD1Ev called 1 returned 100% blocks executed 100%
+function _ZN36TrainTest_RemoveEmptyContainers_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN36TrainTest_RemoveEmptyContainers_TestC1Ev called 1 returned 100% blocks executed 100%
+function _ZN36TrainTest_RemoveEmptyContainers_TestC2Ev called 1 returned 100% blocks executed 100%
+function _ZN36TrainTest_RemoveEmptyContainers_TestD2Ev called 1 returned 100% blocks executed 100%
+        7:  270:TEST(TrainTest, RemoveEmptyContainers) {
+        1:  270-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  270-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  270-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  270-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  270-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:  270-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:  270-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:  270-block  7
+    $$$$$:  270-block  8
+    $$$$$:  270-block  9
+    $$$$$:  270-block 10
+    $$$$$:  270-block 11
+    $$$$$:  270-block 12
+    $$$$$:  270-block 13
+        1:  270-block 14
+        1:  270-block 15
+        1:  270-block 16
+        1:  270-block 17
+        1:  270-block 18
+        3:  271:    Container containers[] = {
+    $$$$$:  271-block  0
+    $$$$$:  271-block  1
+    $$$$$:  271-block  2
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  271-block  3
+    $$$$$:  271-block  4
+    $$$$$:  271-block  5
+    $$$$$:  271-block  6
+    $$$$$:  271-block  7
+    $$$$$:  271-block  8
+    $$$$$:  271-block  9
+        1:  272:            Container(),
+        1:  272-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  273:            Container("Container2", 30.0, 5.0, PIECES),
+        1:  273-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  273-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  274:            Container(),
+        1:  274-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  275:            Container("Container5", 35.0, 7.0, PIECES),
+        1:  275-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  275-block  1
+branch  2 taken 1
+branch  3 taken 0
+        -:  276:    };
+        1:  277:    Train train(4, containers, 200.0, 100.0);
+        1:  277-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  278:
+        1:  279:    train.minContainers();
+        1:  279-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  280:
+        1:  281:    EXPECT_EQ(train.getCount(), 2);
+        1:  281-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  281-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  281-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  281-block  3
+branch  6 taken 0
+branch  7 taken 1
+        1:  281-block  4
+    $$$$$:  281-block  5
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  281-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  281-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  281-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  281-block  9
+    $$$$$:  281-block 10
+    $$$$$:  281-block 11
+    $$$$$:  281-block 12
+        1:  282:    EXPECT_EQ(train.getContainers()[0].getCategory(), PIECES);
+        1:  282-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  282-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  282-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  282-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  282-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  282-block  5
+    $$$$$:  282-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  282-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  282-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  282-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  282-block 10
+    $$$$$:  282-block 11
+    $$$$$:  282-block 12
+    $$$$$:  282-block 13
+        1:  283:    EXPECT_EQ(train.getContainers()[1].getCategory(), PIECES);
+        1:  283-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  283-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  283-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  283-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  283-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  283-block  5
+    $$$$$:  283-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  283-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  283-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  283-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  283-block 10
+    $$$$$:  283-block 11
+    $$$$$:  283-block 12
+    $$$$$:  283-block 13
+        1:  284:}
+    $$$$$:  284-block  0
+    $$$$$:  284-block  1
+    $$$$$:  284-block  2
+    $$$$$:  284-block  3
+    $$$$$:  284-block  4
+    $$$$$:  284-block  5
+    $$$$$:  284-block  6
+    $$$$$:  284-block  7
+    $$$$$:  284-block  8
+    $$$$$:  284-block  9
+        1:  284-block 10
+        1:  284-block 11
+    $$$$$:  284-block 12
+        1:  284-block 13
+    $$$$$:  284-block 14
+    $$$$$:  284-block 15
+    $$$$$:  284-block 16
+    $$$$$:  284-block 17
+    $$$$$:  284-block 18
+        -:  285:
+function _ZN37TrainTest_AssignmentOperatorTest_Test8TestBodyEv called 1 returned 100% blocks executed 36%
+function _ZN37TrainTest_AssignmentOperatorTest_TestD1Ev called 1 returned 100% blocks executed 100%
+function _ZN37TrainTest_AssignmentOperatorTest_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN37TrainTest_AssignmentOperatorTest_TestC1Ev called 1 returned 100% blocks executed 100%
+function _ZN37TrainTest_AssignmentOperatorTest_TestC2Ev called 1 returned 100% blocks executed 100%
+function _ZN37TrainTest_AssignmentOperatorTest_TestD2Ev called 1 returned 100% blocks executed 100%
+        7:  286:TEST(TrainTest, AssignmentOperatorTest) {
+        1:  286-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  286-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  286-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  286-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  286-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:  286-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:  286-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:  286-block  7
+    $$$$$:  286-block  8
+    $$$$$:  286-block  9
+    $$$$$:  286-block 10
+    $$$$$:  286-block 11
+    $$$$$:  286-block 12
+    $$$$$:  286-block 13
+        1:  286-block 14
+        1:  286-block 15
+        1:  286-block 16
+        1:  286-block 17
+        1:  286-block 18
+        6:  287:    Container containers[] = {
+    $$$$$:  287-block  0
+    $$$$$:  287-block  1
+    $$$$$:  287-block  2
+    $$$$$:  287-block  3
+    $$$$$:  287-block  4
+    $$$$$:  287-block  5
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  287-block  6
+    $$$$$:  287-block  7
+    $$$$$:  287-block  8
+    $$$$$:  287-block  9
+    $$$$$:  287-block 10
+    $$$$$:  287-block 11
+    $$$$$:  287-block 12
+        1:  288:            Container("Container1", 50.0, 10.0, PIECES),
+        1:  288-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  288-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  289:            Container("Container2", 30.0, 5.0, DANGEROUS),
+        1:  289-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  289-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  290:            Container("Container3", 40.0, 6.0, BULK),
+        1:  290-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  290-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  291:            Container("Container4", 25.0, 4.0, EMPTY),
+        1:  291-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  291-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  292:            Container("Container5", 35.0, 7.0, DANGEROUS),
+        1:  292-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  292-block  1
+branch  2 taken 1
+branch  3 taken 0
+        -:  293:    };
+        1:  294:    Train train1(5, containers, 200.0, 100.0);
+        1:  294-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  295:    Train train2;
+        1:  295-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  296:
+        1:  297:    train2 = train1;
+        1:  297-block  0
+branch  0 taken 1
+branch  1 taken 0
+        -:  298:
+        1:  299:    EXPECT_EQ(train2.getMaxVolume(), train1.getMaxVolume());
+        1:  299-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  299-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  299-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  299-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  299-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  299-block  5
+    $$$$$:  299-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  299-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  299-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  299-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  299-block 10
+    $$$$$:  299-block 11
+    $$$$$:  299-block 12
+    $$$$$:  299-block 13
+        1:  300:    EXPECT_EQ(train2.getMaxWeight(), train1.getMaxWeight());
+        1:  300-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  300-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  300-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  300-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  300-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  300-block  5
+    $$$$$:  300-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  300-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  300-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  300-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  300-block 10
+    $$$$$:  300-block 11
+    $$$$$:  300-block 12
+    $$$$$:  300-block 13
+        1:  301:    EXPECT_EQ(train2.getCount(), train1.getCount());
+        1:  301-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  301-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  301-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  301-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  301-block  4
+branch  8 taken 0
+branch  9 taken 1
+        1:  301-block  5
+    $$$$$:  301-block  6
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  301-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  301-block  8
+branch 14 never executed
+branch 15 never executed
+    $$$$$:  301-block  9
+branch 16 never executed
+branch 17 never executed
+    $$$$$:  301-block 10
+    $$$$$:  301-block 11
+    $$$$$:  301-block 12
+    $$$$$:  301-block 13
+        1:  302:}
+    $$$$$:  302-block  0
+    $$$$$:  302-block  1
+    $$$$$:  302-block  2
+    $$$$$:  302-block  3
+    $$$$$:  302-block  4
+    $$$$$:  302-block  5
+    $$$$$:  302-block  6
+    $$$$$:  302-block  7
+    $$$$$:  302-block  8
+    $$$$$:  302-block  9
+    $$$$$:  302-block 10
+    $$$$$:  302-block 11
+    $$$$$:  302-block 12
+    $$$$$:  302-block 13
+        1:  302-block 14
+        1:  302-block 15
+    $$$$$:  302-block 16
+        1:  302-block 17
+    $$$$$:  302-block 18
+    $$$$$:  302-block 19
+    $$$$$:  302-block 20
+    $$$$$:  302-block 21
+    $$$$$:  302-block 22
+    $$$$$:  302-block 23
+        -:  303:
+function _ZN26TrainTest_AddingThrow_Test8TestBodyEv called 1 returned 100% blocks executed 32%
+function _ZN26TrainTest_AddingThrow_TestD1Ev called 1 returned 100% blocks executed 100%
+function _ZN26TrainTest_AddingThrow_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN26TrainTest_AddingThrow_TestC1Ev called 1 returned 100% blocks executed 100%
+function _ZN26TrainTest_AddingThrow_TestC2Ev called 1 returned 100% blocks executed 100%
+function _ZN26TrainTest_AddingThrow_TestD2Ev called 1 returned 100% blocks executed 100%
+        7:  304:TEST(TrainTest, AddingThrow) {
+        1:  304-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  304-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  304-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  304-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  304-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:  304-block  5
+branch 10 taken 1
+branch 11 taken 0
+        1:  304-block  6
+branch 12 taken 1
+branch 13 taken 0
+        1:  304-block  7
+    $$$$$:  304-block  8
+    $$$$$:  304-block  9
+    $$$$$:  304-block 10
+    $$$$$:  304-block 11
+    $$$$$:  304-block 12
+    $$$$$:  304-block 13
+        1:  304-block 14
+        1:  304-block 15
+        1:  304-block 16
+        1:  304-block 17
+        1:  304-block 18
+        6:  305:    Container containers[] = {
+    $$$$$:  305-block  0
+    $$$$$:  305-block  1
+    $$$$$:  305-block  2
+    $$$$$:  305-block  3
+    $$$$$:  305-block  4
+    $$$$$:  305-block  5
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  305-block  6
+    $$$$$:  305-block  7
+    $$$$$:  305-block  8
+    $$$$$:  305-block  9
+    $$$$$:  305-block 10
+    $$$$$:  305-block 11
+    $$$$$:  305-block 12
+        1:  306:            Container("Container1", 50.0, 10.0, PIECES),
+        1:  306-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  306-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  307:            Container("Container2", 30.0, 5.0, DANGEROUS),
+        1:  307-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  307-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  308:            Container("Container3", 40.0, 6.0, BULK),
+        1:  308-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  308-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  309:            Container("Container4", 25.0, 4.0, EMPTY),
+        1:  309-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  309-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  310:            Container("Container5", 35.0, 7.0, DANGEROUS),
+        1:  310-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  310-block  1
+branch  2 taken 1
+branch  3 taken 0
+        -:  311:    };
+        1:  312:    Train train1(5, containers, 200.0, 100.0);
+        1:  312-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  313:    Container NewContainer("ContainerNew", 570.0, 110.0, PIECES);
+        1:  313-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  313-block  1
+branch  2 taken 1
+branch  3 taken 0
+    $$$$$:  313-block  2
+        1:  314:    ASSERT_THROW(train1+=NewContainer, std::runtime_error);
+        1:  314-block  0
+branch  0 taken 1
+branch  1 taken 0
+        1:  314-block  1
+branch  2 taken 1
+branch  3 taken 0
+        1:  314-block  2
+branch  4 taken 1
+branch  5 taken 0
+        1:  314-block  3
+branch  6 taken 1
+branch  7 taken 0
+        1:  314-block  4
+branch  8 taken 1
+branch  9 taken 0
+        1:  314-block  5
+branch 10 taken 0
+branch 11 taken 1
+    $$$$$:  314-block  6
+        1:  314-block  7
+        1:  314-block  8
+branch 12 taken 1
+branch 13 taken 0
+        1:  314-block  9
+branch 14 taken 1
+branch 15 taken 0
+        1:  314-block 10
+        1:  314-block 11
+branch 16 taken 0
+branch 17 taken 1
+    $$$$$:  314-block 12
+branch 18 never executed
+branch 19 never executed
+    $$$$$:  314-block 13
+    $$$$$:  314-block 14
+branch 20 never executed
+branch 21 never executed
+    $$$$$:  314-block 15
+branch 22 never executed
+branch 23 never executed
+    $$$$$:  314-block 16
+branch 24 never executed
+branch 25 never executed
+    $$$$$:  314-block 17
+branch 26 never executed
+branch 27 never executed
+    $$$$$:  314-block 18
+branch 28 never executed
+branch 29 never executed
+    $$$$$:  314-block 19
+branch 30 never executed
+branch 31 never executed
+    $$$$$:  314-block 20
+branch 32 never executed
+branch 33 never executed
+    $$$$$:  314-block 21
+branch 34 never executed
+branch 35 never executed
+    $$$$$:  314-block 22
+branch 36 never executed
+branch 37 never executed
+    $$$$$:  314-block 23
+branch 38 never executed
+branch 39 never executed
+    $$$$$:  314-block 24
+    $$$$$:  314-block 25
+branch 40 never executed
+branch 41 never executed
+    $$$$$:  314-block 26
+    $$$$$:  314-block 27
+    $$$$$:  314-block 28
+branch 42 never executed
+branch 43 never executed
+    $$$$$:  314-block 29
+        1:  314-block 30
+    $$$$$:  314-block 31
+    $$$$$:  314-block 32
+branch 44 never executed
+branch 45 never executed
+    $$$$$:  314-block 33
+branch 46 never executed
+branch 47 never executed
+    $$$$$:  314-block 34
+branch 48 never executed
+branch 49 never executed
+    $$$$$:  314-block 35
+    $$$$$:  314-block 36
+    $$$$$:  314-block 37
+        1:  314-block 38
+        1:  314-block 39
+branch 50 taken 0
+branch 51 taken 1
+    $$$$$:  314-block 40
+        3:  315:}
+    $$$$$:  315-block  0
+    $$$$$:  315-block  1
+    $$$$$:  315-block  2
+    $$$$$:  315-block  3
+    $$$$$:  315-block  4
+    $$$$$:  315-block  5
+    $$$$$:  315-block  6
+    $$$$$:  315-block  7
+    $$$$$:  315-block  8
+    $$$$$:  315-block  9
+    $$$$$:  315-block 10
+        1:  315-block 11
+        1:  315-block 12
+        1:  315-block 13
+    $$$$$:  315-block 14
+        1:  315-block 15
+    $$$$$:  315-block 16
+    $$$$$:  315-block 17
+    $$$$$:  315-block 18
+    $$$$$:  315-block 19
+    $$$$$:  315-block 20
+    $$$$$:  315-block 21
+        -:  316:
+        -:  317:
 function main called 1 returned 100% blocks executed 100%
-        1:  156:int main(int argc, char **argv) {
-        1:  157:    ::testing::InitGoogleTest(&argc, argv);
-        1:  158:    return RUN_ALL_TESTS();
-        1:  158-block  0
-        -:  159:}
+        1:  318:int main(int argc, char **argv) {
+        1:  319:    ::testing::InitGoogleTest(&argc, argv);
+        1:  320:    return RUN_ALL_TESTS();
+        1:  320-block  0
+        -:  321:}

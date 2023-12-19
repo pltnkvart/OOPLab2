@@ -64,22 +64,22 @@
         -:   59:  _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 default_delete(
         -:   60:      const default_delete<_Up>&, typename enable_if<is_convertible<_Up*, _Tp*>::value>::type* = 0) _NOEXCEPT {}
         -:   61:
-function _ZNKSt3__114default_deleteINS_18basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEEEclB7v160006EPS6_ called 102 returned 100% blocks executed 100%
+function _ZNKSt3__114default_deleteINS_18basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEEEclB7v160006EPS6_ called 129 returned 100% blocks executed 100%
 function _ZNKSt3__114default_deleteINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEclB7v160006EPS6_ called 0 returned 0% blocks executed 0%
-      102:   62:  _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 void operator()(_Tp* __ptr) const _NOEXCEPT {
+      129:   62:  _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 void operator()(_Tp* __ptr) const _NOEXCEPT {
         -:   63:    static_assert(sizeof(_Tp) >= 0, "cannot delete an incomplete type");
         -:   64:    static_assert(!is_void<_Tp>::value, "cannot delete an incomplete type");
-      102:   65:    delete __ptr;
-      102:   65-block  0
-branch  0 taken 102
+      129:   65:    delete __ptr;
+      129:   65-block  0
+branch  0 taken 129
 branch  1 taken 0
-      102:   65-block  1
+      129:   65-block  1
     $$$$$:   65-block  2
 branch  2 never executed
 branch  3 never executed
     $$$$$:   65-block  3
-      102:   66:  }
-      102:   66-block  0
+      129:   66:  }
+      129:   66-block  0
     $$$$$:   66-block  1
         -:   67:};
         -:   68:
@@ -277,15 +277,15 @@ branch  3 never executed
         -:  260:  unique_ptr& operator=(unique_ptr const&) = delete;
         -:  261:#endif
         -:  262:
-function _ZNSt3__110unique_ptrINS_18basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEED1B7v160006Ev called 102 returned 100% blocks executed 100%
-function _ZNSt3__110unique_ptrINS_18basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEED2B7v160006Ev called 102 returned 100% blocks executed 100%
-function _ZNSt3__110unique_ptrINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEED1B7v160006Ev called 44 returned 100% blocks executed 100%
-function _ZNSt3__110unique_ptrINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEED2B7v160006Ev called 44 returned 100% blocks executed 100%
-      292:  263:  _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 ~unique_ptr() { reset(); }
-      102:  263-block  0
-      102:  263-block  1
-       44:  263-block  2
-       44:  263-block  3
+function _ZNSt3__110unique_ptrINS_18basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEED1B7v160006Ev called 129 returned 100% blocks executed 100%
+function _ZNSt3__110unique_ptrINS_18basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEED2B7v160006Ev called 129 returned 100% blocks executed 100%
+function _ZNSt3__110unique_ptrINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEED1B7v160006Ev called 81 returned 100% blocks executed 100%
+function _ZNSt3__110unique_ptrINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEED2B7v160006Ev called 81 returned 100% blocks executed 100%
+      420:  263:  _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 ~unique_ptr() { reset(); }
+      129:  263-block  0
+      129:  263-block  1
+       81:  263-block  2
+       81:  263-block  3
         -:  264:
         -:  265:  _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 unique_ptr& operator=(nullptr_t) _NOEXCEPT {
         -:  266:    reset();
@@ -319,24 +319,24 @@ function _ZNKSt3__110unique_ptrINS_12basic_stringIcNS_11char_traitsIcEENS_9alloc
         -:  290:    return __t;
         -:  291:  }
         -:  292:
-function _ZNSt3__110unique_ptrINS_18basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEE5resetB7v160006EPS6_ called 102 returned 100% blocks executed 100%
-function _ZNSt3__110unique_ptrINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEE5resetB7v160006EPS6_ called 44 returned 100% blocks executed 66%
-      146:  293:  _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 void reset(pointer __p = pointer()) _NOEXCEPT {
-      146:  294:    pointer __tmp = __ptr_.first();
-      146:  295:    __ptr_.first() = __p;
-      146:  296:    if (__tmp)
-      102:  296-block  0
-branch  0 taken 102
+function _ZNSt3__110unique_ptrINS_18basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEE5resetB7v160006EPS6_ called 129 returned 100% blocks executed 100%
+function _ZNSt3__110unique_ptrINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEE5resetB7v160006EPS6_ called 81 returned 100% blocks executed 66%
+      210:  293:  _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 void reset(pointer __p = pointer()) _NOEXCEPT {
+      210:  294:    pointer __tmp = __ptr_.first();
+      210:  295:    __ptr_.first() = __p;
+      210:  296:    if (__tmp)
+      129:  296-block  0
+branch  0 taken 129
 branch  1 taken 0
-       44:  296-block  1
+       81:  296-block  1
 branch  2 taken 0
-branch  3 taken 44
-      102:  297:      __ptr_.second()(__tmp);
-      102:  297-block  0
+branch  3 taken 81
+      129:  297:      __ptr_.second()(__tmp);
+      129:  297-block  0
     $$$$$:  297-block  1
-      146:  298:  }
-      102:  298-block  0
-       44:  298-block  1
+      210:  298:  }
+      129:  298-block  0
+       81:  298-block  1
         -:  299:
         -:  300:  _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX23 void swap(unique_ptr& __u) _NOEXCEPT {
         -:  301:    __ptr_.swap(__u.__ptr_);

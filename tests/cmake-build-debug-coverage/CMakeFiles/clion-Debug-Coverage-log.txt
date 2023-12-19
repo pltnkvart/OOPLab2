@@ -1,16 +1,4 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja "-DCMAKE_CXX_FLAGS=-fprofile-instr-generate -fcoverage-mapping" "-DCMAKE_C_FLAGS=-fprofile-instr-generate -fcoverage-mapping" -G Ninja -S /Users/plotnikovartem/CLionProjects/OOP/Lab2/tests -B /Users/plotnikovartem/CLionProjects/OOP/Lab2/tests/cmake-build-debug-coverage
--- The C compiler identification is AppleClang 15.0.0.15000040
--- The CXX compiler identification is AppleClang 15.0.0.15000040
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
 CMake Warning (dev) at /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FetchContent.cmake:1267 (message):
   The DOWNLOAD_EXTRACT_TIMESTAMP option was not given and policy CMP0135 is
   not set.  The policy's OLD behavior will be used.  When using a URL
@@ -25,10 +13,6 @@ Call Stack (most recent call first):
   CMakeLists.txt:15 (FetchContent_Declare)
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
--- Found Python: /Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11 (found version "3.11.1") found components: Interpreter 
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
--- Found Threads: TRUE  
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /Users/plotnikovartem/CLionProjects/OOP/Lab2/tests/cmake-build-debug-coverage

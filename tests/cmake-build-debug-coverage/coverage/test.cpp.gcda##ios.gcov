@@ -357,15 +357,15 @@
         -:  352:
         -:  353:protected:
         -:  354:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__18ios_baseC2B7v160006Ev called 104 returned 100% blocks executed 100%
-      104:  355:    ios_base() {// purposefully does no initialization
-      104:  356:               }
-      104:  356-block  0
+function _ZNSt3__18ios_baseC2B7v160006Ev called 133 returned 100% blocks executed 100%
+      133:  355:    ios_base() {// purposefully does no initialization
+      133:  356:               }
+      133:  356-block  0
         -:  357:
         -:  358:    void init(void* __sb);
-function _ZNKSt3__18ios_base5rdbufB7v160006Ev called 443 returned 100% blocks executed 100%
-      443:  359:    _LIBCPP_INLINE_VISIBILITY void* rdbuf() const {return __rdbuf_;}
-      443:  359-block  0
+function _ZNKSt3__18ios_base5rdbufB7v160006Ev called 498 returned 100% blocks executed 100%
+      498:  359:    _LIBCPP_INLINE_VISIBILITY void* rdbuf() const {return __rdbuf_;}
+      498:  359-block  0
         -:  360:
         -:  361:    _LIBCPP_INLINE_VISIBILITY
         -:  362:    void rdbuf(void* __sb)
@@ -476,11 +476,11 @@ function _ZNKSt3__18ios_base5rdbufB7v160006Ev called 443 returned 100% blocks ex
         -:  467:
         -:  468:inline _LIBCPP_INLINE_VISIBILITY
         -:  469:ios_base::fmtflags
-function _ZNKSt3__18ios_base5flagsB7v160006Ev called 422 returned 100% blocks executed 100%
-      422:  470:ios_base::flags() const
-      422:  471:{
-      422:  472:    return __fmtflags_;
-      422:  472-block  0
+function _ZNKSt3__18ios_base5flagsB7v160006Ev called 435 returned 100% blocks executed 100%
+      435:  470:ios_base::flags() const
+      435:  471:{
+      435:  472:    return __fmtflags_;
+      435:  472-block  0
         -:  473:}
         -:  474:
         -:  475:inline _LIBCPP_INLINE_VISIBILITY
@@ -529,33 +529,35 @@ function _ZNKSt3__18ios_base5flagsB7v160006Ev called 422 returned 100% blocks ex
         -:  518:
         -:  519:inline _LIBCPP_INLINE_VISIBILITY
         -:  520:streamsize
-        -:  521:ios_base::precision(streamsize __prec)
-        -:  522:{
-        -:  523:    streamsize __r = __precision_;
-        -:  524:    __precision_ = __prec;
-        -:  525:    return __r;
+function _ZNSt3__18ios_base9precisionB7v160006El called 129 returned 100% blocks executed 100%
+      129:  521:ios_base::precision(streamsize __prec)
+      129:  522:{
+      129:  523:    streamsize __r = __precision_;
+      129:  524:    __precision_ = __prec;
+      129:  525:    return __r;
+      129:  525-block  0
         -:  526:}
         -:  527:
         -:  528:// width
         -:  529:
         -:  530:inline _LIBCPP_INLINE_VISIBILITY
         -:  531:streamsize
-function _ZNKSt3__18ios_base5widthB7v160006Ev called 423 returned 100% blocks executed 100%
-      423:  532:ios_base::width() const
-      423:  533:{
-      423:  534:    return __width_;
-      423:  534-block  0
+function _ZNKSt3__18ios_base5widthB7v160006Ev called 438 returned 100% blocks executed 100%
+      438:  532:ios_base::width() const
+      438:  533:{
+      438:  534:    return __width_;
+      438:  534-block  0
         -:  535:}
         -:  536:
         -:  537:inline _LIBCPP_INLINE_VISIBILITY
         -:  538:streamsize
-function _ZNSt3__18ios_base5widthB7v160006El called 423 returned 100% blocks executed 100%
-      423:  539:ios_base::width(streamsize __wide)
-      423:  540:{
-      423:  541:    streamsize __r = __width_;
-      423:  542:    __width_ = __wide;
-      423:  543:    return __r;
-      423:  543-block  0
+function _ZNSt3__18ios_base5widthB7v160006El called 438 returned 100% blocks executed 100%
+      438:  539:ios_base::width(streamsize __wide)
+      438:  540:{
+      438:  541:    streamsize __r = __width_;
+      438:  542:    __width_ = __wide;
+      438:  543:    return __r;
+      438:  543-block  0
         -:  544:}
         -:  545:
         -:  546:// iostate
@@ -569,12 +571,12 @@ function _ZNSt3__18ios_base5widthB7v160006El called 423 returned 100% blocks exe
         -:  554:
         -:  555:inline _LIBCPP_INLINE_VISIBILITY
         -:  556:void
-function _ZNSt3__18ios_base8setstateB7v160006Ej called 1 returned 100% blocks executed 100%
-        1:  557:ios_base::setstate(iostate __state)
-        1:  558:{
-        1:  559:    clear(__rdstate_ | __state);
-        1:  560:}
-        1:  560-block  0
+function _ZNSt3__18ios_base8setstateB7v160006Ej called 3 returned 100% blocks executed 100%
+        3:  557:ios_base::setstate(iostate __state)
+        3:  558:{
+        3:  559:    clear(__rdstate_ | __state);
+        3:  560:}
+        3:  560-block  0
         -:  561:
         -:  562:inline _LIBCPP_INLINE_VISIBILITY
         -:  563:bool
@@ -648,9 +650,9 @@ function _ZNSt3__18ios_base8setstateB7v160006Ej called 1 returned 100% blocks ex
         -:  631:    _LIBCPP_INLINE_VISIBILITY bool operator!() const    {return  fail();}
         -:  632:    _LIBCPP_INLINE_VISIBILITY iostate rdstate() const   {return ios_base::rdstate();}
         -:  633:    _LIBCPP_INLINE_VISIBILITY void clear(iostate __state = goodbit) {ios_base::clear(__state);}
-function _ZNSt3__19basic_iosIcNS_11char_traitsIcEEE8setstateB7v160006Ej called 1 returned 100% blocks executed 100%
-        1:  634:    _LIBCPP_INLINE_VISIBILITY void setstate(iostate __state) {ios_base::setstate(__state);}
-        1:  634-block  0
+function _ZNSt3__19basic_iosIcNS_11char_traitsIcEEE8setstateB7v160006Ej called 3 returned 100% blocks executed 100%
+        3:  634:    _LIBCPP_INLINE_VISIBILITY void setstate(iostate __state) {ios_base::setstate(__state);}
+        3:  634-block  0
         -:  635:    _LIBCPP_INLINE_VISIBILITY bool good() const {return ios_base::good();}
         -:  636:    _LIBCPP_INLINE_VISIBILITY bool eof() const  {return ios_base::eof();}
         -:  637:    _LIBCPP_INLINE_VISIBILITY bool fail() const {return ios_base::fail();}
@@ -692,10 +694,10 @@ function _ZNSt3__19basic_iosIcNS_11char_traitsIcEEE8setstateB7v160006Ej called 1
         -:  673:
         -:  674:protected:
         -:  675:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__19basic_iosIcNS_11char_traitsIcEEEC2B7v160006Ev called 104 returned 100% blocks executed 100%
-      104:  676:    basic_ios() {// purposefully does no initialization
-      104:  677:                }
-      104:  677-block  0
+function _ZNSt3__19basic_iosIcNS_11char_traitsIcEEEC2B7v160006Ev called 133 returned 100% blocks executed 100%
+      133:  676:    basic_ios() {// purposefully does no initialization
+      133:  677:                }
+      133:  677-block  0
         -:  678:    _LIBCPP_INLINE_VISIBILITY
         -:  679:    void init(basic_streambuf<char_type, traits_type>* __sb);
         -:  680:
@@ -727,14 +729,14 @@ function _ZNSt3__19basic_iosIcNS_11char_traitsIcEEEC2B7v160006Ev called 104 retu
         -:  706:template <class _CharT, class _Traits>
         -:  707:inline _LIBCPP_INLINE_VISIBILITY
         -:  708:void
-function _ZNSt3__19basic_iosIcNS_11char_traitsIcEEE4initB7v160006EPNS_15basic_streambufIcS2_EE called 104 returned 100% blocks executed 100%
-      104:  709:basic_ios<_CharT, _Traits>::init(basic_streambuf<char_type, traits_type>* __sb)
-      104:  710:{
-      104:  711:    ios_base::init(__sb);
-      104:  712:    __tie_ = nullptr;
-      104:  713:    __fill_ = traits_type::eof();
-      104:  714:}
-      104:  714-block  0
+function _ZNSt3__19basic_iosIcNS_11char_traitsIcEEE4initB7v160006EPNS_15basic_streambufIcS2_EE called 133 returned 100% blocks executed 100%
+      133:  709:basic_ios<_CharT, _Traits>::init(basic_streambuf<char_type, traits_type>* __sb)
+      133:  710:{
+      133:  711:    ios_base::init(__sb);
+      133:  712:    __tie_ = nullptr;
+      133:  713:    __fill_ = traits_type::eof();
+      133:  714:}
+      133:  714-block  0
         -:  715:
         -:  716:template <class _CharT, class _Traits>
         -:  717:inline _LIBCPP_INLINE_VISIBILITY
@@ -757,11 +759,11 @@ function _ZNSt3__19basic_iosIcNS_11char_traitsIcEEE4initB7v160006EPNS_15basic_st
         -:  734:template <class _CharT, class _Traits>
         -:  735:inline _LIBCPP_INLINE_VISIBILITY
         -:  736:basic_streambuf<_CharT, _Traits>*
-function _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5rdbufB7v160006Ev called 443 returned 100% blocks executed 100%
-      443:  737:basic_ios<_CharT, _Traits>::rdbuf() const
-      443:  738:{
-      443:  739:    return static_cast<basic_streambuf<char_type, traits_type>*>(ios_base::rdbuf());
-      443:  739-block  0
+function _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5rdbufB7v160006Ev called 498 returned 100% blocks executed 100%
+      498:  737:basic_ios<_CharT, _Traits>::rdbuf() const
+      498:  738:{
+      498:  739:    return static_cast<basic_streambuf<char_type, traits_type>*>(ios_base::rdbuf());
+      498:  739-block  0
         -:  740:}
         -:  741:
         -:  742:template <class _CharT, class _Traits>
@@ -797,17 +799,17 @@ function _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5rdbufB7v160006Ev called 443
         -:  772:template <class _CharT, class _Traits>
         -:  773:inline _LIBCPP_INLINE_VISIBILITY
         -:  774:_CharT
-function _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5widenB7v160006Ec called 47 returned 100% blocks executed 60%
-       47:  775:basic_ios<_CharT, _Traits>::widen(char __c) const
-       47:  776:{
-       47:  777:    return std::use_facet<ctype<char_type> >(getloc()).widen(__c);
-       47:  777-block  0
-branch  0 taken 47
+function _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5widenB7v160006Ec called 52 returned 100% blocks executed 60%
+       52:  775:basic_ios<_CharT, _Traits>::widen(char __c) const
+       52:  776:{
+       52:  777:    return std::use_facet<ctype<char_type> >(getloc()).widen(__c);
+       52:  777-block  0
+branch  0 taken 52
 branch  1 taken 0
-       47:  777-block  1
-branch  2 taken 47
+       52:  777-block  1
+branch  2 taken 52
 branch  3 taken 0
-       47:  777-block  2
+       52:  777-block  2
     $$$$$:  777-block  3
     $$$$$:  777-block  4
     #####:  778:}
@@ -815,17 +817,17 @@ branch  3 taken 0
         -:  780:template <class _CharT, class _Traits>
         -:  781:inline _LIBCPP_INLINE_VISIBILITY
         -:  782:_CharT
-function _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE4fillB7v160006Ev called 422 returned 100% blocks executed 100%
-      422:  783:basic_ios<_CharT, _Traits>::fill() const
-      422:  784:{
-      422:  785:    if (traits_type::eq_int_type(traits_type::eof(), __fill_))
-      422:  785-block  0
-branch  0 taken 376
-branch  1 taken 46
-       46:  786:        __fill_ = widen(' ');
-       46:  786-block  0
-      422:  787:    return __fill_;
-      422:  787-block  0
+function _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE4fillB7v160006Ev called 435 returned 100% blocks executed 100%
+      435:  783:basic_ios<_CharT, _Traits>::fill() const
+      435:  784:{
+      435:  785:    if (traits_type::eq_int_type(traits_type::eof(), __fill_))
+      435:  785-block  0
+branch  0 taken 388
+branch  1 taken 47
+       47:  786:        __fill_ = widen(' ');
+       47:  786-block  0
+      435:  787:    return __fill_;
+      435:  787-block  0
         -:  788:}
         -:  789:
         -:  790:template <class _CharT, class _Traits>

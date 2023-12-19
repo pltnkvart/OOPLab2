@@ -829,71 +829,71 @@
         -:  824:public:
         -:  825:  _LIBCPP_TEMPLATE_DATA_VIS static const size_type npos = -1;
         -:  826:
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006Ev called 374 returned 100% blocks executed 100%
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B7v160006Ev called 374 returned 100% blocks executed 75%
-      748:  827:  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 basic_string()
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006Ev called 615 returned 100% blocks executed 100%
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B7v160006Ev called 615 returned 100% blocks executed 75%
+     1230:  827:  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 basic_string()
         -:  828:      _NOEXCEPT_(is_nothrow_default_constructible<allocator_type>::value)
-      748:  829:      : __r_(__default_init_tag(), __default_init_tag()) {
-      374:  829-block  0
-branch  0 taken 374
+     1230:  829:      : __r_(__default_init_tag(), __default_init_tag()) {
+      615:  829-block  0
+branch  0 taken 615
 branch  1 taken 0
     $$$$$:  829-block  1
-      374:  830:    std::__debug_db_insert_c(this);
-      374:  831:    __default_init();
-      374:  831-block  0
-branch  0 taken 374
+      615:  830:    std::__debug_db_insert_c(this);
+      615:  831:    __default_init();
+      615:  831-block  0
+branch  0 taken 615
 branch  1 taken 0
-      748:  832:  }
-      374:  832-block  0
-      374:  832-block  1
+     1230:  832:  }
+      615:  832-block  0
+      615:  832-block  1
         -:  833:
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006ERKS4_ called 1 returned 100% blocks executed 100%
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B7v160006ERKS4_ called 1 returned 100% blocks executed 66%
-        2:  834:  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 explicit basic_string(const allocator_type& __a)
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006ERKS4_ called 2 returned 100% blocks executed 100%
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B7v160006ERKS4_ called 2 returned 100% blocks executed 66%
+        4:  834:  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 explicit basic_string(const allocator_type& __a)
         -:  835:#if _LIBCPP_STD_VER <= 14
         -:  836:      _NOEXCEPT_(is_nothrow_copy_constructible<allocator_type>::value)
         -:  837:#else
         -:  838:      _NOEXCEPT
         -:  839:#endif
-        2:  840:      : __r_(__default_init_tag(), __a) {
-        1:  840-block  0
-branch  0 taken 1
+        4:  840:      : __r_(__default_init_tag(), __a) {
+        2:  840-block  0
+branch  0 taken 2
 branch  1 taken 0
     $$$$$:  840-block  1
-        1:  841:    std::__debug_db_insert_c(this);
-        1:  842:    __default_init();
-        2:  843:  }
-        1:  843-block  0
-        1:  843-block  1
+        2:  841:    std::__debug_db_insert_c(this);
+        2:  842:    __default_init();
+        4:  843:  }
+        2:  843-block  0
+        2:  843-block  1
         -:  844:
         -:  845:  _LIBCPP_CONSTEXPR_SINCE_CXX20 basic_string(const basic_string& __str);
         -:  846:  _LIBCPP_CONSTEXPR_SINCE_CXX20 basic_string(const basic_string& __str, const allocator_type& __a);
         -:  847:
         -:  848:#ifndef _LIBCPP_CXX03_LANG
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006EOS5_ called 102 returned 100% blocks executed 100%
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B7v160006EOS5_ called 102 returned 100% blocks executed 80%
-      204:  849:  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 basic_string(basic_string&& __str)
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006EOS5_ called 135 returned 100% blocks executed 100%
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B7v160006EOS5_ called 135 returned 100% blocks executed 80%
+      270:  849:  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 basic_string(basic_string&& __str)
         -:  850:#  if _LIBCPP_STD_VER <= 14
         -:  851:      _NOEXCEPT_(is_nothrow_move_constructible<allocator_type>::value)
         -:  852:#  else
         -:  853:      _NOEXCEPT
         -:  854:#  endif
-      204:  855:      : __r_(std::move(__str.__r_)) {
-      102:  856:    __str.__default_init();
-      102:  857:    std::__debug_db_insert_c(this);
-      102:  858:    if (__is_long())
-      102:  858-block  0
-branch  0 taken 70
-branch  1 taken 32
-       32:  859:      std::__debug_db_swap(this, &__str);
-       32:  859-block  0
-branch  0 taken 32
+      270:  855:      : __r_(std::move(__str.__r_)) {
+      135:  856:    __str.__default_init();
+      135:  857:    std::__debug_db_insert_c(this);
+      135:  858:    if (__is_long())
+      135:  858-block  0
+branch  0 taken 95
+branch  1 taken 40
+       40:  859:      std::__debug_db_swap(this, &__str);
+       40:  859-block  0
+branch  0 taken 40
 branch  1 taken 0
-       32:  859-block  1
+       40:  859-block  1
     $$$$$:  859-block  2
-      204:  860:  }
-      102:  860-block  0
-      102:  860-block  1
+      270:  860:  }
+      135:  860-block  0
+      135:  860-block  1
         -:  861:
         -:  862:  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 basic_string(basic_string&& __str, const allocator_type& __a)
         -:  863:      : __r_(__default_init_tag(), __a) {
@@ -912,16 +912,16 @@ branch  1 taken 0
         -:  876:#endif // _LIBCPP_CXX03_LANG
         -:  877:
         -:  878:  template <class = __enable_if_t<__is_allocator<_Allocator>::value, nullptr_t> >
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006IDnEEPKc called 169 returned 100% blocks executed 100%
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B7v160006IDnEEPKc called 169 returned 100% blocks executed 100%
-      338:  879:  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 basic_string(const _CharT* __s)
-      338:  880:      : __r_(__default_init_tag(), __default_init_tag()) {
-      169:  881:    _LIBCPP_ASSERT(__s != nullptr, "basic_string(const char*) detected nullptr");
-      169:  882:    __init(__s, traits_type::length(__s));
-      169:  883:    std::__debug_db_insert_c(this);
-      338:  884:  }
-      169:  884-block  0
-      169:  884-block  1
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006IDnEEPKc called 262 returned 100% blocks executed 100%
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B7v160006IDnEEPKc called 262 returned 100% blocks executed 100%
+      524:  879:  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 basic_string(const _CharT* __s)
+      524:  880:      : __r_(__default_init_tag(), __default_init_tag()) {
+      262:  881:    _LIBCPP_ASSERT(__s != nullptr, "basic_string(const char*) detected nullptr");
+      262:  882:    __init(__s, traits_type::length(__s));
+      262:  883:    std::__debug_db_insert_c(this);
+      524:  884:  }
+      262:  884-block  0
+      262:  884-block  1
         -:  885:
         -:  886:  template <class = __enable_if_t<__is_allocator<_Allocator>::value, nullptr_t> >
         -:  887:  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 basic_string(const _CharT* __s, const _Allocator& __a);
@@ -1051,9 +1051,9 @@ function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B7v160
         -: 1007:    inline _LIBCPP_CONSTEXPR_SINCE_CXX20 ~basic_string();
         -: 1008:
         -: 1009:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEcvNS_17basic_string_viewIcS2_EEB7v160006Ev called 10 returned 100% blocks executed 100%
-       10: 1010:    operator __self_view() const _NOEXCEPT { return __self_view(data(), size()); }
-       10: 1010-block  0
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEcvNS_17basic_string_viewIcS2_EEB7v160006Ev called 16 returned 100% blocks executed 100%
+       16: 1010:    operator __self_view() const _NOEXCEPT { return __self_view(data(), size()); }
+       16: 1010-block  0
         -: 1011:
         -: 1012:    _LIBCPP_CONSTEXPR_SINCE_CXX20 basic_string& operator=(const basic_string& __str);
         -: 1013:
@@ -1075,9 +1075,9 @@ function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEcvNS_17
         -: 1029:    basic_string& operator=(initializer_list<value_type> __il) {return assign(__il.begin(), __il.size());}
         -: 1030:#endif
         -: 1031:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEaSB7v160006EPKc called 39 returned 100% blocks executed 100%
-       39: 1032:    basic_string& operator=(const value_type* __s) {return assign(__s);}
-       39: 1032-block  0
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEaSB7v160006EPKc called 57 returned 100% blocks executed 100%
+       57: 1032:    basic_string& operator=(const value_type* __s) {return assign(__s);}
+       57: 1032-block  0
         -: 1033:#if _LIBCPP_STD_VER > 20
         -: 1034:    basic_string& operator=(nullptr_t) = delete;
         -: 1035:#endif
@@ -1122,15 +1122,15 @@ function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEaSB7v160
         -: 1074:    const_reverse_iterator crend() const _NOEXCEPT
         -: 1075:        {return rend();}
         -: 1076:
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4sizeB7v160006Ev called 698 returned 100% blocks executed 100%
-      698: 1077:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 size_type size() const _NOEXCEPT
-      698: 1078:        {return __is_long() ? __get_long_size() : __get_short_size();}
-      698: 1078-block  0
-branch  0 taken 458
-branch  1 taken 240
-      458: 1078-block  1
-      240: 1078-block  2
-      698: 1078-block  3
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4sizeB7v160006Ev called 823 returned 100% blocks executed 100%
+      823: 1077:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 size_type size() const _NOEXCEPT
+      823: 1078:        {return __is_long() ? __get_long_size() : __get_short_size();}
+      823: 1078-block  0
+branch  0 taken 492
+branch  1 taken 331
+      492: 1078-block  1
+      331: 1078-block  2
+      823: 1078-block  3
         -: 1079:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 size_type length() const _NOEXCEPT {return size();}
         -: 1080:
         -: 1081:  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 size_type max_size() const _NOEXCEPT {
@@ -1201,10 +1201,10 @@ function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEpLB7v160
         -: 1144:        __self_view __sv = __t; return append(__sv);
         -: 1145:    }
         -: 1146:
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEpLB7v160006EPKc called 0 returned 0% blocks executed 0%
-    #####: 1147:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 basic_string& operator+=(const value_type* __s) {
-    #####: 1148:        return append(__s);
-    $$$$$: 1148-block  0
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEpLB7v160006EPKc called 2 returned 100% blocks executed 100%
+        2: 1147:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 basic_string& operator+=(const value_type* __s) {
+        2: 1148:        return append(__s);
+        2: 1148-block  0
         -: 1149:    }
         -: 1150:
         -: 1151:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 basic_string& operator+=(value_type __c) {
@@ -1518,13 +1518,13 @@ function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6appendB
         -: 1457:#endif
         -: 1458:
         -: 1459:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5c_strB7v160006Ev called 1090 returned 100% blocks executed 100%
-     1090: 1460:    const value_type* c_str() const _NOEXCEPT {return data();}
-     1090: 1460-block  0
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5c_strB7v160006Ev called 1519 returned 100% blocks executed 100%
+     1519: 1460:    const value_type* c_str() const _NOEXCEPT {return data();}
+     1519: 1460-block  0
         -: 1461:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4dataB7v160006Ev called 1126 returned 100% blocks executed 100%
-     1126: 1462:    const value_type* data() const _NOEXCEPT  {return std::__to_address(__get_pointer());}
-     1126: 1462-block  0
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4dataB7v160006Ev called 1578 returned 100% blocks executed 100%
+     1578: 1462:    const value_type* data() const _NOEXCEPT  {return std::__to_address(__get_pointer());}
+     1578: 1462-block  0
         -: 1463:#if _LIBCPP_STD_VER > 14 || defined(_LIBCPP_BUILDING_LIBRARY)
         -: 1464:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
 function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4dataB7v160006Ev called 0 returned 0% blocks executed 0%
@@ -1533,9 +1533,9 @@ function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4dataB7v
         -: 1466:#endif
         -: 1467:
         -: 1468:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE13get_allocatorB7v160006Ev called 19 returned 100% blocks executed 100%
-       19: 1469:    allocator_type get_allocator() const _NOEXCEPT {return __alloc();}
-       19: 1469-block  0
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE13get_allocatorB7v160006Ev called 29 returned 100% blocks executed 100%
+       29: 1469:    allocator_type get_allocator() const _NOEXCEPT {return __alloc();}
+       29: 1469-block  0
         -: 1470:
         -: 1471:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
         -: 1472:    size_type find(const basic_string& __str, size_type __pos = 0) const _NOEXCEPT;
@@ -1745,12 +1745,12 @@ function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE13get_a
         -: 1676:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 void __shrink_or_extend(size_type __target_capacity);
         -: 1677:
         -: 1678:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE9__is_longB7v160006Ev called 1966 returned 100% blocks executed 100%
-     1966: 1679:    bool __is_long() const _NOEXCEPT {
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE9__is_longB7v160006Ev called 2617 returned 100% blocks executed 100%
+     2617: 1679:    bool __is_long() const _NOEXCEPT {
         -: 1680:        if (__libcpp_is_constant_evaluated())
         -: 1681:            return true;
-     1966: 1682:        return __r_.first().__s.__is_long_;
-     1966: 1682-block  0
+     2617: 1682:        return __r_.first().__s.__is_long_;
+     2617: 1682-block  0
         -: 1683:    }
         -: 1684:
         -: 1685:    static _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 void __begin_lifetime(pointer __begin, size_type __n) {
@@ -1765,9 +1765,9 @@ function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE9__is_l
         -: 1694:#endif // _LIBCPP_STD_VER > 17
         -: 1695:    }
         -: 1696:
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE14__default_initB7v160006Ev called 477 returned 100% blocks executed 100%
-      477: 1697:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 void __default_init() {
-      477: 1698:        __r_.first() = __rep();
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE14__default_initB7v160006Ev called 752 returned 100% blocks executed 100%
+      752: 1697:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 void __default_init() {
+      752: 1698:        __r_.first() = __rep();
         -: 1699:        if (__libcpp_is_constant_evaluated()) {
         -: 1700:            size_type __sz = __recommend(0) + 1;
         -: 1701:            pointer __ptr = __alloc_traits::allocate(__alloc(), __sz);
@@ -1776,8 +1776,8 @@ function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE14__defa
         -: 1704:            __set_long_cap(__sz);
         -: 1705:            __set_long_size(0);
         -: 1706:        }
-      477: 1707:    }
-      477: 1707-block  0
+      752: 1707:    }
+      752: 1707-block  0
         -: 1708:
         -: 1709:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20 void __deallocate_constexpr() {
         -: 1710:        if (__libcpp_is_constant_evaluated() && __get_pointer() != nullptr)
@@ -1817,9 +1817,9 @@ function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE14__defa
         -: 1744:    }
         -: 1745:
         -: 1746:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX14 allocator_type& __alloc() _NOEXCEPT { return __r_.second(); }
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE7__allocB7v160006Ev called 38 returned 100% blocks executed 100%
-       38: 1747:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR const allocator_type& __alloc() const _NOEXCEPT { return __r_.second(); }
-       38: 1747-block  0
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE7__allocB7v160006Ev called 59 returned 100% blocks executed 100%
+       59: 1747:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR const allocator_type& __alloc() const _NOEXCEPT { return __r_.second(); }
+       59: 1747-block  0
         -: 1748:
         -: 1749:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
         -: 1750:    void __set_short_size(size_type __s) _NOEXCEPT {
@@ -1829,21 +1829,21 @@ function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE7__allo
         -: 1754:    }
         -: 1755:
         -: 1756:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE16__get_short_sizeB7v160006Ev called 240 returned 100% blocks executed 100%
-      240: 1757:    size_type __get_short_size() const _NOEXCEPT {
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE16__get_short_sizeB7v160006Ev called 331 returned 100% blocks executed 100%
+      331: 1757:    size_type __get_short_size() const _NOEXCEPT {
         -: 1758:        _LIBCPP_ASSERT(!__r_.first().__s.__is_long_, "String has to be short when trying to get the short size");
-      240: 1759:        return __r_.first().__s.__size_;
-      240: 1759-block  0
+      331: 1759:        return __r_.first().__s.__size_;
+      331: 1759-block  0
         -: 1760:    }
         -: 1761:
         -: 1762:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
         -: 1763:    void __set_long_size(size_type __s) _NOEXCEPT
         -: 1764:        {__r_.first().__l.__size_ = __s;}
         -: 1765:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE15__get_long_sizeB7v160006Ev called 458 returned 100% blocks executed 100%
-      458: 1766:    size_type __get_long_size() const _NOEXCEPT
-      458: 1767:        {return __r_.first().__l.__size_;}
-      458: 1767-block  0
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE15__get_long_sizeB7v160006Ev called 492 returned 100% blocks executed 100%
+      492: 1766:    size_type __get_long_size() const _NOEXCEPT
+      492: 1767:        {return __r_.first().__l.__size_;}
+      492: 1767-block  0
         -: 1768:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
         -: 1769:    void __set_size(size_type __s) _NOEXCEPT
         -: 1770:        {if (__is_long()) __set_long_size(__s); else __set_short_size(__s);}
@@ -1863,45 +1863,45 @@ function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE15__get
         -: 1784:    void __set_long_pointer(pointer __p) _NOEXCEPT
         -: 1785:        {__r_.first().__l.__data_ = __p;}
         -: 1786:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE18__get_long_pointerB7v160006Ev called 20 returned 100% blocks executed 100%
-       20: 1787:    pointer __get_long_pointer() _NOEXCEPT
-       20: 1788:        {return __r_.first().__l.__data_;}
-       20: 1788-block  0
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE18__get_long_pointerB7v160006Ev called 21 returned 100% blocks executed 100%
+       21: 1787:    pointer __get_long_pointer() _NOEXCEPT
+       21: 1788:        {return __r_.first().__l.__data_;}
+       21: 1788-block  0
         -: 1789:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE18__get_long_pointerB7v160006Ev called 488 returned 100% blocks executed 100%
-      488: 1790:    const_pointer __get_long_pointer() const _NOEXCEPT
-      488: 1791:        {return __r_.first().__l.__data_;}
-      488: 1791-block  0
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE18__get_long_pointerB7v160006Ev called 552 returned 100% blocks executed 100%
+      552: 1790:    const_pointer __get_long_pointer() const _NOEXCEPT
+      552: 1791:        {return __r_.first().__l.__data_;}
+      552: 1791-block  0
         -: 1792:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE19__get_short_pointerB7v160006Ev called 17 returned 100% blocks executed 100%
-       17: 1793:    pointer __get_short_pointer() _NOEXCEPT
-       17: 1794:        {return pointer_traits<pointer>::pointer_to(__r_.first().__s.__data_[0]);}
-       17: 1794-block  0
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE19__get_short_pointerB7v160006Ev called 55 returned 100% blocks executed 100%
+       55: 1793:    pointer __get_short_pointer() _NOEXCEPT
+       55: 1794:        {return pointer_traits<pointer>::pointer_to(__r_.first().__s.__data_[0]);}
+       55: 1794-block  0
         -: 1795:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE19__get_short_pointerB7v160006Ev called 638 returned 100% blocks executed 100%
-      638: 1796:    const_pointer __get_short_pointer() const _NOEXCEPT
-      638: 1797:        {return pointer_traits<const_pointer>::pointer_to(__r_.first().__s.__data_[0]);}
-      638: 1797-block  0
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE19__get_short_pointerB7v160006Ev called 1026 returned 100% blocks executed 100%
+     1026: 1796:    const_pointer __get_short_pointer() const _NOEXCEPT
+     1026: 1797:        {return pointer_traits<const_pointer>::pointer_to(__r_.first().__s.__data_[0]);}
+     1026: 1797-block  0
         -: 1798:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE13__get_pointerB7v160006Ev called 30 returned 100% blocks executed 100%
-       30: 1799:    pointer __get_pointer() _NOEXCEPT
-       30: 1800:        {return __is_long() ? __get_long_pointer() : __get_short_pointer();}
-       30: 1800-block  0
-branch  0 taken 20
-branch  1 taken 10
-       20: 1800-block  1
-       10: 1800-block  2
-       30: 1800-block  3
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE13__get_pointerB7v160006Ev called 39 returned 100% blocks executed 100%
+       39: 1799:    pointer __get_pointer() _NOEXCEPT
+       39: 1800:        {return __is_long() ? __get_long_pointer() : __get_short_pointer();}
+       39: 1800-block  0
+branch  0 taken 21
+branch  1 taken 18
+       21: 1800-block  1
+       18: 1800-block  2
+       39: 1800-block  3
         -: 1801:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE13__get_pointerB7v160006Ev called 1126 returned 100% blocks executed 100%
-     1126: 1802:    const_pointer __get_pointer() const _NOEXCEPT
-     1126: 1803:        {return __is_long() ? __get_long_pointer() : __get_short_pointer();}
-     1126: 1803-block  0
-branch  0 taken 488
-branch  1 taken 638
-      488: 1803-block  1
-      638: 1803-block  2
-     1126: 1803-block  3
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE13__get_pointerB7v160006Ev called 1578 returned 100% blocks executed 100%
+     1578: 1802:    const_pointer __get_pointer() const _NOEXCEPT
+     1578: 1803:        {return __is_long() ? __get_long_pointer() : __get_short_pointer();}
+     1578: 1803-block  0
+branch  0 taken 552
+branch  1 taken 1026
+      552: 1803-block  1
+     1026: 1803-block  2
+     1578: 1803-block  3
         -: 1804:
         -: 1805:    template <size_type __a> static
         -: 1806:        _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
@@ -4126,21 +4126,42 @@ function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4findB7
         -: 4023:template<class _Allocator>
         -: 4024:inline _LIBCPP_CONSTEXPR_SINCE_CXX20 _LIBCPP_HIDE_FROM_ABI
         -: 4025:bool
-        -: 4026:operator==(const basic_string<char, char_traits<char>, _Allocator>& __lhs,
+function _ZNSt3__1eqB7v160006INS_9allocatorIcEEEEbRKNS_12basic_stringIcNS_11char_traitsIcEET_EES9_ called 6 returned 100% blocks executed 91%
+        6: 4026:operator==(const basic_string<char, char_traits<char>, _Allocator>& __lhs,
         -: 4027:           const basic_string<char, char_traits<char>, _Allocator>& __rhs) _NOEXCEPT
-        -: 4028:{
-        -: 4029:    size_t __lhs_sz = __lhs.size();
-        -: 4030:    if (__lhs_sz != __rhs.size())
-        -: 4031:        return false;
-        -: 4032:    const char* __lp = __lhs.data();
-        -: 4033:    const char* __rp = __rhs.data();
-        -: 4034:    if (__lhs.__is_long())
-        -: 4035:        return char_traits<char>::compare(__lp, __rp, __lhs_sz) == 0;
-        -: 4036:    for (; __lhs_sz != 0; --__lhs_sz, ++__lp, ++__rp)
-        -: 4037:        if (*__lp != *__rp)
-        -: 4038:            return false;
-        -: 4039:    return true;
-        -: 4040:}
+        6: 4028:{
+        6: 4029:    size_t __lhs_sz = __lhs.size();
+        6: 4030:    if (__lhs_sz != __rhs.size())
+        6: 4030-block  0
+branch  0 taken 1
+branch  1 taken 5
+        1: 4031:        return false;
+        1: 4031-block  0
+        5: 4032:    const char* __lp = __lhs.data();
+        5: 4033:    const char* __rp = __rhs.data();
+        5: 4034:    if (__lhs.__is_long())
+        5: 4034-block  0
+branch  0 taken 1
+branch  1 taken 4
+        1: 4035:        return char_traits<char>::compare(__lp, __rp, __lhs_sz) == 0;
+        1: 4035-block  0
+       40: 4036:    for (; __lhs_sz != 0; --__lhs_sz, ++__lp, ++__rp)
+        4: 4036-block  0
+       40: 4036-block  1
+branch  0 taken 40
+branch  1 taken 0
+       36: 4036-block  2
+       40: 4037:        if (*__lp != *__rp)
+       40: 4037-block  0
+branch  0 taken 36
+branch  1 taken 4
+       36: 4037-block  1
+        4: 4038:            return false;
+        4: 4038-block  0
+    #####: 4039:    return true;
+    $$$$$: 4039-block  0
+        6: 4040:}
+        6: 4040-block  0
         -: 4041:
         -: 4042:#if _LIBCPP_STD_VER <= 17
         -: 4043:template<class _CharT, class _Traits, class _Allocator>
@@ -4160,16 +4181,16 @@ function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4findB7
         -: 4057:template<class _CharT, class _Traits, class _Allocator>
         -: 4058:inline _LIBCPP_CONSTEXPR_SINCE_CXX20 _LIBCPP_HIDE_FROM_ABI
         -: 4059:bool
-function _ZNSt3__1eqB7v160006IcNS_11char_traitsIcEENS_9allocatorIcEEEEbRKNS_12basic_stringIT_T0_T1_EEPKS6_ called 10 returned 100% blocks executed 66%
-       10: 4060:operator==(const basic_string<_CharT,_Traits,_Allocator>& __lhs,
+function _ZNSt3__1eqB7v160006IcNS_11char_traitsIcEENS_9allocatorIcEEEEbRKNS_12basic_stringIT_T0_T1_EEPKS6_ called 16 returned 100% blocks executed 66%
+       16: 4060:operator==(const basic_string<_CharT,_Traits,_Allocator>& __lhs,
         -: 4061:           const _CharT* __rhs) _NOEXCEPT
-       10: 4062:{
+       16: 4062:{
         -: 4063:#if _LIBCPP_STD_VER > 17
-       10: 4064:    return basic_string_view<_CharT, _Traits>(__lhs) == basic_string_view<_CharT, _Traits>(__rhs);
-       10: 4064-block  0
-branch  0 taken 10
+       16: 4064:    return basic_string_view<_CharT, _Traits>(__lhs) == basic_string_view<_CharT, _Traits>(__rhs);
+       16: 4064-block  0
+branch  0 taken 16
 branch  1 taken 0
-       10: 4064-block  1
+       16: 4064-block  1
     $$$$$: 4064-block  2
         -: 4065:#else
         -: 4066:    typedef basic_string<_CharT, _Traits, _Allocator> _String;

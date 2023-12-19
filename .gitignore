@@ -5,3 +5,5 @@ html/
 latex
 Doxyfile
 .idea
+tests/cmake-build-debug
+tests/cmake-build-debug-coverage

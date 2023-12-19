@@ -28,7 +28,6 @@ Train::Train(int number, Container (&containersInit)[], double _weight, double _
     }
 };
 
-//  создание экземпляров класса с инициализацией одним контейнером;
 /**
  * @brief Class constructor with initialization by one container
  * @param oneContainer One container
@@ -36,7 +35,8 @@ Train::Train(int number, Container (&containersInit)[], double _weight, double _
  * @param _volume Max volume for train
  */
 Train::Train(Container &oneContainer, double _weight, double _volume) {
-    containers = &oneContainer;
+    containers = new Container[1];
+    containers[0] = oneContainer;
     maxWeight = _weight;
     maxVolume = _volume;
     countContainers = 1;
@@ -106,10 +106,10 @@ std::ostream &operator<<(std::ostream &s, const Train &train) {
     return s;
 }
 
-
 /**
  * @brief Adding new container
  * @param newContainer Exemplar new container
+ * @throw std::runtime_error Capacity or volume limitation
  * @return Self pointer
  */
 Train &Train::operator+=(Container newContainer) {
@@ -133,6 +133,7 @@ Train &Train::operator+=(Container newContainer) {
 /**
  * @brief Getting a container by its index
  * @param index Index of container to be received
+ * @throw std::out_of_range Index of container to be received out of range
  * @return Reference to the container
  */
 Container &Train::operator[](int index) {
@@ -146,6 +147,7 @@ Container &Train::operator[](int index) {
 /**
  * @brief Deleting container by its index
  * @param index Index of container to be deleted
+ * @throw std::out_of_range Index of container to be deleted out of range
  */
 void Train::deleteContainer(int index) {
     if (index < countContainers) {
@@ -245,20 +247,24 @@ void Train::ensuringSecurity() {
     }
 }
 
+
 /**
  * @brief Copy assignment operator
  */
 Train &Train::operator=(const Train &tr) {
     if (this != &tr) {
-        auto *new_ar = new Container[countContainers];
+        delete[] containers;
+        containers = new Container[tr.countContainers];
         maxVolume = tr.maxVolume;
         maxWeight = tr.maxWeight;
-        delete[] containers;
-        containers = new_ar;
-        std::copy(tr.containers, tr.containers + tr.countContainers, containers);
+        countContainers = tr.countContainers;
+        for (int i = 0; i < countContainers; i++) {
+            containers[i] = tr.containers[i];
+        }
     }
     return *this;
 }
+
 
 /**
  * @brief Moving assignment operator
@@ -266,6 +272,7 @@ Train &Train::operator=(const Train &tr) {
 Train &Train::operator=(Train &&st) noexcept {
     std::swap(maxWeight, st.maxWeight);
     std::swap(maxVolume, st.maxVolume);
+    std::swap(countContainers, st.countContainers);
     std::swap(containers, st.containers);
     return *this;
 }

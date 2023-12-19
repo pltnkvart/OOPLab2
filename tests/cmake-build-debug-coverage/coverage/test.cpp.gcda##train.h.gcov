@@ -30,65 +30,65 @@
         -:   25:    /**
         -:   26:    * @brief Destructor
         -:   27:    */
-function _ZN5TrainD1Ev called 7 returned 100% blocks executed 100%
-function _ZN5TrainD2Ev called 7 returned 100% blocks executed 71%
-       14:   28:    ~Train() { delete[] containers; };
-        7:   28-block  0
-        7:   28-block  1
-branch  0 taken 4
-branch  1 taken 3
-        4:   28-block  2
+function _ZN5TrainD1Ev called 18 returned 100% blocks executed 100%
+function _ZN5TrainD2Ev called 18 returned 100% blocks executed 71%
+       36:   28:    ~Train() { delete[] containers; };
+       18:   28-block  0
+       18:   28-block  1
+branch  0 taken 13
+branch  1 taken 5
+       13:   28-block  2
     $$$$$:   28-block  3
-        4:   28-block  4
+       13:   28-block  4
     $$$$$:   28-block  5
-        4:   28-block  6
-        7:   28-block  7
+       13:   28-block  6
+       18:   28-block  7
         -:   29:
         -:   30:    //  setters
         -:   31:    /**
         -:   32:     * @brief Setting weight
         -:   33:     */
-function _ZN5Train12setMaxWeightEd called 1 returned 100% blocks executed 100%
-        1:   34:    void setMaxWeight(double weight) { maxWeight = weight; };
-        1:   34-block  0
+function _ZN5Train12setMaxWeightEd called 6 returned 100% blocks executed 100%
+        6:   34:    void setMaxWeight(double weight) { maxWeight = weight; };
+        6:   34-block  0
         -:   35:    /**
         -:   36:    * @brief Setting volume
         -:   37:    */
-function _ZN5Train12setMaxVolumeEd called 1 returned 100% blocks executed 100%
-        1:   38:    void setMaxVolume(double volume) { maxVolume = volume; };
-        1:   38-block  0
+function _ZN5Train12setMaxVolumeEd called 6 returned 100% blocks executed 100%
+        6:   38:    void setMaxVolume(double volume) { maxVolume = volume; };
+        6:   38-block  0
         -:   39:    /**
         -:   40:     * @brief Setting count containers
         -:   41:     */
-function _ZN5Train18setCountContainersEi called 1 returned 100% blocks executed 100%
-        1:   42:    void setCountContainers(int count) { countContainers = count; };
-        1:   42-block  0
+function _ZN5Train18setCountContainersEi called 4 returned 100% blocks executed 100%
+        4:   42:    void setCountContainers(int count) { countContainers = count; };
+        4:   42-block  0
         -:   43:
         -:   44:    //  getters
         -:   45:    /**
         -:   46:     * @brief Getting munber of containers in train
         -:   47:     */
-function _ZNK5Train8getCountEv called 5 returned 100% blocks executed 100%
-        5:   48:    int getCount() const { return countContainers; };
-        5:   48-block  0
+function _ZNK5Train8getCountEv called 16 returned 100% blocks executed 100%
+       16:   48:    int getCount() const { return countContainers; };
+       16:   48-block  0
         -:   49:    /**
         -:   50:     * @brief Getting max weight of train
         -:   51:     */
-function _ZNK5Train12getMaxWeightEv called 5 returned 100% blocks executed 100%
-        5:   52:    double getMaxWeight() const { return maxWeight; };
-        5:   52-block  0
+function _ZNK5Train12getMaxWeightEv called 11 returned 100% blocks executed 100%
+       11:   52:    double getMaxWeight() const { return maxWeight; };
+       11:   52-block  0
         -:   53:    /**
         -:   54:     * @brief Getting max volume of train
         -:   55:     */
-function _ZNK5Train12getMaxVolumeEv called 5 returned 100% blocks executed 100%
-        5:   56:    double getMaxVolume() const { return maxVolume; };
-        5:   56-block  0
+function _ZNK5Train12getMaxVolumeEv called 11 returned 100% blocks executed 100%
+       11:   56:    double getMaxVolume() const { return maxVolume; };
+       11:   56-block  0
         -:   57:    /**
         -:   58:     * @brief Getting array of containers in train
         -:   59:     */
-function _ZNK5Train13getContainersEv called 1 returned 100% blocks executed 100%
-        1:   60:    const Container *getContainers() const { return containers; };
-        1:   60-block  0
+function _ZNK5Train13getContainersEv called 11 returned 100% blocks executed 100%
+       11:   60:    const Container *getContainers() const { return containers; };
+       11:   60-block  0
         -:   61:
         -:   62:    friend std::istream &operator>>(std::istream &is, Train &train);
         -:   63:

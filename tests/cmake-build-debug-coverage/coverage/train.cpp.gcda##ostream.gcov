@@ -223,10 +223,10 @@
         -:  218:
         -:  219:    // 27.7.2.6 Formatted output:
         -:  220:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-function _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsB7v160006EPFRS3_S4_E called 1 returned 100% blocks executed 100%
-        1:  221:    basic_ostream& operator<<(basic_ostream& (*__pf)(basic_ostream&))
-        1:  222:    { return __pf(*this); }
-        1:  222-block  0
+function _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsB7v160006EPFRS3_S4_E called 5 returned 100% blocks executed 100%
+        5:  221:    basic_ostream& operator<<(basic_ostream& (*__pf)(basic_ostream&))
+        5:  222:    { return __pf(*this); }
+        5:  222-block  0
         -:  223:
         -:  224:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
         -:  225:    basic_ostream& operator<<(basic_ios<char_type, traits_type>&
@@ -1094,13 +1094,13 @@ function _ZNSt3__1lsB7v160006INS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_
         -: 1033:template <class _CharT, class _Traits>
         -: 1034:_LIBCPP_HIDE_FROM_ABI inline
         -: 1035:basic_ostream<_CharT, _Traits>&
-function _ZNSt3__14endlB7v160006IcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_ called 1 returned 100% blocks executed 100%
-        1: 1036:endl(basic_ostream<_CharT, _Traits>& __os)
-        1: 1037:{
-        1: 1038:    __os.put(__os.widen('\n'));
-        1: 1039:    __os.flush();
-        1: 1040:    return __os;
-        1: 1040-block  0
+function _ZNSt3__14endlB7v160006IcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_ called 5 returned 100% blocks executed 100%
+        5: 1036:endl(basic_ostream<_CharT, _Traits>& __os)
+        5: 1037:{
+        5: 1038:    __os.put(__os.widen('\n'));
+        5: 1039:    __os.flush();
+        5: 1040:    return __os;
+        5: 1040-block  0
         -: 1041:}
         -: 1042:
         -: 1043:template <class _CharT, class _Traits>

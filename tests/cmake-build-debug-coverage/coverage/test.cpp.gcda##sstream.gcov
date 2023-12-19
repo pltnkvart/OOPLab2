@@ -237,29 +237,29 @@
         -:  232:        : __hm_(nullptr), __mode_(ios_base::in | ios_base::out) {}
         -:  233:
         -:  234:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006Ej called 103 returned 100% blocks executed 100%
-function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B7v160006Ej called 103 returned 100% blocks executed 100%
-      412:  235:    explicit basic_stringbuf(ios_base::openmode __wch)
-      412:  236:        : __hm_(nullptr), __mode_(__wch) {}
-      103:  236-block  0
-      103:  236-block  1
-      103:  236-block  2
-      103:  236-block  3
+function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006Ej called 131 returned 100% blocks executed 100%
+function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B7v160006Ej called 131 returned 100% blocks executed 100%
+      524:  235:    explicit basic_stringbuf(ios_base::openmode __wch)
+      524:  236:        : __hm_(nullptr), __mode_(__wch) {}
+      131:  236-block  0
+      131:  236-block  1
+      131:  236-block  2
+      131:  236-block  3
         -:  237:
         -:  238:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006ERKNS_12basic_stringIcS2_S4_EEj called 1 returned 100% blocks executed 100%
-function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B7v160006ERKNS_12basic_stringIcS2_S4_EEj called 1 returned 100% blocks executed 50%
-        3:  239:    explicit basic_stringbuf(const string_type& __s,
+function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006ERKNS_12basic_stringIcS2_S4_EEj called 2 returned 100% blocks executed 100%
+function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B7v160006ERKNS_12basic_stringIcS2_S4_EEj called 2 returned 100% blocks executed 50%
+        6:  239:    explicit basic_stringbuf(const string_type& __s,
         -:  240:                             ios_base::openmode __wch = ios_base::in | ios_base::out)
-        1:  241:        : __str_(__s.get_allocator()), __hm_(nullptr), __mode_(__wch)
-        3:  242:    {
-        1:  243:        str(__s);
-        1:  243-block  0
-branch  0 taken 1
+        2:  241:        : __str_(__s.get_allocator()), __hm_(nullptr), __mode_(__wch)
+        6:  242:    {
+        2:  243:        str(__s);
+        2:  243-block  0
+branch  0 taken 2
 branch  1 taken 0
-        2:  244:    }
-        1:  244-block  0
-        1:  244-block  1
+        4:  244:    }
+        2:  244-block  0
+        2:  244-block  1
     $$$$$:  244-block  2
     $$$$$:  244-block  3
         -:  245:
@@ -674,19 +674,19 @@ branch  1 taken 0
         -:  654:        : basic_istream<_CharT, _Traits>(&__sb_), __sb_(__wch | ios_base::in) {}
         -:  655:
         -:  656:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__119basic_istringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006ERKNS_12basic_stringIcS2_S4_EEj called 1 returned 100% blocks executed 42%
-        2:  657:    explicit basic_istringstream(const string_type& __s,
+function _ZNSt3__119basic_istringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006ERKNS_12basic_stringIcS2_S4_EEj called 2 returned 100% blocks executed 42%
+        4:  657:    explicit basic_istringstream(const string_type& __s,
         -:  658:                                 ios_base::openmode __wch = ios_base::in)
-        1:  659:        : basic_istream<_CharT, _Traits>(&__sb_)
-        1:  659-block  0
-branch  0 taken 1
+        2:  659:        : basic_istream<_CharT, _Traits>(&__sb_)
+        2:  659-block  0
+branch  0 taken 2
 branch  1 taken 0
-        1:  660:        , __sb_(__s, __wch | ios_base::in)
-        1:  660-block  0
+        2:  660:        , __sb_(__s, __wch | ios_base::in)
+        2:  660-block  0
 branch  0 taken 0
-branch  1 taken 1
-        2:  661:    { }
-        1:  661-block  0
+branch  1 taken 2
+        4:  661:    { }
+        2:  661-block  0
     $$$$$:  661-block  1
     $$$$$:  661-block  2
     $$$$$:  661-block  3
@@ -758,19 +758,19 @@ branch  1 taken 1
         -:  726:public:
         -:  727:    // [ostringstream.cons] Constructors:
         -:  728:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006Ev called 1 returned 100% blocks executed 42%
-        2:  729:    basic_ostringstream()
-        2:  730:        : basic_ostream<_CharT, _Traits>(&__sb_), __sb_(ios_base::out) {}
-        1:  730-block  0
-branch  0 taken 1
+function _ZNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006Ev called 2 returned 100% blocks executed 42%
+        4:  729:    basic_ostringstream()
+        4:  730:        : basic_ostream<_CharT, _Traits>(&__sb_), __sb_(ios_base::out) {}
+        2:  730-block  0
+branch  0 taken 2
 branch  1 taken 0
-        1:  730-block  1
-branch  2 taken 1
+        2:  730-block  1
+branch  2 taken 2
 branch  3 taken 0
-        1:  730-block  2
+        2:  730-block  2
 branch  4 taken 0
-branch  5 taken 1
-        1:  730-block  3
+branch  5 taken 2
+        2:  730-block  3
     $$$$$:  730-block  4
     $$$$$:  730-block  5
     $$$$$:  730-block  6
@@ -814,10 +814,10 @@ branch  5 taken 1
         -:  767:        return const_cast<basic_stringbuf<char_type, traits_type, allocator_type>*>(&__sb_);
         -:  768:    }
         -:  769:    _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEE3strB7v160006Ev called 1 returned 100% blocks executed 100%
-        1:  770:    string_type str() const {
-        1:  771:        return __sb_.str();
-        1:  771-block  0
+function _ZNKSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEE3strB7v160006Ev called 2 returned 100% blocks executed 100%
+        2:  770:    string_type str() const {
+        2:  771:        return __sb_.str();
+        2:  771-block  0
         -:  772:    }
         -:  773:    _LIBCPP_INLINE_VISIBILITY
         -:  774:    void str(const string_type& __s) {
@@ -856,19 +856,19 @@ function _ZNKSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEE
         -:  807:public:
         -:  808:    // [stringstream.cons] constructors
         -:  809:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006Ev called 102 returned 100% blocks executed 42%
-      204:  810:    basic_stringstream()
-      204:  811:        : basic_iostream<_CharT, _Traits>(&__sb_), __sb_(ios_base::in | ios_base::out) {}
-      102:  811-block  0
-branch  0 taken 102
+function _ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B7v160006Ev called 129 returned 100% blocks executed 42%
+      258:  810:    basic_stringstream()
+      258:  811:        : basic_iostream<_CharT, _Traits>(&__sb_), __sb_(ios_base::in | ios_base::out) {}
+      129:  811-block  0
+branch  0 taken 129
 branch  1 taken 0
-      102:  811-block  1
-branch  2 taken 102
+      129:  811-block  1
+branch  2 taken 129
 branch  3 taken 0
-      102:  811-block  2
+      129:  811-block  2
 branch  4 taken 0
-branch  5 taken 102
-      102:  811-block  3
+branch  5 taken 129
+      129:  811-block  3
     $$$$$:  811-block  4
     $$$$$:  811-block  5
     $$$$$:  811-block  6
@@ -911,10 +911,10 @@ branch  5 taken 102
         -:  847:        return const_cast<basic_stringbuf<char_type, traits_type, allocator_type>*>(&__sb_);
         -:  848:    }
         -:  849:    _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEE3strB7v160006Ev called 102 returned 100% blocks executed 100%
-      102:  850:    string_type str() const {
-      102:  851:        return __sb_.str();
-      102:  851-block  0
+function _ZNKSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEE3strB7v160006Ev called 129 returned 100% blocks executed 100%
+      129:  850:    string_type str() const {
+      129:  851:        return __sb_.str();
+      129:  851-block  0
         -:  852:    }
         -:  853:    _LIBCPP_INLINE_VISIBILITY
         -:  854:    void str(const string_type& __s) {

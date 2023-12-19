@@ -191,32 +191,32 @@
         -:  186:    }
         -:  187:
         -:  188:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-function _ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE6sbumpcB7v160006Ev called 10 returned 100% blocks executed 75%
-       10:  189:    int_type sbumpc() {
-       10:  190:        if (__ninp_ == __einp_)
-       10:  190-block  0
+function _ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE6sbumpcB7v160006Ev called 30 returned 100% blocks executed 75%
+       30:  189:    int_type sbumpc() {
+       30:  190:        if (__ninp_ == __einp_)
+       30:  190-block  0
 branch  0 taken 0
-branch  1 taken 10
+branch  1 taken 30
     #####:  191:            return uflow();
     $$$$$:  191-block  0
-       10:  192:        return traits_type::to_int_type(*__ninp_++);
-       10:  192-block  0
-       10:  193:    }
-       10:  193-block  0
+       30:  192:        return traits_type::to_int_type(*__ninp_++);
+       30:  192-block  0
+       30:  193:    }
+       30:  193-block  0
         -:  194:
         -:  195:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-function _ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE5sgetcB7v160006Ev called 11 returned 100% blocks executed 75%
-       11:  196:    int_type sgetc() {
-       11:  197:        if (__ninp_ == __einp_)
-       11:  197-block  0
+function _ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE5sgetcB7v160006Ev called 33 returned 100% blocks executed 75%
+       33:  196:    int_type sgetc() {
+       33:  197:        if (__ninp_ == __einp_)
+       33:  197-block  0
 branch  0 taken 0
-branch  1 taken 11
+branch  1 taken 33
     #####:  198:            return underflow();
     $$$$$:  198-block  0
-       11:  199:        return traits_type::to_int_type(*__ninp_);
-       11:  199-block  0
-       11:  200:    }
-       11:  200-block  0
+       33:  199:        return traits_type::to_int_type(*__ninp_);
+       33:  199-block  0
+       33:  200:    }
+       33:  200-block  0
         -:  201:
         -:  202:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
         -:  203:    streamsize sgetn(char_type* __s, streamsize __n)
